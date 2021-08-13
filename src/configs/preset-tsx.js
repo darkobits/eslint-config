@@ -12,7 +12,7 @@ const config = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
-    './preset-ts'
+    require.resolve('./preset-ts')
   ],
   settings: {
     // TODO: This can be removed when eslint-plugin-react adds this setting as a
