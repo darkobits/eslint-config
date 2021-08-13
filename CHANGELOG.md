@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/darkobits/eslint-plugin/compare/v0.1.1...v0.1.2) (2021-08-13)
+
+
+### 🐞 Bug Fixes
+
+* Use require.resolve to extend local config. ([b1cb01c](https://github.com/darkobits/eslint-plugin/commit/b1cb01cf16afac65ed1eaa1cc79d04f1a6256099))
+
 ### [0.1.1](https://github.com/darkobits/eslint-plugin/compare/v0.1.0...v0.1.1) (2021-08-13)
 
 
