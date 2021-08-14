@@ -953,5 +953,12 @@ config.overrides.push({
   rules: javaScriptRules
 });
 
+config.overrides.push({
+  files: ['*.test.*', '*.spec.*'],
+  rules: {
+    '@typescript-eslint/unbound-method': 'off'
+  }
+});
+
 
 module.exports = config;
