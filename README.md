@@ -1,5 +1,5 @@
 <a href="#top" id="top">
-  <img src="https://user-images.githubusercontent.com/441546/129287002-c18234f4-13b0-4d03-b8c7-1b03b6fac4b9.png" style="max-width: 100%;">
+  <img src="https://user-images.githubusercontent.com/441546/129463138-5a449242-fdbf-4a1b-8b55-c21706ca0946.png" style="max-width: 100%;">
 </a>
 <p align="center">
   <a href="https://www.npmjs.com/package/@darkobits/eslint-plugin"><img src="https://img.shields.io/npm/v/@darkobits/eslint-plugin.svg?style=flat-square"></a>
