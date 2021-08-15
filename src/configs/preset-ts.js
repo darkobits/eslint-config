@@ -888,6 +888,9 @@ config.rules['unicorn/prefer-node-protocol'] = 'off';
 // Don't enforce 'more descriptive' variable names.
 config.rules['unicorn/prevent-abbreviations'] = 'off';
 
+// Allow consecutive calls to .push() on the same array.
+config.rules['unicorn/no-array-push-push'] = 'off';
+
 
 // ----- [Plugin] prefer-arrow -------------------------------------------------
 
