@@ -897,6 +897,9 @@ config.rules['unicorn/no-nested-ternary'] = 'off';
 // Allow the use of Array#reduce().
 config.rules['unicorn/no-array-reduce'] = 'off';
 
+// Allow Array#reduce() to be used to map over object entries.
+config.rules['unicorn/prefer-object-from-entries'] = 'off';
+
 
 // ----- [Plugin] prefer-arrow -------------------------------------------------
 
