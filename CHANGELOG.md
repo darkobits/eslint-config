@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/darkobits/eslint-plugin/compare/v0.1.3...v0.1.4) (2021-08-15)
+
+
+### 📖 Documentation
+
+* Update README. ([2e59658](https://github.com/darkobits/eslint-plugin/commit/2e59658493b1302a7305a72c2adfe871ba28a2d3))
+
+
+### 🏗 Chores
+
+* Move `find-up` to `dependencies`. ([0e8e3b1](https://github.com/darkobits/eslint-plugin/commit/0e8e3b1266deffe1de22e7f3621fd2d03b62e7b3))
+
 ### [0.1.3](https://github.com/darkobits/eslint-plugin/compare/v0.1.2...v0.1.3) (2021-08-15)
 
 
