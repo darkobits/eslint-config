@@ -894,6 +894,9 @@ config.rules['unicorn/no-array-push-push'] = 'off';
 // Allow nested ternary expressions.
 config.rules['unicorn/no-nested-ternary'] = 'off';
 
+// Allow the use of Array#reduce().
+config.rules['unicorn/no-array-reduce'] = 'off';
+
 
 // ----- [Plugin] prefer-arrow -------------------------------------------------
 
