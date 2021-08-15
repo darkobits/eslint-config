@@ -891,6 +891,9 @@ config.rules['unicorn/prevent-abbreviations'] = 'off';
 // Allow consecutive calls to .push() on the same array.
 config.rules['unicorn/no-array-push-push'] = 'off';
 
+// Allow nested ternary expressions.
+config.rules['unicorn/no-nested-ternary'] = 'off';
+
 
 // ----- [Plugin] prefer-arrow -------------------------------------------------
 
