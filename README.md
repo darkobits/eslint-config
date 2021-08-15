@@ -12,6 +12,8 @@ ESLint plugin for TypeScript / TypeScript React projects.
 
 # Install
 
+> **⚠️ Note:** This package requires NPM 7, as it leverages its `peerDependencies` strategy.
+
 ```
 npm install --save-dev @darkobits/eslint-preset
 ```
