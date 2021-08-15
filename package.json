@@ -32,10 +32,10 @@
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-plugin-unicorn": "^23.0.0",
-    "find-up": "^4.1.0"
+    "eslint-plugin-unicorn": "^35.0.0",
+    "find-up": "4.1.0"
   },
   "devDependencies": {
-    "@darkobits/ts": "^0.7.11"
+    "@darkobits/ts": "^0.8.0"
   }
 }
