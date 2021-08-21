@@ -26,7 +26,6 @@ export function findTsConfig() {
         'parserOptions.project yourself.'
       ].join(' '));
     }
-    console.log('CODE', err.code);
 
     return false;
   }

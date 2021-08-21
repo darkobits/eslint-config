@@ -544,11 +544,14 @@ config.rules['@typescript-eslint/no-unsafe-assignment'] = 'off';
 // in the JavaScript ecosystem, and the need for `any` is still quite common.
 config.rules['@typescript-eslint/no-unsafe-member-access'] = 'off';
 
-// Warn when calling functions of type `any`.
-config.rules['@typescript-eslint/no-unsafe-call'] = 'error';
+// Allow calling functions of type `any`. This is necessary for any packages
+// that do not have type definitions.
+config.rules['@typescript-eslint/no-unsafe-call'] = 'off';
 
-// Warn when returning a value of type `any` from a function.
-config.rules['@typescript-eslint/no-unsafe-return'] = 'error';
+// Allow returning a value of type `any` from a function. Most projects will
+// have the 'noImplicitAny' TypeScript option enabled and will therefore have to
+// explicitly declare the return type as `any`.
+config.rules['@typescript-eslint/no-unsafe-return'] = 'off';
 
 // Disallow unused expressions.
 config.rules['no-unused-expressions'] = 'off';
@@ -808,18 +811,26 @@ config.rules['import/order'] = ['error', {
     // Type imports. Only available in TypeScript.
     'type'
   ],
+  // Require 1 empty line between import groups.
+  'newlines-between': 'always',
+  // Require imports within groups to be sorted alphabetically in ascending
+  // order by import path.
+  alphabetize: { order: 'asc' },
   pathGroups: [{
     // Treat React like a Node built-in and require that it be at the top of
     // import lists.
     pattern: 'react',
     group: 'builtin',
     position: 'before'
-  }],
-  // Require 1 empty line between import groups.
-  'newlines-between': 'always',
-  // Require imports within groups to be sorted alphabetically in ascending
-  // order by import path.
-  alphabetize: { order: 'asc' }
+  }, {
+    pattern: 'react-dom',
+    group: 'builtin',
+    position: 'before'
+  }, {
+    pattern: 'jest-mock-extended',
+    group: 'builtin',
+    position: 'before'
+  }]
 }];
 
 // Require 1 empty line after the last top-level import statement.
@@ -896,6 +907,9 @@ config.rules['unicorn/no-nested-ternary'] = 'off';
 
 // Allow the use of Array#reduce().
 config.rules['unicorn/no-array-reduce'] = 'off';
+
+// Allow the use of Array#forEach().
+config.rules['unicorn/no-array-for-each'] = 'off';
 
 // Allow Array#reduce() to be used to map over object entries.
 config.rules['unicorn/prefer-object-from-entries'] = 'off';
