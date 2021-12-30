@@ -31,6 +31,9 @@ const config = {
 // Require button elements to have an explicit "type" attribute.
 config.rules['react/button-has-type'] = ['error'];
 
+// Do not require components to set the `displayName` property.
+config.rules['react/display-name'] = 'off';
+
 // Require that components be defined as arrow functions.
 config.rules['react/function-component-definition'] = ['error', {
   namedComponents: 'arrow-function',
@@ -243,6 +246,9 @@ config.rules['react-hooks/exhaustive-deps'] = 'off';
 // This rule was deprecated in version 6.1.0, but still appears to be in the
 // plugin's 'recommended' rule set.
 config.rules['jsx-a11y/label-has-for'] = 'off';
+
+// Do not require media elements to have captions.
+config.rules['jsx-a11y/media-has-caption'] = 'off';
 
 
 // ----- [Plugin] @typescript/eslint -------------------------------------------

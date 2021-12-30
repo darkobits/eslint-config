@@ -767,14 +767,8 @@ config.rules['import/no-amd'] = 'off';
 config.rules['import/no-nodejs-modules'] = 'off';
 config.rules['import/no-import-module-exports'] = 'off';
 
-// This rule reports any imports that come after non-import statements.
-config.rules['import/first'] = [
-  'error',
-  // Additionally, require that absolute imports (re: external packages) are
-  // imported before relative imports. Note: This might not have much of an
-  // effect in packages that use custom module resolution.
-  'absolute-first'
-];
+// Disable; conflicts with 'import/order' rule.
+config.rules['import/first'] = 'off';
 
 // This rule enforces that all exports are declared at the bottom of the file.
 // This rule will report any export declarations that comes before any
