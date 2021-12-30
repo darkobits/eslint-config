@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/darkobits/eslint-plugin/compare/v0.1.5...v0.1.6) (2021-12-30)
+
+
+### 🛠 Refactoring
+
+* Update rules. ([9d342a4](https://github.com/darkobits/eslint-plugin/commit/9d342a464374294fc6dd16e4455349aa1e6ac4b4))
+
+
+### 🏗 Chores
+
+* Update dependencies. ([18e3292](https://github.com/darkobits/eslint-plugin/commit/18e32926d7cd1684fd67db24a709202a4473a894))
+
 ### [0.1.5](https://github.com/darkobits/eslint-plugin/compare/v0.1.4...v0.1.5) (2021-08-21)
 
 
