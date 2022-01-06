@@ -35,9 +35,9 @@
     "eslint-plugin-unicorn": "^39.0.0"
   },
   "dependencies": {
-    "find-up": "4.1.0"
+    "find-up": "5.0.0"
   },
   "devDependencies": {
-    "@darkobits/ts": "^0.8.9"
+    "@darkobits/ts": "^0.8.11"
   }
 }
