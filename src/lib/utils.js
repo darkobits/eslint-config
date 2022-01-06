@@ -19,6 +19,7 @@ export function findTsConfig() {
     fs.accessSync(tsConfigPath, fs.constants.R_OK);
   } catch (err) {
     if (err.code === 'ENOENT') {
+      // eslint-disable-next-line no-console
       console.warn([
         '[@darkobits/eslint-plugin] Attempted to automatically set ESLint\'s',
         `parserOptions.project to "${tsConfigPath}", but the file could not`,

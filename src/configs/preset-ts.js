@@ -1,5 +1,5 @@
 const { SRC_DIR } = require('etc/constants');
-const  { findTsConfig } = require('lib/utils');
+const { findTsConfig } = require('lib/utils');
 
 
 const config = {
@@ -643,7 +643,7 @@ config.rules['@typescript-eslint/restrict-plus-operands'] = 'error';
 
 // Allow non-string objects to be used in string interpolations. This may have
 // unintended results at times, but also allows developers to implement their
-// own toString methods on objects that will stringify them in a sane way.
+// own toString methods on objects that will serialize them in a sane way.
 config.rules['@typescript-eslint/restrict-template-expressions'] = 'off';
 
 // Enforces await-ing of Promise-like values before returning them. This allows
@@ -877,6 +877,10 @@ config.rules['unicorn/filename-case'] = ['error', {
     pascalCase: true
   }
 }];
+
+// [Dec 2021] This rule is throwing false positives with utility libraries like
+// Ramda, so it has been temporarily disabled.
+config.rules['unicorn/no-array-method-this-argument'] = 'off';
 
 // Allow function references to be passed to iterators.
 config.rules['unicorn/no-fn-reference-in-iterator'] = 'off';

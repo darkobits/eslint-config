@@ -256,10 +256,11 @@ config.rules['jsx-a11y/media-has-caption'] = 'off';
 // Configure the indent rule to ignore JSX nodes. The react/jsx-indent rule
 // will enforce indentation for JSX.
 config.rules['@typescript-eslint/indent'] = ['error', 2, {
-  ignoredNodes: ['JSXElement'],
   // Require an extra 2 spaces of indentation between switch statements and case
   // statements.
-  SwitchCase: 1
+  SwitchCase: 1,
+  flatTernaryExpressions: true,
+  ignoredNodes: ['JSXElement']
 }];
 
 
@@ -268,6 +269,25 @@ config.rules['@typescript-eslint/indent'] = ['error', 2, {
 // Disable this rule in React projects because React makes heavy use of the
 // `null` value.
 config.rules['unicorn/no-null'] = 'off';
+
+// [Dec 2021]
+// The type of `foo` will be `Foo | undefined` because we initialized the
+// variable by passing an implicit `undefined` to `useState`.
+// const [foo, setFoo] = React.useState<Foo>();
+//
+// However, if we try to reset the variable to `undefined` later by calling
+// `setFoo` with zero arguments, TypeScript thinks we are actually trying to set
+// it to `void` rather than `undefined`, and throws a type error:
+// setFoo() //=> "Expected setFoo to be called with 1 argument..."
+//
+// - If we pass an explicit `undefined` to `setFoo` to satisfy the argument
+//   requirement, this rule will throw an error.
+// - If we type the state variable to allow `void` as a type, it can cause
+//   a lot of trouble downstream as anything that consumes that state variable
+//   must now discriminate between 2 bottom values.
+//
+// Thus, until the issue is resolved upstream, this rule has been disabled.
+config.rules['unicorn/no-useless-undefined'] = 'off';
 
 
 // ----- Overrides -------------------------------------------------------------
