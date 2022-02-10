@@ -336,7 +336,8 @@ config.rules['@typescript-eslint/indent'] = ['error', 2, {
   // Require an extra 2 spaces of indentation between switch statements and case
   // statements.
   SwitchCase: 1,
-  flatTernaryExpressions: true
+  flatTernaryExpressions: true,
+  ignoredNodes: ['ConditionalExpression']
 }];
 
 // No strong preference on this rule.
@@ -706,7 +707,13 @@ config.rules['import/no-unresolved'] = ['error', {
   // Resolve require() calls in addition to import statements.
   commonjs: true,
   // Check casing.
-  caseSensitive: true
+  caseSensitive: true,
+  // Do not attempt to resolve imports of ESM URL schemes.
+  ignore: [
+    '^node:',
+    '^data:',
+    '^file:'
+  ]
 }];
 
 // If a default import is used, ensures the module being imported has a default
@@ -794,12 +801,14 @@ config.rules['import/order'] = ['error', {
     'external',
     // Local files (absolute imports).
     'internal',
-    // Relative files in a parent folder.
-    'parent',
-    // Relative files in a sibling folder.
-    'sibling',
-    // Index of the current directory (ie: '.').
-    'index',
+    [
+      // Relative files in a parent folder.
+      'parent',
+      // Relative files in a sibling folder.
+      'sibling',
+      // Index of the current directory (ie: '.').
+      'index'
+    ],
     // Object imports. Only available in TypeScript.
     'object',
     // Type imports. Only available in TypeScript.
@@ -811,18 +820,16 @@ config.rules['import/order'] = ['error', {
   // order by import path.
   alphabetize: { order: 'asc' },
   pathGroups: [{
-    // Treat React like a Node built-in and require that it be at the top of
-    // import lists.
+    pattern: '^node:',
+    group: 'builtin'
+  }, {
+    // Bump React and React DOM to the top of the 'external' list.
     pattern: 'react',
-    group: 'builtin',
+    group: 'external',
     position: 'before'
   }, {
     pattern: 'react-dom',
-    group: 'builtin',
-    position: 'before'
-  }, {
-    pattern: 'jest-mock-extended',
-    group: 'builtin',
+    group: 'external',
     position: 'before'
   }]
 }];
@@ -878,12 +885,21 @@ config.rules['unicorn/filename-case'] = ['error', {
   }
 }];
 
+// Allow functions to be passed by reference directly to an array iteratee.
+config.rules['unicorn/no-array-callback-reference'] = 'off';
+
+// Allow member access of parenthesized await expressions.
+config.rules['unicorn/no-await-expression-member'] = 'off';
+
 // [Dec 2021] This rule is throwing false positives with utility libraries like
 // Ramda, so it has been temporarily disabled.
 config.rules['unicorn/no-array-method-this-argument'] = 'off';
 
 // Allow function references to be passed to iterators.
 config.rules['unicorn/no-fn-reference-in-iterator'] = 'off';
+
+// Allow use of Array.prototype.reduce.
+config.rules['unicorn/no-reduce'] = 'off';
 
 // Don't prohibit usage of require(), require.resolve, and friends. These are
 // not widely used, and when they are it is usually for a good reason. Also,
