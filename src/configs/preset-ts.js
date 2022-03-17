@@ -946,14 +946,15 @@ config.rules['prefer-arrow/prefer-arrow-functions'] = ['error', {
 // ----- Overrides -------------------------------------------------------------
 
 /**
-   * Test files.
-   */
+ * Test files.
+ */
 config.overrides.push({
   files: [
     '*.test.*',
     '*.spec.*'
   ],
   rules: {
+    '@typescript-eslint/unbound-method': 'off',
     // Do not require that async functions utilize the await keyword. This
     // allows us to easily mock async functions with a mock implementation that
     // may be synchronous.
@@ -961,11 +962,16 @@ config.overrides.push({
     // Do not enforce naming convention rules for values.
     '@typescript-eslint/naming-convention': 'off',
     // Allow require() statements.
-    '@typescript-eslint/no-var-requires': 'off'
+    '@typescript-eslint/no-var-requires': 'off',
+    // Allow console statements.
+    'no-console': 'off'
   }
 });
 
 
+/**
+ * JavaScript files.
+ */
 const javaScriptRules = Object.entries(config.rules).reduce((rules, [rule, ruleConfig]) => {
   if (rule.startsWith('@typescript-eslint/')) {
     rules[rule] = 'off';
@@ -987,17 +993,11 @@ const javaScriptRules = Object.entries(config.rules).reduce((rules, [rule, ruleC
   return rules;
 }, {});
 
+
 config.overrides.push({
   files: ['*.js'],
   parser: '@babel/eslint-parser',
   rules: javaScriptRules
-});
-
-config.overrides.push({
-  files: ['*.test.*', '*.spec.*'],
-  rules: {
-    '@typescript-eslint/unbound-method': 'off'
-  }
 });
 
 
