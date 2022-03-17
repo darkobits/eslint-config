@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/darkobits/eslint-plugin/compare/v0.2.1...v0.2.2) (2022-03-17)
+
+
+### 🏗 Chores
+
+* Disable `no-console` in test files. ([ad4c559](https://github.com/darkobits/eslint-plugin/commit/ad4c5595fb0bf1992fe3f1fb86e0adb17109486b))
+* Update dependencies. ([cb275f6](https://github.com/darkobits/eslint-plugin/commit/cb275f6086d995e1be542d10c633cec6975b5c1c))
+
 ### [0.2.1](https://github.com/darkobits/eslint-plugin/compare/v0.2.0...v0.2.1) (2022-03-11)
 
 
