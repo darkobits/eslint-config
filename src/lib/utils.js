@@ -4,9 +4,9 @@ const findUp = require('find-up');
 
 
 /**
- * Returns the path to the host package's tsconfig.json file. If the file cannot
- * be found, returns false. If the file is unreadable, returns false and issues
- * a warning.
+ * Returns the path to the first tsconfig.json file found at or above
+ * `process.cwd()`. If the file cannot be found, returns false. If the file is
+ * unreadable, returns false and issues a warning.
  */
 export function findTsConfig() {
   const tsConfigPath = findUp.sync('tsconfig.json', { type: 'file' });
