@@ -1,3 +1,5 @@
 module.exports = {
-  extends: './src/configs/preset-ts'
+  // Use when testing changes locally.
+  // extends: './dist/configs/preset-ts'
+  extends: 'plugin:@darkobits/ts'
 };
