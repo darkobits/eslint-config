@@ -38,6 +38,6 @@
     "find-up": "5.0.0"
   },
   "devDependencies": {
-    "@darkobits/ts": "^0.8.27"
+    "@darkobits/ts": "^0.9.0-beta.0"
   }
 }
