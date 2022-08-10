@@ -1,3 +1,23 @@
+/**
+ * List of Node globals that are not available in the browser, and are not
+ * polyfilled by Vite.
+ *
+ * Note: These should still be available in files outside of SRC_DIR; ESLint
+ * does not lint those files because they are not included in the TypeScript
+ * "project".
+ */
+const DISALLOWED_NODE_GLOBALS = [
+  '__dirname',
+  '__filename',
+  'Buffer',
+  'exports',
+  'global',
+  'module',
+  'process',
+  'require'
+];
+
+
 const config = {
   parserOptions: {
     jsx: true,
@@ -24,6 +44,11 @@ const config = {
   rules: {},
   overrides: []
 };
+
+
+// ----- Core ------------------------------------------------------------------
+
+config.rules['no-restricted-globals'] = ['error', ...DISALLOWED_NODE_GLOBALS];
 
 
 // ----- [Plugin] react --------------------------------------------------------
@@ -288,20 +313,6 @@ config.rules['unicorn/no-null'] = 'off';
 //
 // Thus, until the issue is resolved upstream, this rule has been disabled.
 config.rules['unicorn/no-useless-undefined'] = 'off';
-
-
-// ----- Overrides -------------------------------------------------------------
-
-// Automatically set the environment to 'browser' in .jsx and .tsx files.
-config.overrides.push({
-  files: [
-    '*.jsx',
-    '*.tsx'
-  ],
-  env: {
-    browser: true
-  }
-});
 
 
 module.exports = config;
