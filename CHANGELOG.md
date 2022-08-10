@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.6](https://github.com/darkobits/eslint-plugin/compare/v0.2.5...v0.2.6) (2022-08-10)
+
+
+### 🛠 Refactoring
+
+* Disable `unicorn/prefer-top-level-await`. ([d649dd6](https://github.com/darkobits/eslint-plugin/commit/d649dd65bcc713daa6f879613de18642647f6868))
+
 ### [0.2.5](https://github.com/darkobits/eslint-plugin/compare/v0.2.4...v0.2.5) (2022-08-10)
 
 
