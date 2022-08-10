@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.7](https://github.com/darkobits/eslint-plugin/compare/v0.2.6...v0.2.7) (2022-08-10)
+
+
+### 🏗 Chores
+
+* **promise-function-async:** Exclude arrow functions from this rule. ([a55f83e](https://github.com/darkobits/eslint-plugin/commit/a55f83e862b27b7d37d5748b5d4bff74184af920))
+
 ### [0.2.6](https://github.com/darkobits/eslint-plugin/compare/v0.2.5...v0.2.6) (2022-08-10)
 
 
