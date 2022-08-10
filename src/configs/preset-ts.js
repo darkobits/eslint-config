@@ -914,6 +914,9 @@ config.rules['unicorn/prefer-module'] = 'off';
 // transpile down to CJS and this is only supported in strict ESM.
 config.rules['unicorn/prefer-node-protocol'] = 'off';
 
+// Top-level await is only available in ESM/ESNext contexts.
+config.rules['unicorn/prefer-top-level-await'] = 'off';
+
 // Don't enforce 'more descriptive' variable names.
 config.rules['unicorn/prevent-abbreviations'] = 'off';
 
