@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.8](https://github.com/darkobits/eslint-plugin/compare/v0.2.7...v0.2.8) (2022-08-10)
+
+
+### 🐞 Bug Fixes
+
+* Properly disable Node globals in source files. ([014704a](https://github.com/darkobits/eslint-plugin/commit/014704a525a159b0dd68072be27c8317fa4fe9db))
+
 ### [0.2.7](https://github.com/darkobits/eslint-plugin/compare/v0.2.6...v0.2.7) (2022-08-10)
 
 
