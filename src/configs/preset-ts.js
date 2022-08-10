@@ -624,7 +624,11 @@ config.rules['@typescript-eslint/prefer-ts-expect-error'] = 'off';
 // Requires any function or method that returns a Promise to be marked `async`.
 config.rules['@typescript-eslint/promise-function-async'] = ['error', {
   // Additional types that should be considered as Promises.
-  allowedPromiseNames: ['PromiseLike', 'Thenable']
+  allowedPromiseNames: ['PromiseLike', 'Thenable'],
+  // Exclude arrow functions. Otherwise, this will produce an error for code
+  // like `.then(res => res.json())`. In such cases, marking the function as
+  // async does little to improve readability.
+  checkArrowFunctions: false
 }];
 
 // Enforce the consistent use of either backticks, double, or single quotes.
@@ -888,6 +892,7 @@ config.rules['unicorn/filename-case'] = ['error', {
     pascalCase: true
   }
 }];
+
 
 // Allow functions to be passed by reference directly to an array iteratee.
 config.rules['unicorn/no-array-callback-reference'] = 'off';
