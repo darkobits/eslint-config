@@ -712,7 +712,11 @@ config.rules['import/no-unresolved'] = ['error', {
   ignore: [
     '^node:',
     '^data:',
-    '^file:'
+    '^file:',
+    // Virtual modules.
+    '^virtual:',
+    // unplugin-icons
+    '^~icons'
   ]
 }];
 
