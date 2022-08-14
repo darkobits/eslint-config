@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.9](https://github.com/darkobits/eslint-plugin/compare/v0.2.8...v0.2.9) (2022-08-14)
+
+
+### 🏗 Chores
+
+* Remove dependency on `eslint-codeframe-formatter`. ([ded749b](https://github.com/darkobits/eslint-plugin/commit/ded749bb6846cdb17c515c015b2fedb95712299a))
+
 ### [0.2.8](https://github.com/darkobits/eslint-plugin/compare/v0.2.7...v0.2.8) (2022-08-10)
 
 
