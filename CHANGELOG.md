@@ -1,3 +1,21 @@
+## [0.2.10](https://github.com/darkobits/eslint-plugin/compare/v0.2.9...v0.2.10) (2023-01-20)
+
+
+### 🛠 Refactoring
+
+* Use `@typescript/eslint-parser` for all file types. ([9a6ce40](https://github.com/darkobits/eslint-plugin/commit/9a6ce4033d0d7762f174ac845b68da41b554d27d))
+
+
+### 📖 Documentation
+
+* Update README. ([7376ef1](https://github.com/darkobits/eslint-plugin/commit/7376ef1fe03bf85e649a988b1d6cc549cb17c63e))
+
+
+### 🏗 Chores
+
+* **deps:** Update dependencies. ([097c133](https://github.com/darkobits/eslint-plugin/commit/097c133153a42129627f66ea59fd548d26de6e58))
+* Update `.ci.yml`. ([98ca48b](https://github.com/darkobits/eslint-plugin/commit/98ca48b37bee5b725a9b59fd3a78e587cebf0a79))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
