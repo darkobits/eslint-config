@@ -558,9 +558,10 @@ config.rules['@typescript-eslint/no-unsafe-return'] = 'off';
 config.rules['no-unused-expressions'] = 'off';
 config.rules['@typescript-eslint/no-unused-expressions'] = 'error';
 
-// Disallow unused variables.
+// Disable 'no-unused-vars'; TypeScript will catch these errors for us, no need
+// to report them twice.
 config.rules['no-unused-vars'] = 'off';
-config.rules['@typescript-eslint/no-unused-vars'] = 'error';
+config.rules['@typescript-eslint/no-unused-vars'] = 'off';
 
 // Disallow the use of variables before they are defined.
 config.rules['no-use-before-define'] = 'off';
@@ -1008,7 +1009,6 @@ const javaScriptRules = Object.entries(config.rules).reduce((rules, [rule, ruleC
 
 config.overrides.push({
   files: ['*.js'],
-  parser: '@babel/eslint-parser',
   rules: javaScriptRules
 });
 
