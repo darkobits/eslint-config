@@ -1,8 +1,9 @@
 {
-  "extends": "@darkobits/ts",
+  "extends": "@darkobits/ts/tsconfig.json",
   "compilerOptions": {
     "allowJs": true,
     "baseUrl": "src",
-    "outDir": "dist"
+    "outDir": "dist",
+    "skipLibCheck": true
   }
 }

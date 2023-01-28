@@ -1,4 +1,3 @@
-const { SRC_DIR } = require('etc/constants');
 const { findTsConfig } = require('lib/utils');
 
 
@@ -708,6 +707,16 @@ config.rules['@typescript-eslint/unified-signatures'] = 'error';
 
 // ----- [Plugin] import -------------------------------------------------------
 
+config.settings['import/parsers'] = {
+  '@typescript-eslint/parser': ['.ts', '.tsx']
+};
+
+config.settings['import/resolver'] = {
+  'eslint-import-resolver-typescript': {
+    project: config.project
+  }
+};
+
 config.rules['import/no-unresolved'] = ['error', {
   // Resolve require() calls in addition to import statements.
   commonjs: true,
@@ -864,14 +873,6 @@ config.rules['import/no-anonymous-default-export'] = 'off';
 
 // Do not require exports to be grouped.
 config.rules['import/group-exports'] = 'off';
-
-// Configure module resolution to include the default source directory.
-config.settings['import/resolver'] = {
-  'eslint-import-resolver-node': {
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
-    moduleDirectory: ['node_modules', SRC_DIR]
-  }
-};
 
 
 // ----- [Plugin] unicorn ------------------------------------------------------
