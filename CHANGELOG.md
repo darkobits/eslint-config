@@ -1,3 +1,14 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.2.11-beta.0](https://github.com/darkobits/eslint-plugin/compare/v0.2.10...v0.2.11-beta.0) (2023-01-28)
+
+
+### 🛠 Refactoring
+
+* Migrate to `eslint-import-resolver-typescript`. ([c993ab8](https://github.com/darkobits/eslint-plugin/commit/c993ab82897b8c2714d5822c97ceb9b61cac02ce))
+
 ## [0.2.10](https://github.com/darkobits/eslint-plugin/compare/v0.2.9...v0.2.10) (2023-01-20)
 
 
