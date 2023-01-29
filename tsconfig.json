@@ -1,9 +1,10 @@
 {
   "extends": "@darkobits/ts/tsconfig.json",
+  "include": ["src"],
   "compilerOptions": {
-    "allowJs": true,
     "baseUrl": "src",
     "outDir": "dist",
+    "allowJs": true,
     "skipLibCheck": true
   }
 }
