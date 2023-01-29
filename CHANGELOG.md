@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.11-beta.1](https://github.com/darkobits/eslint-plugin/compare/v0.2.11-beta.0...v0.2.11-beta.1) (2023-01-29)
+
+
+### 🐞 Bug Fixes
+
+* Fix `tsconfig.json`. ([dca84c4](https://github.com/darkobits/eslint-plugin/commit/dca84c47e8a62a6f597d57d4d564bc1a9d108ac6))
+
 ## [0.2.11-beta.0](https://github.com/darkobits/eslint-plugin/compare/v0.2.10...v0.2.11-beta.0) (2023-01-28)
 
 
