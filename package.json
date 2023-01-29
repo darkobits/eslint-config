@@ -24,11 +24,11 @@
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
-    "eslint": "^8.32.0",
+    "eslint": "^8.33.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-prefer-arrow": "^1.2.3",
-    "eslint-plugin-react": "^7.32.1",
+    "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-unicorn": "^43.0.2"
   },
@@ -37,6 +37,6 @@
     "find-up": "~5.0.0"
   },
   "devDependencies": {
-    "@darkobits/ts": "^0.13.10"
+    "@darkobits/ts": "^0.13.11"
   }
 }
