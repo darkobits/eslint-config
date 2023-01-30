@@ -37,6 +37,9 @@
     "find-up": "~5.0.0"
   },
   "devDependencies": {
-    "@darkobits/ts": "^0.13.11"
+    "@darkobits/eslint-plugin": "^0.2.12",
+    "@darkobits/ts": "^0.13.13",
+    "@types/eslint": "^8.4.10",
+    "ts-essentials": "^9.3.0"
   }
 }

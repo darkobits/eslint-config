@@ -1,6 +1,6 @@
-const fs = require('fs');
+import fs from 'fs';
 
-const findUp = require('find-up');
+import findUp from 'find-up';
 
 
 /**
@@ -19,7 +19,7 @@ export function findTsConfig() {
 
   try {
     fs.accessSync(tsConfigPath, fs.constants.R_OK);
-  } catch (err) {
+  } catch (err: any) {
     if (err.code === 'ENOENT') {
       // eslint-disable-next-line no-console
       console.warn([

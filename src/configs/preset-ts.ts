@@ -1,7 +1,9 @@
-const { findTsConfig } = require('lib/utils');
+import { findTsConfig } from 'lib/utils';
+
+import type { Config } from 'etc/types';
 
 
-const config = {
+const config: Config = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: findTsConfig(),
@@ -713,7 +715,7 @@ config.settings['import/parsers'] = {
 
 config.settings['import/resolver'] = {
   'eslint-import-resolver-typescript': {
-    project: config.project
+    project: config.parserOptions.project
   }
 };
 
@@ -986,7 +988,7 @@ config.overrides.push({
 /**
  * JavaScript files.
  */
-const javaScriptRules = Object.entries(config.rules).reduce((rules, [rule, ruleConfig]) => {
+const javaScriptRules = Object.entries(config.rules).reduce<Config['rules']>((rules, [rule, ruleConfig]) => {
   if (rule.startsWith('@typescript-eslint/')) {
     rules[rule] = 'off';
 

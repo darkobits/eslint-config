@@ -1,3 +1,6 @@
+import type { Config } from 'etc/types';
+
+
 /**
  * List of Node globals that are not available in the browser, and are not
  * polyfilled by Vite.
@@ -18,10 +21,11 @@ const DISALLOWED_NODE_GLOBALS = [
 ];
 
 
-const config = {
+const config: Config = {
   parserOptions: {
-    jsx: true,
-    useJSXTextNode: true
+    ecmaFeatures: {
+      jsx: true
+    }
   },
   plugins: [
     'react',
