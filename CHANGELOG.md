@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/darkobits/eslint-plugin/compare/v0.2.13...v0.3.0) (2023-02-14)
+
+
+### ✨ Features
+
+* Ignore `outDir` if set in `tsconfig.json`. ([cf470e9](https://github.com/darkobits/eslint-plugin/commit/cf470e98e299177433c7dc80cbf1922d682632e8))
+
+
+### 🏗 Chores
+
+* **deps:** Update dependencies. ([df3074c](https://github.com/darkobits/eslint-plugin/commit/df3074c432d04cdb99a7552a7c4c108f2e28ce45))
+
 ## [0.2.13](https://github.com/darkobits/eslint-plugin/compare/v0.2.13-beta.0...v0.2.13) (2023-01-30)
 
 ## [0.2.13-beta.0](https://github.com/darkobits/eslint-plugin/compare/v0.2.12...v0.2.13-beta.0) (2023-01-30)
