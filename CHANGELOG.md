@@ -1,3 +1,10 @@
+## [0.3.2](https://github.com/darkobits/eslint-plugin/compare/v0.3.1...v0.3.2) (2023-02-14)
+
+
+### 🐞 Bug Fixes
+
+* Remove extraneous quotes in ingnore pattern. ([d745395](https://github.com/darkobits/eslint-plugin/commit/d745395e214c7f553e5c1136a9d5953dc8df5d7b))
+
 ## [0.3.1](https://github.com/darkobits/eslint-plugin/compare/v0.3.0...v0.3.1) (2023-02-14)
 
 
