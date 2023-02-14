@@ -42,7 +42,7 @@ if (tsConfigResult) {
 
   if (tsConfigResult.outDir) {
     // @ts-expect-error - We know ignorePatterns is an Array already.
-    config.ignorePatterns.push(`'${tsConfigResult.outDir}/**'`);
+    config.ignorePatterns.push(`${tsConfigResult.outDir}/**`);
   }
 }
 
