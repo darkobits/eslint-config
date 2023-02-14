@@ -33,6 +33,7 @@
     "eslint-plugin-unicorn": "^43.0.2"
   },
   "dependencies": {
+    "comment-json": "^4.2.3",
     "eslint-import-resolver-typescript": "^3.5.3",
     "find-up": "~5.0.0"
   },

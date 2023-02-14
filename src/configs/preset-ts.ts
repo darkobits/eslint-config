@@ -1,4 +1,4 @@
-import { findTsConfig } from 'lib/utils';
+import { parseTsConfig } from 'lib/utils';
 
 import type { Config } from 'etc/types';
 
@@ -6,7 +6,6 @@ import type { Config } from 'etc/types';
 const config: Config = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: findTsConfig(),
     sourceType: 'module'
   },
   env: {
@@ -32,6 +31,20 @@ const config: Config = {
   // for this issue: https://github.com/typescript-eslint/typescript-eslint/issues/967
   ignorePatterns: ['/*.*']
 };
+
+
+const tsConfigResult = parseTsConfig();
+
+// If we were able to find a tsconfig.json, set parserOptions.project and ignore
+// compilerOptions.outDir.
+if (tsConfigResult) {
+  config.parserOptions.project = tsConfigResult.tsConfigPath;
+
+  if (tsConfigResult.outDir) {
+    // @ts-expect-error - We know ignorePatterns is an Array already.
+    config.ignorePatterns.push(`'${tsConfigResult.outDir}/**'`);
+  }
+}
 
 
 // ----- [Base] Possible Errors ------------------------------------------------
