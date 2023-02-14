@@ -36,8 +36,8 @@ export function parseTsConfig(): TsConfigResult | false {
     const parsedTsConfig: any = parse(fs.readFileSync(tsConfigPath, 'utf8'), null, true);
 
     if (typeof parsedTsConfig === 'object') {
-      srcDir = parsedTsConfig?.compilerOptions?.baseUrl;
-      srcDir = parsedTsConfig?.compilerOptions?.outDir;
+      srcDir = parsedTsConfig.compilerOptions?.baseUrl;
+      outDir = parsedTsConfig.compilerOptions?.outDir;
     }
   } catch (err: any) {
     if (err.code === 'ENOENT') {

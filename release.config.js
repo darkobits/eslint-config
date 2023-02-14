@@ -1,3 +1,3 @@
 module.exports = {
-  extends: require('@darkobits/ts').release
+  extends: '@darkobits/ts/config/semantic-release'
 };
