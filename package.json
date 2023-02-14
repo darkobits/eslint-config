@@ -22,9 +22,9 @@
     "help": "nr --scripts"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.49.0",
-    "@typescript-eslint/parser": "^5.49.0",
-    "eslint": "^8.33.0",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "eslint": "^8.34.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-prefer-arrow": "^1.2.3",
@@ -38,9 +38,9 @@
     "find-up": "~5.0.0"
   },
   "devDependencies": {
-    "@darkobits/eslint-plugin": "^0.2.12",
-    "@darkobits/ts": "^0.13.13",
-    "@types/eslint": "^8.4.10",
+    "@darkobits/eslint-plugin": "^0.2.13",
+    "@darkobits/ts": "^0.14.0",
+    "@types/eslint": "^8.21.1",
     "ts-essentials": "^9.3.0"
   }
 }
