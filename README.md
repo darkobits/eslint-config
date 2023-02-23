@@ -12,15 +12,18 @@ ESLint plugin for TypeScript / TypeScript React projects.
 
 # Install
 
-> **⚠️ Note:** This package requires NPM 7, as it leverages its `peerDependencies` strategy.
-
 ```
 npm install --save-dev @darkobits/eslint-preset
 ```
 
+> **⚠️ Note:** This package declares ESLint and the various plugins for which it sets rules as
+> **peer dependencies**. If you're using **NPM 7** or later, you don't need to do anything. If you're
+> using Yarn, PNPm, or an alternative package manager that doesn't automatically install peer
+> dependencies, you'll need to install this package's `peerDependencies` yourself.
+
 # Use
 
-This plugin contains two presets: [`ts`](./src/configs/preset-ts.js) for TypeScript libraries and
+This plugin contains two presets: [`ts`](./src/configs/preset-ts.js) for TypeScript projects and
 [`tsx`](./src/configs/preset-tsx.js) for TypeScript-based React projects.
 
 To extend a preset:
@@ -43,9 +46,9 @@ module.exports = {
 
 ## See Also
 
-* [`@darkobits/ts`](https://github.com/darkobits/ts) – Build toolchain which incorporates the `ts` preset.
-* [`@darkobits/tsx`](https://github.com/darkobits/tsx) – React build toolchain which incorporates the `tsx` preset.
-* [`@darkobits/ts-template`](https://github.com/darkobits/ts-template) – Template repository that uses `@darkobits/ts`.
+* [`@darkobits/ts`](https://github.com/darkobits/ts) – Vite-based toolchain for Node projects.
+* [`@darkobits/tsx`](https://github.com/darkobits/tsx) – Vite-based toolchain for React projects.
+* [`@darkobits/ts-template`](https://github.com/darkobits/ts-template) – Starter template for `@darkobits/ts`.
 
 <br />
 <a href="#top">

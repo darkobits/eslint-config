@@ -22,8 +22,8 @@
     "help": "nr --scripts"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.52.0",
-    "@typescript-eslint/parser": "^5.52.0",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
     "eslint": "^8.34.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@darkobits/eslint-plugin": "^0.3.2",
-    "@darkobits/ts": "^0.14.0",
+    "@darkobits/ts": "^0.14.17",
     "@types/eslint": "^8.21.1",
     "ts-essentials": "^9.3.0"
   }

@@ -1029,4 +1029,4 @@ config.overrides.push({
 });
 
 
-module.exports = config;
+export default config;

@@ -5,9 +5,9 @@ import type { Config } from 'etc/types';
  * List of Node globals that are not available in the browser, and are not
  * polyfilled by Vite.
  *
- * Note: These should still be available in files outside of SRC_DIR; ESLint
- * does not lint those files because they are not included in the TypeScript
- * "project".
+ * Note: These should still be available in files outside of the source root;
+ * ESLint does not lint those files because they are not included in the
+ * TypeScript program.
  */
 const DISALLOWED_NODE_GLOBALS = [
   '__dirname',
@@ -319,4 +319,4 @@ config.rules['unicorn/no-null'] = 'off';
 config.rules['unicorn/no-useless-undefined'] = 'off';
 
 
-module.exports = config;
+export default config;
