@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": "src",
     "outDir": "dist",
-    "exactOptionalPropertyTypes": false
+    "jsx": "react",
+    "lib": ["DOM"]
   }
 }
