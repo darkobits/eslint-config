@@ -35,8 +35,10 @@ jobs:
         run: npm clean-install --ignore-scripts
       - name: Build Project
         run: npx nr build
-      # - name: Run Tests
-      #   run: npx nr test
+      - name: Run Tests
+        run: |
+          npx nr test.smoke.legacy
+          npx nr test.smoke.flat
       - name: Release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
