@@ -1,3 +1,5 @@
+// @ts-expect-error - This package lacks type definitions.
+import jsEslintPlugin from '@eslint/js';
 import tsEslintPlugin from '@typescript-eslint/eslint-plugin';
 import typeScriptParser from '@typescript-eslint/parser';
 // @ts-expect-error - This package lacks type definitions.
@@ -78,6 +80,11 @@ export const commonConfig: MarkNonNullable<FlatESLintConfig, 'ignores' | 'langua
         project: tsConfigResult?.tsConfigPath
       }
     }
+  },
+  rules: {
+    // This is the preferred way to "extend" "eslint:recommended", which is now
+    // deprecated and will issue a warning if used.
+    ...jsEslintPlugin.configs?.recommended?.rules
   }
 };
 
@@ -143,7 +150,6 @@ export const jsTestFileConfig: MarkNonNullable<Linter.FlatConfig, 'files' | 'rul
  * objects need to be used.
  */
 export const tsConfigSet: ConfigSet = [
-  'eslint:recommended',
   commonConfig,
   tsFileConfig,
   jsFileConfig,
