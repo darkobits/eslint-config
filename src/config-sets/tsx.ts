@@ -53,7 +53,17 @@ export const commonConfig: MarkNonNullable<FlatESLintConfig, 'languageOptions'> 
 // ----- [tsx] TypeScript JSX Files --------------------------------------------
 
 export const tsxFileConfig: FlatESLintConfig = {
-  files: ['**/*.tsx']
+  files: ['**/*.tsx'],
+  languageOptions: {
+    globals: {
+      // N.B. `false` indicates the global is defined but read-only. This is
+      // here to prevent the no-undef rule from throwing because it cannot
+      // find the "JSX" global type. This appears to be an issue that
+      // emerged in @typescript-eslint/parser@4.
+      // See: https://github.com/Chatie/eslint-config/issues/45
+      'JSX': false
+    }
+  }
 };
 
 // Apply plugins and their configuration presets.
