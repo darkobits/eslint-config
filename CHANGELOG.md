@@ -1,3 +1,10 @@
+## [0.3.3-beta.2](https://github.com/darkobits/eslint-plugin/compare/v0.3.3-beta.1...v0.3.3-beta.2) (2023-03-08)
+
+
+### 🛠 Refactoring
+
+* Support flat ESLint configuration format. ([594dead](https://github.com/darkobits/eslint-plugin/commit/594dead6cb035dbb2d743f8f166b06b66a635b85))
+
 ## [0.3.3-beta.1](https://github.com/darkobits/eslint-plugin/compare/v0.3.2...v0.3.3-beta.1) (2023-02-26)
 
 
