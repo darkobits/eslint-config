@@ -37,8 +37,8 @@ jobs:
         run: npx nr build
       - name: Run Tests
         run: |
-          npx nr test.smoke.legacy
-          npx nr test.smoke.flat
+          npx nr test
+          npx nr test.smoke.all
       - name: Release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
