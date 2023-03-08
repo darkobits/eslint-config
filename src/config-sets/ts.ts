@@ -50,7 +50,13 @@ export const commonConfig: MarkNonNullable<FlatESLintConfig, 'ignores' | 'langua
     tsConfigResult?.outDir && `${tsConfigResult.outDir}/**`
   ]),
   languageOptions: {
-    // sourceType: 'module',
+    sourceType: 'module',
+    // @ts-expect-error - ESLint's typings for this property only allow strings,
+    // but the API accepts a parser instance as well.
+    parser: typeScriptParser,
+    parserOptions: {
+      project: tsConfigResult?.tsConfigPath
+    },
     ecmaVersion: 'latest',
     globals: {
       // Note: 'node' contains CommonJS globals that may not be available when
@@ -85,12 +91,13 @@ applyPlugin(commonConfig, { plugin: preferArrowPlugin, namespace: 'prefer-arrow'
 export const tsFileConfig: FlatESLintConfig = {
   files: [`**/*.{${TS_EXTS}}`],
   languageOptions: {
-    sourceType: 'module',
-    // @ts-expect-error - ESLint's typings for this property only allow strings,
-    // but the API accepts a parser instance as well.
-    parser: typeScriptParser,
-    parserOptions: {
-      project: tsConfigResult?.tsConfigPath
+    globals: {
+      // N.B. `false` indicates the global is defined but read-only. This is
+      // here to prevent the no-undef rule from throwing because it cannot
+      // find the "NodeJS" global type. This appears to be an issue that
+      // emerged in @typescript-eslint/parser@4.
+      // See: https://github.com/Chatie/eslint-config/issues/45
+      'NodeJS': false
     }
   }
 };
@@ -102,8 +109,8 @@ applyPlugin(tsFileConfig, {
   applyPreset: 'recommended'
 });
 
-// Apply our custom rule-set _after_ applying plugins' rule-sets to ensure ours
-// override the settings from presets.
+// Apply our rules _after_ applying plugins' rule-sets to ensure ours override
+// the rule configurations from presets.
 applyTSRuleSet(tsFileConfig);
 
 
