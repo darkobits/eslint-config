@@ -8,7 +8,7 @@ import findUp from 'find-up';
 import * as R from 'ramda';
 
 import type { ESLint, Linter } from 'eslint';
-import type { ConfigIsh, ConfigSet, MarkNonNullable } from 'etc/types';
+import type { ConfigIsh, MarkNonNullable } from 'etc/types';
 
 
 export interface TsConfigResult {
@@ -226,18 +226,17 @@ export function convertTypeScriptRulesToJavaScriptRules(typeScriptRules: ConfigI
 
 
 /**
- * Provided a configuration set, returns a new configuration set without any
- * globals applied. This seems to be the only way to "unset" globals set by an
- * upstream configuration object in a configuration set.
+ * Provided an object defining ESLint globals (a dictionary mapping strings to
+ * booleans where `true` indicates the global is writable and `false` indicates
+ * the global is read-only) returns an object where all keys value `'off'`,
+ * indicating the global is not available.
+ *
+ * N.B. The value "off" is disallowed in the type-def for "globals", but no type
+ * error is thrown when mapObjIndexed is used. Hopefully the ESLint type-def is
+ * updated to support "off" in a future version.
  */
-export function unsetGlobalsInConfigurationSet(configSet: ConfigSet) {
-  return R.map(flatConfig => {
-    if (typeof flatConfig === 'string') return flatConfig;
-
-    if (flatConfig.languageOptions?.globals) {
-      return R.dissocPath<Linter.FlatConfig>(['languageOptions', 'globals'], flatConfig);
-    }
-
-    return flatConfig;
-  }, configSet);
+export function disableGlobals(globalsObj: NonNullable<NonNullable<Linter.FlatConfig['languageOptions']>['globals']>) {
+  // N.B. We use `mapObjIndexed` here over `map` despite the fact that Ramda's
+  // `map` supports objects because its type-defs are a mess.
+  return R.mapObjIndexed<boolean, 'off'>(R.always('off'), globalsObj);
 }

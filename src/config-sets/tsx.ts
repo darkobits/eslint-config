@@ -7,13 +7,11 @@ import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 
 import { tsConfigSet } from 'config-sets/ts';
-import {
-  ALL_EXTS
-} from 'etc/constants';
+import { ALL_EXTS } from 'etc/constants';
 import {
   applyPlugin,
   convertTypeScriptRulesToJavaScriptRules,
-  unsetGlobalsInConfigurationSet
+  disableGlobals
 } from 'lib/utils';
 import { applyTSXRuleSet } from 'rules/tsx';
 
@@ -37,6 +35,7 @@ export const commonConfig: MarkNonNullable<FlatESLintConfig, 'languageOptions'> 
       }
     },
     globals: {
+      ...disableGlobals(globals.node),
       ...globals.browser
     }
   },
@@ -91,7 +90,7 @@ export const jsxFileConfig: FlatESLintConfig = {
  * objects need to be used.
  */
 export const tsxConfigSet: ConfigSet = [
-  ...unsetGlobalsInConfigurationSet(tsConfigSet),
+  ...tsConfigSet,
   commonConfig,
   tsxFileConfig,
   jsxFileConfig

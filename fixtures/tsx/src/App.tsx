@@ -1,15 +1,29 @@
 import React from 'react';
 
-export const SomeComponent = () => {
-  const foo = true;
 
-  if (foo) {
+// Named function declaration components should be allowed.
+export function TestComponent() {
+  // This lets us test that the NodeJS type is defined.
+  const [timer] = React.useState<NodeJS.Timeout>(setTimeout(() => {
+    return true;
+  }));
+
+  if (timer) {
     return null;
   }
 
-  // const bar = new Animation();
+  return (
+    <div>.</div>
+  );
+}
+
+
+// Named arrow function components should be allowed.
+export const OtherComponent = () => {
+  // This lets us test that the JSX global is defined.
+  const content: JSX.Element = <span>Hello world.</span>;
 
   return (
-    <div>{foo}</div>
+    <div>{content}</div>
   );
 };
