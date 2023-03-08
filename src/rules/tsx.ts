@@ -47,9 +47,9 @@ export function applyTSXRuleSet(config: ConfigIsh) {
   config.rules['react/display-name'] = 'off';
 
   // Require that named components be defined as arrow functions or function
-  // expressions, and that unnamed components be defined as arrow functions.
+  // declarations, and that unnamed components be defined as arrow functions.
   config.rules['react/function-component-definition'] = ['error', {
-    namedComponents: ['arrow-function', 'function-expression'],
+    namedComponents: ['arrow-function', 'function-declaration'],
     unnamedComponents: 'arrow-function'
   }];
 
