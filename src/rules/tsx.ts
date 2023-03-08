@@ -46,9 +46,10 @@ export function applyTSXRuleSet(config: ConfigIsh) {
   // Do not require components to set the `displayName` property.
   config.rules['react/display-name'] = 'off';
 
-  // Require that components be defined as arrow functions.
+  // Require that named components be defined as arrow functions or function
+  // expressions, and that unnamed components be defined as arrow functions.
   config.rules['react/function-component-definition'] = ['error', {
-    namedComponents: 'arrow-function',
+    namedComponents: ['arrow-function', 'function-expression'],
     unnamedComponents: 'arrow-function'
   }];
 
