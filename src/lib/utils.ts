@@ -168,9 +168,13 @@ export function flatConfigToLegacyOverride(flatConfig: MarkNonNullable<Linter.Fl
   // languageOptions.parserOptions.project -> parserOptions.project
   if (flatConfig.languageOptions) {
     legacyOverride.parserOptions = {
-      ...R.omit(['sourceType'], flatConfig.languageOptions),
+      ...R.omit(['sourceType', 'globals'], flatConfig.languageOptions),
       ...flatConfig.languageOptions.parserOptions
     };
+  }
+
+  if (flatConfig.languageOptions?.globals) {
+    legacyOverride.globals = flatConfig.languageOptions.globals;
   }
 
   return legacyOverride;

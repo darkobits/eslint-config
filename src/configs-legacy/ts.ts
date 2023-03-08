@@ -27,21 +27,11 @@ const config: LegacyESLintConfig = {
     ecmaVersion: commonConfig.languageOptions.ecmaVersion,
     project: commonConfig.languageOptions.parserOptions?.project
   },
-  env: {
-    browser: false,
-    node: true
-  },
+  globals: commonConfig.languageOptions.globals,
   plugins: R.keys(commonConfig.plugins),
-  // These extended rule-sets will have been applied to the 'rules' that we copy
-  // from the flat configuration; there is no need to use extends here as long
-  // as the corresponding 'plugins' are loaded.
-  // extends: [
-  //   'eslint:recommended',
-  //   'plugin:@typescript-eslint/eslint-recommended',
-  //   'plugin:@typescript-eslint/recommended',
-  //   'plugin:unicorn/recommended'
-  // ],
   settings: commonConfig.settings,
+  // N.B. This will apply all rules from plugin configurations that were
+  // previously applied using "extends".
   rules: commonConfig.rules,
   ignorePatterns: commonConfig.ignores,
   overrides: []
