@@ -2,11 +2,9 @@ import path from 'path';
 
 // import log from '@darkobits/nr/dist/lib/log';
 import { nr } from '@darkobits/ts';
-import { getPackageContext } from '@darkobits/ts/lib/utils';
 
 // Use the default package scripts from 'ts'. "npm run help" for details.
-export default nr(async ({ command, task, script }) => {
-  const { root } = await getPackageContext();
+export default nr(({ command, task, script }) => {
   const FIXTURES_DIR = 'fixtures';
   const LEGACY_CONFIG = '.legacy-eslintrc.js';
   const NEW_CONFIG = 'eslint.config.mjs';
@@ -20,10 +18,7 @@ export default nr(async ({ command, task, script }) => {
   }], {
     prefix: () => 'ts/legacy',
     execaOptions: {
-      cwd: path.resolve(FIXTURES_DIR, 'ts'),
-      env: {
-        PACKAGE_ROOT: root
-      }
+      cwd: path.resolve(FIXTURES_DIR, 'ts')
     }
   });
 
@@ -35,8 +30,7 @@ export default nr(async ({ command, task, script }) => {
     execaOptions: {
       cwd: path.resolve(FIXTURES_DIR, 'ts'),
       env: {
-        ESLINT_USE_FLAT_CONFIG: 'true',
-        PACKAGE_ROOT: root
+        ESLINT_USE_FLAT_CONFIG: 'true'
       }
     }
   });
@@ -49,10 +43,7 @@ export default nr(async ({ command, task, script }) => {
   }], {
     prefix: () => 'tsx/legacy',
     execaOptions: {
-      cwd: path.resolve(FIXTURES_DIR, 'tsx'),
-      env: {
-        PACKAGE_ROOT: root
-      }
+      cwd: path.resolve(FIXTURES_DIR, 'tsx')
     }
   });
 
@@ -64,8 +55,7 @@ export default nr(async ({ command, task, script }) => {
     execaOptions: {
       cwd: path.resolve(FIXTURES_DIR, 'tsx'),
       env: {
-        ESLINT_USE_FLAT_CONFIG: 'true',
-        PACKAGE_ROOT: root
+        ESLINT_USE_FLAT_CONFIG: 'true'
       }
     }
   });
