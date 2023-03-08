@@ -1,3 +1,11 @@
+## [0.3.3-beta.4](https://github.com/darkobits/eslint-plugin/compare/v0.3.3-beta.3...v0.3.3-beta.4) (2023-03-08)
+
+
+### 🐞 Bug Fixes
+
+* Improve how globals are disabled in configuration sets. ([65a3093](https://github.com/darkobits/eslint-plugin/commit/65a3093a44ac1a0e05f75e58c094871a5753d26d))
+* Require function declarations rather than function expressions. ([38390f3](https://github.com/darkobits/eslint-plugin/commit/38390f3d5e1a1c46edcf90e67853f7f781c8d59c))
+
 ## [0.3.3-beta.3](https://github.com/darkobits/eslint-plugin/compare/v0.3.3-beta.2...v0.3.3-beta.3) (2023-03-08)
 
 
