@@ -20,10 +20,7 @@ const config: LegacyESLintConfig = {
     // Sets 'jsx' to `true`.
     ecmaFeatures: commonConfig.languageOptions?.parserOptions?.ecmaFeatures
   },
-  env: {
-    node: false,
-    browser: true
-  },
+  globals: commonConfig.languageOptions.globals,
   plugins: R.keys(commonConfig.plugins),
   settings: commonConfig.settings,
   rules: commonConfig.rules,
