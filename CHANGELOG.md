@@ -1,3 +1,21 @@
+## [0.3.3-beta.5](https://github.com/darkobits/eslint-plugin/compare/v0.3.3-beta.4...v0.3.3-beta.5) (2023-03-08)
+
+
+### 🐞 Bug Fixes
+
+* Improve handling of globals in legacy configs. ([00b36c9](https://github.com/darkobits/eslint-plugin/commit/00b36c92918b29d7d3501114b87150b5e2099b3e))
+
+
+### 🛠 Refactoring
+
+* Migrate from `eslint:recommended` to `[@eslint](https://github.com/eslint).js`. ([93c0dbb](https://github.com/darkobits/eslint-plugin/commit/93c0dbbc5361fdb7a7a376566460b6ae10e452ea))
+
+
+### 🏗 Chores
+
+* Update `.ci.yml`. ([bd6a741](https://github.com/darkobits/eslint-plugin/commit/bd6a74132c4d1eab4aeba842115925bfe4ec1657))
+* Update smoke tests. ([62671c1](https://github.com/darkobits/eslint-plugin/commit/62671c1455218cbb063f4e4c7bb3fdaeb5cfa0e1))
+
 ## [0.3.3-beta.4](https://github.com/darkobits/eslint-plugin/compare/v0.3.3-beta.3...v0.3.3-beta.4) (2023-03-08)
 
 
