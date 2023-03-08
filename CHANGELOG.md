@@ -1,3 +1,12 @@
+## [0.3.3-beta.3](https://github.com/darkobits/eslint-plugin/compare/v0.3.3-beta.2...v0.3.3-beta.3) (2023-03-08)
+
+
+### 🐞 Bug Fixes
+
+* Explicitly set `sourceType` in legacy configuration. ([1518947](https://github.com/darkobits/eslint-plugin/commit/1518947d36353b99a1b55d284b60db14ce2c3da2))
+* Fix `no-undef` false-positives. ([82e877e](https://github.com/darkobits/eslint-plugin/commit/82e877e647dfb8fb6a836fb72aee3eb638e12e68))
+* Relax restrictions for `react/function-component-definition`. ([461da43](https://github.com/darkobits/eslint-plugin/commit/461da43cf4c1adebd2e011bc62f997721b6e2707))
+
 ## [0.3.3-beta.2](https://github.com/darkobits/eslint-plugin/compare/v0.3.3-beta.1...v0.3.3-beta.2) (2023-03-08)
 
 
