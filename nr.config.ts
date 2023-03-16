@@ -1,13 +1,13 @@
 import path from 'path';
 
-// import log from '@darkobits/nr/dist/lib/log';
 import { nr } from '@darkobits/ts';
 
-// Use the default package scripts from 'ts'. "npm run help" for details.
+
 export default nr(({ command, task, script }) => {
   const FIXTURES_DIR = 'fixtures';
   const LEGACY_CONFIG = '.legacy-eslintrc.js';
   const NEW_CONFIG = 'eslint.config.mjs';
+
 
   // ----- Smoke Tests ---------------------------------------------------------
 
@@ -34,7 +34,6 @@ export default nr(({ command, task, script }) => {
       }
     }
   });
-
 
   const fixturesTsxLegacy = command('eslint', ['eslint', ['src'], {
     ext: 'ts,tsx,js,jsx,cjs,mjs',
@@ -102,9 +101,8 @@ export default nr(({ command, task, script }) => {
   });
 
 
-  // ----- Watch Source & Lint Fixtures ----------------------------------------
-
-  script('test.watch.smoke', {
+  // Watch build directory and lint fixtures on changes.
+  script('test.smoke.watch', {
     group: 'Test',
     description: 'When changes are detected in the output directory, run smoke tests.',
     run: [

@@ -7,12 +7,12 @@ import {
 } from 'config-sets/tsx';
 import { flatConfigToLegacyOverride } from 'lib/utils';
 
-import type { LegacyESLintConfig } from 'etc/types';
+import type { ESLintConfig } from 'etc/types';
 
 
 // ----- [tsx] Legacy Configuration --------------------------------------------
 
-const config: LegacyESLintConfig = {
+const config: ESLintConfig = {
   extends: [
     require.resolve('./ts')
   ],
@@ -20,7 +20,7 @@ const config: LegacyESLintConfig = {
     // Sets 'jsx' to `true`.
     ecmaFeatures: commonConfig.languageOptions?.parserOptions?.ecmaFeatures
   },
-  globals: commonConfig.languageOptions.globals,
+  globals: commonConfig.languageOptions?.globals,
   plugins: R.keys(commonConfig.plugins),
   settings: commonConfig.settings,
   rules: commonConfig.rules,
@@ -29,10 +29,11 @@ const config: LegacyESLintConfig = {
   overrides: []
 };
 
-
-config.overrides.push(flatConfigToLegacyOverride(commonConfig));
-config.overrides.push(flatConfigToLegacyOverride(tsxFileConfig));
-config.overrides.push(flatConfigToLegacyOverride(jsxFileConfig));
+if (config.overrides) {
+  config.overrides.push(flatConfigToLegacyOverride(commonConfig));
+  config.overrides.push(flatConfigToLegacyOverride(tsxFileConfig));
+  config.overrides.push(flatConfigToLegacyOverride(jsxFileConfig));
+}
 
 
 export default config;

@@ -11,23 +11,25 @@ import {
   tsTestFileConfig,
   jsTestFileConfig
 } from 'config-sets/ts';
-import { flatConfigToLegacyOverride } from 'lib/utils';
+import {
+  flatConfigToLegacyOverride
+} from 'lib/utils';
 
-import type { LegacyESLintConfig } from 'etc/types';
+import type { ESLintConfig } from 'etc/types';
 
 
 // ----- [ts] Legacy Configuration ---------------------------------------------
 
-const config: LegacyESLintConfig = {
+const config: ESLintConfig = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     // N.B. We don't copy this setting from our flat configuration because
     // ESLint infers it automatically when using flat config.
     sourceType: 'module',
-    ecmaVersion: commonConfig.languageOptions.ecmaVersion,
-    project: commonConfig.languageOptions.parserOptions?.project
+    ecmaVersion: commonConfig.languageOptions?.ecmaVersion,
+    project: commonConfig.languageOptions?.parserOptions?.project
   },
-  globals: commonConfig.languageOptions.globals,
+  globals: commonConfig.languageOptions?.globals,
   plugins: R.keys(commonConfig.plugins),
   settings: commonConfig.settings,
   // N.B. This will apply all rules from plugin configurations that were
@@ -39,11 +41,13 @@ const config: LegacyESLintConfig = {
 
 // Apply every other flat configuration object as an override. These types are
 // were intentionally designed by ESLint to be compatible.
-config.overrides.push(flatConfigToLegacyOverride(commonConfig));
-config.overrides.push(flatConfigToLegacyOverride(tsFileConfig));
-config.overrides.push(flatConfigToLegacyOverride(jsFileConfig));
-config.overrides.push(flatConfigToLegacyOverride(tsTestFileConfig));
-config.overrides.push(flatConfigToLegacyOverride(jsTestFileConfig));
+if (config.overrides) {
+  config.overrides.push(flatConfigToLegacyOverride(commonConfig));
+  config.overrides.push(flatConfigToLegacyOverride(tsFileConfig));
+  config.overrides.push(flatConfigToLegacyOverride(jsFileConfig));
+  config.overrides.push(flatConfigToLegacyOverride(tsTestFileConfig));
+  config.overrides.push(flatConfigToLegacyOverride(jsTestFileConfig));
+}
 
 
 export default config;

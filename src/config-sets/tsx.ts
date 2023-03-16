@@ -1,3 +1,4 @@
+import { defineFlatConfig } from 'eslint-define-config';
 // @ts-expect-error - This package lacks type definitions.
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 // @ts-expect-error - This package lacks type definitions.
@@ -13,18 +14,16 @@ import {
   convertTypeScriptRulesToJavaScriptRules,
   disableGlobals
 } from 'lib/utils';
-import { applyTSXRuleSet } from 'rules/tsx';
+import {
+  applyTSXRuleSet
+} from 'rules/tsx';
 
-import type {
-  ConfigSet,
-  FlatESLintConfig,
-  MarkNonNullable
-} from 'etc/types';
+import type { FlatESLintConfigItem } from 'etc/types';
 
 
 // ----- [tsx] Common Configuration --------------------------------------------
 
-export const commonConfig: MarkNonNullable<FlatESLintConfig, 'languageOptions'> = {
+export const commonConfig: FlatESLintConfigItem = {
   files: [`**/*.{${ALL_EXTS}}`],
   languageOptions: {
     // This should be set upstream by the 'ts' config set.
@@ -51,7 +50,7 @@ export const commonConfig: MarkNonNullable<FlatESLintConfig, 'languageOptions'> 
 
 // ----- [tsx] TypeScript JSX Files --------------------------------------------
 
-export const tsxFileConfig: FlatESLintConfig = {
+export const tsxFileConfig: FlatESLintConfigItem = {
   files: ['**/*.tsx'],
   languageOptions: {
     globals: {
@@ -76,7 +75,7 @@ applyTSXRuleSet(tsxFileConfig);
 
 // ----- [tsx] JavaScript JSX Files --------------------------------------------
 
-export const jsxFileConfig: FlatESLintConfig = {
+export const jsxFileConfig: FlatESLintConfigItem = {
   files: ['**/*.jsx'],
   rules: convertTypeScriptRulesToJavaScriptRules(tsxFileConfig.rules)
 };
@@ -89,9 +88,9 @@ export const jsxFileConfig: FlatESLintConfig = {
  * directly to ESLint or spread into a new array if additional configuration
  * objects need to be used.
  */
-export const tsxConfigSet: ConfigSet = [
+export const tsxConfigSet = defineFlatConfig([
   ...tsConfigSet,
   commonConfig,
   tsxFileConfig,
   jsxFileConfig
-];
+]);

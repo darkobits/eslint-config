@@ -1,4 +1,4 @@
-import { ConfigIsh } from 'etc/types';
+import { FlatESLintConfigItem } from 'etc/types';
 
 import type { Linter } from 'eslint';
 
@@ -7,7 +7,7 @@ import type { Linter } from 'eslint';
  * Provided a legacy or flat ESLint configuration object, adds rule settings
  * for our 'ts' preset.
  */
-export function applyTSRuleSet(config: ConfigIsh): void {
+export function applyTSRuleSet(config: FlatESLintConfigItem): void {
   config.rules = config.rules ?? {};
 
 
