@@ -1,6 +1,5 @@
-import { FlatESLintConfigItem } from 'etc/types';
-
 import type { Linter } from 'eslint';
+import type { FlatESLintConfigItem } from 'eslint-define-config';
 
 
 /**

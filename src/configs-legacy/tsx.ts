@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { defineConfig } from 'eslint-define-config';
 
 import {
   commonConfig,
@@ -7,12 +7,10 @@ import {
 } from 'config-sets/tsx';
 import { flatConfigToLegacyOverride } from 'lib/utils';
 
-import type { ESLintConfig } from 'etc/types';
-
 
 // ----- [tsx] Legacy Configuration --------------------------------------------
 
-const config: ESLintConfig = {
+export default defineConfig({
   extends: [
     require.resolve('./ts')
   ],
@@ -21,19 +19,14 @@ const config: ESLintConfig = {
     ecmaFeatures: commonConfig.languageOptions?.parserOptions?.ecmaFeatures
   },
   globals: commonConfig.languageOptions?.globals,
-  plugins: R.keys(commonConfig.plugins),
+  plugins: Object.keys(commonConfig.plugins ?? {}),
   settings: commonConfig.settings,
   rules: commonConfig.rules,
   // This should be inherited from 'ts' that we extend.
   ignorePatterns: [],
-  overrides: []
-};
-
-if (config.overrides) {
-  config.overrides.push(flatConfigToLegacyOverride(commonConfig));
-  config.overrides.push(flatConfigToLegacyOverride(tsxFileConfig));
-  config.overrides.push(flatConfigToLegacyOverride(jsxFileConfig));
-}
-
-
-export default config;
+  overrides: [
+    flatConfigToLegacyOverride(commonConfig),
+    flatConfigToLegacyOverride(tsxFileConfig),
+    flatConfigToLegacyOverride(jsxFileConfig)
+  ]
+});

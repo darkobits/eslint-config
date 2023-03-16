@@ -1,4 +1,4 @@
-import { FlatESLintConfigItem } from 'etc/types';
+import type { FlatESLintConfigItem } from 'eslint-define-config';
 
 
 /**
