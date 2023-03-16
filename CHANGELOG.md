@@ -1,3 +1,10 @@
+## [0.3.3-beta.6](https://github.com/darkobits/eslint-plugin/compare/v0.3.3-beta.5...v0.3.3-beta.6) (2023-03-16)
+
+
+### 🛠 Refactoring
+
+* Use `eslint-define-config`. ([9f29694](https://github.com/darkobits/eslint-plugin/commit/9f29694f379772e0c282b531f801ef9874fa5ad7))
+
 ## [0.3.3-beta.5](https://github.com/darkobits/eslint-plugin/compare/v0.3.3-beta.4...v0.3.3-beta.5) (2023-03-08)
 
 
