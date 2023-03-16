@@ -2,6 +2,7 @@
 import jsEslintPlugin from '@eslint/js';
 import tsEslintPlugin from '@typescript-eslint/eslint-plugin';
 import typeScriptParser from '@typescript-eslint/parser';
+import { defineFlatConfig } from 'eslint-define-config';
 // @ts-expect-error - This package lacks type definitions.
 import importPlugin from 'eslint-plugin-import';
 // @ts-expect-error - This package lacks type definitions.
@@ -26,15 +27,8 @@ import {
   generateTypeScriptTestFileRules
 } from 'rules/ts';
 
-import type {
-  ESLint,
-  Linter
-} from 'eslint';
-import type {
-  ConfigSet,
-  FlatESLintConfig,
-  MarkNonNullable
-} from 'etc/types';
+import type { ESLint } from 'eslint';
+import type { FlatESLintConfigItem } from 'etc/types';
 
 
 /**
@@ -45,7 +39,7 @@ const tsConfigResult = parseTsConfig();
 
 // ----- [ts] Common Configuration ---------------------------------------------
 
-export const commonConfig: MarkNonNullable<FlatESLintConfig, 'ignores' | 'languageOptions'> = {
+export const commonConfig: FlatESLintConfigItem = {
   files: [`**/*.{${ALL_EXTS}}`],
   ignores: R.filter(R.is(String), [
     // Ignore the project's output directory, if defined.
@@ -53,7 +47,7 @@ export const commonConfig: MarkNonNullable<FlatESLintConfig, 'ignores' | 'langua
   ]),
   languageOptions: {
     sourceType: 'module',
-    // @ts-expect-error - ESLint's typings for this property only allow strings,
+    // @ts-expect-error? - ESLint's typings for this property only allow strings,
     // but the API accepts a parser instance as well.
     parser: typeScriptParser,
     parserOptions: {
@@ -95,7 +89,7 @@ applyPlugin(commonConfig, { plugin: preferArrowPlugin, namespace: 'prefer-arrow'
 
 // ----- [ts] TypeScript Files -------------------------------------------------
 
-export const tsFileConfig: FlatESLintConfig = {
+export const tsFileConfig: FlatESLintConfigItem = {
   files: [`**/*.{${TS_EXTS}}`],
   languageOptions: {
     globals: {
@@ -111,7 +105,7 @@ export const tsFileConfig: FlatESLintConfig = {
 
 applyPlugin(tsFileConfig, {
   // TODO: See if this typing issue is resolved in a future release.
-  plugin: tsEslintPlugin  as unknown as ESLint.Plugin,
+  plugin: tsEslintPlugin as unknown as ESLint.Plugin,
   namespace: '@typescript-eslint',
   applyPreset: 'recommended'
 });
@@ -123,7 +117,7 @@ applyTSRuleSet(tsFileConfig);
 
 // ----- [ts] JavaScript Files -------------------------------------------------
 
-export const jsFileConfig: MarkNonNullable<Linter.FlatConfig, 'files' | 'rules'> = {
+export const jsFileConfig: FlatESLintConfigItem = {
   files: [`**/*.{${JS_EXTS}}`],
   rules: convertTypeScriptRulesToJavaScriptRules(tsFileConfig.rules)
 };
@@ -131,12 +125,12 @@ export const jsFileConfig: MarkNonNullable<Linter.FlatConfig, 'files' | 'rules'>
 
 // ----- [ts] Test Files -------------------------------------------------------
 
-export const tsTestFileConfig: MarkNonNullable<Linter.FlatConfig, 'files' | 'rules'> = {
+export const tsTestFileConfig: FlatESLintConfigItem = {
   files: [`**/*.{spec,test}.{${TS_EXTS}}`],
   rules: generateTypeScriptTestFileRules()
 };
 
-export const jsTestFileConfig: MarkNonNullable<Linter.FlatConfig, 'files' | 'rules'> = {
+export const jsTestFileConfig: FlatESLintConfigItem = {
   files: [`**/*.{spec,test}.{${JS_EXTS}}`],
   rules: convertTypeScriptRulesToJavaScriptRules(tsTestFileConfig.rules)
 };
@@ -149,10 +143,10 @@ export const jsTestFileConfig: MarkNonNullable<Linter.FlatConfig, 'files' | 'rul
  * directly to ESLint or spread into a new array if additional configuration
  * objects need to be used.
  */
-export const tsConfigSet: ConfigSet = [
+export const tsConfigSet = defineFlatConfig([
   commonConfig,
   tsFileConfig,
   jsFileConfig,
   tsTestFileConfig,
   jsTestFileConfig
-];
+]);

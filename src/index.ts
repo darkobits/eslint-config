@@ -17,10 +17,7 @@ import type { ESLint } from 'eslint';
  * };
  * ```
  */
-export const configs: ESLint.Plugin['configs'] = {
-  ts: tsLegacy,
-  tsx: tsxLegacy
-};
+export const configs = { ts: tsLegacy, tsx: tsxLegacy } as ESLint.Plugin['configs'];
 
 
 /**

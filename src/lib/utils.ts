@@ -1,6 +1,3 @@
-/**
- * @fileoverview Contains various utility functions used throughout the plugin.
- */
 import fs from 'fs';
 
 import { parse } from 'comment-json';
@@ -8,7 +5,7 @@ import findUp from 'find-up';
 import * as R from 'ramda';
 
 import type { ESLint, Linter } from 'eslint';
-import type { ConfigIsh, MarkNonNullable } from 'etc/types';
+import type { FlatESLintConfigItem } from 'etc/types';
 
 
 export interface TsConfigResult {
@@ -117,7 +114,7 @@ export interface ApplyPluginOptions {
  * key, any 'rules' that are added to the configuration from that plugin will
  * fail to resolve the rule's implementation and throw an error.
  */
-export function applyPlugin(config: Linter.FlatConfig, options: ApplyPluginOptions) {
+export function applyPlugin(config: FlatESLintConfigItem, options: ApplyPluginOptions) {
   const { namespace, plugin, applyPreset } = options;
 
   config.plugins = config.plugins ?? {};
@@ -153,8 +150,8 @@ export function applyPlugin(config: Linter.FlatConfig, options: ApplyPluginOptio
 }
 
 
-export function flatConfigToLegacyOverride(flatConfig: MarkNonNullable<Linter.FlatConfig, 'files'>) {
-  const legacyOverride: Linter.ConfigOverride = R.pick([
+export function flatConfigToLegacyOverride(flatConfig: FlatESLintConfigItem) {
+  const legacyOverride: Partial<Linter.ConfigOverride> = R.pick([
     'files',
     'rules'
   ], flatConfig);
@@ -167,6 +164,8 @@ export function flatConfigToLegacyOverride(flatConfig: MarkNonNullable<Linter.Fl
   // languageOptions.ecmaVersion -> parserOptions.ecmaVersion
   // languageOptions.parserOptions.project -> parserOptions.project
   if (flatConfig.languageOptions) {
+    // @ts-expect-error - Mismatch on `ecmaVersion` between legacy and flat
+    // configuration types.
     legacyOverride.parserOptions = {
       ...R.omit(['sourceType', 'globals'], flatConfig.languageOptions),
       ...flatConfig.languageOptions.parserOptions
@@ -177,7 +176,7 @@ export function flatConfigToLegacyOverride(flatConfig: MarkNonNullable<Linter.Fl
     legacyOverride.globals = flatConfig.languageOptions.globals;
   }
 
-  return legacyOverride;
+  return legacyOverride as Linter.ConfigOverride;
 }
 
 
@@ -197,7 +196,7 @@ export function flatConfigToLegacyOverride(flatConfig: MarkNonNullable<Linter.Fl
  * 'no-undef': 'error'
  *
  */
-export function convertTypeScriptRulesToJavaScriptRules(typeScriptRules: ConfigIsh['rules'] = {}) {
+export function convertTypeScriptRulesToJavaScriptRules(typeScriptRules: FlatESLintConfigItem['rules'] = {}) {
   return R.reduce((javaScriptRules, [ruleName, ruleConfig]) => {
 
     // Not likely to happen at runtime, but narrows ruleConfig to non-nullable.
@@ -232,8 +231,8 @@ export function convertTypeScriptRulesToJavaScriptRules(typeScriptRules: ConfigI
 /**
  * Provided an object defining ESLint globals (a dictionary mapping strings to
  * booleans where `true` indicates the global is writable and `false` indicates
- * the global is read-only) returns an object where all keys value `'off'`,
- * indicating the global is not available.
+ * the global is read-only) returns an object where all keys have a value of
+ * `'off'`, indicating the global is not available.
  *
  * N.B. The value "off" is disallowed in the type-def for "globals", but no type
  * error is thrown when mapObjIndexed is used. Hopefully the ESLint type-def is

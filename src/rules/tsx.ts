@@ -1,4 +1,4 @@
-import { ConfigIsh } from 'etc/types';
+import { FlatESLintConfigItem } from 'etc/types';
 
 
 /**
@@ -6,7 +6,7 @@ import { ConfigIsh } from 'etc/types';
  * preset. Used as a single source of truth for both legacy and new/flat
  * ESLint configuration formats.
  */
-export function applyTSXRuleSet(config: ConfigIsh) {
+export function applyTSXRuleSet(config: FlatESLintConfigItem) {
   config.rules = config.rules ?? {};
 
 
@@ -291,6 +291,6 @@ export function applyTSXRuleSet(config: ConfigIsh) {
 }
 
 
-// export function generateJavaScriptRuleSet(config: ConfigIsh): RuleSet {}
+// export function generateJavaScriptRuleSet(config: FlatESLintConfigItem): RuleSet {}
 
 // export function generateTestRuleSet(): RuleSet {}
