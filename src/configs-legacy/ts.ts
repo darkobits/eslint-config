@@ -2,7 +2,7 @@
  * @fileoverview Uses the common rules for the 'ts' preset (see: rules/ts) to
  * build a legacy ESLint configuration object.
  */
-import * as R from 'ramda';
+import { defineConfig } from 'eslint-define-config';
 
 import {
   commonConfig,
@@ -11,16 +11,12 @@ import {
   tsTestFileConfig,
   jsTestFileConfig
 } from 'config-sets/ts';
-import {
-  flatConfigToLegacyOverride
-} from 'lib/utils';
-
-import type { ESLintConfig } from 'etc/types';
+import { flatConfigToLegacyOverride } from 'lib/utils';
 
 
 // ----- [ts] Legacy Configuration ---------------------------------------------
 
-const config: ESLintConfig = {
+export default defineConfig({
   parser: '@typescript-eslint/parser',
   parserOptions: {
     // N.B. We don't copy this setting from our flat configuration because
@@ -30,24 +26,19 @@ const config: ESLintConfig = {
     project: commonConfig.languageOptions?.parserOptions?.project
   },
   globals: commonConfig.languageOptions?.globals,
-  plugins: R.keys(commonConfig.plugins),
+  plugins: Object.keys(commonConfig.plugins ?? {}),
   settings: commonConfig.settings,
   // N.B. This will apply all rules from plugin configurations that were
   // previously applied using "extends".
   rules: commonConfig.rules,
   ignorePatterns: commonConfig.ignores,
-  overrides: []
-};
-
-// Apply every other flat configuration object as an override. These types are
-// were intentionally designed by ESLint to be compatible.
-if (config.overrides) {
-  config.overrides.push(flatConfigToLegacyOverride(commonConfig));
-  config.overrides.push(flatConfigToLegacyOverride(tsFileConfig));
-  config.overrides.push(flatConfigToLegacyOverride(jsFileConfig));
-  config.overrides.push(flatConfigToLegacyOverride(tsTestFileConfig));
-  config.overrides.push(flatConfigToLegacyOverride(jsTestFileConfig));
-}
-
-
-export default config;
+  // Apply every other flat configuration object as an override. These types are
+  // were intentionally designed by ESLint to be compatible.
+  overrides: [
+    flatConfigToLegacyOverride(commonConfig),
+    flatConfigToLegacyOverride(tsFileConfig),
+    flatConfigToLegacyOverride(jsFileConfig),
+    flatConfigToLegacyOverride(tsTestFileConfig),
+    flatConfigToLegacyOverride(jsTestFileConfig)
+  ]
+});

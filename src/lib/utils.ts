@@ -5,7 +5,7 @@ import findUp from 'find-up';
 import * as R from 'ramda';
 
 import type { ESLint, Linter } from 'eslint';
-import type { FlatESLintConfigItem } from 'etc/types';
+import type { FlatESLintConfigItem } from 'eslint-define-config';
 
 
 export interface TsConfigResult {

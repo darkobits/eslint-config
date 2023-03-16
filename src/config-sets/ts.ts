@@ -28,7 +28,7 @@ import {
 } from 'rules/ts';
 
 import type { ESLint } from 'eslint';
-import type { FlatESLintConfigItem } from 'etc/types';
+import type { FlatESLintConfigItem } from 'eslint-define-config';
 
 
 /**
@@ -93,12 +93,8 @@ export const tsFileConfig: FlatESLintConfigItem = {
   files: [`**/*.{${TS_EXTS}}`],
   languageOptions: {
     globals: {
-      // N.B. `false` indicates the global is defined but read-only. This is
-      // here to prevent the no-undef rule from throwing because it cannot
-      // find the "NodeJS" global type. This appears to be an issue that
-      // emerged in @typescript-eslint/parser@4.
       // See: https://github.com/Chatie/eslint-config/issues/45
-      'NodeJS': false
+      'NodeJS': 'readonly'
     }
   }
 };
