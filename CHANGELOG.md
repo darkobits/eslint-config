@@ -1,3 +1,11 @@
+## [0.3.3-beta.7](https://github.com/darkobits/eslint-plugin/compare/v0.3.3-beta.6...v0.3.3-beta.7) (2023-03-20)
+
+
+### 🏗 Chores
+
+* Misc. cleanup. ([538aa9e](https://github.com/darkobits/eslint-plugin/commit/538aa9e1b64131e8cda6147b8347aeb5b844e749))
+* Update dependencies. ([98f4acd](https://github.com/darkobits/eslint-plugin/commit/98f4acd2f7d4692801e2984417a5365d85766427))
+
 ## [0.3.3-beta.6](https://github.com/darkobits/eslint-plugin/compare/v0.3.3-beta.5...v0.3.3-beta.6) (2023-03-16)
 
 
