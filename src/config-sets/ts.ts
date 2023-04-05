@@ -42,8 +42,10 @@ const tsConfigResult = parseTsConfig();
 export const commonConfig: FlatESLintConfigItem = {
   files: [`**/*.{${ALL_EXTS}}`],
   ignores: R.filter(R.is(String), [
-    // Ignore the project's output directory, if defined.
-    tsConfigResult?.outDir && `${tsConfigResult.outDir}/**`
+    // Ignore the project's output directory (at any level of the project tree),
+    // if defined.
+    tsConfigResult?.outDir && `**/${tsConfigResult.outDir}/**`,
+    // Ignore declaration files.
   ]),
   languageOptions: {
     sourceType: 'module',
