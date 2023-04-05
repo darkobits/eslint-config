@@ -2,7 +2,7 @@
 import jsEslintPlugin from '@eslint/js';
 import tsEslintPlugin from '@typescript-eslint/eslint-plugin';
 import typeScriptParser from '@typescript-eslint/parser';
-import { defineFlatConfig } from 'eslint-define-config';
+import { defineFlatConfig, type FlatESLintConfigItem } from 'eslint-define-config';
 // @ts-expect-error - This package lacks type definitions.
 import importPlugin from 'eslint-plugin-import';
 // @ts-expect-error - This package lacks type definitions.
@@ -28,7 +28,6 @@ import {
 } from 'rules/ts';
 
 import type { ESLint } from 'eslint';
-import type { FlatESLintConfigItem } from 'eslint-define-config';
 
 
 /**
@@ -46,10 +45,11 @@ export const commonConfig: FlatESLintConfigItem = {
     // if defined.
     tsConfigResult?.outDir && `**/${tsConfigResult.outDir}/**`,
     // Ignore declaration files.
+    '**/*.d.ts'
   ]),
   languageOptions: {
     sourceType: 'module',
-    // @ts-expect-error? - ESLint's typings for this property only allow strings,
+    // @ts-expect-error - ESLint's typings for this property only allow strings,
     // but the API accepts a parser instance as well.
     parser: typeScriptParser,
     parserOptions: {
