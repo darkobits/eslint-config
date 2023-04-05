@@ -1,3 +1,15 @@
+## [0.3.3-beta.8](https://github.com/darkobits/eslint-plugin/compare/v0.3.3-beta.7...v0.3.3-beta.8) (2023-04-05)
+
+
+### 🐞 Bug Fixes
+
+* Improve `ignores` rules. ([ff94d9d](https://github.com/darkobits/eslint-plugin/commit/ff94d9db4276e2deb4bf2222e2468d90cdb8331e))
+
+
+### 🏗 Chores
+
+* Update dependencies. ([3775dc8](https://github.com/darkobits/eslint-plugin/commit/3775dc8f0a0095c0364eb88c7b2e7db7ad19c66d))
+
 ## [0.3.3-beta.7](https://github.com/darkobits/eslint-plugin/compare/v0.3.3-beta.6...v0.3.3-beta.7) (2023-03-20)
 
 
