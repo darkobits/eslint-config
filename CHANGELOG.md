@@ -1,3 +1,20 @@
+## [0.4.2](https://github.com/darkobits/eslint-plugin/compare/v0.4.1...v0.4.2) (2023-05-02)
+
+
+### 📖 Documentation
+
+* Update README.md. ([8e661aa](https://github.com/darkobits/eslint-plugin/commit/8e661aafa9aee7d6b51ec963cef4cfbac3515b13))
+
+
+### 🐞 Bug Fixes
+
+* Apply TSX rules to all TypeScript extensions. ([337ccb6](https://github.com/darkobits/eslint-plugin/commit/337ccb6b8c9470140864c1cbecbaaa2723d51457))
+
+
+### 🏗 Chores
+
+* **deps:** Update dependencies. ([275ada4](https://github.com/darkobits/eslint-plugin/commit/275ada4009f243fe7fbf7805afa4a43dd80ec2e2))
+
 ## [0.4.1](https://github.com/darkobits/eslint-plugin/compare/v0.4.0...v0.4.1) (2023-05-02)
 
 
