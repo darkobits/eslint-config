@@ -23,8 +23,53 @@ npm install --save-dev @darkobits/eslint-preset
 
 # Use
 
-This plugin contains two presets: [`ts`](./src/configs/preset-ts.js) for TypeScript projects and
-[`tsx`](./src/configs/preset-tsx.js) for TypeScript-based React projects.
+This plugin contains two presets: [`ts`](./src/config-sets/ts.ts) for TypeScript projects and
+[`tsx`](./src/config-sets/tsx.ts) for TypeScript-based React projects.
+
+## Modern ESLint Configuration
+
+ESLint's new configuration format consists of arrays of configuration objects. Presets are therefore
+arrays of various configurations that are merged by ESLint.
+
+If you do not need to define any custom rules, ignores, or overrides, you can export a configuration set
+directly:
+
+> `eslint.config.js`
+
+```ts
+export { ts as default } from '@darkobits/eslint-plugin';
+```
+
+or
+
+```ts
+export { tsx as default } from '@darkobits/eslint-plugin';
+```
+
+If you need to define configuration specific to your project:
+
+```ts
+import { ts } from '@darkobits/eslint-plugin';
+
+export default [{
+  ignores: ['unicorns/**'],
+  rules: {
+    'max-len': 'off'
+  }
+}, ...ts];
+```
+
+### IDE Integration
+
+To use ESLint's new flat configuration format with VS Code, add the following to `.vscode/settings.json`
+in your project:
+
+```json
+  "eslint.experimental.useFlatConfig": true,
+  "eslint.options.overrideConfigFile": "eslint.config.js",
+```
+
+## Legacy ESLint Configuration
 
 To extend a preset:
 
