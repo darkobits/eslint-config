@@ -1,3 +1,38 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.4.0](https://github.com/darkobits/eslint-plugin/compare/v0.3.2...v0.4.0) (2023-05-02)
+
+
+### 🛠 Refactoring
+
+* Migrate from `eslint:recommended` to `[@eslint](https://github.com/eslint).js`. ([458cc64](https://github.com/darkobits/eslint-plugin/commit/458cc64fec858682aaf6a1c6dd8343f8a482915e))
+* Misc. cleanup. ([b527ebb](https://github.com/darkobits/eslint-plugin/commit/b527ebba5dbaa764dbeaf7950211031e24fc1211))
+* Support flat ESLint configuration format. ([fb650be](https://github.com/darkobits/eslint-plugin/commit/fb650be5d85f5c86b90f7a9ba96cd9c8aaa975b1))
+* Use `eslint-define-config`. ([36ea615](https://github.com/darkobits/eslint-plugin/commit/36ea6158133720f5d5afe39fe0a0210df69766eb))
+
+
+### 🐞 Bug Fixes
+
+* Explicitly set `sourceType` in legacy configuration. ([3c96671](https://github.com/darkobits/eslint-plugin/commit/3c966711746a06c53d98e9ee94388bf24708fb0f))
+* Fix `no-undef` false-positives. ([6e1d158](https://github.com/darkobits/eslint-plugin/commit/6e1d158b2938b8db28753f203c21cfa2220bdc70))
+* Improve `ignores` rules. ([53c9b12](https://github.com/darkobits/eslint-plugin/commit/53c9b12b6ef8693a9874198b5a09cf89ea30cbac))
+* Improve handling of globals in legacy configs. ([a810a6a](https://github.com/darkobits/eslint-plugin/commit/a810a6a21adca4978de3c4cdf369cde63b0dede7))
+* Improve how globals are disabled in configuration sets. ([4717a60](https://github.com/darkobits/eslint-plugin/commit/4717a6019dcaa902d86791aa35f401850013d604))
+* Relax restrictions for `react/function-component-definition`. ([55f316a](https://github.com/darkobits/eslint-plugin/commit/55f316a7857ed7c2a274a6d34cae43139130f6fc))
+* Require function declarations rather than function expressions. ([8d535ab](https://github.com/darkobits/eslint-plugin/commit/8d535ab5bcfefef27a7e87149263840b5492a20f))
+
+
+### 🏗 Chores
+
+* **deps:** Update dependencies. ([f918459](https://github.com/darkobits/eslint-plugin/commit/f91845971aacdb71d7e576322559f8d26e050738))
+* Misc. cleanup. ([f6eab81](https://github.com/darkobits/eslint-plugin/commit/f6eab8145651626314d83232bb81829354df7495))
+* Update `.ci.yml`. ([1b1b1e0](https://github.com/darkobits/eslint-plugin/commit/1b1b1e042239e2ffac51249ec9664b25286f80e8))
+* Update dependencies. ([b289dc3](https://github.com/darkobits/eslint-plugin/commit/b289dc37a5ea5514d80c078f835d7c497c6b714b))
+* Update dependencies. ([b396f1a](https://github.com/darkobits/eslint-plugin/commit/b396f1afda78858198c00de3a2aa1194140d4c8b))
+* Update smoke tests. ([8b28850](https://github.com/darkobits/eslint-plugin/commit/8b28850804c4d5e4cf2c9b1abf9248b5bce97e05))
+
 ## [0.3.2](https://github.com/darkobits/eslint-plugin/compare/v0.3.1...v0.3.2) (2023-02-14)
 
 
