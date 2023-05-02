@@ -1,3 +1,10 @@
+## [0.4.1](https://github.com/darkobits/eslint-plugin/compare/v0.4.0...v0.4.1) (2023-05-02)
+
+
+### 🐞 Bug Fixes
+
+* Import plugin ignores `node_modules`. ([63a3255](https://github.com/darkobits/eslint-plugin/commit/63a32557c407bc8c1fd7366a0825302f41582f67))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
