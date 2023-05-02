@@ -2,7 +2,6 @@ import { defineConfig } from 'eslint-define-config';
 
 import {
   commonConfig,
-  tsxFileConfig,
   jsxFileConfig
 } from 'config-sets/tsx';
 import { flatConfigToLegacyOverride } from 'lib/utils';
@@ -26,7 +25,6 @@ export default defineConfig({
   ignorePatterns: [],
   overrides: [
     flatConfigToLegacyOverride(commonConfig),
-    flatConfigToLegacyOverride(tsxFileConfig),
     flatConfigToLegacyOverride(jsxFileConfig)
   ]
 });
