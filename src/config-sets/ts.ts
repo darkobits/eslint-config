@@ -75,7 +75,10 @@ export const commonConfig: FlatESLintConfigItem = {
       'eslint-import-resolver-typescript': {
         project: tsConfigResult?.tsConfigPath
       }
-    }
+    },
+    'import/ignore': [
+      'node_modules'
+    ]
   },
   rules: {
     // This is the preferred way to "extend" "eslint:recommended", which is now
