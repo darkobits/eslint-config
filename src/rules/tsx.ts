@@ -76,8 +76,9 @@ export function applyTSXRuleSet(config: FlatESLintConfigItem) {
   // validation is still optional.
   config.rules['react/prop-types'] = 'off';
 
-  // Prevent missing React imports when using JSX in a module.
-  config.rules['react/react-in-jsx-scope'] = ['error'];
+  // Do not require importing React when using JSX; newer JSX transformers
+  // handle this for us.
+  config.rules['react/react-in-jsx-scope'] = 'off';
 
   // Prevent extra closing tags for components without children.
   config.rules['react/self-closing-comp'] = ['error'];
