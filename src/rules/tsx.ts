@@ -272,6 +272,7 @@ export function applyTSXRuleSet(config: FlatESLintConfigItem) {
   config.rules['unicorn/no-null'] = 'off';
 
   // [Dec 2021]
+  //
   // The type of `foo` will be `Foo | undefined` because we initialized the
   // variable by passing an implicit `undefined` to `useState`.
   // const [foo, setFoo] = React.useState<Foo>();
@@ -292,6 +293,8 @@ export function applyTSXRuleSet(config: FlatESLintConfigItem) {
 }
 
 
-// export function generateJavaScriptRuleSet(config: FlatESLintConfigItem): RuleSet {}
+// export function generateJavaScriptRuleSet(
+//  config: FlatESLintConfigItem
+// ): RuleSet {}
 
 // export function generateTestRuleSet(): RuleSet {}

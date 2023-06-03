@@ -869,7 +869,6 @@ export function applyTSRuleSet(config: FlatESLintConfigItem): void {
     }
   }];
 
-
   // Allow functions to be passed by reference directly to an array iteratee.
   config.rules['unicorn/no-array-callback-reference'] = 'off';
 
@@ -915,6 +914,18 @@ export function applyTSRuleSet(config: FlatESLintConfigItem): void {
 
   // Allow Array#reduce() to be used to map over object entries.
   config.rules['unicorn/prefer-object-from-entries'] = 'off';
+
+  // Do not require that "TODO" comments have an expiration date.
+  config.rules['unicorn/expiring-todo-comments'] = 'off';
+
+  // Only require braces in a switch's "case" statements when they are required.
+  config.rules['unicorn/switch-case-braces'] = ['error', 'avoid'];
+
+  // Do not enforce rules around await-ing non-Promise values.
+  config.rules['unicorn/no-unnecessary-await'] = 'off';
+
+  // Allow negated conditions.
+  config.rules['unicorn/no-negated-condition'] = 'off';
 
 
   // ----- [Plugin] prefer-arrow -----------------------------------------------
