@@ -1,3 +1,10 @@
+## [0.4.6](https://github.com/darkobits/eslint-plugin/compare/v0.4.5...v0.4.6) (2023-06-09)
+
+
+### 🏗 Chores
+
+* Update README. ([2f13f7b](https://github.com/darkobits/eslint-plugin/commit/2f13f7bdf71f6449a0234f5f77a7b7a826d16286))
+
 ## [0.4.5](https://github.com/darkobits/eslint-plugin/compare/v0.4.4...v0.4.5) (2023-06-09)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@darkobits/eslint-plugin",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "author": "darkobits",
   "license": "WTFPL",
   "description": "ESLint plugin for TypeScript projects.",
