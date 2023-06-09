@@ -33,7 +33,7 @@
     <a
     href="https://firstdonoharm.dev"
   ><img
-    src="https://img.shields.io/static/v1?label=license&message=hippocratic&style=flat-square&color=5E2751"
+    src="https://img.shields.io/static/v1?label=license&message=hippocratic&style=flat-square&color=753065"
   ></a>
 </p>
 
@@ -59,11 +59,11 @@ This plugin contains two presets: [`ts`](./src/config-sets/ts.ts) for TypeScript
 
 ## Modern ESLint Configuration
 
-ESLint's new configuration format consists of arrays of configuration objects. Presets are therefore
-arrays of various configurations that are merged by ESLint.
+ESLint's new configuration format is an array of configuration objects. Configuration presets are
+therefore arrays of one or more configuration objects that are merged by ESLint.
 
-If you do not need to define any custom rules, ignores, or overrides, you can export a configuration set
-directly:
+As such, if you do not need to define any custom rules, ignores, or overrides, you can export a
+configuration preset directly:
 
 > `eslint.config.js`
 
@@ -77,17 +77,24 @@ or
 export { tsx as default } from '@darkobits/eslint-plugin';
 ```
 
-If you need to define configuration specific to your project:
+If you need to define configuration specific to your project, spread the preset into a new array. Order
+matters; configuration for files that you want to have globally ignored should precede all other
+configuration while custom overrides should occur last.
 
 ```ts
 import { ts } from '@darkobits/eslint-plugin';
 
-export default [{
-  ignores: ['unicorns/**'],
-  rules: {
-    'max-len': 'off'
+export default [
+  {
+    ignores: ['unicorns/**']
+  },
+  ...ts,
+  {
+    rules: {
+      'max-len': 'off'
+    }
   }
-}, ...ts];
+];
 ```
 
 ### IDE Integration
