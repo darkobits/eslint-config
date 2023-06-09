@@ -1,3 +1,10 @@
+## [0.4.5](https://github.com/darkobits/eslint-plugin/compare/v0.4.4...v0.4.5) (2023-06-09)
+
+
+### 🏗 Chores
+
+* Update LICENSE. ([20aa3a5](https://github.com/darkobits/eslint-plugin/commit/20aa3a5ad8c05078ac3089865ac76d8beb6691a5))
+
 ## [0.4.4](https://github.com/darkobits/eslint-plugin/compare/v0.4.3...v0.4.4) (2023-06-03)
 
 
