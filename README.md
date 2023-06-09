@@ -1,12 +1,43 @@
-<a href="#top" id="top">
-  <img src="https://user-images.githubusercontent.com/441546/129463138-5a449242-fdbf-4a1b-8b55-c21706ca0946.png" style="max-width: 100%;">
-</a>
+<picture>
+	<source
+    media="(prefers-color-scheme: dark)"
+    srcset="https://github.com/darkobits/eslint-plugin/assets/441546/4cf5ec59-b2c0-4f27-aedf-fd162f4e2778"
+    width="100%"
+  >
+	<img
+    src="https://github.com/darkobits/eslint-plugin/assets/441546/fd1bf053-4b3a-4789-a891-876695793e2a"
+    width="100%"
+  >
+</picture>
 <p align="center">
-  <a href="https://www.npmjs.com/package/@darkobits/eslint-plugin"><img src="https://img.shields.io/npm/v/@darkobits/eslint-plugin.svg?style=flat-square"></a>
-  <a href="https://github.com/darkobits/eslint-plugin/actions?query=workflow%3Aci"><img src="https://img.shields.io/github/actions/workflow/status/darkobits/eslint-plugin/ci.yml?style=flat-square"></a>
-  <a href="https://depfu.com/repos/github/darkobits/eslint-plugin"><img src="https://img.shields.io/depfu/darkobits/eslint-plugin?style=flat-square"></a>
-  <a href="https://conventionalcommits.org"><img src="https://img.shields.io/static/v1?label=commits&message=conventional&style=flat-square&color=398AFB"></a>
+  <a
+    href="https://www.npmjs.com/package/@darkobits/eslint-plugin"
+  ><img
+    src="https://img.shields.io/npm/v/@darkobits/eslint-plugin.svg?style=flat-square"
+  ></a>
+  <a
+    href="https://github.com/darkobits/eslint-plugin/actions?query=workflow%3Aci"
+  ><img
+    src="https://img.shields.io/github/actions/workflow/status/darkobits/eslint-plugin/ci.yml?style=flat-square"
+  ></a>
+  <a
+    href="https://depfu.com/repos/github/darkobits/eslint-plugin"
+  ><img
+    src="https://img.shields.io/depfu/darkobits/eslint-plugin?style=flat-square"
+  ></a>
+  <a
+    href="https://conventionalcommits.org"
+  ><img
+    src="https://img.shields.io/static/v1?label=commits&message=conventional&style=flat-square&color=398AFB"
+  ></a>
+    <a
+    href="https://firstdonoharm.dev"
+  ><img
+    src="https://img.shields.io/static/v1?label=license&message=hippocratic&style=flat-square&color=5E2751"
+  ></a>
 </p>
+
+
 
 ESLint plugin for TypeScript / TypeScript React projects.
 
