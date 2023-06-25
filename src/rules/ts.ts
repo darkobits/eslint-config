@@ -853,7 +853,11 @@ export function applyTSRuleSet(config: FlatESLintConfigItem): void {
 
   // Require consistent naming of errors in catch blocks.
   config.rules['unicorn/catch-error-name'] = ['error', {
-    name: 'err'
+    name: 'err',
+    ignore: [
+      // Additionally, allow errors to be named "cause".
+      /^cause$/
+    ]
   }];
 
   // DISABLED: This rule is disabled because it is often necessary to define
