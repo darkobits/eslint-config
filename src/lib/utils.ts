@@ -18,15 +18,10 @@ export interface TsConfigResult {
  * Returns the path to the first tsconfig.json file found at or above
  * `process.cwd()`. If the file cannot be found, returns false. If the file is
  * unreadable, returns false and issues a warning.
- *
- * TODO: Use tsconfck for this.
  */
 export function parseTsConfig(): TsConfigResult | void {
   const tsConfigPath = findUp.sync('tsconfig.json', { type: 'file' });
-
-  if (!tsConfigPath) {
-    return;
-  }
+  if (!tsConfigPath) return;
 
   let srcDir;
   let outDir;
@@ -34,9 +29,7 @@ export function parseTsConfig(): TsConfigResult | void {
   try {
     fs.accessSync(tsConfigPath, fs.constants.R_OK);
 
-    // @ts-expect-error - We can use null here.
-    // eslint-disable-next-line unicorn/no-null
-    const parsedTsConfig: any = parse(fs.readFileSync(tsConfigPath, 'utf8'), null, true);
+    const parsedTsConfig: any = parse(fs.readFileSync(tsConfigPath, 'utf8'), undefined, true);
 
     if (typeof parsedTsConfig === 'object') {
       srcDir = parsedTsConfig.compilerOptions?.baseUrl;
@@ -137,12 +130,14 @@ export function applyPlugin(config: FlatESLintConfigItem, options: ApplyPluginOp
 
     for (const preset of presetsToApply) {
       if (!plugin.configs[preset]) throw new Error(`Plugin "${namespace}" has no preset "${preset}".`);
+      // @ts-expect-error - Types broke on @types/eslint 8.40.1 -> 8.40.2
       const { rules } = plugin.configs[preset];
       if (!rules) throw new Error(`Preset ${namespace}/${preset} has no rule configurations.`);
 
       Object.entries(rules).forEach(([ruleName, ruleConfig]) => {
         config.rules = config.rules ?? {};
         if (!ruleConfig) return;
+        // @ts-expect-error - Types broke on @types/eslint 8.40.1 -> 8.40.2
         config.rules[ruleName] = ruleConfig;
       });
     }
