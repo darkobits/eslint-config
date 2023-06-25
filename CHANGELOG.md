@@ -1,3 +1,10 @@
+## [0.4.8](https://github.com/darkobits/eslint-plugin/compare/v0.4.7...v0.4.8) (2023-06-25)
+
+
+### 🏗 Chores
+
+* **rules:** Errors in catch clauses may be named `cause`. ([fddbfe7](https://github.com/darkobits/eslint-plugin/commit/fddbfe72b5a5456ab5904d38e66214ab8047d315))
+
 ## [0.4.7](https://github.com/darkobits/eslint-plugin/compare/v0.4.6...v0.4.7) (2023-06-11)
 
 
