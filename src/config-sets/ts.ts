@@ -39,7 +39,13 @@ const tsConfigResult = parseTsConfig();
 // ----- [ts] Common Configuration ---------------------------------------------
 
 export const commonConfig: FlatESLintConfigItem = {
-  files: [`**/*.{${ALL_EXTS}}`],
+  files: [
+    // Include top-level configuration files in a project. This exists to
+    // suppress errors in IDEs from the ESLint plugin when viewing such files.
+    `*.{${ALL_EXTS}}`,
+    // Include all files in sub-directories.
+    `**/*.{${ALL_EXTS}}`
+  ],
   ignores: R.filter(R.is(String), [
     // Ignore the project's output directory (at any level of the project tree),
     // if defined.
