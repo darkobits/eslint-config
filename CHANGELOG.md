@@ -1,3 +1,15 @@
+## [0.4.10](https://github.com/darkobits/eslint-plugin/compare/v0.4.9...v0.4.10) (2023-06-28)
+
+
+### 🏗 Chores
+
+* **deps:** Update dependencies. ([6423225](https://github.com/darkobits/eslint-plugin/commit/64232254ffbf5d457e4ad10e7f67bf852a990849))
+
+
+### 🛠 Refactoring
+
+* Include top-level project files. ([180367b](https://github.com/darkobits/eslint-plugin/commit/180367be570586c2067fcabbda793aef049e6046))
+
 ## [0.4.9](https://github.com/darkobits/eslint-plugin/compare/v0.4.8...v0.4.9) (2023-06-25)
 
 
