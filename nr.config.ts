@@ -11,102 +11,79 @@ export default nr(({ command, task, script }) => {
 
   // ----- Smoke Tests ---------------------------------------------------------
 
-  const fixturesTsLegacy = command('eslint', ['eslint', ['src'], {
-    ext: 'ts,tsx,js,jsx,cjs,mjs',
-    format: 'codeframe',
-    config: LEGACY_CONFIG
-  }], {
+  const fixturesTsLegacy = command('eslint', {
+    args: ['src', { ext: 'ts,tsx,js,jsx,cjs,mjs', format: 'codeframe', config: LEGACY_CONFIG }],
     prefix: () => 'ts/legacy',
-    execaOptions: {
-      cwd: path.resolve(FIXTURES_DIR, 'ts')
-    }
+    cwd: path.resolve(FIXTURES_DIR, 'ts')
   });
 
-  const fixturesTsFlat = command('eslint', ['eslint', ['src'], {
-    format: 'codeframe',
-    config: NEW_CONFIG
-  }], {
+  const fixturesTsFlat = command('eslint', {
+    args: ['src', { format: 'codeframe', config: NEW_CONFIG }],
     prefix: () => 'ts/flat',
-    execaOptions: {
-      cwd: path.resolve(FIXTURES_DIR, 'ts'),
-      env: {
-        ESLINT_USE_FLAT_CONFIG: 'true'
-      }
+    cwd: path.resolve(FIXTURES_DIR, 'ts'),
+    env: {
+      ESLINT_USE_FLAT_CONFIG: 'true'
     }
   });
 
-  const fixturesTsxLegacy = command('eslint', ['eslint', ['src'], {
-    ext: 'ts,tsx,js,jsx,cjs,mjs',
-    format: 'codeframe',
-    config: LEGACY_CONFIG
-  }], {
+  const fixturesTsxLegacy = command('eslint', {
+    args: ['src', { ext: 'ts,tsx,js,jsx,cjs,mjs', format: 'codeframe', config: LEGACY_CONFIG }],
     prefix: () => 'tsx/legacy',
-    execaOptions: {
-      cwd: path.resolve(FIXTURES_DIR, 'tsx')
-    }
+    cwd: path.resolve(FIXTURES_DIR, 'tsx')
   });
 
-  const fixturesTsxFlat = command('eslint', ['eslint', ['src'], {
-    format: 'codeframe',
-    config: NEW_CONFIG
-  }], {
+  const fixturesTsxFlat = command('eslint', {
+    args: ['src', { format: 'codeframe', config: NEW_CONFIG }],
     prefix: () => 'tsx/flat',
-    execaOptions: {
-      cwd: path.resolve(FIXTURES_DIR, 'tsx'),
-      env: {
-        ESLINT_USE_FLAT_CONFIG: 'true'
-      }
+    cwd: path.resolve(FIXTURES_DIR, 'tsx'),
+    env: {
+      ESLINT_USE_FLAT_CONFIG: 'true'
     }
   });
 
-  script('test.smoke.legacy', {
+  script('test.smoke.legacy', [
+    task(() => {
+      // log.info(log.prefix('test.smoke.legacy'), 'Starting test...');
+    }),
+    [fixturesTsLegacy, fixturesTsxLegacy]
+  ], {
     group: 'Test',
     description: 'Run ESLint in the fixtures directory using a legacy configuration file.',
-    timing: true,
-    run: [
-      task('log', () => {
-        // log.info(log.prefix('test.smoke.legacy'), 'Starting test...');
-      }),
-      [fixturesTsLegacy, fixturesTsxLegacy]
-    ]
+    timing: true
   });
 
-  script('test.smoke.flat', {
+  script('test.smoke.flat', [
+    task(() => {
+      // log.info(log.prefix('test.smoke.flat'), 'Starting test...');
+    }),
+    [fixturesTsFlat, fixturesTsxFlat]
+  ], {
     group: 'Test',
     description: 'Run ESLint in the fixtures directory using a flat configuration file.',
-    timing: true,
-    run: [
-      task('log', () => {
-        // log.info(log.prefix('test.smoke.flat'), 'Starting test...');
-      }),
-      [fixturesTsFlat, fixturesTsxFlat]
-    ]
+    timing: true
   });
 
-  script('test.smoke.all', {
+  script('test.smoke.all', [
+    task(() => {
+      // log.info(log.prefix('test.smoke.flat'), 'Starting test...');
+    }),
+    [
+      fixturesTsLegacy,
+      fixturesTsFlat,
+      fixturesTsxLegacy,
+      fixturesTsxFlat
+    ]
+  ], {
     group: 'Test',
     description: 'Run ESLint in the fixtures directory using a both configuration files.',
-    timing: true,
-    run: [
-      task('log', () => {
-        // log.info(log.prefix('test.smoke.flat'), 'Starting test...');
-      }),
-      [
-        fixturesTsLegacy,
-        fixturesTsFlat,
-        fixturesTsxLegacy,
-        fixturesTsxFlat
-      ]
-    ]
+    timing: true
   });
 
 
   // Watch build directory and lint fixtures on changes.
-  script('test.smoke.watch', {
-    group: 'Test',
-    description: 'When changes are detected in the output directory, run smoke tests.',
-    run: [
-      command('nodemon', ['nodemon', {
+  script('test.smoke.watch', [
+    command('nodemon', {
+      args: {
         watch: ['dist', FIXTURES_DIR],
         ext: 'ts,tsx,js,jsx,cjs,mjs,json',
         delay: '100ms',
@@ -116,7 +93,10 @@ export default nr(({ command, task, script }) => {
           'nr test.smoke.legacy; ',
           'nr test.smoke.flat'
         ].join('')
-      }])
-    ]
+      }
+    })
+  ], {
+    group: 'Test',
+    description: 'When changes are detected in the output directory, run smoke tests.'
   });
 });

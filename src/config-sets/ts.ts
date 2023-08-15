@@ -55,8 +55,6 @@ export const commonConfig: FlatESLintConfigItem = {
   ]),
   languageOptions: {
     sourceType: 'module',
-    // @ts-expect-error - ESLint's typings for this property only allow strings,
-    // but the API accepts a parser instance as well.
     parser: typeScriptParser,
     parserOptions: {
       project: tsConfigResult?.tsConfigPath

@@ -35,10 +35,20 @@ export default defineConfig({
   // Apply every other flat configuration object as an override. These types are
   // were intentionally designed by ESLint to be compatible.
   overrides: [
+    // @ts-expect-error - Mismatch on ecmaVersion between ESLint and
+    // eslint-define-config.
     flatConfigToLegacyOverride(commonConfig),
+    // @ts-expect-error - Mismatch on ecmaVersion between ESLint and
+    // eslint-define-config.
     flatConfigToLegacyOverride(tsFileConfig),
+    // @ts-expect-error - Mismatch on ecmaVersion between ESLint and
+    // eslint-define-config.
     flatConfigToLegacyOverride(jsFileConfig),
+    // @ts-expect-error - Mismatch on ecmaVersion between ESLint and
+    // eslint-define-config.
     flatConfigToLegacyOverride(tsTestFileConfig),
+    // @ts-expect-error - Mismatch on ecmaVersion between ESLint and
+    // eslint-define-config.
     flatConfigToLegacyOverride(jsTestFileConfig)
   ]
 });

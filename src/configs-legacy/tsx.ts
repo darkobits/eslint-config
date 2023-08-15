@@ -24,7 +24,11 @@ export default defineConfig({
   // This should be inherited from 'ts' that we extend.
   ignorePatterns: [],
   overrides: [
+    // @ts-expect-error - Mismatch on ecmaVersion between ESLint and
+    // eslint-define-config.
     flatConfigToLegacyOverride(commonConfig),
+    // @ts-expect-error - Mismatch on ecmaVersion between ESLint and
+    // eslint-define-config.
     flatConfigToLegacyOverride(jsxFileConfig)
   ]
 });

@@ -1,7 +1,4 @@
-import fs from 'fs';
-
-import { parse } from 'comment-json';
-import findUp from 'find-up';
+import { getTsconfig } from 'get-tsconfig';
 import * as R from 'ramda';
 
 import type { ESLint, Linter } from 'eslint';
@@ -16,43 +13,17 @@ export interface TsConfigResult {
 
 /**
  * Returns the path to the first tsconfig.json file found at or above
- * `process.cwd()`. If the file cannot be found, returns false. If the file is
- * unreadable, returns false and issues a warning.
+ * `process.cwd()`. If the file cannot be found, returns `undefined`.
  */
 export function parseTsConfig(): TsConfigResult | void {
-  const tsConfigPath = findUp.sync('tsconfig.json', { type: 'file' });
-  if (!tsConfigPath) return;
+  const result = getTsconfig();
 
-  let srcDir;
-  let outDir;
-
-  try {
-    fs.accessSync(tsConfigPath, fs.constants.R_OK);
-
-    const parsedTsConfig: any = parse(fs.readFileSync(tsConfigPath, 'utf8'), undefined, true);
-
-    if (typeof parsedTsConfig === 'object') {
-      srcDir = parsedTsConfig.compilerOptions?.baseUrl;
-      outDir = parsedTsConfig.compilerOptions?.outDir;
-    }
-  } catch (err: any) {
-    if (err.code === 'ENOENT') {
-      // eslint-disable-next-line no-console
-      console.warn([
-        '[@darkobits/eslint-plugin] Attempted to automatically set ESLint\'s',
-        `parserOptions.project to "${tsConfigPath}", but the file could not`,
-        'be read. You will need to create a tsconfig.json or set',
-        'parserOptions.project yourself.'
-      ].join(' '));
-    }
-
-    return;
-  }
+  if (!result) return;
 
   return {
-    tsConfigPath,
-    srcDir,
-    outDir
+    tsConfigPath: result.path,
+    srcDir: result.config.compilerOptions?.baseUrl,
+    outDir: result.config.compilerOptions?.outDir
   };
 }
 
@@ -159,8 +130,6 @@ export function flatConfigToLegacyOverride(flatConfig: FlatESLintConfigItem) {
   // languageOptions.ecmaVersion -> parserOptions.ecmaVersion
   // languageOptions.parserOptions.project -> parserOptions.project
   if (flatConfig.languageOptions) {
-    // @ts-expect-error - Mismatch on `ecmaVersion` between legacy and flat
-    // configuration types.
     legacyOverride.parserOptions = {
       ...R.omit(['sourceType', 'globals'], flatConfig.languageOptions),
       ...flatConfig.languageOptions.parserOptions
@@ -172,6 +141,7 @@ export function flatConfigToLegacyOverride(flatConfig: FlatESLintConfigItem) {
   }
 
   return legacyOverride as Linter.ConfigOverride;
+  // return legacyOverride as Lin
 }
 
 
