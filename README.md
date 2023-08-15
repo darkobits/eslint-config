@@ -37,29 +37,27 @@
   ></a>
 </p>
 
-
-
 ESLint plugin for TypeScript / TypeScript React projects.
 
 # Install
 
 ```
-npm install --save-dev @darkobits/eslint-preset
+npm install --save-dev @darkobits/eslint-plugin
 ```
 
 > **⚠️ Note:** This package declares ESLint and the various plugins for which it sets rules as
 > **peer dependencies**. If you're using **NPM 7** or later, you don't need to do anything. If you're
 > using Yarn, PNPm, or an alternative package manager that doesn't automatically install peer
-> dependencies, you'll need to install this package's `peerDependencies` yourself.
+> dependencies, you'll need to install this package's peer dependencies yourself.
 
 # Use
 
 This plugin contains two presets: [`ts`](./src/config-sets/ts.ts) for TypeScript projects and
 [`tsx`](./src/config-sets/tsx.ts) for TypeScript-based React projects.
 
-## Modern ESLint Configuration
+## Modern (Flat) ESLint Configuration
 
-ESLint's new configuration format is an array of configuration objects. Configuration presets are
+ESLint's new flat configuration format is an array of configuration objects. Configuration presets are
 therefore arrays of one or more configuration objects that are merged by ESLint.
 
 As such, if you do not need to define any custom rules, ignores, or overrides, you can export a
@@ -99,12 +97,15 @@ export default [
 
 ### IDE Integration
 
-To use ESLint's new flat configuration format with VS Code, add the following to `.vscode/settings.json`
-in your project:
+To use ESLint's new flat configuration format with VS Code, add the following to the project's settings:
+
+> `.vscode/settings.json`
 
 ```json
+{
   "eslint.experimental.useFlatConfig": true,
-  "eslint.options.overrideConfigFile": "eslint.config.js",
+  "eslint.options.overrideConfigFile": "eslint.config.js"
+}
 ```
 
 ## Legacy ESLint Configuration
@@ -126,12 +127,6 @@ module.exports = {
   extends: 'plugin:@darkobits/tsx'
 };
 ```
-
-## See Also
-
-* [`@darkobits/ts`](https://github.com/darkobits/ts) – Vite-based toolchain for Node projects.
-* [`@darkobits/tsx`](https://github.com/darkobits/tsx) – Vite-based toolchain for React projects.
-* [`@darkobits/ts-template`](https://github.com/darkobits/ts-template) – Starter template for `@darkobits/ts`.
 
 <br />
 <a href="#top">
