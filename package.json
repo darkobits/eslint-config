@@ -9,8 +9,8 @@
     "url": "https://github.com/darkobits/eslint-plugin"
   },
   "engines": {
-    "node": ">=14",
-    "npm": ">=7"
+    "node": ">=18",
+    "npm": ">=8"
   },
   "engineStrict": true,
   "files": [
