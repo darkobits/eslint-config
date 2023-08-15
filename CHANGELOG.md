@@ -1,3 +1,25 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.5.0](https://github.com/darkobits/eslint-plugin/compare/v0.4.10...v0.5.0) (2023-08-15)
+
+
+### 🏗 Chores
+
+* **deps:** Update dependencies. ([5f34aff](https://github.com/darkobits/eslint-plugin/commit/5f34affe4cf162783d450cf5c5d443e0379a28a1))
+* Require Node 18 or later. ([48fe2ea](https://github.com/darkobits/eslint-plugin/commit/48fe2eacf291af90bdee829effe728b2511eac3a))
+
+
+### 📖 Documentation
+
+* Update README. ([994d1eb](https://github.com/darkobits/eslint-plugin/commit/994d1eb166f408cfb531d4c9f7c54811bacf1b6c))
+
+
+### 🛠 Refactoring
+
+* **rules:** Disallow `++` and `--` operators. ([74416cf](https://github.com/darkobits/eslint-plugin/commit/74416cf2adaec523c7314499c57128868de9be04))
+
 ## [0.4.10](https://github.com/darkobits/eslint-plugin/compare/v0.4.9...v0.4.10) (2023-06-28)
 
 
