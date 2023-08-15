@@ -88,6 +88,11 @@ export function applyTSRuleSet(config: FlatESLintConfigItem): void {
   // statements.
   config.rules['no-loop-func'] = 'error';
 
+  // Disallow the use of the ++ and -- unary operators.
+  config.rules['no-plusplus'] = ['error', {
+    allowForLoopAfterthoughts: false
+  }];
+
 
   // ----- [Base] Stylistic ----------------------------------------------------
 
