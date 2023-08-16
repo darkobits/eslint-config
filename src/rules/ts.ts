@@ -18,6 +18,11 @@ export function applyTSRuleSet(config: FlatESLintConfigItem): void {
   // Warn on usage of `console` methods.
   config.rules['no-console'] = ['warn'];
 
+  // Disallow passing `10` as the second parameter to `parseInt`; since ES5 the
+  // second argument is only required when the developer needs the string to be
+  // parsed with a base other than 10.
+  config.rules['radix'] = ['error', 'as-needed'];
+
   // Disallow assignments that can lead to race conditions due to usage of
   // `await` or `yield`.
   config.rules['require-atomic-updates'] = 'error';
