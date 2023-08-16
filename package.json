@@ -6,7 +6,7 @@
   "description": "ESLint plugin for TypeScript projects.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/darkobits/eslint-plugin"
+    "url": "git+https://github.com/darkobits/eslint-plugin.git"
   },
   "engines": {
     "node": ">=18",
