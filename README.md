@@ -57,8 +57,9 @@ This plugin contains two presets: [`ts`](./src/config-sets/ts.ts) for TypeScript
 
 ## Modern (Flat) ESLint Configuration
 
-ESLint's new flat configuration format is an array of configuration objects. Configuration presets are
-therefore arrays of one or more configuration objects that are merged by ESLint.
+ESLint's [new flat configuration format](https://eslint.org/blog/2022/08/new-config-system-part-1/)
+is an array of configuration objects. Configuration presets are therefore arrays of one or more
+configuration objects that are merged by ESLint.
 
 As such, if you do not need to define any custom rules, ignores, or overrides, you can export a
 configuration preset directly:
