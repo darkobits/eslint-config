@@ -4,12 +4,24 @@ import { nr } from '@darkobits/ts';
 
 
 export default nr(({ command, task, script }) => {
-  const FIXTURES_DIR = 'fixtures';
-  const LEGACY_CONFIG = '.legacy-eslintrc.js';
-  const NEW_CONFIG = 'eslint.config.mjs';
+  // This re-defines the default build script without parallelization. This is
+  // necessary because this project's ESLint configuration relies on the project
+  // having been built first.
+  script('build', [
+    command('vite', { args: ['build'] }),
+    'script:lint'
+  ], {
+    group: 'Build',
+    description: 'Build, type-check, and lint the project.',
+    timing: true
+  });
 
 
   // ----- Smoke Tests ---------------------------------------------------------
+
+  const FIXTURES_DIR = 'fixtures';
+  const LEGACY_CONFIG = '.legacy-eslintrc.js';
+  const NEW_CONFIG = 'eslint.config.mjs';
 
   const fixturesTsLegacy = command('eslint', {
     args: ['src', { ext: 'ts,tsx,js,jsx,cjs,mjs', format: 'codeframe', config: LEGACY_CONFIG }],
