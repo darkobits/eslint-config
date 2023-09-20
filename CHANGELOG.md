@@ -1,3 +1,17 @@
+## [0.5.1](https://github.com/darkobits/eslint-plugin/compare/v0.5.0...v0.5.1) (2023-09-20)
+
+
+### 🏗 Chores
+
+* **deps:** Update dependencies. ([ec6681e](https://github.com/darkobits/eslint-plugin/commit/ec6681e9b72835d0f46986e2ea70db2ba18d0277))
+* Fix build script. ([a6f1d1d](https://github.com/darkobits/eslint-plugin/commit/a6f1d1d6f1c4b2cbf423053fd6385e55ebb30e0c))
+* Normalize repository URL. ([730c45d](https://github.com/darkobits/eslint-plugin/commit/730c45d203057937dcdb8dd1f56e0dd0d2bc6309))
+
+
+### 🛠 Refactoring
+
+* **rules:** Disallow unnecessary `parseInt` radix arguments. ([c754965](https://github.com/darkobits/eslint-plugin/commit/c754965ea883c76832f536b20d48f9372cda34c2))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
