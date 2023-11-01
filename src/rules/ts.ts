@@ -400,6 +400,11 @@ export function applyTSRuleSet(config: FlatESLintConfigItem): void {
     selector: ['class', 'interface', 'typeAlias', 'typeParameter'],
     format: ['PascalCase']
   }, {
+    // Allow any standard casing for default imports.
+    // @ts-expect-error - 'import' is a valid value here; types are inaccurate.
+    selector: 'import',
+    format: ['camelCase', 'UPPER_CASE', 'PascalCase']
+  }, {
     // Do not enforce any naming conventions for object properties because we
     // often need to use objects whose shape is defined by a third-party API or
     // schema that we have no control over.
