@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": "src",
     "outDir": "dist",
-    "exactOptionalPropertyTypes": false
+    "exactOptionalPropertyTypes": false,
+    "esModuleInterop": true
   }
 }

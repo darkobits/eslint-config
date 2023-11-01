@@ -15,10 +15,11 @@ export interface TsConfigResult {
  * Returns the path to the first tsconfig.json file found at or above
  * `process.cwd()`. If the file cannot be found, returns `undefined`.
  */
-export function parseTsConfig(): TsConfigResult | void {
+export function parseTsConfig(): TsConfigResult {
   const result = getTsconfig();
 
-  if (!result) return;
+  if (!result)
+    throw new Error('[@darkobits/eslint-plugin] Unable to locate a tsconfig.json file.');
 
   return {
     tsConfigPath: result.path,

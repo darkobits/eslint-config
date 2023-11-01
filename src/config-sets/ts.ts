@@ -33,7 +33,7 @@ import type { ESLint } from 'eslint';
 /**
  * Infer various settings from the project's tsconfig.json file.
  */
-const tsConfigResult = parseTsConfig();
+const tsConfig = parseTsConfig();
 
 
 // ----- [ts] Common Configuration ---------------------------------------------
@@ -49,7 +49,7 @@ export const commonConfig: FlatESLintConfigItem = {
   ignores: R.filter(R.is(String), [
     // Ignore the project's output directory (at any level of the project tree),
     // if defined.
-    tsConfigResult?.outDir && `**/${tsConfigResult.outDir}/**`,
+    tsConfig?.outDir && `**/${tsConfig.outDir}/**`,
     // Ignore declaration files.
     '**/*.d.ts'
   ]),
@@ -57,7 +57,7 @@ export const commonConfig: FlatESLintConfigItem = {
     sourceType: 'module',
     parser: typeScriptParser,
     parserOptions: {
-      project: tsConfigResult?.tsConfigPath
+      project: tsConfig.tsConfigPath
     },
     ecmaVersion: 'latest',
     globals: {
@@ -77,7 +77,7 @@ export const commonConfig: FlatESLintConfigItem = {
     },
     'import/resolver': {
       'eslint-import-resolver-typescript': {
-        project: tsConfigResult?.tsConfigPath
+        project: tsConfig.tsConfigPath
       }
     },
     'import/ignore': [
