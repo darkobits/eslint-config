@@ -1,6 +1,6 @@
 import {
   defineFlatConfig,
-  type FlatESLintConfigItem
+  type FlatESLintConfig
 } from 'eslint-define-config';
 // @ts-expect-error - This package lacks type definitions.
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
@@ -22,7 +22,7 @@ import { applyTSXRuleSet } from 'rules/tsx';
 
 // ----- [tsx] Common Configuration --------------------------------------------
 
-export const commonConfig: FlatESLintConfigItem = {
+export const commonConfig: FlatESLintConfig = {
   files: [`**/*.{${ALL_EXTS}}`],
   languageOptions: {
     // This should be set upstream by the 'ts' config set.
@@ -59,7 +59,7 @@ applyTSXRuleSet(commonConfig);
 
 // ----- [tsx] JavaScript JSX Files --------------------------------------------
 
-export const jsxFileConfig: FlatESLintConfigItem = {
+export const jsxFileConfig: FlatESLintConfig = {
   files: ['**/*.{js,jsx}'],
   rules: convertTypeScriptRulesToJavaScriptRules(commonConfig.rules)
 };

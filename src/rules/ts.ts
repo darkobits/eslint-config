@@ -1,12 +1,12 @@
 import type { Linter } from 'eslint';
-import type { FlatESLintConfigItem } from 'eslint-define-config';
+import type { FlatESLintConfig } from 'eslint-define-config';
 
 
 /**
  * Provided a legacy or flat ESLint configuration object, adds rule settings
  * for our 'ts' preset.
  */
-export function applyTSRuleSet(config: FlatESLintConfigItem): void {
+export function applyTSRuleSet(config: FlatESLintConfig): void {
   config.rules = config.rules ?? {};
 
 
@@ -401,7 +401,6 @@ export function applyTSRuleSet(config: FlatESLintConfigItem): void {
     format: ['PascalCase']
   }, {
     // Allow any standard casing for default imports.
-    // @ts-expect-error - 'import' is a valid value here; types are inaccurate.
     selector: 'import',
     format: ['camelCase', 'UPPER_CASE', 'PascalCase']
   }, {

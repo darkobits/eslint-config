@@ -53,3 +53,6 @@ export const configs = { ts: tsLegacy, tsx: tsxLegacy } as ESLint.Plugin['config
  */
 export { tsConfigSet as ts } from './config-sets/ts';
 export { tsxConfigSet as tsx } from './config-sets/tsx';
+
+
+export { defineConfig, defineFlatConfig } from 'eslint-define-config';

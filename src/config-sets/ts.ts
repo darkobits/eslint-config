@@ -2,7 +2,7 @@
 import jsEslintPlugin from '@eslint/js';
 import tsEslintPlugin from '@typescript-eslint/eslint-plugin';
 import typeScriptParser from '@typescript-eslint/parser';
-import { defineFlatConfig, type FlatESLintConfigItem } from 'eslint-define-config';
+import { defineFlatConfig, type FlatESLintConfig } from 'eslint-define-config';
 // @ts-expect-error - This package lacks type definitions.
 import importPlugin from 'eslint-plugin-import';
 // @ts-expect-error - This package lacks type definitions.
@@ -38,7 +38,7 @@ const tsConfig = parseTsConfig();
 
 // ----- [ts] Common Configuration ---------------------------------------------
 
-export const commonConfig: FlatESLintConfigItem = {
+export const commonConfig: FlatESLintConfig = {
   files: [
     // Include top-level configuration files in a project. This exists to
     // suppress errors in IDEs from the ESLint plugin when viewing such files.
@@ -98,7 +98,7 @@ applyPlugin(commonConfig, { plugin: preferArrowPlugin, namespace: 'prefer-arrow'
 
 // ----- [ts] TypeScript Files -------------------------------------------------
 
-export const tsFileConfig: FlatESLintConfigItem = {
+export const tsFileConfig: FlatESLintConfig = {
   files: [`**/*.{${TS_EXTS}}`],
   languageOptions: {
     globals: {
@@ -122,7 +122,7 @@ applyTSRuleSet(tsFileConfig);
 
 // ----- [ts] JavaScript Files -------------------------------------------------
 
-export const jsFileConfig: FlatESLintConfigItem = {
+export const jsFileConfig: FlatESLintConfig = {
   files: [`**/*.{${JS_EXTS}}`],
   rules: convertTypeScriptRulesToJavaScriptRules(tsFileConfig.rules)
 };
@@ -130,12 +130,12 @@ export const jsFileConfig: FlatESLintConfigItem = {
 
 // ----- [ts] Test Files -------------------------------------------------------
 
-export const tsTestFileConfig: FlatESLintConfigItem = {
+export const tsTestFileConfig: FlatESLintConfig = {
   files: [`**/*.{spec,test}.{${TS_EXTS}}`],
   rules: generateTypeScriptTestFileRules()
 };
 
-export const jsTestFileConfig: FlatESLintConfigItem = {
+export const jsTestFileConfig: FlatESLintConfig = {
   files: [`**/*.{spec,test}.{${JS_EXTS}}`],
   rules: convertTypeScriptRulesToJavaScriptRules(tsTestFileConfig.rules)
 };

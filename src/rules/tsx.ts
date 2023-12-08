@@ -1,4 +1,4 @@
-import type { FlatESLintConfigItem } from 'eslint-define-config';
+import type { FlatESLintConfig } from 'eslint-define-config';
 
 
 /**
@@ -6,7 +6,7 @@ import type { FlatESLintConfigItem } from 'eslint-define-config';
  * preset. Used as a single source of truth for both legacy and new/flat
  * ESLint configuration formats.
  */
-export function applyTSXRuleSet(config: FlatESLintConfigItem) {
+export function applyTSXRuleSet(config: FlatESLintConfig) {
   config.rules = config.rules ?? {};
 
 
@@ -294,7 +294,7 @@ export function applyTSXRuleSet(config: FlatESLintConfigItem) {
 
 
 // export function generateJavaScriptRuleSet(
-//  config: FlatESLintConfigItem
+//  config: FlatESLintConfig
 // ): RuleSet {}
 
 // export function generateTestRuleSet(): RuleSet {}

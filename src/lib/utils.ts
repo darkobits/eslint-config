@@ -2,7 +2,7 @@ import { getTsconfig } from 'get-tsconfig';
 import * as R from 'ramda';
 
 import type { ESLint, Linter } from 'eslint';
-import type { FlatESLintConfigItem } from 'eslint-define-config';
+import type { FlatESLintConfig } from 'eslint-define-config';
 
 
 export interface TsConfigResult {
@@ -79,7 +79,7 @@ export interface ApplyPluginOptions {
  * key, any 'rules' that are added to the configuration from that plugin will
  * fail to resolve the rule's implementation and throw an error.
  */
-export function applyPlugin(config: FlatESLintConfigItem, options: ApplyPluginOptions) {
+export function applyPlugin(config: FlatESLintConfig, options: ApplyPluginOptions) {
   const { namespace, plugin, applyPreset } = options;
 
   config.plugins = config.plugins ?? {};
@@ -117,7 +117,7 @@ export function applyPlugin(config: FlatESLintConfigItem, options: ApplyPluginOp
 }
 
 
-export function flatConfigToLegacyOverride(flatConfig: FlatESLintConfigItem) {
+export function flatConfigToLegacyOverride(flatConfig: FlatESLintConfig) {
   const legacyOverride: Partial<Linter.ConfigOverride> = R.pick([
     'files',
     'rules'
@@ -162,7 +162,7 @@ export function flatConfigToLegacyOverride(flatConfig: FlatESLintConfigItem) {
  * 'no-undef': 'error'
  *
  */
-export function convertTypeScriptRulesToJavaScriptRules(typeScriptRules: FlatESLintConfigItem['rules'] = {}) {
+export function convertTypeScriptRulesToJavaScriptRules(typeScriptRules: FlatESLintConfig['rules'] = {}) {
   return R.reduce((javaScriptRules, [ruleName, ruleConfig]) => {
 
     // Not likely to happen at runtime, but narrows ruleConfig to non-nullable.

@@ -1,9 +1,9 @@
 import path from 'path';
 
-import { nr } from '@darkobits/ts';
+import { withDefaultPackageScripts } from '@darkobits/ts';
 
 
-export default nr(({ command, task, script }) => {
+export default withDefaultPackageScripts(({ command, task, script }) => {
   // This re-defines the default build script without parallelization. This is
   // necessary because this project's ESLint configuration relies on the project
   // having been built first.
