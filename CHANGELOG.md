@@ -1,3 +1,10 @@
+## [0.5.4](https://github.com/darkobits/eslint-plugin/compare/v0.5.3...v0.5.4) (2023-12-08)
+
+
+### 🏗 Chores
+
+* **deps:** Update dependencies. ([feb71be](https://github.com/darkobits/eslint-plugin/commit/feb71bea6a2dcb189440661c64c1294dd9902f12))
+
 ## [0.5.3](https://github.com/darkobits/eslint-plugin/compare/v0.5.2...v0.5.3) (2023-11-01)
 
 
