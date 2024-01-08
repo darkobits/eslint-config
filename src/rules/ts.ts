@@ -704,7 +704,7 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
   // ----- [Plugin] import -----------------------------------------------------
 
   config.rules['import/no-unresolved'] = ['error', {
-  // Resolve require() calls in addition to import statements.
+    // Resolve require() calls in addition to import statements.
     commonjs: true,
     // Check casing.
     caseSensitive: true,
