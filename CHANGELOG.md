@@ -1,3 +1,11 @@
+## [0.5.5](https://github.com/darkobits/eslint-plugin/compare/v0.5.4...v0.5.5) (2024-02-01)
+
+
+### 🏗 Chores
+
+* **deps:** Update dependencies. ([d00ab23](https://github.com/darkobits/eslint-plugin/commit/d00ab237f3c97a6a0222a4fee866835d5fd05d65))
+* Fix spacing. ([8193d56](https://github.com/darkobits/eslint-plugin/commit/8193d568b326d6f96407a56e90eafd005f698f1a))
+
 ## [0.5.4](https://github.com/darkobits/eslint-plugin/compare/v0.5.3...v0.5.4) (2023-12-08)
 
 
