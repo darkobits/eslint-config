@@ -199,13 +199,7 @@ export function convertTypeScriptRulesToJavaScriptRules(typeScriptRules: FlatESL
  * booleans where `true` indicates the global is writable and `false` indicates
  * the global is read-only) returns an object where all keys have a value of
  * `'off'`, indicating the global is not available.
- *
- * N.B. The value "off" is disallowed in the type-def for "globals", but no type
- * error is thrown when mapObjIndexed is used. Hopefully the ESLint type-def is
- * updated to support "off" in a future version.
  */
-export function disableGlobals(globalsObj: NonNullable<NonNullable<Linter.FlatConfig['languageOptions']>['globals']>) {
-  // N.B. We use `mapObjIndexed` here over `map` despite the fact that Ramda's
-  // `map` supports objects because its type-defs are a mess.
-  return R.mapObjIndexed<boolean, 'off'>(R.always('off'), globalsObj);
+export function disableGlobals(globalsObj: ESLint.Globals) {
+  return R.map(R.always('off'), globalsObj) as ESLint.Globals;
 }

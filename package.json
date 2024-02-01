@@ -22,11 +22,11 @@
     "help": "nr --scripts"
   },
   "peerDependencies": {
-    "@eslint/js": "^8.55.0",
-    "@typescript-eslint/eslint-plugin": "^6.13.2",
-    "@typescript-eslint/parser": "^6.13.2",
-    "eslint": "^8.55.0",
-    "eslint-plugin-import": "^2.29.0",
+    "@eslint/js": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-react": "^7.33.2",
@@ -35,20 +35,20 @@
   },
   "dependencies": {
     "@darkobits/log": "^2.0.0-beta.16",
-    "eslint-define-config": "^2.0.0",
+    "eslint-define-config": "^2.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "get-tsconfig": "^4.7.2",
-    "globals": "^13.23.0",
+    "globals": "^13.24.0",
     "ramda": "^0.29.1"
   },
   "devDependencies": {
-    "@darkobits/ts": "~0.20.1",
-    "@types/eslint": "^8.44.8",
-    "@types/ramda": "^0.29.9",
-    "@types/react": "^18.2.42",
+    "@darkobits/ts": "~0.20.4",
+    "@types/eslint": "^8.56.2",
+    "@types/ramda": "^0.29.10",
+    "@types/react": "^18.2.51",
     "react": "^18.2.0"
   },
   "overrides": {
-    "eslint": "^8.55.0"
+    "eslint": "^8.56.0"
   }
 }
