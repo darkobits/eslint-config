@@ -1,3 +1,14 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.6.0](https://github.com/darkobits/eslint-plugin/compare/v0.5.5...v0.6.0) (2024-05-08)
+
+
+### 🏗 Chores
+
+* Update dependencies. ([ac18521](https://github.com/darkobits/eslint-plugin/commit/ac18521ec3e8b19e87fca643d2281b0b3bc97f87))
+
 ## [0.5.5](https://github.com/darkobits/eslint-plugin/compare/v0.5.4...v0.5.5) (2024-02-01)
 
 
