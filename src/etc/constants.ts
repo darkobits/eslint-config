@@ -1,13 +1,13 @@
 /**
  * Comma-delimited list of TypeScript extensions we want ESLint to include.
  */
-export const TS_EXTS = 'ts,tsx,cts,mts' as const;
+export const TS_EXTS = 'ts,tsx,cts,mts';
 
 
 /**
  * Comma-delimited list of JavaScript extensions we want ESLint to include.
  */
-export const JS_EXTS = 'js,jsx,cjs,mjs' as const;
+export const JS_EXTS = 'js,jsx,cjs,mjs';
 
 
 /**
