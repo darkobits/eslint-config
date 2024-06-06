@@ -7,7 +7,6 @@ import { defineFlatConfig, type FlatESLintConfig } from 'eslint-define-config';
 import importPlugin from 'eslint-plugin-import';
 // @ts-expect-error - This package lacks type definitions.
 import preferArrowPlugin from 'eslint-plugin-prefer-arrow';
-// @ts-expect-error - This package lacks type definitions.
 import unicornPlugin from 'eslint-plugin-unicorn';
 import globals from 'globals';
 import * as R from 'ramda';

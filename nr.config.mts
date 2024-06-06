@@ -1,6 +1,6 @@
 import path from 'path';
 
-import defineConfig from '@darkobits/nr';
+import { defineConfig } from '@darkobits/nr';
 import { defaultPackageScripts } from '@darkobits/ts';
 
 
