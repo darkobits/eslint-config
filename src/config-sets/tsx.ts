@@ -1,24 +1,23 @@
 import {
   defineFlatConfig,
   type FlatESLintConfig
-} from 'eslint-define-config';
+} from 'eslint-define-config'
 // @ts-expect-error - This package lacks type definitions.
-import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
+import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
 // @ts-expect-error - This package lacks type definitions.
-import reactPlugin from 'eslint-plugin-react';
+import reactPlugin from 'eslint-plugin-react'
 // @ts-expect-error - This package lacks type definitions.
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
-import globals from 'globals';
+import reactHooksPlugin from 'eslint-plugin-react-hooks'
+import globals from 'globals'
 
-import { tsConfigSet } from 'config-sets/ts';
-import { ALL_EXTS } from 'etc/constants';
+import { tsConfigSet } from 'config-sets/ts'
+import { ALL_EXTS } from 'etc/constants'
 import {
   applyPlugin,
   convertTypeScriptRulesToJavaScriptRules,
   disableGlobals
-} from 'lib/utils';
-import { applyTSXRuleSet } from 'rules/tsx';
-
+} from 'lib/utils'
+import { applyTSXRuleSet } from 'rules/tsx'
 
 // ----- [tsx] Common Configuration --------------------------------------------
 
@@ -46,24 +45,22 @@ export const commonConfig: FlatESLintConfig = {
       version: 'detect'
     }
   }
-};
+}
 
 // Apply plugins and their configuration presets.
-applyPlugin(commonConfig, { namespace: 'react', plugin: reactPlugin, applyPreset: 'recommended' });
-applyPlugin(commonConfig, { namespace: 'react-hooks', plugin: reactHooksPlugin, applyPreset: 'recommended' });
-applyPlugin(commonConfig, { namespace: 'jsx-a11y', plugin: jsxA11yPlugin, applyPreset: 'recommended' });
+applyPlugin(commonConfig, { namespace: 'react', plugin: reactPlugin, applyPreset: 'recommended' })
+applyPlugin(commonConfig, { namespace: 'react-hooks', plugin: reactHooksPlugin, applyPreset: 'recommended' })
+applyPlugin(commonConfig, { namespace: 'jsx-a11y', plugin: jsxA11yPlugin, applyPreset: 'recommended' })
 
 // Apply our custom rule-set _after_ applying plugins' rule-sets.
-applyTSXRuleSet(commonConfig);
-
+applyTSXRuleSet(commonConfig)
 
 // ----- [tsx] JavaScript JSX Files --------------------------------------------
 
 export const jsxFileConfig: FlatESLintConfig = {
   files: ['**/*.{js,jsx}'],
   rules: convertTypeScriptRulesToJavaScriptRules(commonConfig.rules)
-};
-
+}
 
 // ----- [tsx] Configuration Set -----------------------------------------------
 
@@ -76,4 +73,4 @@ export const tsxConfigSet = defineFlatConfig([
   ...tsConfigSet,
   commonConfig,
   jsxFileConfig
-]);
+])

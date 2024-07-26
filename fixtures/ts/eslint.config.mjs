@@ -1,3 +1,3 @@
-import { ts } from '../../dist/index.js';
+import { ts } from '../../dist/index.js'
 
-export default [...ts];
+export default [...ts]

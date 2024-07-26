@@ -1,1 +1,1 @@
-export { ts as default } from './dist/index.js';
+export { ts as default } from './dist/index.js'

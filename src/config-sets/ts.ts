@@ -1,39 +1,37 @@
 // @ts-expect-error - This package lacks type definitions.
-import jsEslintPlugin from '@eslint/js';
-import tsEslintPlugin from '@typescript-eslint/eslint-plugin';
-import typeScriptParser from '@typescript-eslint/parser';
-import { defineFlatConfig, type FlatESLintConfig } from 'eslint-define-config';
+import jsEslintPlugin from '@eslint/js'
+import tsEslintPlugin from '@typescript-eslint/eslint-plugin'
+import typeScriptParser from '@typescript-eslint/parser'
+import { defineFlatConfig, type FlatESLintConfig } from 'eslint-define-config'
 // @ts-expect-error - This package lacks type definitions.
-import importPlugin from 'eslint-plugin-import';
+import importPlugin from 'eslint-plugin-import'
 // @ts-expect-error - This package lacks type definitions.
-import preferArrowPlugin from 'eslint-plugin-prefer-arrow';
-import unicornPlugin from 'eslint-plugin-unicorn';
-import globals from 'globals';
-import * as R from 'ramda';
+import preferArrowPlugin from 'eslint-plugin-prefer-arrow'
+import unicornPlugin from 'eslint-plugin-unicorn'
+import globals from 'globals'
+import * as R from 'ramda'
 
 import {
   TS_EXTS,
   JS_EXTS,
   ALL_EXTS
-} from 'etc/constants';
+} from 'etc/constants'
 import {
   applyPlugin,
   convertTypeScriptRulesToJavaScriptRules,
   parseTsConfig
-} from 'lib/utils';
+} from 'lib/utils'
 import {
   applyTSRuleSet,
   generateTypeScriptTestFileRules
-} from 'rules/ts';
+} from 'rules/ts'
 
-import type { ESLint } from 'eslint';
-
+import type { ESLint } from 'eslint'
 
 /**
  * Infer various settings from the project's tsconfig.json file.
  */
-const tsConfig = parseTsConfig();
-
+const tsConfig = parseTsConfig()
 
 // ----- [ts] Common Configuration ---------------------------------------------
 
@@ -88,12 +86,11 @@ export const commonConfig: FlatESLintConfig = {
     // deprecated and will issue a warning if used.
     ...jsEslintPlugin.configs?.recommended?.rules
   }
-};
+}
 
-applyPlugin(commonConfig, { plugin: importPlugin, namespace: 'import', applyPreset: 'recommended' });
-applyPlugin(commonConfig, { plugin: unicornPlugin, namespace: 'unicorn', applyPreset: 'recommended' });
-applyPlugin(commonConfig, { plugin: preferArrowPlugin, namespace: 'prefer-arrow' });
-
+applyPlugin(commonConfig, { plugin: importPlugin, namespace: 'import', applyPreset: 'recommended' })
+applyPlugin(commonConfig, { plugin: unicornPlugin, namespace: 'unicorn', applyPreset: 'recommended' })
+applyPlugin(commonConfig, { plugin: preferArrowPlugin, namespace: 'prefer-arrow' })
 
 // ----- [ts] TypeScript Files -------------------------------------------------
 
@@ -105,40 +102,37 @@ export const tsFileConfig: FlatESLintConfig = {
       'NodeJS': 'readonly'
     }
   }
-};
+}
 
 applyPlugin(tsFileConfig, {
   // TODO: See if this typing issue is resolved in a future release.
   plugin: tsEslintPlugin as unknown as ESLint.Plugin,
   namespace: '@typescript-eslint',
   applyPreset: 'recommended'
-});
+})
 
 // Apply our rules _after_ applying plugins' rule-sets to ensure ours override
 // the rule configurations from presets.
-applyTSRuleSet(tsFileConfig);
-
+applyTSRuleSet(tsFileConfig)
 
 // ----- [ts] JavaScript Files -------------------------------------------------
 
 export const jsFileConfig: FlatESLintConfig = {
   files: [`**/*.{${JS_EXTS}}`],
   rules: convertTypeScriptRulesToJavaScriptRules(tsFileConfig.rules)
-};
-
+}
 
 // ----- [ts] Test Files -------------------------------------------------------
 
 export const tsTestFileConfig: FlatESLintConfig = {
   files: [`**/*.{spec,test}.{${TS_EXTS}}`],
   rules: generateTypeScriptTestFileRules()
-};
+}
 
 export const jsTestFileConfig: FlatESLintConfig = {
   files: [`**/*.{spec,test}.{${JS_EXTS}}`],
   rules: convertTypeScriptRulesToJavaScriptRules(tsTestFileConfig.rules)
-};
-
+}
 
 // ----- [ts] Configuration Set ------------------------------------------------
 
@@ -153,4 +147,4 @@ export const tsConfigSet = defineFlatConfig([
   jsFileConfig,
   tsTestFileConfig,
   jsTestFileConfig
-]);
+])
