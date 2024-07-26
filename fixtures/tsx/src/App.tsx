@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 // Named function declaration components should be allowed.
 export function TestComponent() {
   // This lets us test that the NodeJS type is defined.
@@ -14,7 +13,6 @@ export function TestComponent() {
     <div>.</div>
   )
 }
-
 
 // Named arrow function components should be allowed.
 export const OtherComponent = () => {
