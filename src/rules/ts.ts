@@ -340,14 +340,14 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
     after: true
   }];
 
-  // Require semi-colons after members in interface declarations.
+  // Require no semi-colons after members in interface declarations.
   config.rules['@typescript-eslint/member-delimiter-style'] = ['error', {
     multiline: {
-      delimiter: 'semi',
-      requireLast: true
+      delimiter: 'none',
+      requireLast: false
     },
     singleline: {
-      delimiter: 'semi',
+      delimiter: 'none',
       requireLast: false
     }
   }];
@@ -651,9 +651,9 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
   // allows for better stack traces if the promise rejects.
   config.rules['@typescript-eslint/return-await'] = 'error';
 
-  // Require semi-colons. #ComeAtMeBro
+  // Require ni semi-colons.
   config.rules['semi'] = 'off';
-  config.rules['@typescript-eslint/semi'] = ['error', 'always'];
+  config.rules['@typescript-eslint/semi'] = ['error', 'never'];
 
   // Enforce consistent spacing before function parenthesis.
   config.rules['space-before-function-paren'] = 'off';
@@ -801,14 +801,14 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
   // Enforce a convention in the order of require() / import statements.
   config.rules['import/order'] = ['error', {
     groups: [
-    // Node built-in modules.
+      // Node built-in modules.
       'builtin',
       // External packages.
       'external',
       // Local files (absolute imports).
       'internal',
       [
-      // Relative files in a parent folder.
+        // Relative files in a parent folder.
         'parent',
         // Relative files in a sibling folder.
         'sibling',
@@ -829,13 +829,13 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
       pattern: '^node:',
       group: 'builtin'
     }, {
-    // Bump React and React DOM to the top of the 'external' list.
+      // Bump React and React DOM to the top of the 'builtin' list.
       pattern: 'react',
-      group: 'external',
+      group: 'builtin',
       position: 'before'
     }, {
       pattern: 'react-dom',
-      group: 'external',
+      group: 'builtin',
       position: 'before'
     }]
   }];
