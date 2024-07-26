@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/darkobits/eslint-plugin/compare/v1.0.0...v2.0.0) (2024-07-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* This plugin no longer supports legacy configuration files.
+
+### 🏗 Chores
+
+* Update source files after rule changes. ([b1e0c3b](https://github.com/darkobits/eslint-plugin/commit/b1e0c3b7891b07864403fbf2668fa6616e3d9d9a))
+
+
+### 🛠 Refactoring
+
+* Drop support for legacy configuration format. ([a99bc9b](https://github.com/darkobits/eslint-plugin/commit/a99bc9b5df96e5fe64cbbfb7a4e70ddbbc1b6fb8))
+
 ## [1.0.0](https://github.com/darkobits/eslint-plugin/compare/v0.6.0...v1.0.0) (2024-07-26)
 
 
