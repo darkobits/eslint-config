@@ -1,8 +1,7 @@
-import path from 'path';
+import path from 'path'
 
-import { defineConfig } from '@darkobits/nr';
-import { defaultPackageScripts } from '@darkobits/ts';
-
+import { defineConfig } from '@darkobits/nr'
+import { defaultPackageScripts } from '@darkobits/ts'
 
 export default defineConfig([
   defaultPackageScripts,
@@ -17,20 +16,12 @@ export default defineConfig([
       group: 'Build',
       description: 'Build, type-check, and lint the project.',
       timing: true
-    });
-
+    })
 
     // ----- Smoke Tests -------------------------------------------------------
 
-    const FIXTURES_DIR = 'fixtures';
-    const LEGACY_CONFIG = '.legacy-eslintrc.js';
-    const NEW_CONFIG = 'eslint.config.mjs';
-
-    const fixturesTsLegacy = command('eslint', {
-      args: ['src', { ext: 'ts,tsx,js,jsx,cjs,mjs', format: 'codeframe', config: LEGACY_CONFIG }],
-      prefix: () => 'ts/legacy',
-      cwd: path.resolve(FIXTURES_DIR, 'ts')
-    });
+    const FIXTURES_DIR = 'fixtures'
+    const NEW_CONFIG = 'eslint.config.mjs'
 
     const fixturesTsFlat = command('eslint', {
       args: ['src', { format: 'codeframe', config: NEW_CONFIG }],
@@ -39,13 +30,7 @@ export default defineConfig([
       env: {
         ESLINT_USE_FLAT_CONFIG: 'true'
       }
-    });
-
-    const fixturesTsxLegacy = command('eslint', {
-      args: ['src', { ext: 'ts,tsx,js,jsx,cjs,mjs', format: 'codeframe', config: LEGACY_CONFIG }],
-      prefix: () => 'tsx/legacy',
-      cwd: path.resolve(FIXTURES_DIR, 'tsx')
-    });
+    })
 
     const fixturesTsxFlat = command('eslint', {
       args: ['src', { format: 'codeframe', config: NEW_CONFIG }],
@@ -54,18 +39,7 @@ export default defineConfig([
       env: {
         ESLINT_USE_FLAT_CONFIG: 'true'
       }
-    });
-
-    script('test.smoke.legacy', [
-      fn(() => {
-        // log.info(log.prefix('test.smoke.legacy'), 'Starting test...');
-      }),
-      [fixturesTsLegacy, fixturesTsxLegacy]
-    ], {
-      group: 'Test',
-      description: 'Run ESLint in the fixtures directory using a legacy configuration file.',
-      timing: true
-    });
+    })
 
     script('test.smoke.flat', [
       fn(() => {
@@ -76,24 +50,21 @@ export default defineConfig([
       group: 'Test',
       description: 'Run ESLint in the fixtures directory using a flat configuration file.',
       timing: true
-    });
+    })
 
     script('test.smoke.all', [
       fn(() => {
         // log.info(log.prefix('test.smoke.flat'), 'Starting test...');
       }),
       [
-        fixturesTsLegacy,
         fixturesTsFlat,
-        fixturesTsxLegacy,
         fixturesTsxFlat
       ]
     ], {
       group: 'Test',
       description: 'Run ESLint in the fixtures directory using a both configuration files.',
       timing: true
-    });
-
+    })
 
     // Watch build directory and lint fixtures on changes.
     script('test.smoke.watch', [
@@ -104,8 +75,6 @@ export default defineConfig([
           delay: '100ms',
           exec: [
             'clear && ',
-            // Make sure we run both smoke tests in parallel.
-            'nr test.smoke.legacy; ',
             'nr test.smoke.flat'
           ].join('')
         }
@@ -113,6 +82,6 @@ export default defineConfig([
     ], {
       group: 'Test',
       description: 'When changes are detected in the output directory, run smoke tests.'
-    });
+    })
   }
-]);
+])

@@ -1,39 +1,17 @@
-import tsLegacy from './configs-legacy/ts';
-import tsxLegacy from './configs-legacy/tsx';
-
-import type { ESLint } from 'eslint';
-
-
 /**
- * This export conforms to the ESLint Plugin API spec, and will allow users with
- * legacy configuration files to 'extend' a preset using a specifier like
- * '@darkobits/ts'.
+ * This export allows users to export a preset directly or spread it into a new
+ * configuration set.
  *
  * @example
  *
  * ```js
- * module.exports = {
- *   extends: '@darkobits/ts'
- * };
- * ```
- */
-export const configs = { ts: tsLegacy, tsx: tsxLegacy } as ESLint.Plugin['configs'];
-
-
-/**
- * This export allows users with new/flat configuration files to export a
- * preset directly or spread it into a new configuration set.
- *
- * @example
- *
- * ```js
- * export { ts as default } from '@darkobits/eslint-plugin';
+ * export { ts as default } from '@darkobits/eslint-plugin'
  * ```
  *
  * @example
  *
  * ```js
- * import { ts } from '@darkobits/eslint-plugin';
+ * import { ts } from '@darkobits/eslint-plugin'
  *
  * export default [
  *   ...ts,
@@ -43,7 +21,7 @@ export const configs = { ts: tsLegacy, tsx: tsxLegacy } as ESLint.Plugin['config
  *       // Set rule overrides.
  *     }
  *   }
- * ];
+ * ]
  * ```
  *
  * See:
@@ -51,8 +29,7 @@ export const configs = { ts: tsLegacy, tsx: tsxLegacy } as ESLint.Plugin['config
  * - https://eslint.org/blog/2022/08/new-config-system-part-1
  * - https://eslint.org/blog/2022/08/new-config-system-part-2
  */
-export { tsConfigSet as ts } from './config-sets/ts';
-export { tsxConfigSet as tsx } from './config-sets/tsx';
+export { tsConfigSet as ts } from './config-sets/ts'
+export { tsxConfigSet as tsx } from './config-sets/tsx'
 
-
-export { defineConfig, defineFlatConfig } from 'eslint-define-config';
+export { defineFlatConfig } from 'eslint-define-config'
