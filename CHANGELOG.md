@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/darkobits/eslint-plugin/compare/v0.6.0...v1.0.0) (2024-07-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* **rules:** The settings for `semi` have been updated. This will require code changes that can be addressed with `eslint --fix`.
+
+### 🏗 Chores
+
+* **deps:** Update dependencies. ([85f10ce](https://github.com/darkobits/eslint-plugin/commit/85f10ce366a34e37356b83e7e7a014ca457eddcb))
+* **rules:** Update `semi`. ([397968c](https://github.com/darkobits/eslint-plugin/commit/397968c1b41beeaff80378d0570d34830efe2665))
+
 ## [0.6.0](https://github.com/darkobits/eslint-plugin/compare/v0.5.5...v0.6.0) (2024-05-08)
 
 
