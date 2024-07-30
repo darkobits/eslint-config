@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/darkobits/eslint-plugin/compare/v2.0.0...v2.0.1) (2024-07-30)
+
+
+### 🏗 Chores
+
+* Update source files afer rules changes. ([f675eee](https://github.com/darkobits/eslint-plugin/commit/f675eeeb9f530733aec22f6bd1492c35ecdd632b))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
