@@ -99,43 +99,43 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
 
   // Require line breaks after opening and before closing array brackets if
   // there are line breaks inside elements or between elements.
-  config.rules['array-bracket-newline'] = ['error', 'consistent']
+  config.rules['@stylistic/array-bracket-newline'] = ['error', 'consistent']
 
   // Disallow spaces inside array brackets.
-  config.rules['array-bracket-spacing'] = ['error', 'never']
+  config.rules['@stylistic/array-bracket-spacing'] = ['error', 'never']
 
   // Disallows spaces inside an open block token and the next token on the
   // same line.
-  config.rules['block-spacing'] = ['error', 'never']
+  config.rules['@stylistic/block-spacing'] = ['error', 'never']
 
   // Require that comments begin with a capitalized letter. This rule always
   // ignores words like 'eslint' used in override directives.
   //
   // Note: This rule is off because it creates noise when code blocks are
   // commented-out.
-  config.rules['capitalized-comments'] = 'off'
+  config.rules['@stylistic/capitalized-comments'] = 'off'
 
   // Disallow trailing commas in object and array literals.
-  config.rules['comma-dangle'] = ['error', 'never']
+  config.rules['@stylistic/comma-dangle'] = ['error', 'never']
 
   // Enforce standard comma style, in which commas are placed at the end of
   // the current line, in array literals, object literals, and variable
   // declarations.
-  config.rules['comma-style'] = ['error', 'last']
+  config.rules['@stylistic/comma-style'] = ['error', 'last']
 
   // Disallow spaces inside of computed properties in object literals.
-  config.rules['computed-property-spacing'] = ['error', 'never', {
+  config.rules['@stylistic/computed-property-spacing'] = ['error', 'never', {
     enforceForClassMembers: true
   }]
 
   // Require a newline at the end of files.
-  config.rules['eol-last'] = ['error', 'never']
+  config.rules['@stylistic/eol-last'] = ['error', 'never']
 
   // Require double quotes in JSX.
-  config.rules['jsx-quotes'] = ['error', 'prefer-double']
+  config.rules['@stylistic/jsx-quotes'] = ['error', 'prefer-double']
 
   // Warn about long lines.
-  config.rules['max-len'] = ['warn', {
+  config.rules['@stylistic/max-len'] = ['warn', {
     tabWidth: 2,
     // Prefer lines of code remain under 192 characters.
     code: 192,
@@ -150,22 +150,22 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
   }]
 
   // Allow up to 2 empty lines.
-  config.rules['no-multiple-empty-lines'] = ['error', {
+  config.rules['@stylistic/no-multiple-empty-lines'] = ['error', {
     max: 1
   }]
 
   // Require a space after '//' in comments.
-  config.rules['spaced-comment'] = ['error', 'always']
+  config.rules['@stylistic/spaced-comment'] = ['error', 'always']
 
   // Enforce consistent spacing around around colons in `case` and `default`
   // clauses in `switch` statements.
-  config.rules['switch-colon-spacing'] = ['error', {
+  config.rules['@stylistic/switch-colon-spacing'] = ['error', {
     after: true,
     before: false
   }]
 
   // Disallow spaces between a tag function and its template literal.
-  config.rules['template-tag-spacing'] = ['error', 'never']
+  config.rules['@stylistic/template-tag-spacing'] = ['error', 'never']
 
   // ----- [Base] ECMAScript 6 -------------------------------------------------
 

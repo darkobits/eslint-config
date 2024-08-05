@@ -1,5 +1,6 @@
 // @ts-expect-error - This package lacks type definitions.
 import jsEslintPlugin from '@eslint/js'
+import stylisticPlugin from '@stylistic/eslint-plugin'
 import tsEslintPlugin from '@typescript-eslint/eslint-plugin'
 import typeScriptParser from '@typescript-eslint/parser'
 import { defineFlatConfig, type FlatESLintConfig } from 'eslint-define-config'
@@ -90,6 +91,7 @@ export const commonConfig: FlatESLintConfig = {
 
 applyPlugin(commonConfig, { plugin: importPlugin, namespace: 'import', applyPreset: 'recommended' })
 applyPlugin(commonConfig, { plugin: unicornPlugin, namespace: 'unicorn', applyPreset: 'recommended' })
+applyPlugin(commonConfig, { plugin: stylisticPlugin, namespace: '@stylistic' })
 applyPlugin(commonConfig, { plugin: preferArrowPlugin, namespace: 'prefer-arrow' })
 
 // ----- [ts] TypeScript Files -------------------------------------------------
