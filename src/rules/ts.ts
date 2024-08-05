@@ -249,7 +249,7 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
 
   // Disallow typing values using their runtime constructors, and prefer their
   // primitive counterparts instead.
-  config.rules['@typescript-eslint/ban-types'] = ['error', {
+  config.rules['@typescript-eslint/no-restricted-types'] = ['error', {
     types: {
       String: 'Use `string` instead.',
       Number: 'Use `number` instead.',
