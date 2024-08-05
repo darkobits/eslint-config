@@ -261,7 +261,7 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
 
   // Enforce the usage of 'one-true-brace-style' for braces.
   config.rules['brace-style'] = 'off'
-  config.rules['@typescript-eslint/brace-style'] = ['error', '1tbs']
+  config.rules['@/brace-style'] = ['error', '1tbs']
 
   // Naming conventions are enforced using the naming-convention rule (see
   // below).
@@ -273,7 +273,7 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
 
   // Disallow spaces before commas, require spaces after commas.
   config.rules['comma-spacing'] = 'off'
-  config.rules['@typescript-eslint/comma-spacing'] = ['error', {
+  config.rules['@/comma-spacing'] = ['error', {
     before: false,
     after: true
   }]
@@ -308,11 +308,11 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
   // Disallow spaces between the function name and the opening parenthesis that
   // calls it.
   config.rules['func-call-spacing'] = 'off'
-  config.rules['@typescript-eslint/func-call-spacing'] = ['error', 'never']
+  config.rules['@/func-call-spacing'] = ['error', 'never']
 
   // Require 2-space indentation.
   config.rules['indent'] = 'off'
-  config.rules['@typescript-eslint/indent'] = ['error', 2, {
+  config.rules['@/indent'] = ['error', 2, {
     // Require an extra 2 spaces of indentation between switch statements and
     // case statements.
     SwitchCase: 1,
@@ -329,7 +329,7 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
 
   // Require a space before and after keywords like `for`, `if`, etc.
   config.rules['keyword-spacing'] = 'off'
-  config.rules['@typescript-eslint/keyword-spacing'] = ['error', {
+  config.rules['@/keyword-spacing'] = ['error', {
     before: true,
     after: true
   }]
@@ -437,14 +437,14 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
 
   // Disallow unnecessary parentheses, except around JSX expressions.
   config.rules['no-extra-parens'] = 'off'
-  config.rules['@typescript-eslint/no-extra-parens'] = ['error', 'all', {
+  config.rules['@/no-extra-parens'] = ['error', 'all', {
     ignoreJSX: 'all',
     enforceForArrowConditionals: false
   }]
 
   // Disallow unnecessary semicolons.
   config.rules['no-extra-semi'] = 'off'
-  config.rules['@typescript-eslint/no-extra-semi'] = 'error'
+  config.rules['@/no-extra-semi'] = 'error'
 
   // Disallow the use of classes as namespaces.
   config.rules['@typescript-eslint/no-extraneous-class'] = 'error'
@@ -499,7 +499,7 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
   config.rules['@typescript-eslint/no-this-alias'] = 'error'
 
   // Disallow throwing literals as exceptions.
-  config.rules['@typescript-eslint/no-throw-literal'] = 'error'
+  config.rules['@/no-throw-literal'] = 'error'
 
   // Allow the use of type aliases.
   config.rules['@typescript-eslint/no-type-alias'] = 'off'
@@ -623,7 +623,7 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
 
   // Enforce the consistent use of either backticks, double, or single quotes.
   config.rules['quotes'] = 'off'
-  config.rules['@typescript-eslint/quotes'] = ['error', 'single']
+  config.rules['@/quotes'] = ['error', 'single']
 
   // Require Array#sort calls to always provide a comparator function.
   config.rules['@typescript-eslint/require-array-sort-compare'] = 'error'
@@ -647,11 +647,11 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
 
   // Require ni semi-colons.
   config.rules['semi'] = 'off'
-  config.rules['@typescript-eslint/semi'] = ['error', 'never']
+  config.rules['@/semi'] = ['error', 'never']
 
   // Enforce consistent spacing before function parenthesis.
   config.rules['space-before-function-paren'] = 'off'
-  config.rules['@typescript-eslint/space-before-function-paren'] = ['error', {
+  config.rules['@/space-before-function-paren'] = ['error', {
     named: 'never',
     anonymous: 'never',
     asyncArrow: 'always'
