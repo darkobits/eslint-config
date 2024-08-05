@@ -166,6 +166,6 @@ export function convertTypeScriptRulesToJavaScriptRules(typeScriptRules: FlatESL
  * the global is read-only) returns an object where all keys have a value of
  * `'off'`, indicating the global is not available.
  */
-export function disableGlobals(globalsObj: ESLint.Globals) {
-  return R.map(R.always('off'), globalsObj) as ESLint.Globals
+export function disableGlobals(globalsObj: any) {
+  return R.map(R.always('off'), globalsObj) as any
 }
