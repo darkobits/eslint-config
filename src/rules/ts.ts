@@ -335,7 +335,7 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
   }]
 
   // Require no semi-colons after members in interface declarations.
-  config.rules['@typescript-eslint/member-delimiter-style'] = ['error', {
+  config.rules['@stylistic/member-delimiter-style'] = ['error', {
     multiline: {
       delimiter: 'none',
       requireLast: false
