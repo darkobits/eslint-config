@@ -1,3 +1,19 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [2.1.0](https://github.com/darkobits/eslint-plugin/compare/v2.0.1...v2.1.0) (2024-08-06)
+
+
+### 🏗 Chores
+
+* Add `@stylistic/eslint-plugin`. ([b984f10](https://github.com/darkobits/eslint-plugin/commit/b984f10eebbd531f145babc8b27a13efe69b423d))
+* **deps:** Update dependencies. ([8c6f633](https://github.com/darkobits/eslint-plugin/commit/8c6f633b162e5aa5ce83b62d2aab60d3e9ab10aa))
+* **deps:** Update dependencies. ([bc1ca17](https://github.com/darkobits/eslint-plugin/commit/bc1ca17bec456d32c90b83e780d8066723f6571f))
+* Migrate `ban-types` → `no-restricted-types`. ([b0c1513](https://github.com/darkobits/eslint-plugin/commit/b0c1513f563e5b5e036d67bfb52682084b0b147a))
+* Migrate `member-delimiter-style`. ([141d5b9](https://github.com/darkobits/eslint-plugin/commit/141d5b9242a2673e010c4403cf3ae66da7065432))
+* Migrate `type-annotation-spacing`. ([e789263](https://github.com/darkobits/eslint-plugin/commit/e7892636160d67b5ca51e134abddcb1200cccc09))
+
 ## [2.0.1](https://github.com/darkobits/eslint-plugin/compare/v2.0.0...v2.0.1) (2024-07-30)
 
 
