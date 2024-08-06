@@ -833,8 +833,9 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
     }]
   }]
 
+  // [Aug 2024] Temporarily disabled until ESLint v9 support is added.
   // Require 1 empty line after the last top-level import statement.
-  config.rules['import/newline-after-import'] = 'error'
+  // config.rules['import/newline-after-import'] = 'error'
 
   // Allow unassigned imports (ie: imports with side-effects).
   config.rules['import/no-unassigned-import'] = 'off'
