@@ -671,7 +671,7 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
   }]
 
   // Enforce consistent spacing around type annotations.
-  config.rules['@typescript-eslint/type-annotation-spacing'] = ['error', {
+  config.rules['@stylistic/type-annotation-spacing'] = ['error', {
     before: false,
     after: true,
     overrides: {
