@@ -43,7 +43,7 @@
     "ramda": "^0.30.1"
   },
   "devDependencies": {
-    "@darkobits/ts": "~0.21.1",
+    "@darkobits/ts": "~0.22.0",
     "@types/eslint": "^9.6.0",
     "@types/ramda": "^0.30.1",
     "@types/react": "^18.3.3",
