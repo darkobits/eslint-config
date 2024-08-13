@@ -1,3 +1,9 @@
+## [2.1.3](https://github.com/darkobits/eslint-plugin/compare/v2.1.2...v2.1.3) (2024-08-13)
+
+### 🏗 Chores
+
+* **ci:** Update workflow. ([d8ad552](https://github.com/darkobits/eslint-plugin/commit/d8ad5521f9b4a6a9ed3c5bea416d65815d98028b))
+
 ## [2.1.2](https://github.com/darkobits/eslint-plugin/compare/v2.1.1...v2.1.2) (2024-08-13)
 
 ### 🏗 Chores
