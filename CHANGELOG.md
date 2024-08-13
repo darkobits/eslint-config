@@ -1,3 +1,13 @@
+## [2.1.1](https://github.com/darkobits/eslint-plugin/compare/v2.1.0...v2.1.1) (2024-08-13)
+
+### 🏗 Chores
+
+* **ci:** Use LTS version of Node. ([446655d](https://github.com/darkobits/eslint-plugin/commit/446655d3c4a1dffb9caf203dc13d5e9410e60831))
+* **deps:** Update dependencies. ([cbc8142](https://github.com/darkobits/eslint-plugin/commit/cbc8142b3bd00ab0e043a12f7b4fa03c4dc1e2e1))
+* **deps:** Update dependencies. ([9175ff4](https://github.com/darkobits/eslint-plugin/commit/9175ff426236902bde9654289d92ccd34eec96e1))
+* Remove `release.config.js`. ([ae77f4f](https://github.com/darkobits/eslint-plugin/commit/ae77f4fc403b22ad501ba814914bc5f21dee21d7))
+* Remove overrides. ([90b994c](https://github.com/darkobits/eslint-plugin/commit/90b994c78441e78bbfd29a234a8f5e9623a8ab22))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
