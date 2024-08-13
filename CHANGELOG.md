@@ -1,3 +1,17 @@
+## [2.1.2](https://github.com/darkobits/eslint-plugin/compare/v2.1.1...v2.1.2) (2024-08-13)
+
+### 🏗 Chores
+
+* Fix lint errors. ([e086aa5](https://github.com/darkobits/eslint-plugin/commit/e086aa5b992d05af51062f959567cb57d54a4104))
+
+### 📖 Documentation
+
+* Update README. ([9990630](https://github.com/darkobits/eslint-plugin/commit/99906307ea974041c316c0ede77d76ce1103e301))
+
+### 🛠 Refactoring
+
+* Publish as ESM. ([ef0159b](https://github.com/darkobits/eslint-plugin/commit/ef0159b7a9822ef2faa473ae79324962267f87a5))
+
 ## [2.1.1](https://github.com/darkobits/eslint-plugin/compare/v2.1.0...v2.1.1) (2024-08-13)
 
 ### 🏗 Chores
