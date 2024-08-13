@@ -4,6 +4,7 @@
   "description": "An ESLint plugin for TypeScript projects.",
   "author": "darkobits",
   "license": "Hippocratic",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/darkobits/eslint-plugin.git"
