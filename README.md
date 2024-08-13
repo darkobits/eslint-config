@@ -55,25 +55,25 @@ npm install --save-dev @darkobits/eslint-plugin
 This plugin contains two presets: [`ts`](./src/config-sets/ts.ts) for TypeScript projects and
 [`tsx`](./src/config-sets/tsx.ts) for TypeScript-based React projects.
 
-## Modern (Flat) ESLint Configuration
+## Configuration
 
-ESLint's [new flat configuration format](https://eslint.org/blog/2022/08/new-config-system-part-1/)
-is an array of configuration objects. Configuration presets are therefore arrays of one or more
+ESLint's new [flat configuration format](https://eslint.org/blog/2022/08/new-config-system-part-1/)
+consists of an array of configuration objects, and configuration presets are now arrays of one or more
 configuration objects that are merged by ESLint.
 
-As such, if you do not need to define any custom rules, ignores, or overrides, you can export a
-configuration preset directly:
+If you do not need to define any custom rules, ignores, or overrides, you can export a configuration
+preset directly:
 
 > `eslint.config.js`
 
 ```ts
-export { ts as default } from '@darkobits/eslint-plugin';
+export { ts as default } from '@darkobits/eslint-plugin'
 ```
 
 or
 
 ```ts
-export { tsx as default } from '@darkobits/eslint-plugin';
+export { tsx as default } from '@darkobits/eslint-plugin'
 ```
 
 If you need to define configuration specific to your project, spread the preset into a new array. Order
@@ -81,19 +81,27 @@ matters; configuration for files that you want to have globally ignored should p
 configuration while custom overrides should occur last.
 
 ```ts
-import { ts } from '@darkobits/eslint-plugin';
+import { ts } from '@darkobits/eslint-plugin'
 
 export default [
-  {
-    ignores: ['unicorns/**']
-  },
+  { ignores: ['unicorns/**'] },
   ...ts,
-  {
-    rules: {
-      'max-len': 'off'
-    }
-  }
-];
+  { rules: { 'max-len': 'off' } }
+]
+```
+
+### TypeScript
+
+For added type safety, use the `defineFlatConfig` helper:
+
+```ts
+import { defineFlatConfig, ts } from '@darkobits/eslint-plugin'
+
+export default defineFlatConfig([
+  { ignores: ['unicorns/**'] },
+  ...ts,
+  { rules: { 'max-len': 'off' } }
+])
 ```
 
 ### IDE Integration
@@ -104,29 +112,8 @@ To use ESLint's new flat configuration format with VS Code, add the following to
 
 ```json
 {
-  "eslint.experimental.useFlatConfig": true,
-  "eslint.options.overrideConfigFile": "eslint.config.js"
+  "eslint.useFlatConfig": true
 }
-```
-
-## Legacy ESLint Configuration
-
-To extend a preset:
-
-> `.eslintrc.js`
-
-```js
-module.exports = {
-  extends: 'plugin:@darkobits/ts'
-};
-```
-
-or
-
-```js
-module.exports = {
-  extends: 'plugin:@darkobits/tsx'
-};
 ```
 
 <br />
