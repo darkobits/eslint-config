@@ -1,3 +1,9 @@
+## [2.1.4](https://github.com/darkobits/eslint-plugin/compare/v2.1.3...v2.1.4) (2024-08-14)
+
+### 🛠 Refactoring
+
+* **rules:** `no-unnecessary-type-arguments` issues a warning instead of an error. ([8bbb8b8](https://github.com/darkobits/eslint-plugin/commit/8bbb8b87c515f099163b49b49b6f9a01e12e4d4e))
+
 ## [2.1.3](https://github.com/darkobits/eslint-plugin/compare/v2.1.2...v2.1.3) (2024-08-13)
 
 ### 🏗 Chores
