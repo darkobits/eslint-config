@@ -1,3 +1,9 @@
+## [2.1.6](https://github.com/darkobits/eslint-plugin/compare/v2.1.5...v2.1.6) (2024-08-14)
+
+### 🛠 Refactoring
+
+* **rules:** Disable various unicorn rules. ([2b94fbf](https://github.com/darkobits/eslint-plugin/commit/2b94fbfba76ea78aad3536d3b40e981c3deb5b4a))
+
 ## [2.1.5](https://github.com/darkobits/eslint-plugin/compare/v2.1.4...v2.1.5) (2024-08-14)
 
 ### 🐞 Bug Fixes
