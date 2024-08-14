@@ -516,7 +516,7 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
   config.rules['@typescript-eslint/no-unnecessary-qualifier'] = 'error'
 
   // Prevent callees from providing the default value for a type parameter.
-  config.rules['@typescript-eslint/no-unnecessary-type-arguments'] = 'error'
+  config.rules['@typescript-eslint/no-unnecessary-type-arguments'] = 'warn'
 
   // Disallow type assertions that do not change the type of an expression.
   config.rules['@typescript-eslint/no-unnecessary-type-assertion'] = 'error'
