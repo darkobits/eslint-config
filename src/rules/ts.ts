@@ -938,6 +938,18 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
   // Allow negated conditions.
   config.rules['unicorn/no-negated-condition'] = 'off'
 
+  // Allow abbreviations.
+  config.rules['unicorn/prevent-abbreviations'] = 'off'
+
+  // Allow nested ternaries.
+  config.rules['unicorn/no-nested-ternary'] = 'off'
+
+  // Do not enforce import style.
+  config.rules['unicorn/import-style'] = 'off'
+
+  // Allow anonymous default exports.
+  config.rules['unicorn/no-anonymous-default-export'] = 'off'
+
   // ----- [Plugin] prefer-arrow -----------------------------------------------
 
   // Prefer the use of arrow functions in certain contexts.
