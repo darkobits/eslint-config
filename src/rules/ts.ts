@@ -696,39 +696,39 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
 
   // ----- [Plugin] import -----------------------------------------------------
 
-  config.rules['import/no-unresolved'] = ['error', {
-    // Resolve require() calls in addition to import statements.
-    commonjs: true,
-    // Check casing.
-    caseSensitive: true,
-    // Do not attempt to resolve imports of ESM URL schemes.
-    ignore: [
-      '^node:',
-      '^data:',
-      '^file:',
-      // Virtual modules.
-      '^virtual:',
-      // unplugin-icons
-      '^~icons'
-    ]
-  }]
+  // config.rules['import/no-unresolved'] = ['error', {
+  //   // Resolve require() calls in addition to import statements.
+  //   commonjs: true,
+  //   // Check casing.
+  //   caseSensitive: true,
+  //   // Do not attempt to resolve imports of ESM URL schemes.
+  //   ignore: [
+  //     '^node:',
+  //     '^data:',
+  //     '^file:',
+  //     // Virtual modules.
+  //     '^virtual:',
+  //     // unplugin-icons
+  //     '^~icons'
+  //   ]
+  // }]
 
   // If a default import is used, ensures the module being imported has a
   // default export.
-  config.rules['import/default'] = 'error'
+  // config.rules['import/default'] = 'error'
 
   // Allow dynamic require() calls. These should not be used often anyway.
-  config.rules['import/no-dynamic-require'] = 'off'
+  // config.rules['import/no-dynamic-require'] = 'off'
 
   // Disallow cyclic dependencies. While these work in CJS / Webpack, they can
   // cause subtle bugs in strict ES.
-  config.rules['import/no-cycle'] = 'error'
+  // config.rules['import/no-cycle'] = 'error'
 
   // Disallow useless path segments in import statements.
-  config.rules['import/no-useless-path-segments'] = 'error'
+  // config.rules['import/no-useless-path-segments'] = 'error'
 
   // Disallow invalid exports, i.e. re-export of the same name.
-  config.rules['import/export'] = 'error'
+  // config.rules['import/export'] = 'error'
 
   // Allows the following:
   //
@@ -742,19 +742,19 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
   //
   // Rationale: This lets consumers choose to use a single default import to
   // access all named exports without having to write 'import * as fooModule'.
-  config.rules['import/no-named-as-default-member'] = 'off'
-  config.rules['import/no-named-as-default'] = 'off'
+  // config.rules['import/no-named-as-default-member'] = 'off'
+  // config.rules['import/no-named-as-default'] = 'off'
 
   // Allow the import of external modules that are not declared in package.json.
   // This package and tsx make dependencies like React and Linaria available to
   // consumers via their peerDependencies so the consumer does not have to
   // manage their versions.
-  config.rules['import/no-extraneous-dependencies'] = 'off'
+  // config.rules['import/no-extraneous-dependencies'] = 'off'
 
   // Allow modules to have no exports (tests, CLI entry points) and allow
   // modules to export values that are not imported in the local project
   // (libraries).
-  config.rules['import/no-unused-modules'] = 'off'
+  // config.rules['import/no-unused-modules'] = 'off'
 
   // Warn if a module could be mistakenly parsed as a script by a consumer
   // leveraging Unambiguous JavaScript Grammar to determine correct parsing
@@ -765,96 +765,96 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
   // mixed module syntax and CJS syntax, especially for configuration files like
   // this one which configure tools such as ESLint, which as of yet have refused
   // to implement support for configuration files in ESM syntax.
-  config.rules['import/unambiguous'] = 'off'
+  // config.rules['import/unambiguous'] = 'off'
 
   // These rules are far too ambitious to exist right now.
-  config.rules['import/no-commonjs'] = 'off'
-  config.rules['import/no-amd'] = 'off'
-  config.rules['import/no-nodejs-modules'] = 'off'
-  config.rules['import/no-import-module-exports'] = 'off'
+  // config.rules['import/no-commonjs'] = 'off'
+  // config.rules['import/no-amd'] = 'off'
+  // config.rules['import/no-nodejs-modules'] = 'off'
+  // config.rules['import/no-import-module-exports'] = 'off'
 
   // Disable; conflicts with 'import/order' rule.
-  config.rules['import/first'] = 'off'
+  // config.rules['import/first'] = 'off'
 
   // This rule enforces that all exports are declared at the bottom of the file.
   // This rule will report any export declarations that comes before any
   // non-export statements.
-  config.rules['import/exports-last'] = 'off'
+  // config.rules['import/exports-last'] = 'off'
 
   // Report repeated import of the same module in multiple places.
-  config.rules['import/no-duplicates'] = 'error'
+  // config.rules['import/no-duplicates'] = 'error'
 
   // Allow namespace imports. This is the most convenient way to use packages
   // like Ramda without renaming named imports to avoid conflicts.
-  config.rules['import/no-namespace'] = 'off'
+  // config.rules['import/no-namespace'] = 'off'
 
   // Do not require the use of file extensions within the import path.
-  config.rules['import/extensions'] = 'off'
+  // config.rules['import/extensions'] = 'off'
 
   // Enforce a convention in the order of require() / import statements.
-  config.rules['import/order'] = ['error', {
-    groups: [
-      // Node built-in modules.
-      'builtin',
-      // External packages.
-      'external',
-      // Local files (absolute imports).
-      'internal',
-      [
-        // Relative files in a parent folder.
-        'parent',
-        // Relative files in a sibling folder.
-        'sibling',
-        // Index of the current directory (ie: '.').
-        'index'
-      ],
-      // Object imports. Only available in TypeScript.
-      'object',
-      // Type imports. Only available in TypeScript.
-      'type'
-    ],
-    // Require 1 empty line between import groups.
-    'newlines-between': 'always',
-    // Require imports within groups to be sorted alphabetically in ascending
-    // order by import path.
-    alphabetize: { order: 'asc' },
-    pathGroups: [{
-      pattern: '^node:',
-      group: 'builtin'
-    }, {
-      // Bump React and React DOM to the top of the 'builtin' list.
-      pattern: 'react',
-      group: 'builtin',
-      position: 'before'
-    }, {
-      pattern: 'react-dom',
-      group: 'builtin',
-      position: 'before'
-    }]
-  }]
+  // config.rules['import/order'] = ['error', {
+  //   groups: [
+  //     // Node built-in modules.
+  //     'builtin',
+  //     // External packages.
+  //     'external',
+  //     // Local files (absolute imports).
+  //     'internal',
+  //     [
+  //       // Relative files in a parent folder.
+  //       'parent',
+  //       // Relative files in a sibling folder.
+  //       'sibling',
+  //       // Index of the current directory (ie: '.').
+  //       'index'
+  //     ],
+  //     // Object imports. Only available in TypeScript.
+  //     'object',
+  //     // Type imports. Only available in TypeScript.
+  //     'type'
+  //   ],
+  //   // Require 1 empty line between import groups.
+  //   'newlines-between': 'always',
+  //   // Require imports within groups to be sorted alphabetically in ascending
+  //   // order by import path.
+  //   alphabetize: { order: 'asc' },
+  //   pathGroups: [{
+  //     pattern: '^node:',
+  //     group: 'builtin'
+  //   }, {
+  //     // Bump React and React DOM to the top of the 'builtin' list.
+  //     pattern: 'react',
+  //     group: 'builtin',
+  //     position: 'before'
+  //   }, {
+  //     pattern: 'react-dom',
+  //     group: 'builtin',
+  //     position: 'before'
+  //   }]
+  // }]
 
   // [Aug 2024] Temporarily disabled until ESLint v9 support is added.
   // Require 1 empty line after the last top-level import statement.
   // config.rules['import/newline-after-import'] = 'error'
 
   // Allow unassigned imports (ie: imports with side-effects).
-  config.rules['import/no-unassigned-import'] = 'off'
+  // config.rules['import/no-unassigned-import'] = 'off'
 
   // Allow named values to be the default export of a module. This can often
   // help improve the readability of stack traces for debugging.
-  config.rules['import/no-named-default'] = 'off'
+  // config.rules['import/no-named-default'] = 'off'
 
   // Allow default exports.
-  config.rules['import/no-default-export'] = 'off'
+  // config.rules['import/no-default-export'] = 'off'
 
   // Allow named exports.
-  config.rules['import/no-named-export'] = 'off'
+  // config.rules['import/no-named-export'] = 'off'
 
   // Allow anonymous default exports (again).
-  config.rules['import/no-anonymous-default-export'] = 'off'
+  // config.rules['import/no-anonymous-default-export'] = 'off'
 
   // Do not require exports to be grouped.
-  config.rules['import/group-exports'] = 'off'
+  // config.rules['import/group-exports'] = 'off'
 
   // ----- [Plugin] unicorn ----------------------------------------------------
 

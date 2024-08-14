@@ -1,13 +1,18 @@
+import stylisticPlugin from '@stylistic/eslint-plugin'
 import {
   defineFlatConfig,
   type FlatESLintConfig
 } from 'eslint-define-config'
+// import importPlugin from 'eslint-plugin-import'
 // @ts-expect-error - This package lacks type definitions.
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
+// @ts-expect-error - This package lacks type definitions.
+import preferArrowPlugin from 'eslint-plugin-prefer-arrow'
 // @ts-expect-error - This package lacks type definitions.
 import reactPlugin from 'eslint-plugin-react'
 // @ts-expect-error - This package lacks type definitions.
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
+import unicornPlugin from 'eslint-plugin-unicorn'
 import globals from 'globals'
 
 import { tsConfigSet } from 'config-sets/ts'
@@ -48,9 +53,13 @@ export const commonConfig: FlatESLintConfig = {
 }
 
 // Apply plugins and their configuration presets.
-applyPlugin(commonConfig, { namespace: 'react', plugin: reactPlugin, applyPreset: 'recommended' })
-applyPlugin(commonConfig, { namespace: 'react-hooks', plugin: reactHooksPlugin, applyPreset: 'recommended' })
-applyPlugin(commonConfig, { namespace: 'jsx-a11y', plugin: jsxA11yPlugin, applyPreset: 'recommended' })
+applyPlugin(commonConfig, { plugin: stylisticPlugin, namespace: '@stylistic' })
+applyPlugin(commonConfig, { plugin: preferArrowPlugin, namespace: 'prefer-arrow' })
+applyPlugin(commonConfig, { plugin: reactPlugin, namespace: 'react', applyPreset: 'recommended' })
+// applyPlugin(commonConfig, { plugin: importPlugin, namespace: 'import', applyPreset: 'recommended' })
+applyPlugin(commonConfig, { plugin: unicornPlugin, namespace: 'unicorn', applyPreset: 'recommended' })
+applyPlugin(commonConfig, { plugin: jsxA11yPlugin, namespace: 'jsx-a11y', applyPreset: 'recommended' })
+applyPlugin(commonConfig, { plugin: reactHooksPlugin, namespace: 'react-hooks', applyPreset: 'recommended' })
 
 // Apply our custom rule-set _after_ applying plugins' rule-sets.
 applyTSXRuleSet(commonConfig)
