@@ -1,3 +1,9 @@
+## [2.1.5](https://github.com/darkobits/eslint-plugin/compare/v2.1.4...v2.1.5) (2024-08-14)
+
+### 🐞 Bug Fixes
+
+* Disable `eslint-plugin-import` until it is updated to work with ESLint 9. ([18c5bbc](https://github.com/darkobits/eslint-plugin/commit/18c5bbc1dd2390f06f400a76d73462a69f57202f))
+
 ## [2.1.4](https://github.com/darkobits/eslint-plugin/compare/v2.1.3...v2.1.4) (2024-08-14)
 
 ### 🛠 Refactoring
