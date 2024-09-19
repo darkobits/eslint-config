@@ -1,3 +1,9 @@
+## [2.1.8](https://github.com/darkobits/eslint-plugin/compare/v2.1.7...v2.1.8) (2024-09-19)
+
+### 🐞 Bug Fixes
+
+* Do not double-add plugins. ([82ad498](https://github.com/darkobits/eslint-plugin/commit/82ad498685db7bd66d8dc2be76980959aa976bcf))
+
 ## [2.1.7](https://github.com/darkobits/eslint-plugin/compare/v2.1.6...v2.1.7) (2024-09-19)
 
 ### 🏗 Chores
