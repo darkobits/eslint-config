@@ -283,9 +283,3 @@ export function applyTSXRuleSet(config: FlatESLintConfig) {
   // Thus, until the issue is resolved upstream, this rule has been disabled.
   config.rules['unicorn/no-useless-undefined'] = 'off'
 }
-
-// export function generateJavaScriptRuleSet(
-//  config: FlatESLintConfig
-// ): RuleSet {}
-
-// export function generateTestRuleSet(): RuleSet {}
