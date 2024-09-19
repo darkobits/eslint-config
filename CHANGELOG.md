@@ -1,3 +1,9 @@
+## [2.1.7](https://github.com/darkobits/eslint-plugin/compare/v2.1.6...v2.1.7) (2024-09-19)
+
+### 🏗 Chores
+
+* **deps:** Update dependencies. ([c6d6d76](https://github.com/darkobits/eslint-plugin/commit/c6d6d7615e0f468d4662707daae9b556cd7c2b6f))
+
 ## [2.1.6](https://github.com/darkobits/eslint-plugin/compare/v2.1.5...v2.1.6) (2024-08-14)
 
 ### 🛠 Refactoring
