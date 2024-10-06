@@ -1,3 +1,9 @@
+## [2.1.10](https://github.com/darkobits/eslint-plugin/compare/v2.1.9...v2.1.10) (2024-10-06)
+
+### 🏗 Chores
+
+* **deps:** Update `eslint-plugin-react-hooks`. ([dcd2bae](https://github.com/darkobits/eslint-plugin/commit/dcd2baed495bc78bd9bea48243e85da5b7db5833))
+
 ## [2.1.9](https://github.com/darkobits/eslint-plugin/compare/v2.1.8...v2.1.9) (2024-10-06)
 
 ### 🏗 Chores
