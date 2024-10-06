@@ -1,4 +1,3 @@
-// @ts-expect-error - This package lacks type definitions.
 import jsEslintPlugin from '@eslint/js'
 import stylisticPlugin from '@stylistic/eslint-plugin'
 import tsEslintPlugin from '@typescript-eslint/eslint-plugin'
