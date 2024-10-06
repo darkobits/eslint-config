@@ -2,10 +2,10 @@ import {
   defineFlatConfig,
   type FlatESLintConfig
 } from 'eslint-define-config'
-// import importPlugin from 'eslint-plugin-import'
+// @ts-expect-error - This package lacks type definitions.
+import importPlugin from 'eslint-plugin-import'
 // @ts-expect-error - This package lacks type definitions.
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
-// @ts-expect-error - This package lacks type definitions.
 import reactPlugin from 'eslint-plugin-react'
 // @ts-expect-error - This package lacks type definitions.
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
@@ -49,8 +49,9 @@ export const commonConfig: FlatESLintConfig = {
 }
 
 // Apply plugins and their configuration presets.
+// @ts-expect-error Type mismatch.
 applyPlugin(commonConfig, { plugin: reactPlugin, namespace: 'react', applyPreset: 'recommended' })
-// applyPlugin(commonConfig, { plugin: importPlugin, namespace: 'import', applyPreset: 'recommended' })
+applyPlugin(commonConfig, { plugin: importPlugin, namespace: 'import', applyPreset: 'recommended' })
 applyPlugin(commonConfig, { plugin: jsxA11yPlugin, namespace: 'jsx-a11y', applyPreset: 'recommended' })
 applyPlugin(commonConfig, { plugin: reactHooksPlugin, namespace: 'react-hooks', applyPreset: 'recommended' })
 

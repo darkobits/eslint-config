@@ -4,7 +4,8 @@ import stylisticPlugin from '@stylistic/eslint-plugin'
 import tsEslintPlugin from '@typescript-eslint/eslint-plugin'
 import typeScriptParser from '@typescript-eslint/parser'
 import { defineFlatConfig, type FlatESLintConfig } from 'eslint-define-config'
-// import importPlugin from 'eslint-plugin-import'
+// @ts-expect-error - This package lacks type definitions.
+import importPlugin from 'eslint-plugin-import'
 // @ts-expect-error - This package lacks type definitions.
 import preferArrowPlugin from 'eslint-plugin-prefer-arrow'
 import unicornPlugin from 'eslint-plugin-unicorn'
@@ -69,17 +70,17 @@ export const commonConfig: FlatESLintConfig = {
     reportUnusedDisableDirectives: true
   },
   settings: {
-    // 'import/parsers': {
-    //   '@typescript-eslint/parser': TS_EXTS.split(',').map(ext => `.${ext}`)
-    // },
-    // 'import/resolver': {
-    //   'eslint-import-resolver-typescript': {
-    //     project: tsConfig.tsConfigPath
-    //   }
-    // },
-    // 'import/ignore': [
-    //   'node_modules'
-    // ]
+    'import/parsers': {
+      '@typescript-eslint/parser': TS_EXTS.split(',').map(ext => `.${ext}`)
+    },
+    'import/resolver': {
+      'eslint-import-resolver-typescript': {
+        project: tsConfig.tsConfigPath
+      }
+    },
+    'import/ignore': [
+      'node_modules'
+    ]
   },
   rules: {
     // This is the preferred way to "extend" "eslint:recommended", which is now
@@ -88,7 +89,7 @@ export const commonConfig: FlatESLintConfig = {
   }
 }
 
-// applyPlugin(commonConfig, { plugin: importPlugin, namespace: 'import', applyPreset: 'recommended' })
+applyPlugin(commonConfig, { plugin: importPlugin, namespace: 'import', applyPreset: 'recommended' })
 applyPlugin(commonConfig, { plugin: unicornPlugin, namespace: 'unicorn', applyPreset: 'recommended' })
 applyPlugin(commonConfig, { plugin: stylisticPlugin, namespace: '@stylistic' })
 applyPlugin(commonConfig, { plugin: preferArrowPlugin, namespace: 'prefer-arrow' })
