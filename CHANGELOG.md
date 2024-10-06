@@ -1,3 +1,9 @@
+## [2.1.9](https://github.com/darkobits/eslint-plugin/compare/v2.1.8...v2.1.9) (2024-10-06)
+
+### 🏗 Chores
+
+* Re-enable `eslint-plugin-import`. ([de97c89](https://github.com/darkobits/eslint-plugin/commit/de97c892eff8da5e95f010fddf9a2e5d4efa88a9))
+
 ## [2.1.8](https://github.com/darkobits/eslint-plugin/compare/v2.1.7...v2.1.8) (2024-09-19)
 
 ### 🐞 Bug Fixes
