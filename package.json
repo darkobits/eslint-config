@@ -1,6 +1,6 @@
 {
   "name": "@darkobits/eslint-plugin",
-  "version": "2.1.10",
+  "version": "2.1.11",
   "description": "An ESLint plugin for TypeScript projects.",
   "author": "darkobits",
   "license": "Hippocratic",
