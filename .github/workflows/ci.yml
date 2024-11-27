@@ -36,7 +36,6 @@ jobs:
 
       - name: Capture Environment Variables
         run: |
-          echo "GIT_VERSION=$(git describe --tags --always)" >> $GITHUB_ENV
           echo "GIT_REPO=${{ github.repository }}" >> $GITHUB_ENV
           echo "GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
           echo "RUN_URL=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_ENV
@@ -57,13 +56,19 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx nr release
 
+      - name: Post Release / Capture New Version
+        if: ${{ success() }}
+        run: |
+          echo "GIT_VERSION=$(git describe --tags --always)" >> $GITHUB_ENV
+
       - name: Post-Release / Send Success Notification
         if: ${{ success() }}
         run: |
           curl --silent \
           --data-urlencode "user=${{ secrets.PUSHOVER_USER }}" \
           --data-urlencode "token=${{ secrets.PUSHOVER_TOKEN }}" \
-          --data-urlencode "message=🚀 Successfully released $GIT_VERSION of $GIT_REPO from branch $GIT_BRANCH." \
+          --data-urlencode "html=1" \
+          --data-urlencode "message=🚀 Successfully released <b>$GIT_VERSION</b> of <b>$GIT_REPO</b> from branch <b>$GIT_BRANCH</>.\n\n<a href=\"https://google.com\">Google</a>" \
           --data-urlencode "url=$RUN_URL" \
           --data-urlencode "url_title=View Workflow Run" \
           https://api.pushover.net/1/messages.json
@@ -74,7 +79,8 @@ jobs:
           curl --silent \
           --data-urlencode "user=${{ secrets.PUSHOVER_USER }}" \
           --data-urlencode "token=${{ secrets.PUSHOVER_TOKEN }}" \
-          --data-urlencode "message=❗️ Failed to release $GIT_REPO on branch $GIT_BRANCH." \
+          --data-urlencode "html=1" \
+          --data-urlencode "message=❗️ Failed to release <b>$GIT_REPO</b> on branch <b>$GIT_BRANCH</b>." \
           --data-urlencode "url=$RUN_URL" \
           --data-urlencode "url_title=View Workflow Run" \
           https://api.pushover.net/1/messages.json
