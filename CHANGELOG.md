@@ -1,3 +1,9 @@
+## [2.1.14](https://github.com/darkobits/eslint-plugin/compare/v2.1.13...v2.1.14) (2024-11-27)
+
+### 🏗 Chores
+
+* Test CI workflow. ([dccb9e2](https://github.com/darkobits/eslint-plugin/commit/dccb9e282a6fa3a1419fe0bdd9e4a53acbff7866))
+
 ## [2.1.13](https://github.com/darkobits/eslint-plugin/compare/v2.1.12...v2.1.13) (2024-11-27)
 
 ### 🏗 Chores
