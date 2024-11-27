@@ -67,10 +67,12 @@ jobs:
           curl --silent \
           --data-urlencode "user=${{ secrets.PUSHOVER_USER }}" \
           --data-urlencode "token=${{ secrets.PUSHOVER_TOKEN }}" \
+          --data-urlencode "Workflow Run Succeeded" \
           --data-urlencode "html=1" \
-          --data-urlencode "message=🚀 Successfully released <b>$GIT_VERSION</b> of <b>$GIT_REPO</b> from branch <b>$GIT_BRANCH</>.\n\n<a href=\"https://google.com\">Google 2</a>" \
-          --data-urlencode "url=$RUN_URL" \
+          --data-urlencode "message=🚀 Successfully released <b>$GIT_REPO@$GIT_VERSION</b>." \
           --data-urlencode "url_title=View Workflow Run" \
+          --data-urlencode "url=$RUN_URL" \
+          --data-urlencode "sound=confirmation" \
           https://api.pushover.net/1/messages.json
 
       - name: Post-Release / Send Error Notification
@@ -79,8 +81,10 @@ jobs:
           curl --silent \
           --data-urlencode "user=${{ secrets.PUSHOVER_USER }}" \
           --data-urlencode "token=${{ secrets.PUSHOVER_TOKEN }}" \
+          --data-urlencode "Workflow Run Failed" \
           --data-urlencode "html=1" \
-          --data-urlencode "message=❗️ Failed to release <b>$GIT_REPO</b> on branch <b>$GIT_BRANCH</b>." \
-          --data-urlencode "url=$RUN_URL" \
+          --data-urlencode "message=❗️ Failed to release <b>$GIT_REPO</b>." \
           --data-urlencode "url_title=View Workflow Run" \
+          --data-urlencode "url=$RUN_URL" \
+          --data-urlencode "sound=alert" \
           https://api.pushover.net/1/messages.json
