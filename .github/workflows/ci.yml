@@ -22,19 +22,31 @@ jobs:
     if: github.ref_type != 'tag'
     runs-on: ubuntu-latest
     steps:
+
       - name: Clone Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
           cache: npm
+
+      - name: Capture Environment Variables
+        run: |
+          echo "GIT_VERSION=$(git describe --tags --always)" >> $GITHUB_ENV
+          echo "GIT_REPO=${{ github.repository }}" >> $GITHUB_ENV
+          echo "GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
+          echo "RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
       - name: Install Dependencies
         run: npm clean-install
+
       - name: Build Project
         run: npx nr build
+
       - name: Smoke Tests
         run: npx nr test.smoke.all
 
@@ -44,13 +56,24 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx nr release
 
-      - name: 'Post-Release: Set Environment Variables'
-        id: set_env
+      - name: Post-Release / Send Success Notification
+        if: ${{ success() }}
         run: |
-          echo "GIT_VERSION=$(git describe --tags --always)" >> $GITHUB_ENV
-          echo "CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
+          curl -s \
+          --form-string "user=${{ secrets.PUSHOVER_USER }}" \
+          --form-string "token=${{ secrets.PUSHOVER_TOKEN }}" \
+          --form-string "message=🚀 Successfully released $GIT_VERSION of $GIT_REPO from branch $GIT_BRANCH." \
+          --from-string "url=$RUN_URL" \
+          --from-string "url_title=View Workflow Run" \
+          https://api.pushover.net/1/messages.json
 
-      - name: 'Post-Release: Confirm Environment Variables'
+      - name: Post-Release / Send Error Notification
+        if: ${{ failure() }}
         run: |
-          echo "Git Version: $GIT_VERSION"
-          echo "Current Branch: $CURRENT_BRANCH"
+          curl -s \
+          --form-string "user=${{ secrets.PUSHOVER_USER }}" \
+          --form-string "token=${{ secrets.PUSHOVER_TOKEN }}" \
+          --form-string "message=❗️ CI failed for $GIT_REPO/$GIT_BRANCH on commit $${{ github.sha }}." \
+          --from-string "url=$RUN_URL" \
+          --from-string "url_title=View Workflow Run" \
+          https://api.pushover.net/1/messages.json
