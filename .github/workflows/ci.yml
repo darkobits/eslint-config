@@ -37,8 +37,20 @@ jobs:
         run: npx nr build
       - name: Smoke Tests
         run: npx nr test.smoke.all
+
       - name: Release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx nr release
+
+      - name: 'Post-Release: Set Environment Variables'
+        id: set_env
+        run: |
+          echo "GIT_VERSION=$(git describe --tags --always)" >> $GITHUB_ENV
+          echo "CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
+
+      - name: 'Post-Release: Confirm Environment Variables'
+        run: |
+          echo "Git Version: $GIT_VERSION"
+          echo "Current Branch: $CURRENT_BRANCH"
