@@ -62,9 +62,9 @@ jobs:
           curl --silent \
           --data-urlencode "user=${{ secrets.PUSHOVER_USER }}" \
           --data-urlencode "token=${{ secrets.PUSHOVER_TOKEN }}" \
-          --data-urlencode "title=Workflow Run Succeeded" \
+          --data-urlencode "title=🚀 Workflow Run Succeeded" \
           --data-urlencode "html=1" \
-          --data-urlencode "message=🚀 Successfully released <b>$REPO@$VERSION</b>." \
+          --data-urlencode "message=$REPO $VERSION" \
           --data-urlencode "url_title=View Workflow Run" \
           --data-urlencode "url=$RUN_URL" \
           --data-urlencode "sound=confirmation" \
@@ -76,9 +76,9 @@ jobs:
           curl --silent \
           --data-urlencode "user=${{ secrets.PUSHOVER_USER }}" \
           --data-urlencode "token=${{ secrets.PUSHOVER_TOKEN }}" \
-          --data-urlencode "title=Workflow Run Failed" \
+          --data-urlencode "title=❗️ Workflow Run Failed" \
           --data-urlencode "html=1" \
-          --data-urlencode "message=❗️ Failed to release <b>$REPO</b>." \
+          --data-urlencode "message=$REPO" \
           --data-urlencode "url_title=View Workflow Run" \
           --data-urlencode "url=$RUN_URL" \
           --data-urlencode "sound=kill-bill-siren" \
