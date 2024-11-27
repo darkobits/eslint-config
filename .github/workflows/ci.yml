@@ -68,7 +68,7 @@ jobs:
           --data-urlencode "user=${{ secrets.PUSHOVER_USER }}" \
           --data-urlencode "token=${{ secrets.PUSHOVER_TOKEN }}" \
           --data-urlencode "html=1" \
-          --data-urlencode "message=🚀 Successfully released <b>$GIT_VERSION</b> of <b>$GIT_REPO</b> from branch <b>$GIT_BRANCH</>.\n\n<a href=\"https://google.com\">Google</a>" \
+          --data-urlencode "message=🚀 Successfully released <b>$GIT_VERSION</b> of <b>$GIT_REPO</b> from branch <b>$GIT_BRANCH</>.\n\n<a href=\"https://google.com\">Google 2</a>" \
           --data-urlencode "url=$RUN_URL" \
           --data-urlencode "url_title=View Workflow Run" \
           https://api.pushover.net/1/messages.json
