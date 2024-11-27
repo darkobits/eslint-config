@@ -1,3 +1,10 @@
+## [2.1.13](https://github.com/darkobits/eslint-plugin/compare/v2.1.12...v2.1.13) (2024-11-27)
+
+### 🏗 Chores
+
+* Fix CI workflow. ([845819c](https://github.com/darkobits/eslint-plugin/commit/845819ccd0c3f7dce5c16eb15bb5b27672006733))
+* Update CI workflow. ([c695eb0](https://github.com/darkobits/eslint-plugin/commit/c695eb0ac8687b439cdb1c283815f2e763c1a5f2))
+
 ## [2.1.12](https://github.com/darkobits/eslint-plugin/compare/v2.1.11...v2.1.12) (2024-11-27)
 
 ### 🏗 Chores
