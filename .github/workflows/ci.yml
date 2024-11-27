@@ -81,5 +81,5 @@ jobs:
           --data-urlencode "message=❗️ Failed to release <b>$REPO</b>." \
           --data-urlencode "url_title=View Workflow Run" \
           --data-urlencode "url=$RUN_URL" \
-          --data-urlencode "sound=alert" \
+          --data-urlencode "sound=kill-bill-siren" \
           https://api.pushover.net/1/messages.json
