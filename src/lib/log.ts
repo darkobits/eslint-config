@@ -1,3 +1,3 @@
-import LogFactory from '@darkobits/log'
+import { createLogger } from '@darkobits/log'
 
-export default LogFactory({ heading: '@darkobits/eslint-plugin' })
+export default createLogger({ heading: '@darkobits/eslint-plugin' })

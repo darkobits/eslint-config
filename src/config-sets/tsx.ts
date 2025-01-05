@@ -49,7 +49,6 @@ export const commonConfig: FlatESLintConfig = {
 }
 
 // Apply plugins and their configuration presets.
-// @ts-expect-error Type mismatch.
 applyPlugin(commonConfig, { plugin: reactPlugin, namespace: 'react', applyPreset: 'recommended' })
 applyPlugin(commonConfig, { plugin: importPlugin, namespace: 'import', applyPreset: 'recommended' })
 applyPlugin(commonConfig, { plugin: jsxA11yPlugin, namespace: 'jsx-a11y', applyPreset: 'recommended' })
