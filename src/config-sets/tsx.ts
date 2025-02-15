@@ -7,7 +7,6 @@ import importPlugin from 'eslint-plugin-import'
 // @ts-expect-error - This package lacks type definitions.
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
 import reactPlugin from 'eslint-plugin-react'
-// @ts-expect-error - This package lacks type definitions.
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import globals from 'globals'
 
