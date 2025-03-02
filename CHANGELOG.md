@@ -1,3 +1,9 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [2.2.0](https://github.com/darkobits/eslint-plugin/compare/v2.1.20...v2.2.0) (2025-03-02)
+
 ## [2.1.20](https://github.com/darkobits/eslint-plugin/compare/v2.1.19...v2.1.20) (2025-01-05)
 
 ### 🏗 Chores
