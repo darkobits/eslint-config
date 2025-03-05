@@ -97,6 +97,7 @@ applyPlugin(commonConfig, { plugin: stylisticPlugin, namespace: '@stylistic', ap
 
 export const tsFileConfig: FlatESLintConfig = {
   files: [`**/*.{${TS_EXTS}}`],
+  ignores: commonConfig.ignores,
   plugins: { ...commonConfig.plugins },
   languageOptions: {
     globals: {
@@ -121,6 +122,7 @@ applyTSRuleSet(tsFileConfig)
 
 export const jsFileConfig: FlatESLintConfig = {
   files: [`**/*.{${JS_EXTS}}`],
+  ignores: commonConfig.ignores,
   plugins: { ...commonConfig.plugins },
   rules: convertTypeScriptRulesToJavaScriptRules(tsFileConfig.rules)
 }
@@ -129,11 +131,13 @@ export const jsFileConfig: FlatESLintConfig = {
 
 export const tsTestFileConfig: FlatESLintConfig = {
   files: [`**/*.{spec,test}.{${TS_EXTS}}`],
+  ignores: commonConfig.ignores,
   rules: generateTypeScriptTestFileRules()
 }
 
 export const jsTestFileConfig: FlatESLintConfig = {
   files: [`**/*.{spec,test}.{${JS_EXTS}}`],
+  ignores: commonConfig.ignores,
   rules: convertTypeScriptRulesToJavaScriptRules(tsTestFileConfig.rules)
 }
 
