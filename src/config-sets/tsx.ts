@@ -1,27 +1,21 @@
-import {
-  defineFlatConfig,
-  type FlatESLintConfig
-} from 'eslint-define-config'
-// @ts-expect-error - This package lacks type definitions.
-import importPlugin from 'eslint-plugin-import'
-// @ts-expect-error - This package lacks type definitions.
-import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
-import reactPlugin from 'eslint-plugin-react'
-import reactHooksPlugin from 'eslint-plugin-react-hooks'
+import { defineFlatConfig } from 'eslint-define-config'
 import globals from 'globals'
 
 import { tsConfigSet } from 'config-sets/ts'
 import { ALL_EXTS } from 'etc/constants'
 import {
-  applyPlugin,
   convertTypeScriptRulesToJavaScriptRules,
   disableGlobals
 } from 'lib/utils'
 import { applyTSXRuleSet } from 'rules/tsx'
 
+import type { NamedFlatEslintConfig } from 'types'
+
 // ----- [tsx] Common Configuration --------------------------------------------
 
-export const commonConfig: FlatESLintConfig = {
+// Apply our custom rule-set _after_ applying plugins' rule-sets.
+const commonConfig = applyTSXRuleSet({
+  name: 'darkobits/tsx/common',
   files: [`**/*.{${ALL_EXTS}}`],
   languageOptions: {
     // This should be set upstream by the 'ts' config set.
@@ -45,20 +39,12 @@ export const commonConfig: FlatESLintConfig = {
       version: 'detect'
     }
   }
-}
-
-// Apply plugins and their configuration presets.
-applyPlugin(commonConfig, { plugin: reactPlugin, namespace: 'react', applyPreset: 'recommended' })
-applyPlugin(commonConfig, { plugin: importPlugin, namespace: 'import', applyPreset: 'recommended' })
-applyPlugin(commonConfig, { plugin: jsxA11yPlugin, namespace: 'jsx-a11y', applyPreset: 'recommended' })
-applyPlugin(commonConfig, { plugin: reactHooksPlugin, namespace: 'react-hooks', applyPreset: 'recommended' })
-
-// Apply our custom rule-set _after_ applying plugins' rule-sets.
-applyTSXRuleSet(commonConfig)
+})
 
 // ----- [tsx] JavaScript JSX Files --------------------------------------------
 
-export const jsxFileConfig: FlatESLintConfig = {
+export const jsxFileConfig: NamedFlatEslintConfig = {
+  name: 'darkobits/tsx/files-jsx',
   files: ['**/*.{js,jsx}'],
   rules: convertTypeScriptRulesToJavaScriptRules(commonConfig.rules)
 }

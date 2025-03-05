@@ -1,39 +1,27 @@
-import type { FlatESLintConfig } from 'eslint-define-config'
+// @ts-expect-error - This package lacks type definitions.
+import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
+import reactPlugin from 'eslint-plugin-react'
+import reactHooksPlugin from 'eslint-plugin-react-hooks'
+
+import type { NamedFlatEslintConfig } from 'types'
 
 /**
- * Provided an ESLint configuration object, adds rule settings for the 'ts'
- * preset.
+ * Provided an ESLint configuration object, adds presets and rules for
+ * TypeScript JSX files.
  */
-export function applyTSXRuleSet(config: FlatESLintConfig) {
+export function applyTSXRuleSet(config: NamedFlatEslintConfig) {
+  config.plugins = config.plugins ?? {}
   config.rules = config.rules ?? {}
 
-  /**
-   * List of Node globals that are not available in the browser, and are not
-   * polyfilled by Vite.
-   *
-   * Note: These should still be available in files outside of the source root;
-   * ESLint does not lint those files because they are not included in the
-   * TypeScript program.
-   */
-  // const DISALLOWED_NODE_GLOBALS = [
-  //   '__dirname',
-  //   '__filename',
-  //   'Buffer',
-  //   'exports',
-  //   'global',
-  //   'module',
-  //   'process',
-  //   'require'
-  // ]
+  // ----- Plugin: React -------------------------------------------------------
 
-  // ----- Core ----------------------------------------------------------------
+  config.plugins['react'] = reactPlugin
 
-  // config.rules['no-restricted-globals'] = [
-  //   'error',
-  //   ...DISALLOWED_NODE_GLOBALS
-  // ]
-
-  // ----- [Plugin] react ------------------------------------------------------
+  config.rules = {
+    ...config.rules,
+    ...reactPlugin.configs['recommended'].rules,
+    ...reactPlugin.configs['jsx-runtime'].rules
+  }
 
   // Require button elements to have an explicit "type" attribute.
   config.rules['react/button-has-type'] = ['error']
@@ -232,7 +220,14 @@ export function applyTSXRuleSet(config: FlatESLintConfig) {
     prop: 'ignore'
   }]
 
-  // ----- [Plugin] react-hooks ------------------------------------------------
+  // ----- Plugin: React Hooks -------------------------------------------------
+
+  config.plugins['react-hooks'] = reactHooksPlugin
+
+  config.rules = {
+    ...config.rules,
+    ...reactHooksPlugin.configs['recommended'].rules
+  }
 
   // Warn when hooks do not declare dependencies they use.
   //
@@ -282,4 +277,15 @@ export function applyTSXRuleSet(config: FlatESLintConfig) {
   //
   // Thus, until the issue is resolved upstream, this rule has been disabled.
   config.rules['unicorn/no-useless-undefined'] = 'off'
+
+  // ----- Plugin: JSX A11Y ----------------------------------------------------
+
+  config.plugins['jsx-a11y'] = jsxA11yPlugin
+
+  config.rules = {
+    ...config.rules,
+    ...jsxA11yPlugin.configs['recommended'].rules
+  }
+
+  return config
 }

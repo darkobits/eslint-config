@@ -1,8 +1,8 @@
 import { getTsconfig } from 'get-tsconfig'
 import * as R from 'ramda'
 
-import type { ESLint, Linter } from 'eslint'
-import type { FlatESLintConfig } from 'eslint-define-config'
+import type { Linter } from 'eslint'
+import type { NamedFlatEslintConfig } from 'types'
 
 export interface TsConfigResult {
   tsConfigPath: string
@@ -27,93 +27,6 @@ export function parseTsConfig(): TsConfigResult {
   }
 }
 
-export interface ApplyPluginOptions {
-  namespace: string
-  plugin: ESLint.Plugin
-  applyPreset?: string | Array<string>
-}
-
-/**
- * In order for configuration in the 'rules' key to look-up rules from plug-ins
- * correctly, the key used in 'plugins' _must_ match the namespace portion of
- * the rule when referenced in 'rules'. For example:
- *
- * Let's assume that:
- * - A package named "eslint-plugin-do-something" is an ESLint plugin that
- *   defines two custom rules: "foo-rule" and "bar-rule".
- * - The plugin also exports a configuration preset named "recommended" that
- *   enables "foo-rule". "bar-rule" can be enabled by the user if they so
- *   desire.
- * - We want to add this plugin to our flat config AND use the plugin's
- *   "recommended" preset.
- *
- * In order for that to work, we have to be _extremely_ careful about what key
- * we use in 'plugins' when adding the plugin:
- *
- * ```ts
- * import foo from 'eslint-plugin-do-something'
- *
- * const config = {
- *   plugins: {
- *     // With flat config, the name of the package from which the plugin
- *     // originated is irrelevant. Instead, the key that we make up here is
- *     // what ESLint will use when resolving rules from this plugin.
- *     'baz': foo
- *   },
- *   rules: {
- *     // Example of using a built-in ESLint rule.
- *     'no-undef': 'error',
- *     // Manually configure a custom rule using the custom 'baz' namespace we
- *     // used in 'plugins' above.
- *     'baz/foo-rule': 'warn'
- *   }
- * }
- * ```
- *
- * However, all plugins written prior to the advent of "flat config" that both
- * (1) provide custom rules and (2) provide configuration presets that
- * incorporate those custom rules will (3) define said configuration presets
- * with a specific namespace, and if that namespace is not used in the 'plugins'
- * key, any 'rules' that are added to the configuration from that plugin will
- * fail to resolve the rule's implementation and throw an error.
- */
-export function applyPlugin(config: FlatESLintConfig, options: ApplyPluginOptions) {
-  const { namespace, plugin, applyPreset } = options
-
-  config.plugins = config.plugins ?? {}
-  config.rules = config.rules ?? {}
-
-  if (!plugin) throw new Error('No plugin provided.')
-  // TODO: Can we derive any info by introspecting the plugin value here? Maybe
-  // resolve the package it came from?
-  if (!namespace) throw new Error('No namespace provided.')
-
-  // Apply plugin.
-  config.plugins[namespace] = plugin
-
-  if (applyPreset) {
-    if (!plugin.configs) throw new Error(`Plugin "${namespace}" does not provide any presets.`)
-
-    const presetsToApply = Array.isArray(applyPreset)
-      ? applyPreset
-      : [applyPreset]
-
-    for (const preset of presetsToApply) {
-      if (!plugin.configs[preset]) throw new Error(`Plugin "${namespace}" has no preset "${preset}".`)
-      // @ts-expect-error - Types broke on @types/eslint 8.40.1 -> 8.40.2
-      const { rules } = plugin.configs[preset]
-      if (!rules) throw new Error(`Preset ${namespace}/${preset} has no rule configurations.`)
-
-      Object.entries(rules).forEach(([ruleName, ruleConfig]) => {
-        config.rules = config.rules ?? {}
-        if (!ruleConfig) return
-        // @ts-expect-error - Types broke on @types/eslint 8.40.1 -> 8.40.2
-        config.rules[ruleName] = ruleConfig
-      })
-    }
-  }
-}
-
 /**
  * Provided either a configuration object with a `rules` property, reduces those
  * rules into a new rules object by omitting any @typescript-eslint rules and
@@ -129,7 +42,7 @@ export function applyPlugin(config: FlatESLintConfig, options: ApplyPluginOption
  * 'no-undef': 'error'
  *
  */
-export function convertTypeScriptRulesToJavaScriptRules(typeScriptRules: FlatESLintConfig['rules'] = {}) {
+export function convertTypeScriptRulesToJavaScriptRules(typeScriptRules: NamedFlatEslintConfig['rules'] = {}) {
   return R.reduce((javaScriptRules, [ruleName, ruleConfig]) => {
     // Not likely to happen at runtime, but narrows ruleConfig to non-nullable.
     if (!ruleConfig) return javaScriptRules
