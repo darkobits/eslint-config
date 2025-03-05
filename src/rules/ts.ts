@@ -99,42 +99,103 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
 
   // Require line breaks after opening and before closing array brackets if
   // there are line breaks inside elements or between elements.
+  config.rules['array-bracket-newline'] = 'off'
   config.rules['@stylistic/array-bracket-newline'] = ['error', 'consistent']
 
   // Disallow spaces inside array brackets.
+  config.rules['array-bracket-spacing'] = 'off'
   config.rules['@stylistic/array-bracket-spacing'] = ['error', 'never']
+
+  // Require parens around arrow function arguments only when required.
+  config.rules['arrow-parens'] = 'off'
+  config.rules['@stylistic/arrow-parens'] = ['error', 'as-needed', {
+    // Require parens if the function body is surrounded by braces.
+    // requireForBlockBody: true
+  }]
+
+  // Require a space before and after an arrow function's arrow.
+  config.rules['arrow-spacing'] = 'off'
+  config.rules['@stylistic/arrow-spacing'] = ['error', {
+    before: true,
+    after: true
+  }]
 
   // Disallows spaces inside an open block token and the next token on the
   // same line.
+  config.rules['block-spacing'] = 'off'
   config.rules['@stylistic/block-spacing'] = ['error', 'never']
+
+  // Enforce the usage of 'one-true-brace-style' for braces.
+  config.rules['brace-style'] = 'off'
+  config.rules['@stylistic/brace-style'] = ['error', '1tbs']
 
   // Require that comments begin with a capitalized letter. This rule always
   // ignores words like 'eslint' used in override directives.
   //
   // Note: This rule is off because it creates noise when code blocks are
   // commented-out.
+  config.rules['capitalized-comments'] = 'off'
   config.rules['@stylistic/capitalized-comments'] = 'off'
 
   // Disallow trailing commas in object and array literals.
+  config.rules['comma-dangle'] = 'off'
   config.rules['@stylistic/comma-dangle'] = ['error', 'never']
+
+  // Disallow spaces before commas, require spaces after commas.
+  config.rules['comma-spacing'] = 'off'
+  config.rules['@stylistic/comma-spacing'] = ['error', {
+    before: false,
+    after: true
+  }]
 
   // Enforce standard comma style, in which commas are placed at the end of
   // the current line, in array literals, object literals, and variable
   // declarations.
+  config.rules['comma-style'] = 'off'
   config.rules['@stylistic/comma-style'] = ['error', 'last']
 
   // Disallow spaces inside of computed properties in object literals.
+  config.rules['computed-property-spacing'] = 'off'
   config.rules['@stylistic/computed-property-spacing'] = ['error', 'never', {
     enforceForClassMembers: true
   }]
 
   // Require a newline at the end of files.
+  config.rules['eol-last'] = 'off'
   config.rules['@stylistic/eol-last'] = ['error', 'never']
 
+  // Disallow spaces between the function name and the opening parenthesis that
+  // calls it.
+  config.rules['func-call-spacing'] = 'off'
+  config.rules['@stylistic/func-call-spacing'] = ['error', 'never']
+
+  // Require 2-space indentation.
+  config.rules['indent'] = 'off'
+  config.rules['@stylistic/indent'] = ['error', 2, {
+    // Require an extra 2 spaces of indentation between switch statements and
+    // case statements.
+    SwitchCase: 1,
+    flatTernaryExpressions: true,
+    ignoredNodes: [
+      'ConditionalExpression',
+      // See: https://github.com/typescript-eslint/typescript-eslint/issues/455
+      'TSTypeParameterInstantiation'
+    ]
+  }]
+
   // Require double quotes in JSX.
+  config.rules['jsx-quotes'] = 'off'
   config.rules['@stylistic/jsx-quotes'] = ['error', 'prefer-double']
 
+  // Require a space before and after keywords like `for`, `if`, etc.
+  config.rules['keyword-spacing'] = 'off'
+  config.rules['@stylistic/keyword-spacing'] = ['error', {
+    before: true,
+    after: true
+  }]
+
   // Warn about long lines.
+  config.rules['max-len'] = 'off'
   config.rules['@stylistic/max-len'] = ['warn', {
     tabWidth: 2,
     // Prefer lines of code remain under 192 characters.
@@ -149,51 +210,106 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
     ignoreStrings: true
   }]
 
+  // Require no semi-colons after members in interface declarations.
+  config.rules['member-delimiter-style'] = 'off'
+  config.rules['@stylistic/member-delimiter-style'] = ['error', {
+    multiline: {
+      delimiter: 'none',
+      requireLast: false
+    },
+    singleline: {
+      delimiter: 'semi',
+      requireLast: false
+    }
+  }]
+
+  // Disallow arrow functions where they could be confused with comparisons.
+  config.rules['no-confusing-arrow'] = 'off'
+  config.rules['@stylistic/no-confusing-arrow'] = ['error', {
+  // Relaxes the rule and allows parens as a valid confusion-preventing
+  // syntax.
+    allowParens: true
+  }]
+
+  // Disallow unnecessary parentheses, except around JSX expressions.
+  config.rules['no-extra-parens'] = 'off'
+  config.rules['@stylistic/no-extra-parens'] = ['error', 'all', {
+    ignoreJSX: 'all',
+    enforceForArrowConditionals: false
+  }]
+
+  // Disallow unnecessary semicolons.
+  config.rules['no-extra-semi'] = 'off'
+  config.rules['@stylistic/no-extra-semi'] = 'error'
+
   // Allow up to 2 empty lines.
+  config.rules['no-multiple-empty-lines'] = 'off'
   config.rules['@stylistic/no-multiple-empty-lines'] = ['error', {
     max: 1
   }]
 
   // Require quotes around all object literal property names if any name
   // strictly requires quotes, otherwise disallow quotes around property names.
+  config.rules['quote-props'] = 'off'
   config.rules['@stylistic/quote-props'] = ['error', 'consistent-as-needed']
 
+  // Enforce the consistent use of either backticks, double, or single quotes.
+  config.rules['quotes'] = 'off'
+  config.rules['@stylistic/quotes'] = ['error', 'single']
+
+  // Disallow spaces between rest/spread operators and their expressions.
+  config.rules['rest-spread-spacing'] = 'off'
+  config.rules['@stylistic/rest-spread-spacing'] = 'error'
+
+  // Do not use semi-colons.
+  config.rules['semi'] = 'off'
+  config.rules['@stylistic/semi'] = ['error', 'never']
+
+  // Enforce consistent spacing before function parenthesis.
+  config.rules['space-before-function-paren'] = 'off'
+  config.rules['@stylistic/space-before-function-paren'] = ['error', {
+    named: 'never',
+    anonymous: 'never',
+    asyncArrow: 'always'
+  }]
+
   // Require a space after '//' in comments.
+  config.rules['spaced-comment'] = 'off'
   config.rules['@stylistic/spaced-comment'] = ['error', 'always']
 
   // Enforce consistent spacing around around colons in `case` and `default`
   // clauses in `switch` statements.
+  config.rules['switch-colon-spacing'] = 'off'
   config.rules['@stylistic/switch-colon-spacing'] = ['error', {
     after: true,
     before: false
   }]
 
+  // Disallow extraneous spaces inside of template string curly brace pairs.
+  config.rules['template-curly-spacing'] = 'off'
+  config.rules['@stylistic/template-curly-spacing'] = ['error', 'never']
+
   // Disallow spaces between a tag function and its template literal.
+  config.rules['template-tag-spacing'] = 'off'
   config.rules['@stylistic/template-tag-spacing'] = ['error', 'never']
+
+  // Enforce consistent spacing around type annotations.
+  config.rules['type-annotation-spacing'] = 'off'
+  config.rules['@stylistic/type-annotation-spacing'] = ['error', {
+    before: false,
+    after: true,
+    overrides: {
+      arrow: {
+        before: true,
+        after: true
+      }
+    }
+  }]
 
   // ----- [Base] ECMAScript 6 -------------------------------------------------
 
   // Do not enforce a particular arrow body style.
   config.rules['arrow-body-style'] = 'off'
-
-  // Require parens around arrow function arguments only when required.
-  config.rules['arrow-parens'] = ['error', 'as-needed', {
-  // Require parens if the function body is surrounded by braces.
-  // requireForBlockBody: true
-  }]
-
-  // Require a space before and after an arrow function's arrow.
-  config.rules['arrow-spacing'] = ['error', {
-    before: true,
-    after: true
-  }]
-
-  // Disallow arrow functions where they could be confused with comparisons.
-  config.rules['no-confusing-arrow'] = ['error', {
-  // Relaxes the rule and allows parens as a valid confusion-preventing
-  // syntax.
-    allowParens: true
-  }]
 
   // Disallow duplicate imports.
   config.rules['no-duplicate-imports'] = 'error'
@@ -215,12 +331,6 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
 
   // Require using template literals instead of string concatenation.
   config.rules['prefer-template'] = 'error'
-
-  // Disallow spaces between rest/spread operators and their expressions.
-  config.rules['rest-spread-spacing'] = 'error'
-
-  // Disallow extraneous spaces inside of template string curly brace pairs.
-  config.rules['template-curly-spacing'] = ['error', 'never']
 
   // Require using arrow functions for callbacks.
   // For more rules related to arrow functions, see:
@@ -263,10 +373,6 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
     }
   }]
 
-  // Enforce the usage of 'one-true-brace-style' for braces.
-  config.rules['brace-style'] = 'off'
-  config.rules['@/brace-style'] = ['error', '1tbs']
-
   // Naming conventions are enforced using the naming-convention rule (see
   // below).
   config.rules['camelcase'] = 'off'
@@ -274,13 +380,6 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
 
   // No strong preference on this rule.
   config.rules['@typescript-eslint/class-literal-property-style'] = 'off'
-
-  // Disallow spaces before commas, require spaces after commas.
-  config.rules['comma-spacing'] = 'off'
-  config.rules['@/comma-spacing'] = ['error', {
-    before: false,
-    after: true
-  }]
 
   // Require the 'as' syntax for type assertions and allow casting object
   // literals using this syntax.
@@ -309,46 +408,8 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
   // necessary.
   config.rules['@typescript-eslint/explicit-module-boundary-types'] = 'off'
 
-  // Disallow spaces between the function name and the opening parenthesis that
-  // calls it.
-  config.rules['func-call-spacing'] = 'off'
-  config.rules['@/func-call-spacing'] = ['error', 'never']
-
-  // Require 2-space indentation.
-  config.rules['indent'] = 'off'
-  config.rules['@/indent'] = ['error', 2, {
-    // Require an extra 2 spaces of indentation between switch statements and
-    // case statements.
-    SwitchCase: 1,
-    flatTernaryExpressions: true,
-    ignoredNodes: [
-      'ConditionalExpression',
-      // See: https://github.com/typescript-eslint/typescript-eslint/issues/455
-      'TSTypeParameterInstantiation'
-    ]
-  }]
-
   // No strong preference on this rule.
   config.rules['@typescript-eslint/init-declarations'] = 'off'
-
-  // Require a space before and after keywords like `for`, `if`, etc.
-  config.rules['keyword-spacing'] = 'off'
-  config.rules['@/keyword-spacing'] = ['error', {
-    before: true,
-    after: true
-  }]
-
-  // Require no semi-colons after members in interface declarations.
-  config.rules['@stylistic/member-delimiter-style'] = ['error', {
-    multiline: {
-      delimiter: 'none',
-      requireLast: false
-    },
-    singleline: {
-      delimiter: 'semi',
-      requireLast: false
-    }
-  }]
 
   // Enforce member ordering on interfaces and classes.
   config.rules['@typescript-eslint/member-ordering'] = ['error', {
@@ -438,17 +499,6 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
 
   // Disallow extra non-null assertions.
   config.rules['@typescript-eslint/no-extra-non-null-assertion'] = 'error'
-
-  // Disallow unnecessary parentheses, except around JSX expressions.
-  config.rules['no-extra-parens'] = 'off'
-  config.rules['@/no-extra-parens'] = ['error', 'all', {
-    ignoreJSX: 'all',
-    enforceForArrowConditionals: false
-  }]
-
-  // Disallow unnecessary semicolons.
-  config.rules['no-extra-semi'] = 'off'
-  config.rules['@/no-extra-semi'] = 'error'
 
   // Disallow the use of classes as namespaces.
   config.rules['@typescript-eslint/no-extraneous-class'] = 'error'
@@ -625,10 +675,6 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
     checkArrowFunctions: false
   }]
 
-  // Enforce the consistent use of either backticks, double, or single quotes.
-  config.rules['quotes'] = 'off'
-  config.rules['@/quotes'] = ['error', 'single']
-
   // Require Array#sort calls to always provide a comparator function.
   config.rules['@typescript-eslint/require-array-sort-compare'] = 'error'
 
@@ -649,18 +695,6 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
   // allows for better stack traces if the promise rejects.
   config.rules['@typescript-eslint/return-await'] = 'error'
 
-  // Require ni semi-colons.
-  config.rules['semi'] = 'off'
-  config.rules['@/semi'] = ['error', 'never']
-
-  // Enforce consistent spacing before function parenthesis.
-  config.rules['space-before-function-paren'] = 'off'
-  config.rules['@/space-before-function-paren'] = ['error', {
-    named: 'never',
-    anonymous: 'never',
-    asyncArrow: 'always'
-  }]
-
   // Allow type coercion in boolean expressions.
   config.rules['@typescript-eslint/strict-boolean-expressions'] = 'off'
 
@@ -672,18 +706,6 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
     path: 'never',
     types: 'never',
     lib: 'never'
-  }]
-
-  // Enforce consistent spacing around type annotations.
-  config.rules['@stylistic/type-annotation-spacing'] = ['error', {
-    before: false,
-    after: true,
-    overrides: {
-      arrow: {
-        before: true,
-        after: true
-      }
-    }
   }]
 
   // Do not require explicit type definitions. Prefer using TypeScript in strict
