@@ -123,7 +123,7 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
   // Disallows spaces inside an open block token and the next token on the
   // same line.
   config.rules['block-spacing'] = 'off'
-  config.rules['@stylistic/block-spacing'] = ['error', 'never']
+  config.rules['@stylistic/block-spacing'] = ['error', 'always']
 
   // Enforce the usage of 'one-true-brace-style' for braces.
   config.rules['brace-style'] = 'off'
