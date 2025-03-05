@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.1](https://github.com/darkobits/eslint-plugin/compare/v2.2.0...v2.2.1) (2025-03-05)
+
+
+### Bug Fixes
+
+* Apply stylistic plugin to TS file config object. ([363432c](https://github.com/darkobits/eslint-plugin/commit/363432c22834304a3f1bad18a38c67f8b598118a))
+
 ## [2.2.0](https://github.com/darkobits/eslint-plugin/compare/v2.1.20...v2.2.0) (2025-03-02)
 
 ## [2.1.20](https://github.com/darkobits/eslint-plugin/compare/v2.1.19...v2.1.20) (2025-01-05)
