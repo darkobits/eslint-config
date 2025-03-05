@@ -90,7 +90,6 @@ export const commonConfig: FlatESLintConfig = {
 
 applyPlugin(commonConfig, { plugin: importPlugin, namespace: 'import', applyPreset: 'recommended' })
 applyPlugin(commonConfig, { plugin: unicornPlugin, namespace: 'unicorn', applyPreset: 'recommended' })
-applyPlugin(commonConfig, { plugin: stylisticPlugin, namespace: '@stylistic' })
 applyPlugin(commonConfig, { plugin: preferArrowPlugin, namespace: 'prefer-arrow' })
 
 // ----- [ts] TypeScript Files -------------------------------------------------
@@ -104,6 +103,11 @@ export const tsFileConfig: FlatESLintConfig = {
     }
   }
 }
+
+applyPlugin(tsFileConfig, {
+  plugin: stylisticPlugin,
+  namespace: '@stylistic'
+})
 
 applyPlugin(tsFileConfig, {
   // TODO: See if this typing issue is resolved in a future release.

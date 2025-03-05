@@ -51,7 +51,7 @@ export interface ApplyPluginOptions {
  * we use in 'plugins' when adding the plugin:
  *
  * ```ts
- * import foo from 'eslint-plugin-do-something';
+ * import foo from 'eslint-plugin-do-something'
  *
  * const config = {
  *   plugins: {
@@ -67,7 +67,7 @@ export interface ApplyPluginOptions {
  *     // used in 'plugins' above.
  *     'baz/foo-rule': 'warn'
  *   }
- * };
+ * }
  * ```
  *
  * However, all plugins written prior to the advent of "flat config" that both
