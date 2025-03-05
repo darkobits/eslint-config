@@ -35,7 +35,7 @@ export const commonConfig: FlatESLintConfig = {
       ...disableGlobals(globals.node),
       ...globals.browser,
       // See: https://github.com/Chatie/eslint-config/issues/45
-      'JSX': 'readonly'
+      JSX: 'readonly'
     }
   },
   settings: {

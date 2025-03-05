@@ -91,23 +91,20 @@ export const commonConfig: FlatESLintConfig = {
 applyPlugin(commonConfig, { plugin: importPlugin, namespace: 'import', applyPreset: 'recommended' })
 applyPlugin(commonConfig, { plugin: unicornPlugin, namespace: 'unicorn', applyPreset: 'recommended' })
 applyPlugin(commonConfig, { plugin: preferArrowPlugin, namespace: 'prefer-arrow' })
+applyPlugin(commonConfig, { plugin: stylisticPlugin, namespace: '@stylistic', applyPreset: 'recommended' })
 
 // ----- [ts] TypeScript Files -------------------------------------------------
 
 export const tsFileConfig: FlatESLintConfig = {
   files: [`**/*.{${TS_EXTS}}`],
+  plugins: { ...commonConfig.plugins },
   languageOptions: {
     globals: {
       // See: https://github.com/Chatie/eslint-config/issues/45
-      'NodeJS': 'readonly'
+      NodeJS: 'readonly'
     }
   }
 }
-
-applyPlugin(tsFileConfig, {
-  plugin: stylisticPlugin,
-  namespace: '@stylistic'
-})
 
 applyPlugin(tsFileConfig, {
   // TODO: See if this typing issue is resolved in a future release.
@@ -124,6 +121,7 @@ applyTSRuleSet(tsFileConfig)
 
 export const jsFileConfig: FlatESLintConfig = {
   files: [`**/*.{${JS_EXTS}}`],
+  plugins: { ...commonConfig.plugins },
   rules: convertTypeScriptRulesToJavaScriptRules(tsFileConfig.rules)
 }
 

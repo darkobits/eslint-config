@@ -154,6 +154,10 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
     max: 1
   }]
 
+  // Require quotes around all object literal property names if any name
+  // strictly requires quotes, otherwise disallow quotes around property names.
+  config.rules['@stylistic/quote-props'] = ['error', 'consistent-as-needed']
+
   // Require a space after '//' in comments.
   config.rules['@stylistic/spaced-comment'] = ['error', 'always']
 
@@ -793,7 +797,7 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
 
   // Enforce a convention in the order of require() / import statements.
   config.rules['import/order'] = ['error', {
-    groups: [
+    'groups': [
       // Node built-in modules.
       'builtin',
       // External packages.
@@ -817,8 +821,8 @@ export function applyTSRuleSet(config: FlatESLintConfig): void {
     'newlines-between': 'always',
     // Require imports within groups to be sorted alphabetically in ascending
     // order by import path.
-    alphabetize: { order: 'asc' },
-    pathGroups: [{
+    'alphabetize': { order: 'asc' },
+    'pathGroups': [{
       pattern: '^node:',
       group: 'builtin'
     }, {

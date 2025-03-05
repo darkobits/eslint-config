@@ -131,7 +131,6 @@ export function applyPlugin(config: FlatESLintConfig, options: ApplyPluginOption
  */
 export function convertTypeScriptRulesToJavaScriptRules(typeScriptRules: FlatESLintConfig['rules'] = {}) {
   return R.reduce((javaScriptRules, [ruleName, ruleConfig]) => {
-
     // Not likely to happen at runtime, but narrows ruleConfig to non-nullable.
     if (!ruleConfig) return javaScriptRules
 
