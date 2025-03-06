@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/darkobits/eslint-plugin/compare/v2.2.3...v3.0.0) (2025-03-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* This package's name has changed to `@darkobits/eslint-config`.
+* This package's named exports have changed. To upgrade to this version, you will need to update your ESLint configuration file.
+
+### Bug Fixes
+
+* Apply common ignores to all config objects. ([623c748](https://github.com/darkobits/eslint-plugin/commit/623c748fd6722d2f3d1534486ec195de83bc5720))
+* Use correct setting for `block-spacing` rule. ([8e19978](https://github.com/darkobits/eslint-plugin/commit/8e199782a2519603f4c7921bb5ee3a6578c4c3fd))
+
+
+* Rename exports to `presetTs` and `presetTsx` for clarity. ([ad97e8f](https://github.com/darkobits/eslint-plugin/commit/ad97e8f73fb25e37c7f97e79defe13ce8b0a6246))
+* Rename package. ([cff27af](https://github.com/darkobits/eslint-plugin/commit/cff27af76d7dc4174cb734f23077ff00367ecb80))
+
 ### [2.2.3](https://github.com/darkobits/eslint-plugin/compare/v2.2.2...v2.2.3) (2025-03-05)
 
 ### [2.2.2](https://github.com/darkobits/eslint-plugin/compare/v2.2.1...v2.2.2) (2025-03-05)
