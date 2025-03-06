@@ -1,11 +1,11 @@
 <picture>
 	<source
     media="(prefers-color-scheme: dark)"
-    srcset="https://github.com/darkobits/eslint-config/assets/441546/4cf5ec59-b2c0-4f27-aedf-fd162f4e2778"
+    srcset="https://github.com/user-attachments/assets/bb885092-d9f2-4cf7-a58d-ba4b3426e05f"
     width="100%"
   >
 	<img
-    src="https://github.com/darkobits/eslint-config/assets/441546/fd1bf053-4b3a-4789-a891-876695793e2a"
+    src="https://github.com/user-attachments/assets/65940eda-121f-43cb-af21-2693fd90397d"
     width="100%"
   >
 </picture>
@@ -39,20 +39,20 @@
 
 ESLint configuration presets for TypeScript and TypeScript + React projects.
 
-# Requirements
+## Requirements
 
+* ESLint `>=9.0.0`.
 * Your project must be using ESLint's new [flat configuration format](https://eslint.org/blog/2022/08/new-config-system-part-1/).
 
-
-# Install
+## Install
 
 ```
 npm install --save-dev @darkobits/eslint-config
 ```
 
-# Use
+## Use
 
-This plugin provides two presets: [`presetTs`](./src/configuration-presets/preset-ts.ts) for TypeScript
+This package provides two presets: [`presetTs`](./src/configuration-presets/preset-ts.ts) for TypeScript
 projects and [`presetTsx`](./src/configuration-presets/preset-tsx.ts) for TypeScript projects that use
 JSX and React.
 

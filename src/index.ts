@@ -1,6 +1,6 @@
 /**
  * Configuration presets (re: arrays of configuration objects) exported by this
- * plugin.
+ * package.
  *
  * See:
  * - https://eslint.org/docs/latest/use/configure/configuration-files-new
