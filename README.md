@@ -1,29 +1,29 @@
 <picture>
 	<source
     media="(prefers-color-scheme: dark)"
-    srcset="https://github.com/darkobits/eslint-plugin/assets/441546/4cf5ec59-b2c0-4f27-aedf-fd162f4e2778"
+    srcset="https://github.com/darkobits/eslint-config/assets/441546/4cf5ec59-b2c0-4f27-aedf-fd162f4e2778"
     width="100%"
   >
 	<img
-    src="https://github.com/darkobits/eslint-plugin/assets/441546/fd1bf053-4b3a-4789-a891-876695793e2a"
+    src="https://github.com/darkobits/eslint-config/assets/441546/fd1bf053-4b3a-4789-a891-876695793e2a"
     width="100%"
   >
 </picture>
 <p align="center">
   <a
-    href="https://www.npmjs.com/package/@darkobits/eslint-plugin"
+    href="https://www.npmjs.com/package/@darkobits/eslint-config"
   ><img
-    src="https://img.shields.io/npm/v/@darkobits/eslint-plugin.svg?style=flat-square"
+    src="https://img.shields.io/npm/v/@darkobits/eslint-config.svg?style=flat-square"
   ></a>
   <a
-    href="https://github.com/darkobits/eslint-plugin/actions?query=workflow%3Aci"
+    href="https://github.com/darkobits/eslint-config/actions?query=workflow%3Aci"
   ><img
-    src="https://img.shields.io/github/actions/workflow/status/darkobits/eslint-plugin/ci.yml?style=flat-square"
+    src="https://img.shields.io/github/actions/workflow/status/darkobits/eslint-config/ci.yml?style=flat-square"
   ></a>
   <a
-    href="https://depfu.com/repos/github/darkobits/eslint-plugin"
+    href="https://depfu.com/repos/github/darkobits/eslint-config"
   ><img
-    src="https://img.shields.io/depfu/darkobits/eslint-plugin?style=flat-square"
+    src="https://img.shields.io/depfu/darkobits/eslint-config?style=flat-square"
   ></a>
   <a
     href="https://conventionalcommits.org"
@@ -47,7 +47,7 @@ ESLint configuration presets for TypeScript and TypeScript + React projects.
 # Install
 
 ```
-npm install --save-dev @darkobits/eslint-plugin
+npm install --save-dev @darkobits/eslint-config
 ```
 
 # Use
@@ -60,13 +60,13 @@ In your project's `eslint.config.js` file, import the desired preset and re-expo
 export:
 
 ```ts
-export { presetTs as default } from '@darkobits/eslint-plugin'
+export { presetTs as default } from '@darkobits/eslint-config'
 ```
 
 or
 
 ```ts
-export { presetTsx as default } from '@darkobits/eslint-plugin'
+export { presetTsx as default } from '@darkobits/eslint-config'
 ```
 
 If you need to define any additional configuration specific to your project, use the spread operator to
@@ -74,7 +74,7 @@ add the preset to a new array:
 
 ```ts
 import { airBnb } from '@airbnb/eslint-config-airbnb-is-still-a-thing-right'
-import { presetTs } from '@darkobits/eslint-plugin'
+import { presetTs } from '@darkobits/eslint-config'
 
 export default [
   // Exempt this directory from linting. Do this early to prevent ESLint from
@@ -99,7 +99,7 @@ For more on this topic, refer to the ESLint [documentation](https://eslint.org/d
 For added type safety, use the `defineFlatConfig` helper:
 
 ```ts
-import { defineFlatConfig, presetTs } from '@darkobits/eslint-plugin'
+import { defineFlatConfig, presetTs } from '@darkobits/eslint-config'
 
 export default defineFlatConfig([
   { ignores: ['unicorns/**'] },

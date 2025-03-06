@@ -17,8 +17,9 @@ export interface TsConfigResult {
 export function parseTsConfig(): TsConfigResult {
   const result = getTsconfig()
 
-  if (!result)
-    throw new Error('[@darkobits/eslint-plugin] Unable to locate a tsconfig.json file.')
+  if (!result) throw new Error(
+    '[@darkobits/eslint-config] Unable to locate a tsconfig.json file.'
+  )
 
   return {
     tsConfigPath: result.path,

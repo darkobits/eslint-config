@@ -1,5 +1,5 @@
 {
-  "name": "@darkobits/eslint-plugin",
+  "name": "@darkobits/eslint-config",
   "version": "2.2.3",
   "description": "ESLint configuration presets for TypeScript projects.",
   "author": "darkobits",
