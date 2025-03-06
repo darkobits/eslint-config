@@ -83,5 +83,7 @@ export default defineConfig([
       group: 'Test',
       description: 'When changes are detected in the output directory, run smoke tests.'
     })
+
+    script('preBump', 'script:test.smoke.all')
   }
 ])
