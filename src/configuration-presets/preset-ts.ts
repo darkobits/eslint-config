@@ -92,7 +92,6 @@ const tsFileConfig = applyTSRuleSet({
   name: 'darkobits/ts/files-ts',
   files: [`**/*.{${TS_EXTS}}`],
   ignores: commonConfig.ignores,
-  // plugins: { ...commonConfig.plugins },
   languageOptions: {
     globals: {
       // See: https://github.com/Chatie/eslint-config/issues/45
@@ -107,7 +106,6 @@ const jsFileConfig: NamedFlatEslintConfig = {
   name: 'darkobits/js/files-js',
   files: [`**/*.{${JS_EXTS}}`],
   ignores: commonConfig.ignores,
-  plugins: { ...commonConfig.plugins },
   rules: convertTypeScriptRulesToJavaScriptRules(tsFileConfig.rules)
 }
 
@@ -134,7 +132,7 @@ const jsTestFileConfig: NamedFlatEslintConfig = {
  * directly to ESLint or spread into a new array if additional configuration
  * objects need to be used.
  */
-export const tsConfigSet = defineFlatConfig([
+export const presetTs = defineFlatConfig([
   commonConfig,
   tsFileConfig,
   jsFileConfig,

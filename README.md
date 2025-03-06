@@ -37,7 +37,12 @@
   ></a>
 </p>
 
-ESLint plugin for TypeScript / TypeScript React projects.
+ESLint plugin for TypeScript and TypeScript + React projects.
+
+# Requirements
+
+* Your project must be using ESLint's new [flat configuration format](https://eslint.org/blog/2022/08/new-config-system-part-1/).
+
 
 # Install
 
@@ -45,76 +50,77 @@ ESLint plugin for TypeScript / TypeScript React projects.
 npm install --save-dev @darkobits/eslint-plugin
 ```
 
-> **⚠️ Note:** This package declares ESLint and the various plugins for which it sets rules as
-> **peer dependencies**. If you're using **NPM 7** or later, you don't need to do anything. If you're
-> using Yarn, PNPm, or an alternative package manager that doesn't automatically install peer
-> dependencies, you'll need to install this package's peer dependencies yourself.
-
 # Use
 
-This plugin contains two presets: [`ts`](./src/config-sets/ts.ts) for TypeScript projects and
-[`tsx`](./src/config-sets/tsx.ts) for TypeScript-based React projects.
+This plugin provides two presets: [`presetTs`](./src/configuration-presets/preset-ts.ts) for TypeScript
+projects and [`presetTsx`](./src/configuration-presets/preset-tsx.ts) for TypeScript projects that use
+JSX and React.
 
-## Configuration
-
-ESLint's new [flat configuration format](https://eslint.org/blog/2022/08/new-config-system-part-1/)
-consists of an array of configuration objects, and configuration presets are now arrays of one or more
-configuration objects that are merged by ESLint.
-
-If you do not need to define any custom rules, ignores, or overrides, you can export a configuration
-preset directly:
-
-> `eslint.config.js`
+In your project's `eslint.config.js` file, import the desired preset and re-export it as the default
+export:
 
 ```ts
-export { ts as default } from '@darkobits/eslint-plugin'
+export { presetTs as default } from '@darkobits/eslint-plugin'
 ```
 
 or
 
 ```ts
-export { tsx as default } from '@darkobits/eslint-plugin'
+export { presetTsx as default } from '@darkobits/eslint-plugin'
 ```
 
-If you need to define configuration specific to your project, spread the preset into a new array. Order
-matters; configuration for files that you want to have globally ignored should precede all other
-configuration while custom overrides should occur last.
+If you need to define any additional configuration specific to your project, use the spread operator to
+add the preset to a new array:
 
 ```ts
-import { ts } from '@darkobits/eslint-plugin'
+import { airBnb } from '@airbnb/eslint-config-airbnb-is-still-a-thing-right'
+import { presetTs } from '@darkobits/eslint-plugin'
 
 export default [
+  // Exempt this directory from linting. Do this early to prevent ESLint from
+  // processing these files any further.
   { ignores: ['unicorns/**'] },
-  ...ts,
-  { rules: { 'max-len': 'off' } }
+  // Then, apply one or more configuration presets.
+  ...airBnb,
+  ...presetTs,
+  // If we then wanted to disable a rule used by any of the above:
+  { rules: { 'unicorn/catch-error-name': 'off' } }
 ]
 ```
 
-### TypeScript
+> [!TIP]
+> Order matters here! Configuration for files that you want to have globally ignored occur first,
+> followed by one or more configuration presets, then overrides.
+
+For more on this topic, refer to the ESLint [documentation](https://eslint.org/docs/latest/extend/shareable-configs#overriding-settings-from-shareable-configs).
+
+### Type Safety
 
 For added type safety, use the `defineFlatConfig` helper:
 
 ```ts
-import { defineFlatConfig, ts } from '@darkobits/eslint-plugin'
+import { defineFlatConfig, presetTs } from '@darkobits/eslint-plugin'
 
 export default defineFlatConfig([
   { ignores: ['unicorns/**'] },
-  ...ts,
+  ...presetTs,
   { rules: { 'max-len': 'off' } }
 ])
 ```
 
-### IDE Integration
+### Configuration Inspector
 
-To use ESLint's new flat configuration format with VS Code, add the following to the project's settings:
+You can use ESLint's new [Configuration Inspector](https://github.com/eslint/config-inspector#readme) to
+see an exhaustive list of all rules (and their settings) applied in your project by running the
+following:
 
-> `.vscode/settings.json`
-
-```json
-{
-  "eslint.useFlatConfig": true
-}
+```sh
+npx eslint --inspect-config
 ```
+
+Example:
+
+![](https://private-user-images.githubusercontent.com/11247099/320013940-d74a057a-f674-4a8d-977f-d9b6a3cde949.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDEyNjAwMDYsIm5iZiI6MTc0MTI1OTcwNiwicGF0aCI6Ii8xMTI0NzA5OS8zMjAwMTM5NDAtZDc0YTA1N2EtZjY3NC00YThkLTk3N2YtZDliNmEzY2RlOTQ5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMDYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzA2VDExMTUwNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTAxZTc1YjY1ZjA5NDRhYTViMTY4MmQ5YmQxMzU4MWU4ODI0MDQyNzYyMGQ5MDEwMGU4YjA0ODFkZGM5ZjdkYTgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Cs6PUEqZPHKWV26iMlOgz3wrKS6937e6zOeEWHLALGU)
 
 <br />
 <a href="#top">

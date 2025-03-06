@@ -1,3 +1,3 @@
-import { tsx } from '../../dist/index.js'
+import { presetTsx } from '../../dist/index.js'
 
-export default [...tsx]
+export default [...presetTsx]

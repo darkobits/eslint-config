@@ -1,7 +1,7 @@
 import { defineFlatConfig } from 'eslint-define-config'
 import globals from 'globals'
 
-import { tsConfigSet } from 'config-sets/ts'
+import { presetTs } from 'configuration-presets/preset-ts'
 import { ALL_EXTS } from 'etc/constants'
 import {
   convertTypeScriptRulesToJavaScriptRules,
@@ -56,8 +56,8 @@ export const jsxFileConfig: NamedFlatEslintConfig = {
  * directly to ESLint or spread into a new array if additional configuration
  * objects need to be used.
  */
-export const tsxConfigSet = defineFlatConfig([
-  ...tsConfigSet,
+export const presetTsx = defineFlatConfig([
+  ...presetTs,
   commonConfig,
   jsxFileConfig
 ])

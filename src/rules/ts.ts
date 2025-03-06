@@ -48,8 +48,10 @@ export function applyTSRuleSet(config: NamedFlatEslintConfig) {
     'ts-expect-error': 'allow-with-description'
   }]
 
-  // Allow the use of the @ts-ignore directive.
-  config.rules['@typescript-eslint/ban-ts-ignore'] = 'off'
+  // Allow the use of the @ts-ignore directive. This rule may have been
+  // superseded by ts-comment.
+  // config.rules['@typescript-eslint/ban-ts-ignore'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/ban-ts-ignore')
 
   // Disallow typing values using their runtime constructors, and prefer their
   // primitive counterparts instead.
@@ -65,11 +67,14 @@ export function applyTSRuleSet(config: NamedFlatEslintConfig) {
 
   // Naming conventions are enforced using the naming-convention rule (see
   // below).
-  config.rules['camelcase'] = 'off'
-  config.rules['@typescript-eslint/camelcase'] = 'off'
+  // config.rules['camelcase'] = 'off'
+  // config.rules['@typescript-eslint/camelcase'] = 'off'
+  Reflect.deleteProperty(config.rules, 'camelcase')
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/camelcase')
 
   // No strong preference on this rule.
-  config.rules['@typescript-eslint/class-literal-property-style'] = 'off'
+  // config.rules['@typescript-eslint/class-literal-property-style'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/class-literal-property-style')
 
   // Require the 'as' syntax for type assertions and allow casting object
   // literals using this syntax.
@@ -80,26 +85,33 @@ export function applyTSRuleSet(config: NamedFlatEslintConfig) {
 
   // Require that optional parameters and parameters with default values are
   // last in a function signature.
-  config.rules['default-param-last'] = 'off'
-  config.rules['@typescript-eslint/default-param-last'] = 'error'
+  // config.rules['default-param-last'] = 'off'
+  // config.rules['@typescript-eslint/default-param-last'] = 'error'
+  Reflect.deleteProperty(config.rules, 'default-param-last')
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/default-param-last')
 
   // No strong preference on this rule.
-  config.rules['@typescript-eslint/dot-notation'] = 'off'
+  // config.rules['@typescript-eslint/dot-notation'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/dot-notation')
 
   // Do not require explicit function return types; TypeScript has excellent
   // type inference and this is often not needed.
-  config.rules['@typescript-eslint/explicit-function-return-type'] = 'off'
+  // config.rules['@typescript-eslint/explicit-function-return-type'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/explicit-function-return-type')
 
   // No strong preference on this rule.
-  config.rules['@typescript-eslint/explicit-member-accessibility'] = 'off'
+  // config.rules['@typescript-eslint/explicit-member-accessibility'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/explicit-member-accessibility')
 
   // This rule requires explicit typing of anything exported from an ES module.
   // TypeScript's type inference is good enough that this shouldn't be
   // necessary.
-  config.rules['@typescript-eslint/explicit-module-boundary-types'] = 'off'
+  // config.rules['@typescript-eslint/explicit-module-boundary-types'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/explicit-module-boundary-types')
 
   // No strong preference on this rule.
-  config.rules['@typescript-eslint/init-declarations'] = 'off'
+  // config.rules['@typescript-eslint/init-declarations'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/init-declarations')
 
   // Enforce member ordering on interfaces and classes.
   config.rules['@typescript-eslint/member-ordering'] = ['error', {
@@ -123,7 +135,8 @@ export function applyTSRuleSet(config: NamedFlatEslintConfig) {
   // stronger guarantees about correctness, "method" style is required to
   // express overloads in interfaces; "property" style here would result in a
   // duplicate key error.
-  config.rules['@typescript-eslint/method-signature-style'] = 'off'
+  // config.rules['@typescript-eslint/method-signature-style'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/method-signature-style')
 
   // Enforce naming conventions for various kinds of symbols.
   config.rules['@typescript-eslint/naming-convention'] = ['warn', {
@@ -174,7 +187,8 @@ export function applyTSRuleSet(config: NamedFlatEslintConfig) {
   config.rules['@typescript-eslint/no-dupe-class-members'] = 'error'
 
   // No strong preference on this rule.
-  config.rules['@typescript-eslint/no-dynamic-delete'] = 'off'
+  // config.rules['@typescript-eslint/no-dynamic-delete'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/no-dynamic-delete')
 
   // Disallow empty functions.
   config.rules['no-empty-function'] = 'off'
@@ -182,7 +196,8 @@ export function applyTSRuleSet(config: NamedFlatEslintConfig) {
 
   // Allow explicit `any` types. While not recommended, this is sometimes
   // necessary.
-  config.rules['@typescript-eslint/no-explicit-any'] = 'off'
+  // config.rules['@typescript-eslint/no-explicit-any'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/no-explicit-any')
 
   // Disallow extra non-null assertions.
   config.rules['@typescript-eslint/no-extra-non-null-assertion'] = 'error'
@@ -210,11 +225,14 @@ export function applyTSRuleSet(config: NamedFlatEslintConfig) {
   //
   // DISABLED: This rule is disabled because it incorrectly detects an error
   // when `void` is used in union return types (ex: Promise<void> | void).
-  config.rules['@typescript-eslint/no-invalid-void-type'] = 'off'
+  // config.rules['@typescript-eslint/no-invalid-void-type'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/no-invalid-void-type')
 
   // No strong preference on this rule.
-  config.rules['no-magic-numbers'] = 'off'
-  config.rules['@typescript-eslint/no-magic-numbers'] = 'off'
+  // config.rules['no-magic-numbers'] = 'off'
+  Reflect.deleteProperty(config.rules, 'no-magic-numbers')
+  // config.rules['@typescript-eslint/no-magic-numbers'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/no-magic-numbers')
 
   // Enforce valid definition of `new` and `constructor`.
   config.rules['@typescript-eslint/no-misused-new'] = 'error'
@@ -248,7 +266,8 @@ export function applyTSRuleSet(config: NamedFlatEslintConfig) {
   // Prevents conditionals where the type is always truthy or always falsy.
   //
   // DISABLED: This rule seems to prevent &&-gating.
-  config.rules['@typescript-eslint/no-unnecessary-condition'] = 'off'
+  // config.rules['@typescript-eslint/no-unnecessary-condition'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/no-unnecessary-condition')
 
   // Disallow unnecessary namespace qualifiers.
   config.rules['@typescript-eslint/no-unnecessary-qualifier'] = 'error'
@@ -263,22 +282,26 @@ export function applyTSRuleSet(config: NamedFlatEslintConfig) {
   //
   // TEMPORARILY DISABLED: Regrettably, there are too many un-typed modules/APIs
   // in the JavaScript ecosystem, and the need for `any` is still quite common.
-  config.rules['@typescript-eslint/no-unsafe-assignment'] = 'off'
+  // config.rules['@typescript-eslint/no-unsafe-assignment'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/no-unsafe-assignment')
 
   // Warn on member access of values that are of type `any`.
   //
   // TEMPORARILY DISABLED: Regrettably, there are too many un-typed modules/APIs
   // in the JavaScript ecosystem, and the need for `any` is still quite common.
-  config.rules['@typescript-eslint/no-unsafe-member-access'] = 'off'
+  // config.rules['@typescript-eslint/no-unsafe-member-access'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/no-unsafe-member-access')
 
   // Allow calling functions of type `any`. This is necessary for any packages
   // that do not have type definitions.
-  config.rules['@typescript-eslint/no-unsafe-call'] = 'off'
+  // config.rules['@typescript-eslint/no-unsafe-call'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/no-unsafe-call')
 
   // Allow returning a value of type `any` from a function. Most projects will
   // have the 'noImplicitAny' TypeScript option enabled and will therefore have
   // to explicitly declare the return type as `any`.
-  config.rules['@typescript-eslint/no-unsafe-return'] = 'off'
+  // config.rules['@typescript-eslint/no-unsafe-return'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/no-unsafe-return')
 
   // Disallow unused expressions.
   config.rules['no-unused-expressions'] = 'off'
@@ -311,7 +334,8 @@ export function applyTSRuleSet(config: NamedFlatEslintConfig) {
   config.rules['@typescript-eslint/prefer-includes'] = 'error'
 
   // No strong preference on this rule.
-  config.rules['@typescript-eslint/prefer-namespace-keyword'] = 'off'
+  // config.rules['@typescript-eslint/prefer-namespace-keyword'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/prefer-namespace-keyword')
 
   // Enforce the usage of the nullish coalescing operator instead of logical
   // chaining.
@@ -322,7 +346,8 @@ export function applyTSRuleSet(config: NamedFlatEslintConfig) {
   config.rules['@typescript-eslint/prefer-optional-chain'] = 'error'
 
   // Do not require marking function parameters as `readonly`.
-  config.rules['@typescript-eslint/prefer-readonly-parameter-types'] = 'off'
+  // config.rules['@typescript-eslint/prefer-readonly-parameter-types'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/prefer-readonly-parameter-types')
 
   // Require that private members are marked as readonly if they're never
   // modified outside of the constructor
@@ -364,17 +389,20 @@ export function applyTSRuleSet(config: NamedFlatEslintConfig) {
   // Allow non-string objects to be used in string interpolations. This may have
   // unintended results at times, but also allows developers to implement their
   // own toString methods on objects that will serialize them in a sane way.
-  config.rules['@typescript-eslint/restrict-template-expressions'] = 'off'
+  // config.rules['@typescript-eslint/restrict-template-expressions'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/restrict-template-literal-expressions')
 
   // Enforces await-ing of Promise-like values before returning them. This
   // allows for better stack traces if the promise rejects.
   config.rules['@typescript-eslint/return-await'] = 'error'
 
   // Allow type coercion in boolean expressions.
-  config.rules['@typescript-eslint/strict-boolean-expressions'] = 'off'
+  // config.rules['@typescript-eslint/strict-boolean-expressions'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/strict-boolean-expressions')
 
   // No strong preference on this rule.
-  config.rules['@typescript-eslint/switch-exhaustiveness-check'] = 'off'
+  // config.rules['@typescript-eslint/switch-exhaustiveness-check'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/switch-exhaustiveness-check')
 
   // Prefer ES6-style import declarations over triple-slash references.
   config.rules['@typescript-eslint/triple-slash-reference'] = ['error', {
@@ -385,7 +413,8 @@ export function applyTSRuleSet(config: NamedFlatEslintConfig) {
 
   // Do not require explicit type definitions. Prefer using TypeScript in strict
   // mode and leveraging type inference instead.
-  config.rules['@typescript-eslint/typedef'] = 'off'
+  // config.rules['@typescript-eslint/typedef'] = 'off'
+  Reflect.deleteProperty(config.rules, '@typescript-eslint/typedef')
 
   // Disallow unbound methods from being called outside of their intended `this`
   // context.

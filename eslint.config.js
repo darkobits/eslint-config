@@ -1,1 +1,1 @@
-export { ts as default } from './dist/index.js'
+export { presetTs as default } from './dist/index.js'

@@ -27,7 +27,8 @@ export function applyTSXRuleSet(config: NamedFlatEslintConfig) {
   config.rules['react/button-has-type'] = ['error']
 
   // Do not require components to set the `displayName` property.
-  config.rules['react/display-name'] = 'off'
+  // config.rules['react/display-name'] = 'off'
+  Reflect.deleteProperty(config.rules, 'react/display-name')
 
   // Require that named components be defined as arrow functions or function
   // declarations, and that unnamed components be defined as arrow functions.
@@ -50,7 +51,8 @@ export function applyTSXRuleSet(config: NamedFlatEslintConfig) {
   // DISABLED: While it may prevent certain mistakes, these can usually be
   // caught by proof-reading copy. Leaving this rule enabled makes drafting copy
   // in JSX unwieldy.
-  config.rules['react/no-unescaped-entities'] = 'off'
+  // config.rules['react/no-unescaped-entities'] = 'off'
+  Reflect.deleteProperty(config.rules, 'react/no-special-entities')
 
   // Prevent usage of unknown DOM properties.
   config.rules['react/no-unknown-property'] = ['error']
@@ -58,10 +60,12 @@ export function applyTSXRuleSet(config: NamedFlatEslintConfig) {
   // Prefer TypeScript for validating props. Use of PropTypes for runtime
   // validation is still optional.
   config.rules['react/prop-types'] = 'off'
+  Reflect.deleteProperty(config.rules, 'react/prop-types')
 
   // Do not require importing React when using JSX; newer JSX transformers
   // handle this for us.
-  config.rules['react/react-in-jsx-scope'] = 'off'
+  // config.rules['react/react-in-jsx-scope'] = 'off'
+  Reflect.deleteProperty(config.rules, 'react/react-in-jsx-scope')
 
   // Prevent extra closing tags for components without children.
   config.rules['react/self-closing-comp'] = ['error']
@@ -92,7 +96,8 @@ export function applyTSXRuleSet(config: NamedFlatEslintConfig) {
   //   ? <div>Value is true!</div>
   //   : <div>Value is false.</div>
   // }
-  config.rules['react/jsx-newline'] = 'off'
+  // config.rules['react/jsx-newline'] = 'off'
+  Reflect.deleteProperty(config.rules, 'react/jsx-newline')
 
   // Disallow spaces inside of curly braces in JSX attributes and expressions.
   config.rules['react/jsx-curly-spacing'] = ['error', {
@@ -241,22 +246,26 @@ export function applyTSXRuleSet(config: NamedFlatEslintConfig) {
   //   // Prevents false-positives when using `use-async-effect`.
   //   additionalHooks: 'useAsyncEffect'
   // }]
-  config.rules['react-hooks/exhaustive-deps'] = 'off'
+  // config.rules['react-hooks/exhaustive-deps'] = 'off'
+  Reflect.deleteProperty(config.rules, 'react-hooks/exhaustive-deps')
 
   // ----- [Plugin] jsx-a11y ---------------------------------------------------
 
   // This rule was deprecated in version 6.1.0, but still appears to be in the
   // plugin's 'recommended' rule set.
-  config.rules['jsx-a11y/label-has-for'] = 'off'
+  // config.rules['jsx-a11y/label-has-for'] = 'off'
+  Reflect.deleteProperty(config.rules, 'jsx-a11y/label-has-for')
 
   // Do not require media elements to have captions.
-  config.rules['jsx-a11y/media-has-caption'] = 'off'
+  // config.rules['jsx-a11y/media-has-caption'] = 'off'
+  Reflect.deleteProperty(config.rules, 'jsx-a11y/media-has-caption')
 
   // ----- [Plugin] unicorn ----------------------------------------------------
 
   // Disable this rule in React projects because React makes heavy use of the
   // `null` value.
-  config.rules['unicorn/no-null'] = 'off'
+  // config.rules['unicorn/no-null'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/no-null')
 
   // [Dec 2021]
   //
@@ -276,7 +285,8 @@ export function applyTSXRuleSet(config: NamedFlatEslintConfig) {
   //   must now discriminate between 2 bottom values.
   //
   // Thus, until the issue is resolved upstream, this rule has been disabled.
-  config.rules['unicorn/no-useless-undefined'] = 'off'
+  // config.rules['unicorn/no-useless-undefined'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/no-useless-undefined')
 
   // ----- Plugin: JSX A11Y ----------------------------------------------------
 

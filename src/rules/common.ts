@@ -33,7 +33,8 @@ export function applyCommonRuleSet(config: NamedFlatEslintConfig) {
   config.rules['no-alert'] = 'error'
 
   // This rule is superseded by @typescript-eslint/no-misused-promises.
-  config.rules['no-async-promise-executor'] = 'off'
+  // config.rules['no-async-promise-executor'] = 'off'
+  Reflect.deleteProperty(config.rules, 'no-async-promise-executor')
 
   // Disallow the use of `arguments.caller` and `arguments.callee`.
   config.rules['no-caller'] = 'error'
@@ -96,7 +97,8 @@ export function applyCommonRuleSet(config: NamedFlatEslintConfig) {
   // ----- Common: ECMAScript 6 ------------------------------------------------
 
   // Do not enforce a particular arrow body style.
-  config.rules['arrow-body-style'] = 'off'
+  // config.rules['arrow-body-style'] = 'off'
+  Reflect.deleteProperty(config.rules, 'arrow-body-style')
 
   // Disallow duplicate imports.
   config.rules['no-duplicate-imports'] = 'error'
@@ -334,7 +336,8 @@ export function applyCommonRuleSet(config: NamedFlatEslintConfig) {
   config.rules['import/default'] = 'error'
 
   // Allow dynamic require() calls. These should not be used often anyway.
-  config.rules['import/no-dynamic-require'] = 'off'
+  // config.rules['import/no-dynamic-require'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/no-dynamic-require')
 
   // Disallow cyclic dependencies. While these work in CJS / Webpack, they can
   // cause subtle bugs in strict ES.
@@ -358,43 +361,55 @@ export function applyCommonRuleSet(config: NamedFlatEslintConfig) {
   //
   // Rationale: This lets consumers choose to use a single default import to
   // access all named exports without having to write 'import * as fooModule'.
-  config.rules['import/no-named-as-default-member'] = 'off'
-  config.rules['import/no-named-as-default'] = 'off'
+  // config.rules['import/no-named-as-default-member'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/no-named-as-default-member')
+  // config.rules['import/no-named-as-default'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/no-named-as-default')
 
   // Allow the import of external modules that are not declared in package.json.
   // This package and tsx make dependencies like React and Linaria available to
   // consumers via their peerDependencies so the consumer does not have to
   // manage their versions.
-  config.rules['import/no-extraneous-dependencies'] = 'off'
+  // config.rules['import/no-extraneous-dependencies'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/no-extraneous-dependencies')
 
   // Allow modules to have no exports (tests, CLI entry points) and allow
   // modules to export values that are not imported in the local project
   // (libraries).
-  config.rules['import/no-unused-modules'] = 'off'
+  // config.rules['import/no-unused-modules'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/no-unused-modules')
 
   // These rules are far too ambitious to exist right now.
-  config.rules['import/no-commonjs'] = 'off'
-  config.rules['import/no-amd'] = 'off'
-  config.rules['import/no-nodejs-modules'] = 'off'
-  config.rules['import/no-import-module-exports'] = 'off'
+  // config.rules['import/no-commonjs'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/no-commonjs')
+  // config.rules['import/no-amd'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/no-amd')
+  // config.rules['import/no-nodejs-modules'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/no-nodejs-modules')
+  // config.rules['import/no-import-module-exports'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/no-import-module-exports')
 
   // Disable; conflicts with 'import/order' rule.
-  config.rules['import/first'] = 'off'
+  // config.rules['import/first'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/first')
 
   // This rule enforces that all exports are declared at the bottom of the file.
   // This rule will report any export declarations that comes before any
   // non-export statements.
-  config.rules['import/exports-last'] = 'off'
+  // config.rules['import/exports-last'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/exports-last')
 
   // Report repeated import of the same module in multiple places.
   config.rules['import/no-duplicates'] = 'error'
 
   // Allow namespace imports. This is the most convenient way to use packages
   // like Ramda without renaming named imports to avoid conflicts.
-  config.rules['import/no-namespace'] = 'off'
+  // config.rules['import/no-namespace'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/no-whitespace')
 
   // Do not require the use of file extensions within the import path.
-  config.rules['import/extensions'] = 'off'
+  // config.rules['import/extensions'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/extensions')
 
   // Enforce a convention in the order of require() / import statements.
   config.rules['import/order'] = ['error', {
@@ -443,23 +458,29 @@ export function applyCommonRuleSet(config: NamedFlatEslintConfig) {
   config.rules['import/newline-after-import'] = 'error'
 
   // Allow unassigned imports (ie: imports with side-effects).
-  config.rules['import/no-unassigned-import'] = 'off'
+  // config.rules['import/no-unassigned-import'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/no-unassigned-import')
 
   // Allow named values to be the default export of a module. This can often
   // help improve the readability of stack traces for debugging.
-  config.rules['import/no-named-default'] = 'off'
+  // config.rules['import/no-named-default'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/no-named-default')
 
   // Allow default exports.
-  config.rules['import/no-default-export'] = 'off'
+  // config.rules['import/no-default-export'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/no-default-export')
 
   // Allow named exports.
-  config.rules['import/no-named-export'] = 'off'
+  // config.rules['import/no-named-export'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/no-named-export')
 
   // Allow anonymous default exports (again).
-  config.rules['import/no-anonymous-default-export'] = 'off'
+  // config.rules['import/no-anonymous-default-export'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/no-anonymous-default-export')
 
   // Do not require exports to be grouped.
-  config.rules['import/group-exports'] = 'off'
+  // config.rules['import/group-exports'] = 'off'
+  Reflect.deleteProperty(config.rules, 'import/group-exports')
 
   // ----- [Plugin] prefer-arrow -----------------------------------------------
 
@@ -487,7 +508,7 @@ export function applyCommonRuleSet(config: NamedFlatEslintConfig) {
 
   // Require consistent naming of errors in catch blocks.
   config.rules['unicorn/catch-error-name'] = ['error', {
-    name: 'err',
+    name: 'error',
     ignore: [
       // Additionally, allow errors to be named "cause".
       /^cause$/
@@ -497,7 +518,8 @@ export function applyCommonRuleSet(config: NamedFlatEslintConfig) {
   // DISABLED: This rule is disabled because it is often necessary to define
   // functions inside React.useEffect factories to ensure that variables bound
   // by their closures have the expected values.
-  config.rules['unicorn/consistent-function-scoping'] = 'off'
+  // config.rules['unicorn/consistent-function-scoping'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/consistent-function-scoping')
 
   // Allow file names in kebab-case and PascalCase.
   config.rules['unicorn/filename-case'] = ['error', {
@@ -508,71 +530,73 @@ export function applyCommonRuleSet(config: NamedFlatEslintConfig) {
   }]
 
   // Allow functions to be passed by reference directly to an array iteratee.
-  config.rules['unicorn/no-array-callback-reference'] = 'off'
-
-  // Allow member access of parenthesized await expressions.
-  config.rules['unicorn/no-await-expression-member'] = 'off'
-
-  // [Dec 2021] This rule is throwing false positives with utility libraries
-  // like Ramda, so it has been temporarily disabled.
-  config.rules['unicorn/no-array-method-this-argument'] = 'off'
-
-  // Allow use of Array.prototype.reduce.
-  config.rules['unicorn/no-array-reduce'] = 'off'
-
-  // Don't prohibit usage of require(), require.resolve, and friends. These are
-  // not widely used, and when they are it is usually for a good reason. Also,
-  // 'import.meta.resolve' is still considered experimental.
-  config.rules['unicorn/prefer-module'] = 'off'
-
-  // Don't enforce usage of the 'node:' protocol for importing built-ins; we
-  // still transpile down to CJS and this is only supported in strict ESM.
-  config.rules['unicorn/prefer-node-protocol'] = 'off'
-
-  // Top-level await is only available in ESM/ESNext contexts.
-  config.rules['unicorn/prefer-top-level-await'] = 'off'
-
-  // Don't enforce 'more descriptive' variable names.
-  config.rules['unicorn/prevent-abbreviations'] = 'off'
-
-  // Allow consecutive calls to .push() on the same array.
-  config.rules['unicorn/no-array-push-push'] = 'off'
-
-  // Allow nested ternary expressions.
-  config.rules['unicorn/no-nested-ternary'] = 'off'
-
-  // Allow the use of Array#reduce().
-  config.rules['unicorn/no-array-reduce'] = 'off'
+  // config.rules['unicorn/no-array-callback-reference'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/no-array-callback-reference')
 
   // Allow the use of Array#forEach().
   config.rules['unicorn/no-array-for-each'] = 'off'
 
-  // Allow Array#reduce() to be used to map over object entries.
-  config.rules['unicorn/prefer-object-from-entries'] = 'off'
+  // [Dec 2021] This rule is throwing false positives with utility libraries
+  // like Ramda, so it has been temporarily disabled.
+  // config.rules['unicorn/no-array-method-this-argument'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/no-array-method-this-argument')
+
+  // Allow use of Array.prototype.reduce.
+  // config.rules['unicorn/no-array-reduce'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/no-array-reduce')
+
+  // Allow consecutive calls to .push() on the same array.
+  // config.rules['unicorn/no-array-push-push'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/no-array-push')
+
+  // Allow member access of parenthesized await expressions.
+  // config.rules['unicorn/no-await-expression-member'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/no-await-expression-member')
+
+  // Allow nested ternary expressions.
+  // config.rules['unicorn/no-nested-ternary'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/no-nested-ternary')
+
+  // Don't prohibit usage of require(), require.resolve, and friends. These are
+  // not widely used, and when they are it is usually for a good reason. Also,
+  // 'import.meta.resolve' is still considered experimental.
+  // config.rules['unicorn/prefer-module'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/prefer-module')
+
+  // Top-level await is only available in ESM/ESNext contexts.
+  // config.rules['unicorn/prefer-top-level-await'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/prefer-top-level-await')
+
+  // Don't enforce 'more descriptive' variable names.
+  // config.rules['unicorn/prevent-abbreviations'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/prevent-abbreviations')
+
+  // Allow
+  // config.rules['unicorn/prefer-object-from-entries'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/prefer-object-from-entries')
 
   // Do not require that "TODO" comments have an expiration date.
-  config.rules['unicorn/expiring-todo-comments'] = 'off'
+  // config.rules['unicorn/expiring-todo-comments'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/expiring-todo-comments')
 
   // Only require braces in a switch's "case" statements when they are required.
   config.rules['unicorn/switch-case-braces'] = ['error', 'avoid']
 
   // Do not enforce rules around await-ing non-Promise values.
-  config.rules['unicorn/no-unnecessary-await'] = 'off'
+  // config.rules['unicorn/no-unnecessary-await'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/no-unnecessary-await')
 
   // Allow negated conditions.
-  config.rules['unicorn/no-negated-condition'] = 'off'
-
-  // Allow abbreviations.
-  config.rules['unicorn/prevent-abbreviations'] = 'off'
-
-  // Allow nested ternaries.
-  config.rules['unicorn/no-nested-ternary'] = 'off'
+  // config.rules['unicorn/no-negated-condition'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/no-negated-condition')
 
   // Do not enforce import style.
-  config.rules['unicorn/import-style'] = 'off'
+  // config.rules['unicorn/import-style'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/import-style')
 
   // Allow anonymous default exports.
-  config.rules['unicorn/no-anonymous-default-export'] = 'off'
+  // config.rules['unicorn/no-anonymous-default-export'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/no-anonymous-default-export')
 
   return config
 }
