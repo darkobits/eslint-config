@@ -79,7 +79,7 @@ import { presetTs } from '@darkobits/eslint-config'
 export default [
   // Exempt this directory from linting. Do this early to prevent ESLint from
   // processing these files any further.
-  { ignores: ['unicorns/**'] },
+  { ignores: ['rainbows/**'] },
   // Then, apply one or more configuration presets.
   ...airBnb,
   ...presetTs,
@@ -102,9 +102,9 @@ For added type safety, use the `defineFlatConfig` helper:
 import { defineFlatConfig, presetTs } from '@darkobits/eslint-config'
 
 export default defineFlatConfig([
-  { ignores: ['unicorns/**'] },
+  { ignores: ['rainbows/**'] },
   ...presetTs,
-  { rules: { 'max-len': 'off' } }
+  { rules: { 'unicorn/catch-error-name': 'off' } }
 ])
 ```
 
