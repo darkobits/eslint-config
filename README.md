@@ -37,6 +37,9 @@
   ></a>
 </p>
 
+> [!IMPORTANT]
+> This package was renamed to `@darkobits/eslint-config` in version 3.0.0.
+
 ESLint plugin for TypeScript / TypeScript React projects.
 
 # Install
