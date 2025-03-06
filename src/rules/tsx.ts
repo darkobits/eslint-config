@@ -10,7 +10,7 @@ import type { NamedFlatEslintConfig } from 'types'
  * Provided an ESLint configuration object, adds presets and rules for
  * TypeScript JSX files.
  */
-export function applyTSXRules(config: MarkRequired<NamedFlatEslintConfig, 'rules' | 'plugins'>) {
+export function applyTsxRules(config: MarkRequired<NamedFlatEslintConfig, 'rules' | 'plugins'>) {
   // ----- Plugin: React -------------------------------------------------------
 
   config.plugins['react'] = reactPlugin

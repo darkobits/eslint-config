@@ -8,7 +8,7 @@ import type { NamedFlatEslintConfig } from 'types'
  * Provided an ESLint configuration object, adds presets and rules for all
  * TypeScript files.
  */
-export function applyTSRules(config: MarkRequired<NamedFlatEslintConfig, 'rules' | 'plugins'>) {
+export function applyTsRules(config: MarkRequired<NamedFlatEslintConfig, 'rules' | 'plugins'>) {
   // ----- [Plugin] @typescript/eslint -----------------------------------------
 
   // TODO: See if this typing issue is resolved in a future release.

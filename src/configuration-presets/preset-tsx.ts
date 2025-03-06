@@ -1,22 +1,22 @@
 import { defineFlatConfig } from 'eslint-define-config'
 import globals from 'globals'
 
-import { presetTs } from 'configuration-presets/preset-ts'
+import { presetTs, ignores } from 'configuration-presets/preset-ts'
 import { ALL_EXTS } from 'etc/constants'
 import {
   convertTypeScriptRulesToJavaScriptRules,
   disableGlobals
 } from 'lib/utils'
-import { applyTSXRules } from 'rules/tsx'
+import { applyTsxRules } from 'rules/tsx'
 
 import type { NamedFlatEslintConfig } from 'types'
 
 // ----- [tsx] Common Configuration --------------------------------------------
 
-// Apply our custom rule-set _after_ applying plugins' rule-sets.
-const commonConfig = applyTSXRules({
+const commonConfig = applyTsxRules({
   name: 'darkobits/tsx/common',
   files: [`**/*.{${ALL_EXTS}}`],
+  ignores,
   languageOptions: {
     // This should be set upstream by the 'ts' config set.
     // parser: typeScriptParser,
@@ -48,6 +48,7 @@ const commonConfig = applyTSXRules({
 export const jsxFileConfig: NamedFlatEslintConfig = {
   name: 'darkobits/tsx/src-files-jsx',
   files: ['**/*.{js,jsx}'],
+  ignores,
   rules: convertTypeScriptRulesToJavaScriptRules(commonConfig.rules)
 }
 

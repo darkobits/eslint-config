@@ -17,7 +17,7 @@ import {
 } from 'lib/utils'
 import { applyCommonRules } from 'rules/common'
 import {
-  applyTSRules,
+  applyTsRules,
   generateTypeScriptTestFileRules
 } from 'rules/ts'
 
@@ -27,6 +27,16 @@ import type { NamedFlatEslintConfig } from 'types'
  * Infer various settings from the project's tsconfig.json file.
  */
 const tsConfig = parseTsConfig()
+
+/**
+ * Common ignore patterns.
+ */
+export const ignores = R.filter(R.is(String), [
+  // Build artifacts.
+  tsConfig?.outDir && `**/${path.basename(tsConfig.outDir)}/**`,
+  // Declaration files.
+  '**/*.d.ts'
+])
 
 // ----- [ts] Common Configuration ---------------------------------------------
 
@@ -39,13 +49,7 @@ const commonConfig = applyCommonRules({
     // Include all files in sub-directories.
     `**/*.{${ALL_EXTS}}`
   ],
-  ignores: R.filter(R.is(String), [
-    // Ignore the project's output directory (at any level of the project tree),
-    // if defined.
-    tsConfig?.outDir && `**/${path.basename(tsConfig.outDir)}/**`,
-    // Ignore declaration files.
-    '**/*.d.ts'
-  ]),
+  ignores,
   languageOptions: {
     sourceType: 'module',
     parser: typeScriptParser,
@@ -80,7 +84,7 @@ const commonConfig = applyCommonRules({
   rules: {
     // This is the preferred way to "extend" "eslint:recommended", which is now
     // deprecated and will issue a warning if used.
-    ...jsEslintPlugin.configs?.recommended?.rules
+    ...jsEslintPlugin.configs['recommended'].rules
   },
   plugins: {}
 })
@@ -89,10 +93,10 @@ const commonConfig = applyCommonRules({
 
 // Apply our rules _after_ applying plugins' rule-sets to ensure ours override
 // the rule configurations from presets.
-const tsFileConfig = applyTSRules({
+const tsFileConfig = applyTsRules({
   name: 'darkobits/ts/src-files-ts',
   files: [`**/*.{${TS_EXTS}}`],
-  ignores: commonConfig.ignores,
+  ignores,
   languageOptions: {
     globals: {
       // See: https://github.com/Chatie/eslint-config/issues/45
@@ -108,7 +112,7 @@ const tsFileConfig = applyTSRules({
 const jsFileConfig: NamedFlatEslintConfig = {
   name: 'darkobits/ts/src-files-js',
   files: [`**/*.{${JS_EXTS}}`],
-  ignores: commonConfig.ignores,
+  ignores,
   rules: convertTypeScriptRulesToJavaScriptRules(tsFileConfig.rules)
 }
 
@@ -117,14 +121,14 @@ const jsFileConfig: NamedFlatEslintConfig = {
 const tsTestFileConfig: NamedFlatEslintConfig = {
   name: 'darkobits/ts/test-files-ts',
   files: [`**/*.{spec,test}.{${TS_EXTS}}`],
-  ignores: commonConfig.ignores,
+  ignores,
   rules: generateTypeScriptTestFileRules()
 }
 
 const jsTestFileConfig: NamedFlatEslintConfig = {
   name: 'darkobits/ts/test-files-js',
   files: [`**/*.{spec,test}.{${JS_EXTS}}`],
-  ignores: commonConfig.ignores,
+  ignores,
   rules: convertTypeScriptRulesToJavaScriptRules(tsTestFileConfig.rules)
 }
 

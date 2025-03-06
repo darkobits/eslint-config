@@ -236,8 +236,8 @@ export function applyCommonRules(config: MarkRequired<NamedFlatEslintConfig, 'ru
 
   // Disallow arrow functions where they could be confused with comparisons.
   config.rules['@stylistic/no-confusing-arrow'] = ['error', {
-  // Relaxes the rule and allows parens as a valid confusion-preventing
-  // syntax.
+    // Relaxes the rule and allows parens as a valid confusion-preventing
+    // syntax.
     allowParens: true
   }]
 
@@ -250,10 +250,8 @@ export function applyCommonRules(config: MarkRequired<NamedFlatEslintConfig, 'ru
   // Disallow unnecessary semicolons.
   config.rules['@stylistic/no-extra-semi'] = 'error'
 
-  // Allow up to 2 empty lines.
-  config.rules['@stylistic/no-multiple-empty-lines'] = ['error', {
-    max: 1
-  }]
+  // Allow up to 1 consecutive empty line.
+  config.rules['@stylistic/no-multiple-empty-lines'] = ['error', { max: 1 }]
 
   // Require quotes around all object literal property names if any name
   // strictly requires quotes, otherwise disallow quotes around property names.
@@ -302,6 +300,12 @@ export function applyCommonRules(config: MarkRequired<NamedFlatEslintConfig, 'ru
       }
     }
   }]
+
+  // Do not require ternary expressions be multi-line.
+  Reflect.deleteProperty(config.rules, '@stylistic/multiline-ternary')
+
+  // Require at least 1 space inside blocks.
+  config.rules['@stylistic/block-spacing'] = ['error', 'always']
 
   // ----- [Plugin] import -----------------------------------------------------
 
@@ -359,42 +363,32 @@ export function applyCommonRules(config: MarkRequired<NamedFlatEslintConfig, 'ru
   //
   // Rationale: This lets consumers choose to use a single default import to
   // access all named exports without having to write 'import * as fooModule'.
-  // config.rules['import/no-named-as-default-member'] = 'off'
   Reflect.deleteProperty(config.rules, 'import/no-named-as-default-member')
-  // config.rules['import/no-named-as-default'] = 'off'
   Reflect.deleteProperty(config.rules, 'import/no-named-as-default')
 
   // Allow the import of external modules that are not declared in package.json.
   // This package and tsx make dependencies like React and Linaria available to
   // consumers via their peerDependencies so the consumer does not have to
   // manage their versions.
-  // config.rules['import/no-extraneous-dependencies'] = 'off'
   Reflect.deleteProperty(config.rules, 'import/no-extraneous-dependencies')
 
   // Allow modules to have no exports (tests, CLI entry points) and allow
   // modules to export values that are not imported in the local project
   // (libraries).
-  // config.rules['import/no-unused-modules'] = 'off'
   Reflect.deleteProperty(config.rules, 'import/no-unused-modules')
 
   // These rules are far too ambitious to exist right now.
-  // config.rules['import/no-commonjs'] = 'off'
   Reflect.deleteProperty(config.rules, 'import/no-commonjs')
-  // config.rules['import/no-amd'] = 'off'
   Reflect.deleteProperty(config.rules, 'import/no-amd')
-  // config.rules['import/no-nodejs-modules'] = 'off'
   Reflect.deleteProperty(config.rules, 'import/no-nodejs-modules')
-  // config.rules['import/no-import-module-exports'] = 'off'
   Reflect.deleteProperty(config.rules, 'import/no-import-module-exports')
 
   // Disable; conflicts with 'import/order' rule.
-  // config.rules['import/first'] = 'off'
   Reflect.deleteProperty(config.rules, 'import/first')
 
   // This rule enforces that all exports are declared at the bottom of the file.
   // This rule will report any export declarations that comes before any
   // non-export statements.
-  // config.rules['import/exports-last'] = 'off'
   Reflect.deleteProperty(config.rules, 'import/exports-last')
 
   // Report repeated import of the same module in multiple places.
@@ -402,11 +396,9 @@ export function applyCommonRules(config: MarkRequired<NamedFlatEslintConfig, 'ru
 
   // Allow namespace imports. This is the most convenient way to use packages
   // like Ramda without renaming named imports to avoid conflicts.
-  // config.rules['import/no-namespace'] = 'off'
   Reflect.deleteProperty(config.rules, 'import/no-whitespace')
 
   // Do not require the use of file extensions within the import path.
-  // config.rules['import/extensions'] = 'off'
   Reflect.deleteProperty(config.rules, 'import/extensions')
 
   // Enforce a convention in the order of require() / import statements.
@@ -451,33 +443,26 @@ export function applyCommonRules(config: MarkRequired<NamedFlatEslintConfig, 'ru
     }]
   }]
 
-  // [Aug 2024] Temporarily disabled until ESLint v9 support is added.
   // Require 1 empty line after the last top-level import statement.
   config.rules['import/newline-after-import'] = 'error'
 
   // Allow unassigned imports (ie: imports with side-effects).
-  // config.rules['import/no-unassigned-import'] = 'off'
   Reflect.deleteProperty(config.rules, 'import/no-unassigned-import')
 
   // Allow named values to be the default export of a module. This can often
   // help improve the readability of stack traces for debugging.
-  // config.rules['import/no-named-default'] = 'off'
   Reflect.deleteProperty(config.rules, 'import/no-named-default')
 
   // Allow default exports.
-  // config.rules['import/no-default-export'] = 'off'
   Reflect.deleteProperty(config.rules, 'import/no-default-export')
 
   // Allow named exports.
-  // config.rules['import/no-named-export'] = 'off'
   Reflect.deleteProperty(config.rules, 'import/no-named-export')
 
   // Allow anonymous default exports (again).
-  // config.rules['import/no-anonymous-default-export'] = 'off'
   Reflect.deleteProperty(config.rules, 'import/no-anonymous-default-export')
 
   // Do not require exports to be grouped.
-  // config.rules['import/group-exports'] = 'off'
   Reflect.deleteProperty(config.rules, 'import/group-exports')
 
   // ----- [Plugin] prefer-arrow -----------------------------------------------
@@ -516,7 +501,6 @@ export function applyCommonRules(config: MarkRequired<NamedFlatEslintConfig, 'ru
   // DISABLED: This rule is disabled because it is often necessary to define
   // functions inside React.useEffect factories to ensure that variables bound
   // by their closures have the expected values.
-  // config.rules['unicorn/consistent-function-scoping'] = 'off'
   Reflect.deleteProperty(config.rules, 'unicorn/consistent-function-scoping')
 
   // Allow file names in kebab-case and PascalCase.
@@ -528,72 +512,57 @@ export function applyCommonRules(config: MarkRequired<NamedFlatEslintConfig, 'ru
   }]
 
   // Allow functions to be passed by reference directly to an array iteratee.
-  // config.rules['unicorn/no-array-callback-reference'] = 'off'
   Reflect.deleteProperty(config.rules, 'unicorn/no-array-callback-reference')
 
   // Allow the use of Array#forEach().
-  config.rules['unicorn/no-array-for-each'] = 'off'
+  Reflect.deleteProperty(config.rules, 'unicorn/no-array-for-each')
 
   // [Dec 2021] This rule is throwing false positives with utility libraries
   // like Ramda, so it has been temporarily disabled.
-  // config.rules['unicorn/no-array-method-this-argument'] = 'off'
   Reflect.deleteProperty(config.rules, 'unicorn/no-array-method-this-argument')
 
+  // Allow consecutive calls to .push() on the same array.
+  Reflect.deleteProperty(config.rules, 'unicorn/no-array-push-push')
+
   // Allow use of Array.prototype.reduce.
-  // config.rules['unicorn/no-array-reduce'] = 'off'
   Reflect.deleteProperty(config.rules, 'unicorn/no-array-reduce')
 
-  // Allow consecutive calls to .push() on the same array.
-  // config.rules['unicorn/no-array-push-push'] = 'off'
-  Reflect.deleteProperty(config.rules, 'unicorn/no-array-push')
-
   // Allow member access of parenthesized await expressions.
-  // config.rules['unicorn/no-await-expression-member'] = 'off'
   Reflect.deleteProperty(config.rules, 'unicorn/no-await-expression-member')
 
   // Allow nested ternary expressions.
-  // config.rules['unicorn/no-nested-ternary'] = 'off'
   Reflect.deleteProperty(config.rules, 'unicorn/no-nested-ternary')
 
   // Don't prohibit usage of require(), require.resolve, and friends. These are
   // not widely used, and when they are it is usually for a good reason. Also,
   // 'import.meta.resolve' is still considered experimental.
-  // config.rules['unicorn/prefer-module'] = 'off'
   Reflect.deleteProperty(config.rules, 'unicorn/prefer-module')
 
   // Top-level await is only available in ESM/ESNext contexts.
-  // config.rules['unicorn/prefer-top-level-await'] = 'off'
   Reflect.deleteProperty(config.rules, 'unicorn/prefer-top-level-await')
 
   // Don't enforce 'more descriptive' variable names.
-  // config.rules['unicorn/prevent-abbreviations'] = 'off'
   Reflect.deleteProperty(config.rules, 'unicorn/prevent-abbreviations')
 
   // Allow
-  // config.rules['unicorn/prefer-object-from-entries'] = 'off'
   Reflect.deleteProperty(config.rules, 'unicorn/prefer-object-from-entries')
 
   // Do not require that "TODO" comments have an expiration date.
-  // config.rules['unicorn/expiring-todo-comments'] = 'off'
   Reflect.deleteProperty(config.rules, 'unicorn/expiring-todo-comments')
 
   // Only require braces in a switch's "case" statements when they are required.
   config.rules['unicorn/switch-case-braces'] = ['error', 'avoid']
 
   // Do not enforce rules around await-ing non-Promise values.
-  // config.rules['unicorn/no-unnecessary-await'] = 'off'
   Reflect.deleteProperty(config.rules, 'unicorn/no-unnecessary-await')
 
   // Allow negated conditions.
-  // config.rules['unicorn/no-negated-condition'] = 'off'
   Reflect.deleteProperty(config.rules, 'unicorn/no-negated-condition')
 
   // Do not enforce import style.
-  // config.rules['unicorn/import-style'] = 'off'
   Reflect.deleteProperty(config.rules, 'unicorn/import-style')
 
   // Allow anonymous default exports.
-  // config.rules['unicorn/no-anonymous-default-export'] = 'off'
   Reflect.deleteProperty(config.rules, 'unicorn/no-anonymous-default-export')
 
   return config
