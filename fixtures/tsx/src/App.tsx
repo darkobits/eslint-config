@@ -17,7 +17,7 @@ export function TestComponent() {
 // Named arrow function components should be allowed.
 export const OtherComponent = () => {
   // This lets us test that the JSX global is defined.
-  const content: JSX.Element = <span>Hello world.</span>
+  const content: React.JSX.Element = <span>Hello world.</span>
 
   return (
     <div>{content}</div>

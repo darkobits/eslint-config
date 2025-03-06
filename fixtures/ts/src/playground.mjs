@@ -1,5 +1,5 @@
 // Import should work.
-import path from 'path'
+import path from 'node:path'
 
 // require should be defined; assume we are transpiling to CJS.
 export const foo = require(path.resolve('foo'))
