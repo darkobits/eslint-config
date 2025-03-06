@@ -6,15 +6,13 @@ import preferArrowPlugin from 'eslint-plugin-prefer-arrow'
 import unicornPlugin from 'eslint-plugin-unicorn'
 
 import type { Rules } from 'eslint-define-config'
+import type { MarkRequired } from 'ts-essentials'
 import type { NamedFlatEslintConfig } from 'types'
 
 /**
  * Provided an ESLint configuration object, adds common presets and rules.
  */
-export function applyCommonRuleSet(config: NamedFlatEslintConfig) {
-  config.plugins = config.plugins ?? {}
-  config.rules = config.rules ?? {}
-
+export function applyCommonRules(config: MarkRequired<NamedFlatEslintConfig, 'rules' | 'plugins'>) {
   // ----- Common: Best Practices ----------------------------------------------
 
   // Enforce return statements in callbacks of array methods.

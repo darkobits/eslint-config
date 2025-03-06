@@ -7,14 +7,14 @@ import {
   convertTypeScriptRulesToJavaScriptRules,
   disableGlobals
 } from 'lib/utils'
-import { applyTSXRuleSet } from 'rules/tsx'
+import { applyTSXRules } from 'rules/tsx'
 
 import type { NamedFlatEslintConfig } from 'types'
 
 // ----- [tsx] Common Configuration --------------------------------------------
 
 // Apply our custom rule-set _after_ applying plugins' rule-sets.
-const commonConfig = applyTSXRuleSet({
+const commonConfig = applyTSXRules({
   name: 'darkobits/tsx/common',
   files: [`**/*.{${ALL_EXTS}}`],
   languageOptions: {
@@ -38,13 +38,15 @@ const commonConfig = applyTSXRuleSet({
     react: {
       version: 'detect'
     }
-  }
+  },
+  rules: {},
+  plugins: {}
 })
 
 // ----- [tsx] JavaScript JSX Files --------------------------------------------
 
 export const jsxFileConfig: NamedFlatEslintConfig = {
-  name: 'darkobits/tsx/files-jsx',
+  name: 'darkobits/tsx/src-files-jsx',
   files: ['**/*.{js,jsx}'],
   rules: convertTypeScriptRulesToJavaScriptRules(commonConfig.rules)
 }

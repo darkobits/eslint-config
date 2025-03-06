@@ -3,16 +3,14 @@ import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
 
+import type { MarkRequired } from 'ts-essentials'
 import type { NamedFlatEslintConfig } from 'types'
 
 /**
  * Provided an ESLint configuration object, adds presets and rules for
  * TypeScript JSX files.
  */
-export function applyTSXRuleSet(config: NamedFlatEslintConfig) {
-  config.plugins = config.plugins ?? {}
-  config.rules = config.rules ?? {}
-
+export function applyTSXRules(config: MarkRequired<NamedFlatEslintConfig, 'rules' | 'plugins'>) {
   // ----- Plugin: React -------------------------------------------------------
 
   config.plugins['react'] = reactPlugin
@@ -27,7 +25,6 @@ export function applyTSXRuleSet(config: NamedFlatEslintConfig) {
   config.rules['react/button-has-type'] = ['error']
 
   // Do not require components to set the `displayName` property.
-  // config.rules['react/display-name'] = 'off'
   Reflect.deleteProperty(config.rules, 'react/display-name')
 
   // Require that named components be defined as arrow functions or function
@@ -51,20 +48,16 @@ export function applyTSXRuleSet(config: NamedFlatEslintConfig) {
   // DISABLED: While it may prevent certain mistakes, these can usually be
   // caught by proof-reading copy. Leaving this rule enabled makes drafting copy
   // in JSX unwieldy.
-  // config.rules['react/no-unescaped-entities'] = 'off'
   Reflect.deleteProperty(config.rules, 'react/no-special-entities')
 
   // Prevent usage of unknown DOM properties.
   config.rules['react/no-unknown-property'] = ['error']
 
-  // Prefer TypeScript for validating props. Use of PropTypes for runtime
-  // validation is still optional.
-  config.rules['react/prop-types'] = 'off'
+  // PropTypes is deprecated.
   Reflect.deleteProperty(config.rules, 'react/prop-types')
 
   // Do not require importing React when using JSX; newer JSX transformers
   // handle this for us.
-  // config.rules['react/react-in-jsx-scope'] = 'off'
   Reflect.deleteProperty(config.rules, 'react/react-in-jsx-scope')
 
   // Prevent extra closing tags for components without children.
@@ -96,7 +89,6 @@ export function applyTSXRuleSet(config: NamedFlatEslintConfig) {
   //   ? <div>Value is true!</div>
   //   : <div>Value is false.</div>
   // }
-  // config.rules['react/jsx-newline'] = 'off'
   Reflect.deleteProperty(config.rules, 'react/jsx-newline')
 
   // Disallow spaces inside of curly braces in JSX attributes and expressions.
@@ -251,6 +243,13 @@ export function applyTSXRuleSet(config: NamedFlatEslintConfig) {
 
   // ----- [Plugin] jsx-a11y ---------------------------------------------------
 
+  config.plugins['jsx-a11y'] = jsxA11yPlugin
+
+  config.rules = {
+    ...config.rules,
+    ...jsxA11yPlugin.configs['recommended'].rules
+  }
+
   // This rule was deprecated in version 6.1.0, but still appears to be in the
   // plugin's 'recommended' rule set.
   // config.rules['jsx-a11y/label-has-for'] = 'off'
@@ -262,10 +261,13 @@ export function applyTSXRuleSet(config: NamedFlatEslintConfig) {
 
   // ----- [Plugin] unicorn ----------------------------------------------------
 
+  // NOTE: This plugin was installed and its rules configured by the 'ts'
+  // preset, so deleting them from our own rules will not suffice, we need to
+  // explicitly set them to 'off'.
+
   // Disable this rule in React projects because React makes heavy use of the
   // `null` value.
-  // config.rules['unicorn/no-null'] = 'off'
-  Reflect.deleteProperty(config.rules, 'unicorn/no-null')
+  config.rules['unicorn/no-null'] = 'off'
 
   // [Dec 2021]
   //
@@ -285,17 +287,9 @@ export function applyTSXRuleSet(config: NamedFlatEslintConfig) {
   //   must now discriminate between 2 bottom values.
   //
   // Thus, until the issue is resolved upstream, this rule has been disabled.
-  // config.rules['unicorn/no-useless-undefined'] = 'off'
-  Reflect.deleteProperty(config.rules, 'unicorn/no-useless-undefined')
+  config.rules['unicorn/no-useless-undefined'] = 'off'
 
   // ----- Plugin: JSX A11Y ----------------------------------------------------
-
-  config.plugins['jsx-a11y'] = jsxA11yPlugin
-
-  config.rules = {
-    ...config.rules,
-    ...jsxA11yPlugin.configs['recommended'].rules
-  }
 
   return config
 }

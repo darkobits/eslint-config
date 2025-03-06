@@ -1,16 +1,14 @@
 import tsEslintPlugin from '@typescript-eslint/eslint-plugin'
 
 import type { ESLint, Linter } from 'eslint'
+import type { MarkRequired } from 'ts-essentials'
 import type { NamedFlatEslintConfig } from 'types'
 
 /**
  * Provided an ESLint configuration object, adds presets and rules for all
  * TypeScript files.
  */
-export function applyTSRuleSet(config: NamedFlatEslintConfig) {
-  config.plugins = config.plugins ?? {}
-  config.rules = config.rules ?? {}
-
+export function applyTSRules(config: MarkRequired<NamedFlatEslintConfig, 'rules' | 'plugins'>) {
   // ----- [Plugin] @typescript/eslint -----------------------------------------
 
   // TODO: See if this typing issue is resolved in a future release.

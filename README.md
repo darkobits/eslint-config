@@ -37,7 +37,7 @@
   ></a>
 </p>
 
-ESLint plugin for TypeScript and TypeScript + React projects.
+ESLint configuration presets for TypeScript and TypeScript + React projects.
 
 # Requirements
 
