@@ -1,1 +1,0 @@
-export { presetTs as default } from './dist/index.js'

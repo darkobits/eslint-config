@@ -1,66 +1,43 @@
-import { defineFlatConfig } from 'eslint-define-config'
-import globals from 'globals'
+// @ts-expect-error - This package lacks type definitions.
+import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
+import reactPlugin from 'eslint-plugin-react'
+import reactHooksPlugin from 'eslint-plugin-react-hooks'
+import * as tseslint from 'typescript-eslint'
 
-import { presetTs, ignores } from 'configuration-presets/preset-ts'
-import { ALL_EXTS } from 'etc/constants'
-import {
-  convertTypeScriptRulesToJavaScriptRules,
-  disableGlobals
-} from 'lib/utils'
-import { applyTsxRules } from 'rules/tsx'
+import { getTypeScriptReactRules } from 'rules/tsx'
 
-import type { NamedFlatEslintConfig } from 'types'
+import { ts } from './preset-ts'
 
-// ----- [tsx] Common Configuration --------------------------------------------
-
-const commonConfig = applyTsxRules({
-  name: 'darkobits/tsx/common',
-  files: [`**/*.{${ALL_EXTS}}`],
-  ignores,
-  languageOptions: {
-    // This should be set upstream by the 'ts' config set.
-    // parser: typeScriptParser,
-    parserOptions: {
-      ecmaFeatures: {
-        jsx: true
-      }
+export const tsx: tseslint.ConfigArray = tseslint.config(
+  // ----- TypeScript Files ----------------------------------------------------
+  {
+    files: ['**/*.ts'],
+    extends: [ts],
+    plugins: {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      'jsx-a11y': jsxA11yPlugin,
+      'react': reactPlugin,
+      'react-hooks': reactHooksPlugin
     },
-    globals: {
-      ...disableGlobals(globals.node),
-      ...globals.browser,
-      // See: https://github.com/Chatie/eslint-config/issues/45
-      JSX: 'readonly'
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    rules: {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      ...jsxA11yPlugin.configs.recommended.rules,
+      ...reactPlugin.configs.recommended.rules,
+      ...reactPlugin.configs['jsx-runtime'].rules,
+      ...reactHooksPlugin.configs.recommended.rules,
+      ...getTypeScriptReactRules()
     }
   },
-  settings: {
-    // TODO: This can be removed when eslint-plugin-react adds this setting as a
-    // default in a future version.
-    react: {
-      version: 'detect'
+  // ----- JavaScript Files ----------------------------------------------------
+  {
+    files: ['**/*.js'],
+    extends: [
+      tseslint.configs.disableTypeChecked
+    ],
+    rules: {
+      // turn off rules that don't apply to JS code
+      // '@typescript-eslint/explicit-function-return-type': 'off',
     }
-  },
-  rules: {},
-  plugins: {}
-})
-
-// ----- [tsx] JavaScript JSX Files --------------------------------------------
-
-export const jsxFileConfig: NamedFlatEslintConfig = {
-  name: 'darkobits/tsx/src-files-jsx',
-  files: ['**/*.{js,jsx}'],
-  ignores,
-  rules: convertTypeScriptRulesToJavaScriptRules(commonConfig.rules)
-}
-
-// ----- [tsx] Configuration Set -----------------------------------------------
-
-/**
- * Configuration set for TypeScript React projects. This value may be exported
- * directly to ESLint or spread into a new array if additional configuration
- * objects need to be used.
- */
-export const presetTsx = defineFlatConfig([
-  ...presetTs,
-  commonConfig,
-  jsxFileConfig
-])
+  }
+)

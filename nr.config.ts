@@ -24,7 +24,7 @@ export default defineConfig([
     const NEW_CONFIG = 'eslint.config.mjs'
 
     const fixturesTsFlat = command('eslint', {
-      args: ['src', { format: 'codeframe', config: NEW_CONFIG }],
+      args: ['.', { format: 'codeframe', config: NEW_CONFIG }],
       prefix: () => 'ts/flat',
       cwd: path.resolve(FIXTURES_DIR, 'ts'),
       env: {
@@ -33,7 +33,7 @@ export default defineConfig([
     })
 
     const fixturesTsxFlat = command('eslint', {
-      args: ['src', { format: 'codeframe', config: NEW_CONFIG }],
+      args: ['.', { format: 'codeframe', config: NEW_CONFIG }],
       prefix: () => 'tsx/flat',
       cwd: path.resolve(FIXTURES_DIR, 'tsx'),
       env: {

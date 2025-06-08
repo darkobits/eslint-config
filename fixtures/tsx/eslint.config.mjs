@@ -1,3 +1,3 @@
-import { presetTsx } from '../../dist/index.js'
+import eslintPlugin from '../../dist/index.js'
 
-export default [...presetTsx]
+export default eslintPlugin.configs.tsx

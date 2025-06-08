@@ -1,83 +1,79 @@
-// @ts-expect-error - This package lacks type definitions.
-import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
-import reactPlugin from 'eslint-plugin-react'
-import reactHooksPlugin from 'eslint-plugin-react-hooks'
-
-import type { MarkRequired } from 'ts-essentials'
-import type { NamedFlatEslintConfig } from 'types'
+import type { Rules } from 'types'
 
 /**
  * Provided an ESLint configuration object, adds presets and rules for
  * TypeScript JSX files.
  */
-export function applyTsxRules(config: MarkRequired<NamedFlatEslintConfig, 'rules' | 'plugins'>) {
+export function getTypeScriptReactRules(): Rules {
+  const rules: Rules = {}
+
   // ----- Plugin: React -------------------------------------------------------
 
-  config.plugins['react'] = reactPlugin
+  // config.plugins.react = reactPlugin
 
-  config.rules = {
-    ...config.rules,
-    ...reactPlugin.configs['recommended'].rules,
-    ...reactPlugin.configs['jsx-runtime'].rules
-  }
+  // rules = {
+  //   ...rules,
+  //   ...reactPlugin.configs.recommended.rules,
+  //   ...reactPlugin.configs['jsx-runtime'].rules
+  // }
 
   // Require button elements to have an explicit "type" attribute.
-  config.rules['react/button-has-type'] = ['error']
+  rules['react/button-has-type'] = ['error']
 
   // Do not require components to set the `displayName` property.
-  Reflect.deleteProperty(config.rules, 'react/display-name')
+  Reflect.deleteProperty(rules, 'react/display-name')
 
   // Require that named components be defined as arrow functions or function
   // declarations, and that unnamed components be defined as arrow functions.
-  config.rules['react/function-component-definition'] = ['error', {
+  rules['react/function-component-definition'] = ['error', {
     namedComponents: ['arrow-function', 'function-declaration'],
     unnamedComponents: 'arrow-function'
   }]
 
   // Prevent usage of array indexes in `key` attributes.
-  config.rules['react/no-array-index-key'] = ['error']
+  rules['react/no-array-index-key'] = ['error']
 
   // Prevent usage of dangerous JSX properties.
-  config.rules['react/no-danger'] = ['error']
+  rules['react/no-danger'] = ['error']
 
   // Prevent usage of deprecated methods.
-  config.rules['react/no-deprecated'] = ['error']
+  rules['react/no-deprecated'] = ['error']
 
   // Prevent invalid characters from appearing in markup.
   //
   // DISABLED: While it may prevent certain mistakes, these can usually be
   // caught by proof-reading copy. Leaving this rule enabled makes drafting copy
   // in JSX unwieldy.
-  Reflect.deleteProperty(config.rules, 'react/no-special-entities')
+  Reflect.deleteProperty(rules, 'react/no-special-entities')
 
   // Prevent usage of unknown DOM properties.
-  config.rules['react/no-unknown-property'] = ['error']
+  rules['react/no-unknown-property'] = ['error']
 
   // PropTypes is deprecated.
-  Reflect.deleteProperty(config.rules, 'react/prop-types')
+  Reflect.deleteProperty(rules, 'react/prop-types')
 
   // Do not require importing React when using JSX; newer JSX transformers
   // handle this for us.
-  Reflect.deleteProperty(config.rules, 'react/react-in-jsx-scope')
+  Reflect.deleteProperty(rules, 'react/react-in-jsx-scope')
 
   // Prevent extra closing tags for components without children.
-  config.rules['react/self-closing-comp'] = ['error']
+  rules['react/self-closing-comp'] = ['error']
 
   // Require that the value of the `style` prop be an object or a variable that
   // is an object.
-  config.rules['react/style-prop-object'] = ['error']
+  rules['react/style-prop-object'] = ['error']
 
   // Prevent passing children to void DOM elements (ie: <img />, <br />).
-  config.rules['react/void-dom-elements-no-children'] = ['error']
+  rules['react/void-dom-elements-no-children'] = ['error']
 
   // Enforce explicit boolean attribute notation in JSX.
-  config.rules['react/jsx-boolean-value'] = ['error']
+  rules['react/jsx-boolean-value'] = ['error']
 
   // Validate closing bracket location in JSX elements.
-  config.rules['react/jsx-closing-bracket-location'] = ['error', 'tag-aligned']
+  rules['react/jsx-closing-bracket-location'] = ['error', 'tag-aligned']
 
   // Disallow unnecessary curly braces in JSX props and children.
-  config.rules['react/jsx-curly-brace-presence'] = ['error', 'never']
+  rules['react/jsx-curly-brace-presence'] = ['error', 'never']
 
   // Enforce consistent line breaks in curly braces in JSX attributes and
   // expressions.
@@ -89,57 +85,57 @@ export function applyTsxRules(config: MarkRequired<NamedFlatEslintConfig, 'rules
   //   ? <div>Value is true!</div>
   //   : <div>Value is false.</div>
   // }
-  Reflect.deleteProperty(config.rules, 'react/jsx-newline')
+  Reflect.deleteProperty(rules, 'react/jsx-newline')
 
   // Disallow spaces inside of curly braces in JSX attributes and expressions.
-  config.rules['react/jsx-curly-spacing'] = ['error', {
+  rules['react/jsx-curly-spacing'] = ['error', {
     when: 'never',
     objectLiterals: 'never'
   }]
 
   // Disallow spaces around equal signs in JSX attributes.
-  config.rules['react/jsx-equals-spacing'] = ['error', 'never']
+  rules['react/jsx-equals-spacing'] = ['error', 'never']
 
   // Restrict which file extensions may contain JSX.
-  config.rules['react/jsx-filename-extension'] = ['error', {
+  rules['react/jsx-filename-extension'] = ['error', {
     extensions: ['.tsx', '.jsx']
   }]
 
   // Require that the first JSX property be on a new line if the JSX tag takes
   // up multiple lines and there are multiple properties.
-  config.rules['react/jsx-first-prop-new-line'] = ['error', 'multiline-multiprop']
+  rules['react/jsx-first-prop-new-line'] = ['error', 'multiline-multiprop']
 
   // Enforce shorthand for React fragments (ie: <>...</>).
-  config.rules['react/jsx-fragments'] = ['error', 'syntax']
+  rules['react/jsx-fragments'] = ['error', 'syntax']
 
   // Require indentation of 2 spaces in JSX, including attributes and logical
   // expressions.
-  config.rules['react/jsx-indent'] = ['error', 2, {
+  rules['react/jsx-indent'] = ['error', 2, {
     checkAttributes: true,
     indentLogicalExpressions: true
   }]
 
   // Enforce an indentation level of 2 spaces for multi-line JSX props relative
   // to their tags.
-  config.rules['react/jsx-indent-props'] = ['error', 2]
+  rules['react/jsx-indent-props'] = ['error', 2]
 
   // Report missing `key` props in iterators/collection literals.
-  config.rules['react/jsx-key'] = ['error', {
+  rules['react/jsx-key'] = ['error', {
     checkFragmentShorthand: true
   }]
 
   // Warn on excessive JSX indentation depth.
-  config.rules['react/jsx-max-depth'] = ['warn', {
+  rules['react/jsx-max-depth'] = ['warn', {
     max: 16
   }]
 
   // Limit the maximum number of props on a single line in JSX.
-  config.rules['react/jsx-max-props-per-line'] = ['error', {
+  rules['react/jsx-max-props-per-line'] = ['error', {
     maximum: 4
   }]
 
   // Control what kinds of functions can be used in JSX props.
-  config.rules['react/jsx-no-bind'] = ['error', {
+  rules['react/jsx-no-bind'] = ['error', {
   // Allow anonymous arrow functions.
     allowArrowFunctions: true,
     // Disallow regular functions.
@@ -153,13 +149,13 @@ export function applyTsxRules(config: MarkRequired<NamedFlatEslintConfig, 'rules
   }]
 
   // Prevent comments from accidentally being inserted as text nodes.
-  config.rules['react/jsx-no-comment-textnodes'] = ['error']
+  rules['react/jsx-no-comment-textnodes'] = ['error']
 
   // Disallow duplicate properties in JSX.
-  config.rules['react/jsx-no-duplicate-props'] = ['error']
+  rules['react/jsx-no-duplicate-props'] = ['error']
 
   // Disallow the usage of `javascript:` URLs.
-  config.rules['react/jsx-no-script-url'] = ['error', [{
+  rules['react/jsx-no-script-url'] = ['error', [{
   // Include the popular Link component from React Router.
     name: 'Link',
     props: ['to']
@@ -167,32 +163,32 @@ export function applyTsxRules(config: MarkRequired<NamedFlatEslintConfig, 'rules
 
   // Disallow a `target="_blank"` attribute without an accompanying
   // `rel="noopener noreferrer"` attribute.
-  config.rules['react/jsx-no-target-blank'] = ['error']
+  rules['react/jsx-no-target-blank'] = ['error']
 
   // Disallow undeclared variables in JSX.
-  config.rules['react/jsx-no-undef'] = ['error', {
+  rules['react/jsx-no-undef'] = ['error', {
     allowGlobals: false
   }]
 
   // Disallow unnecessary JSX fragments.
-  config.rules['react/jsx-no-useless-fragment'] = ['error']
+  rules['react/jsx-no-useless-fragment'] = ['error']
 
   // Enforce PascalCase for user-defined JSX components.
-  config.rules['react/jsx-pascal-case'] = ['error']
+  rules['react/jsx-pascal-case'] = ['error']
 
   // Disallow multiple spaces between inline JSX props.
-  config.rules['react/jsx-props-no-multi-spaces'] = ['error']
+  rules['react/jsx-props-no-multi-spaces'] = ['error']
 
   // Disallow JSX props spreading. This enhances readability of code by being
   // more explicit about what props are received by the component.
-  config.rules['react/jsx-props-no-spreading'] = ['error', {
+  rules['react/jsx-props-no-spreading'] = ['error', {
   // Allow props spreading when the properties being spread are explicitly
   // enumerated.
     explicitSpread: 'ignore'
   }]
 
   // Validate whitespace in and around the JSX opening and closing brackets.
-  config.rules['react/jsx-tag-spacing'] = ['error', {
+  rules['react/jsx-tag-spacing'] = ['error', {
   // Disallow spaces after `<` opening tags.
     afterOpening: 'never',
     // Disallow spaces before `>` closing tags.
@@ -204,10 +200,10 @@ export function applyTsxRules(config: MarkRequired<NamedFlatEslintConfig, 'rules
   }]
 
   // Prevent variables used in JSX from being incorrectly marked as unused.
-  config.rules['react/jsx-uses-vars'] = ['error']
+  rules['react/jsx-uses-vars'] = ['error']
 
   // Require parens around multi-line JSX expressions in certain contexts.
-  config.rules['react/jsx-wrap-multilines'] = ['error', {
+  rules['react/jsx-wrap-multilines'] = ['error', {
     declaration: 'parens',
     assignment: 'parens',
     return: 'parens',
@@ -219,12 +215,12 @@ export function applyTsxRules(config: MarkRequired<NamedFlatEslintConfig, 'rules
 
   // ----- Plugin: React Hooks -------------------------------------------------
 
-  config.plugins['react-hooks'] = reactHooksPlugin
+  // config.plugins['react-hooks'] = reactHooksPlugin
 
-  config.rules = {
-    ...config.rules,
-    ...reactHooksPlugin.configs['recommended'].rules
-  }
+  // rules = {
+  //   ...rules,
+  //   ...reactHooksPlugin.configs.recommended.rules
+  // }
 
   // Warn when hooks do not declare dependencies they use.
   //
@@ -234,30 +230,30 @@ export function applyTsxRules(config: MarkRequired<NamedFlatEslintConfig, 'rules
   // passed to useAsyncEffect is async. Consider re-enabling it if a future
   // version is more configurable.
   //
-  // config.rules['react-hooks/exhaustive-deps'] = ['warn', {
+  // rules['react-hooks/exhaustive-deps'] = ['warn', {
   //   // Prevents false-positives when using `use-async-effect`.
   //   additionalHooks: 'useAsyncEffect'
   // }]
-  // config.rules['react-hooks/exhaustive-deps'] = 'off'
-  Reflect.deleteProperty(config.rules, 'react-hooks/exhaustive-deps')
+  // rules['react-hooks/exhaustive-deps'] = 'off'
+  Reflect.deleteProperty(rules, 'react-hooks/exhaustive-deps')
 
   // ----- [Plugin] jsx-a11y ---------------------------------------------------
 
-  config.plugins['jsx-a11y'] = jsxA11yPlugin
+  // config.plugins['jsx-a11y'] = jsxA11yPlugin
 
-  config.rules = {
-    ...config.rules,
-    ...jsxA11yPlugin.configs['recommended'].rules
-  }
+  // rules = {
+  //   ...rules,
+  //   ...jsxA11yPlugin.configs.recommended.rules
+  // }
 
   // This rule was deprecated in version 6.1.0, but still appears to be in the
   // plugin's 'recommended' rule set.
-  // config.rules['jsx-a11y/label-has-for'] = 'off'
-  Reflect.deleteProperty(config.rules, 'jsx-a11y/label-has-for')
+  // rules['jsx-a11y/label-has-for'] = 'off'
+  Reflect.deleteProperty(rules, 'jsx-a11y/label-has-for')
 
   // Do not require media elements to have captions.
-  // config.rules['jsx-a11y/media-has-caption'] = 'off'
-  Reflect.deleteProperty(config.rules, 'jsx-a11y/media-has-caption')
+  // rules['jsx-a11y/media-has-caption'] = 'off'
+  Reflect.deleteProperty(rules, 'jsx-a11y/media-has-caption')
 
   // ----- [Plugin] unicorn ----------------------------------------------------
 
@@ -267,7 +263,7 @@ export function applyTsxRules(config: MarkRequired<NamedFlatEslintConfig, 'rules
 
   // Disable this rule in React projects because React makes heavy use of the
   // `null` value.
-  config.rules['unicorn/no-null'] = 'off'
+  rules['unicorn/no-null'] = 'off'
 
   // [Dec 2021]
   //
@@ -287,9 +283,9 @@ export function applyTsxRules(config: MarkRequired<NamedFlatEslintConfig, 'rules
   //   must now discriminate between 2 bottom values.
   //
   // Thus, until the issue is resolved upstream, this rule has been disabled.
-  config.rules['unicorn/no-useless-undefined'] = 'off'
+  rules['unicorn/no-useless-undefined'] = 'off'
 
   // ----- Plugin: JSX A11Y ----------------------------------------------------
 
-  return config
+  return rules
 }

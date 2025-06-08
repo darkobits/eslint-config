@@ -1,3 +1,3 @@
-import { presetTs } from '../../dist/index.js'
+import eslintPlugin from '../../dist/index.js'
 
-export default [...presetTs]
+export default eslintPlugin.configs.ts
