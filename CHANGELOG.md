@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0-beta.0](https://github.com/darkobits/eslint-plugin/compare/v3.0.2...v4.0.0-beta.0) (2025-06-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* Substantial re-write using `typescript-eslint` to simplify configuration definitions.
+
+* Use pnpm, typescript-eslint, simplify config setup. ([5158d16](https://github.com/darkobits/eslint-plugin/commit/5158d16dab6652e2349e07461a58faed59bdb25a))
+
 ### [3.0.2](https://github.com/darkobits/eslint-plugin/compare/v3.0.1...v3.0.2) (2025-03-06)
 
 ### [3.0.1](https://github.com/darkobits/eslint-plugin/compare/v3.0.0...v3.0.1) (2025-03-06)
