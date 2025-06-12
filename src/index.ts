@@ -1,18 +1,9 @@
 import * as tseslint from 'typescript-eslint'
 
-import { ts } from './configuration-presets/preset-ts'
-import { tsx } from './configuration-presets/preset-tsx'
+import { ts } from './configs/ts'
+import { tsx } from './configs/tsx'
 
-import type { ConfigArray, InfiniteDepthConfigWithExtends } from 'typescript-eslint'
-
-export type ConfigHelper = (
-  ...configs: Array<InfiniteDepthConfigWithExtends>
-) => ConfigArray
-
-export interface Configs {
-  ts: ConfigArray
-  tsx: ConfigArray
-}
+import type { ConfigHelper, Configs } from './types'
 
 /**
  * Utility for authoring type-safe configuration files.
@@ -35,3 +26,4 @@ export default {
 }
 
 export { type ConfigArray } from 'typescript-eslint'
+export * from './types'
