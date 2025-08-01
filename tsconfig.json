@@ -1,9 +1,18 @@
 {
-  "extends": "@darkobits/ts/tsconfig.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "baseUrl": "src",
-    "outDir": "dist",
+    "lib": ["esnext"],
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noEmit": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "exactOptionalPropertyTypes": false,
-    "esModuleInterop": true
-  }
+    "paths": { "@/*": ["./src/*"] }
+  },
+  "include": ["src", "*.config.ts"],
+  "exclude": ["dist", "node_modules", "fixtures"]
 }

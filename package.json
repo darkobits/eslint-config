@@ -2,36 +2,42 @@
   "name": "@darkobits/eslint-config",
   "version": "4.0.0-beta.1",
   "description": "ESLint configuration presets for TypeScript projects.",
-  "author": "darkobits",
-  "license": "Hippocratic",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/darkobits/eslint-plugin.git"
   },
-  "engines": {
-    "node": ">=22"
+  "license": "Hippocratic",
+  "type": "module",
+  "author": "darkobits",
+  "exports": {
+    ".": "./dist/index.js",
+    "./configs/ts": "./dist/configs/ts.js",
+    "./configs/tsx": "./dist/configs/tsx.js",
+    "./types": "./dist/types.js",
+    "./package.json": "./package.json"
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "exports": {
-    "types": "./dist/index.d.ts",
-    "default": "./dist/index.js"
-  },
   "scripts": {
-    "build": "nr build",
-    "prepare": "nr prepare",
-    "help": "nr --scripts"
-  },
-  "peerDependencies": {
-    "@typescript-eslint/parser": "^8.26.0",
-    "eslint": "^9.0.0"
+    "build": "tsdown",
+    "dev": "tsdown --watch src",
+    "lint": "eslint --cache",
+    "lint:fix": "eslint --cache --fix",
+    "test": "vitest --run",
+    "test:coverage": "vitest --run --coverage",
+    "test:watch": "vitest",
+    "tsc": "tsc",
+    "tsc:watch": "tsc --watch"
   },
   "dependencies": {
     "@eslint/js": "^9.21.0",
     "@stylistic/eslint-plugin": "^4.2.0",
     "@typescript-eslint/eslint-plugin": "^8.26.0",
+    "@typescript-eslint/parser": "^8.26.0",
     "eslint-import-resolver-typescript": "^4.4.3",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
@@ -44,16 +50,27 @@
   },
   "devDependencies": {
     "@darkobits/nr": "^0.18.8",
-    "@darkobits/ts": "~0.24.2",
     "@types/eslint": "^9.6.1",
     "@types/node": "^22.15.30",
     "@types/react": "^19.0.10",
+    "@vitest/ui": "^3.2.4",
     "eslint": "^9.21.0",
+    "eslint-plugin-package-json": "^0.42.0",
     "jiti": "^2.4.2",
+    "publint": "^0.3.12",
     "react": "^19.0.0",
     "ts-essentials": "^10.0.4",
-    "vite": "^6.3.5",
+    "tsdown": "^0.12.9",
+    "typescript": "^5.8.3",
+    "unplugin-unused": "^0.5.1",
+    "vite": "^7.0.0",
     "vitest": "^3.2.2"
   },
-  "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912"
+  "peerDependencies": {
+    "eslint": "^9.0.0"
+  },
+  "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912",
+  "engines": {
+    "node": ">=22"
+  }
 }

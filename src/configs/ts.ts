@@ -2,8 +2,8 @@ import path from 'node:path'
 
 import eslint from '@eslint/js'
 import stylisticPlugin from '@stylistic/eslint-plugin'
-// @ts-expect-error - This package lacks type definitions.
 import importPlugin from 'eslint-plugin-import'
+import packageJsonPlugin from 'eslint-plugin-package-json'
 // @ts-expect-error - This package lacks type definitions.
 import preferArrowPlugin from 'eslint-plugin-prefer-arrow'
 import unicornPlugin from 'eslint-plugin-unicorn'
@@ -21,7 +21,8 @@ export const ts: tseslint.ConfigArray = tseslint.config(
       eslint.configs.recommended,
       tseslint.configs.strictTypeChecked,
       tseslint.configs.stylisticTypeChecked,
-      unicornPlugin.configs.recommended
+      unicornPlugin.configs.recommended,
+      packageJsonPlugin.configs.recommended
     ],
     languageOptions: {
       parserOptions: {
@@ -31,9 +32,9 @@ export const ts: tseslint.ConfigArray = tseslint.config(
     },
     plugins: {
       '@stylistic': stylisticPlugin,
-       
+
       'import': importPlugin,
-       
+
       'prefer-arrow': preferArrowPlugin
       // 'unicorn': unicornPlugin
     },
@@ -50,9 +51,9 @@ export const ts: tseslint.ConfigArray = tseslint.config(
         'node_modules'
       ]
     },
-     
+
     rules: {
-       
+
       ...importPlugin.configs.recommended.rules,
 
       // ----- Common: Best Practices ------------------------------------------

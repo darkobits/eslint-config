@@ -7,19 +7,15 @@ import * as tseslint from 'typescript-eslint'
 import { ts } from './ts'
 
 export const tsx: tseslint.ConfigArray = tseslint.config(
-  // ----- TypeScript Files ----------------------------------------------------
   {
-    files: ['**/*.ts'],
     extends: [ts],
+    files: ['**/*.{ts,tsx}'],
     plugins: {
-       
       'jsx-a11y': jsxA11yPlugin,
       'react': reactPlugin,
       'react-hooks': reactHooksPlugin
     },
-     
     rules: {
-       
       ...jsxA11yPlugin.configs.recommended.rules,
       ...reactPlugin.configs.recommended.rules,
       ...reactPlugin.configs['jsx-runtime'].rules,
