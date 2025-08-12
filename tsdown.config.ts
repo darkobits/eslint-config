@@ -7,7 +7,13 @@ export default defineConfig({
    *
    * @see https://tsdown.dev/reference/config-options#entry
    */
-  entry: ['src/**/*.ts', '!src/**/*.test.ts'],
+  entry: ['src/**/*.{ts,tsx,js,jsx}', '!src/**/*.{spec,test}.{ts,tsx,js,jsx}'],
+  /**
+   * Do not bundle third party dependencies.
+   *
+   * See: https://tsdown.dev/options/dependencies#external
+   */
+  external: [/node_modules/],
   /**
    * Do not bundle output into a single file. Instead, use the same directory
    * structure as the source files.
@@ -16,17 +22,16 @@ export default defineConfig({
   */
   unbundle: true,
   /**
-  * Check for unused dependencies with `unplugin-unused` (installed separately).
-  *
-  * @see https://tsdown.dev/reference/config-options#unused
-  */
-  unused: true,
-  /**
   * After building, run `publint` (installed separately).
   *
   * @see https://tsdown.dev/reference/config-options#publint
   */
   publint: true,
+  /**
+   * Emit declaration files.
+   *
+   * See: https://tsdown.dev/options/dts
+   */
   dts: true,
   /**
    * This will automatically keep the `main`, `module`, `types`, and `exports`
