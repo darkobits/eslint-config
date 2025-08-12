@@ -78,7 +78,7 @@ exports[`preset-ts > should match the snapshot 1`] = `
       "parser": {
         "meta": {
           "name": "typescript-eslint/parser",
-          "version": "8.38.0",
+          "version": "8.39.1",
         },
         "parseForESLint": [Function],
       },
@@ -365,7 +365,7 @@ exports[`preset-ts > should match the snapshot 1`] = `
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -570,7 +570,7 @@ exports[`preset-ts > should match the snapshot 1`] = `
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.38.0",
+                  "version": "8.39.1",
                 },
                 "parseForESLint": [Function],
               },
@@ -692,7 +692,7 @@ exports[`preset-ts > should match the snapshot 1`] = `
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -772,7 +772,7 @@ exports[`preset-ts > should match the snapshot 1`] = `
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -879,7 +879,7 @@ exports[`preset-ts > should match the snapshot 1`] = `
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -963,7 +963,7 @@ exports[`preset-ts > should match the snapshot 1`] = `
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -1057,7 +1057,7 @@ exports[`preset-ts > should match the snapshot 1`] = `
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -1144,6 +1144,7 @@ exports[`preset-ts > should match the snapshot 1`] = `
                 "@typescript-eslint/no-unnecessary-type-arguments": "error",
                 "@typescript-eslint/no-unnecessary-type-assertion": "error",
                 "@typescript-eslint/no-unnecessary-type-constraint": "error",
+                "@typescript-eslint/no-unnecessary-type-conversion": "error",
                 "@typescript-eslint/no-unnecessary-type-parameters": "error",
                 "@typescript-eslint/no-unsafe-argument": "error",
                 "@typescript-eslint/no-unsafe-assignment": "error",
@@ -1214,7 +1215,7 @@ exports[`preset-ts > should match the snapshot 1`] = `
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -1281,6 +1282,7 @@ exports[`preset-ts > should match the snapshot 1`] = `
                 "@typescript-eslint/no-unnecessary-template-expression": "error",
                 "@typescript-eslint/no-unnecessary-type-arguments": "error",
                 "@typescript-eslint/no-unnecessary-type-assertion": "error",
+                "@typescript-eslint/no-unnecessary-type-conversion": "error",
                 "@typescript-eslint/no-unnecessary-type-parameters": "error",
                 "@typescript-eslint/no-unsafe-argument": "error",
                 "@typescript-eslint/no-unsafe-assignment": "error",
@@ -1336,7 +1338,7 @@ exports[`preset-ts > should match the snapshot 1`] = `
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -1407,7 +1409,7 @@ exports[`preset-ts > should match the snapshot 1`] = `
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -1487,7 +1489,7 @@ exports[`preset-ts > should match the snapshot 1`] = `
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -1821,6 +1823,7 @@ exports[`preset-ts > should match the snapshot 1`] = `
               "@typescript-eslint/no-unnecessary-type-arguments": "error",
               "@typescript-eslint/no-unnecessary-type-assertion": "error",
               "@typescript-eslint/no-unnecessary-type-constraint": "error",
+              "@typescript-eslint/no-unnecessary-type-conversion": "error",
               "@typescript-eslint/no-unnecessary-type-parameters": "error",
               "@typescript-eslint/no-unsafe-argument": "error",
               "@typescript-eslint/no-unsafe-assignment": "error",
@@ -1909,6 +1912,7 @@ exports[`preset-ts > should match the snapshot 1`] = `
               "@typescript-eslint/no-unnecessary-template-expression": "error",
               "@typescript-eslint/no-unnecessary-type-arguments": "error",
               "@typescript-eslint/no-unnecessary-type-assertion": "error",
+              "@typescript-eslint/no-unnecessary-type-conversion": "error",
               "@typescript-eslint/no-unnecessary-type-parameters": "error",
               "@typescript-eslint/no-unsafe-argument": "error",
               "@typescript-eslint/no-unsafe-assignment": "error",
@@ -2030,7 +2034,7 @@ exports[`preset-ts > should match the snapshot 1`] = `
         },
         "meta": {
           "name": "@typescript-eslint/eslint-plugin",
-          "version": "8.38.0",
+          "version": "8.39.1",
         },
         "rules": {
           "adjacent-overload-signatures": {
@@ -2184,7 +2188,6 @@ exports[`preset-ts > should match the snapshot 1`] = `
                   "additionalProperties": false,
                   "properties": {
                     "minimumDescriptionLength": {
-                      "default": 3,
                       "description": "A minimum character length for descriptions when \`allow-with-description\` is enabled.",
                       "type": "number",
                     },
@@ -2280,7 +2283,6 @@ exports[`preset-ts > should match the snapshot 1`] = `
                   "additionalProperties": false,
                   "properties": {
                     "enforceForClassFields": {
-                      "default": true,
                       "description": "Enforces that functions used as instance field initializers utilize \`this\`.",
                       "type": "boolean",
                     },
@@ -2672,27 +2674,22 @@ exports[`preset-ts > should match the snapshot 1`] = `
                   "additionalProperties": false,
                   "properties": {
                     "allowIndexSignaturePropertyAccess": {
-                      "default": false,
                       "description": "Whether to allow accessing properties matching an index signature with array notation.",
                       "type": "boolean",
                     },
                     "allowKeywords": {
-                      "default": true,
                       "description": "Whether to allow keywords such as ["class"]\`.",
                       "type": "boolean",
                     },
                     "allowPattern": {
-                      "default": "",
                       "description": "Regular expression of names to allow.",
                       "type": "string",
                     },
                     "allowPrivateClassPropertyAccess": {
-                      "default": false,
                       "description": "Whether to allow accessing class members marked as \`private\` with array notation.",
                       "type": "boolean",
                     },
                     "allowProtectedClassPropertyAccess": {
-                      "default": false,
                       "description": "Whether to allow accessing class members marked as \`protected\` with array notation.",
                       "type": "boolean",
                     },
@@ -6752,7 +6749,6 @@ You must still type the parameters of the function.",
                   "additionalProperties": false,
                   "properties": {
                     "checkNever": {
-                      "default": false,
                       "description": "Whether to suggest removing \`void\` when the argument has type \`never\`.",
                       "type": "boolean",
                     },
@@ -7952,6 +7948,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             "meta": {
               "docs": {
                 "description": "Disallow conversion idioms when they do not change the type or value of the expression",
+                "recommended": "strict",
                 "requiresTypeChecking": true,
                 "url": "https://typescript-eslint.io/rules/no-unnecessary-type-conversion",
               },
@@ -8022,6 +8019,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
                 "unsafeArrayPatternFromTuple": "Unsafe array destructuring of a tuple element with an {{sender}} value.",
                 "unsafeArraySpread": "Unsafe spread of an {{sender}} value in an array.",
                 "unsafeAssignment": "Unsafe assignment of type {{sender}} to a variable of type {{receiver}}.",
+                "unsafeObjectPattern": "Unsafe object destructuring of a property with an {{sender}} value.",
               },
               "schema": [],
               "type": "problem",
@@ -10514,6 +10512,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
       "@typescript-eslint/no-unnecessary-type-arguments": "error",
       "@typescript-eslint/no-unnecessary-type-assertion": "error",
       "@typescript-eslint/no-unnecessary-type-constraint": "error",
+      "@typescript-eslint/no-unnecessary-type-conversion": "error",
       "@typescript-eslint/no-unnecessary-type-parameters": "error",
       "@typescript-eslint/no-unsafe-argument": "error",
       "@typescript-eslint/no-unsafe-assignment": "error",
@@ -10585,7 +10584,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
       "parser": {
         "meta": {
           "name": "typescript-eslint/parser",
-          "version": "8.38.0",
+          "version": "8.39.1",
         },
         "parseForESLint": [Function],
       },
@@ -10872,7 +10871,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -11077,7 +11076,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
               "parser": {
                 "meta": {
                   "name": "typescript-eslint/parser",
-                  "version": "8.38.0",
+                  "version": "8.39.1",
                 },
                 "parseForESLint": [Function],
               },
@@ -11199,7 +11198,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -11279,7 +11278,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -11386,7 +11385,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -11470,7 +11469,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -11564,7 +11563,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -11653,6 +11652,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                 "@typescript-eslint/no-unnecessary-type-arguments": "error",
                 "@typescript-eslint/no-unnecessary-type-assertion": "error",
                 "@typescript-eslint/no-unnecessary-type-constraint": "error",
+                "@typescript-eslint/no-unnecessary-type-conversion": "error",
                 "@typescript-eslint/no-unnecessary-type-parameters": "error",
                 "@typescript-eslint/no-unsafe-argument": "error",
                 "@typescript-eslint/no-unsafe-assignment": "error",
@@ -11723,7 +11723,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -11790,6 +11790,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                 "@typescript-eslint/no-unnecessary-template-expression": "error",
                 "@typescript-eslint/no-unnecessary-type-arguments": "error",
                 "@typescript-eslint/no-unnecessary-type-assertion": "error",
+                "@typescript-eslint/no-unnecessary-type-conversion": "error",
                 "@typescript-eslint/no-unnecessary-type-parameters": "error",
                 "@typescript-eslint/no-unsafe-argument": "error",
                 "@typescript-eslint/no-unsafe-assignment": "error",
@@ -11845,7 +11846,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -11916,7 +11917,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -11994,7 +11995,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                 "parser": {
                   "meta": {
                     "name": "typescript-eslint/parser",
-                    "version": "8.38.0",
+                    "version": "8.39.1",
                   },
                   "parseForESLint": [Function],
                 },
@@ -12328,6 +12329,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
               "@typescript-eslint/no-unnecessary-type-arguments": "error",
               "@typescript-eslint/no-unnecessary-type-assertion": "error",
               "@typescript-eslint/no-unnecessary-type-constraint": "error",
+              "@typescript-eslint/no-unnecessary-type-conversion": "error",
               "@typescript-eslint/no-unnecessary-type-parameters": "error",
               "@typescript-eslint/no-unsafe-argument": "error",
               "@typescript-eslint/no-unsafe-assignment": "error",
@@ -12416,6 +12418,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
               "@typescript-eslint/no-unnecessary-template-expression": "error",
               "@typescript-eslint/no-unnecessary-type-arguments": "error",
               "@typescript-eslint/no-unnecessary-type-assertion": "error",
+              "@typescript-eslint/no-unnecessary-type-conversion": "error",
               "@typescript-eslint/no-unnecessary-type-parameters": "error",
               "@typescript-eslint/no-unsafe-argument": "error",
               "@typescript-eslint/no-unsafe-assignment": "error",
@@ -12537,7 +12540,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
         },
         "meta": {
           "name": "@typescript-eslint/eslint-plugin",
-          "version": "8.38.0",
+          "version": "8.39.1",
         },
         "rules": {
           "adjacent-overload-signatures": {
@@ -12691,7 +12694,6 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                   "additionalProperties": false,
                   "properties": {
                     "minimumDescriptionLength": {
-                      "default": 3,
                       "description": "A minimum character length for descriptions when \`allow-with-description\` is enabled.",
                       "type": "number",
                     },
@@ -12787,7 +12789,6 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                   "additionalProperties": false,
                   "properties": {
                     "enforceForClassFields": {
-                      "default": true,
                       "description": "Enforces that functions used as instance field initializers utilize \`this\`.",
                       "type": "boolean",
                     },
@@ -13179,27 +13180,22 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                   "additionalProperties": false,
                   "properties": {
                     "allowIndexSignaturePropertyAccess": {
-                      "default": false,
                       "description": "Whether to allow accessing properties matching an index signature with array notation.",
                       "type": "boolean",
                     },
                     "allowKeywords": {
-                      "default": true,
                       "description": "Whether to allow keywords such as ["class"]\`.",
                       "type": "boolean",
                     },
                     "allowPattern": {
-                      "default": "",
                       "description": "Regular expression of names to allow.",
                       "type": "string",
                     },
                     "allowPrivateClassPropertyAccess": {
-                      "default": false,
                       "description": "Whether to allow accessing class members marked as \`private\` with array notation.",
                       "type": "boolean",
                     },
                     "allowProtectedClassPropertyAccess": {
-                      "default": false,
                       "description": "Whether to allow accessing class members marked as \`protected\` with array notation.",
                       "type": "boolean",
                     },
@@ -17259,7 +17255,6 @@ You must still type the parameters of the function.",
                   "additionalProperties": false,
                   "properties": {
                     "checkNever": {
-                      "default": false,
                       "description": "Whether to suggest removing \`void\` when the argument has type \`never\`.",
                       "type": "boolean",
                     },
@@ -18459,6 +18454,7 @@ Otherwise, if you don't need to preserve emojis or other non-Ascii characters, d
             "meta": {
               "docs": {
                 "description": "Disallow conversion idioms when they do not change the type or value of the expression",
+                "recommended": "strict",
                 "requiresTypeChecking": true,
                 "url": "https://typescript-eslint.io/rules/no-unnecessary-type-conversion",
               },
@@ -18529,6 +18525,7 @@ You can try to fix this by turning on the \`noImplicitThis\` compiler option, or
                 "unsafeArrayPatternFromTuple": "Unsafe array destructuring of a tuple element with an {{sender}} value.",
                 "unsafeArraySpread": "Unsafe spread of an {{sender}} value in an array.",
                 "unsafeAssignment": "Unsafe assignment of type {{sender}} to a variable of type {{receiver}}.",
+                "unsafeObjectPattern": "Unsafe object destructuring of a property with an {{sender}} value.",
               },
               "schema": [],
               "type": "problem",
@@ -25067,21 +25064,41 @@ If your function does not access \`this\`, you can annotate it with \`this: void
               "package-json/unique-dependencies": "error",
               "package-json/valid-author": "error",
               "package-json/valid-bin": "error",
+              "package-json/valid-bundleDependencies": "error",
+              "package-json/valid-config": "error",
+              "package-json/valid-cpu": "error",
+              "package-json/valid-dependencies": "error",
+              "package-json/valid-description": "error",
+              "package-json/valid-devDependencies": "error",
+              "package-json/valid-license": "error",
               "package-json/valid-name": "error",
+              "package-json/valid-optionalDependencies": "error",
               "package-json/valid-package-definition": [
                 "error",
                 {
                   "ignoreProperties": [
                     "author",
+                    "bundleDependencies",
+                    "config",
+                    "cpu",
+                    "dependencies",
+                    "description",
+                    "devDependencies",
+                    "license",
+                    "optionalDependencies",
+                    "peerDependencies",
+                    "scripts",
+                    "type",
                     "bin",
                     "name",
                     "repository-directory",
-                    "type",
                     "version",
                   ],
                 },
               ],
+              "package-json/valid-peerDependencies": "error",
               "package-json/valid-repository-directory": "error",
+              "package-json/valid-scripts": "error",
               "package-json/valid-type": "error",
               "package-json/valid-version": "error",
             },
@@ -25799,21 +25816,41 @@ If your function does not access \`this\`, you can annotate it with \`this: void
               "package-json/unique-dependencies": "error",
               "package-json/valid-author": "error",
               "package-json/valid-bin": "error",
+              "package-json/valid-bundleDependencies": "error",
+              "package-json/valid-config": "error",
+              "package-json/valid-cpu": "error",
+              "package-json/valid-dependencies": "error",
+              "package-json/valid-description": "error",
+              "package-json/valid-devDependencies": "error",
+              "package-json/valid-license": "error",
               "package-json/valid-name": "error",
+              "package-json/valid-optionalDependencies": "error",
               "package-json/valid-package-definition": [
                 "error",
                 {
                   "ignoreProperties": [
                     "author",
+                    "bundleDependencies",
+                    "config",
+                    "cpu",
+                    "dependencies",
+                    "description",
+                    "devDependencies",
+                    "license",
+                    "optionalDependencies",
+                    "peerDependencies",
+                    "scripts",
+                    "type",
                     "bin",
                     "name",
                     "repository-directory",
-                    "type",
                     "version",
                   ],
                 },
               ],
+              "package-json/valid-peerDependencies": "error",
               "package-json/valid-repository-directory": "error",
+              "package-json/valid-scripts": "error",
               "package-json/valid-type": "error",
               "package-json/valid-version": "error",
             },
@@ -25821,12 +25858,17 @@ If your function does not access \`this\`, you can annotate it with \`this: void
         },
         "meta": {
           "name": "eslint-plugin-package-json",
-          "version": "0.42.1",
+          "version": "0.52.1",
         },
         "rules": {
           "no-empty-fields": {
             "create": [Function],
             "meta": {
+              "defaultOptions": [
+                {
+                  "ignoreProperties": [],
+                },
+              ],
               "docs": {
                 "category": "Best Practices",
                 "description": "Reports on unnecessary empty arrays and objects.",
@@ -25838,7 +25880,21 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                 "emptyFields": "The field '{{field}}' does nothing and can be removed.",
                 "remove": "Remove this empty field.",
               },
-              "schema": [],
+              "schema": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "ignoreProperties": {
+                      "description": "Array of top-level properties to ignore.",
+                      "items": {
+                        "type": "string",
+                      },
+                      "type": "array",
+                    },
+                  },
+                  "type": "object",
+                },
+              ],
               "type": "suggestion",
             },
           },
@@ -25865,6 +25921,11 @@ If your function does not access \`this\`, you can annotate it with \`this: void
           "order-properties": {
             "create": [Function],
             "meta": {
+              "defaultOptions": [
+                {
+                  "order": "sort-package-json",
+                },
+              ],
               "docs": {
                 "category": "Best Practices",
                 "description": "Package properties must be declared in standard order",
@@ -25876,6 +25937,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
               },
               "schema": [
                 {
+                  "additionalProperties": false,
                   "properties": {
                     "order": {
                       "anyOf": [
@@ -25899,6 +25961,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                           ],
                         },
                       ],
+                      "description": "Specifies the sorting order of top-level properties.",
                     },
                   },
                   "type": "object",
@@ -25910,6 +25973,11 @@ If your function does not access \`this\`, you can annotate it with \`this: void
           "repository-shorthand": {
             "create": [Function],
             "meta": {
+              "defaultOptions": [
+                {
+                  "form": "object",
+                },
+              ],
               "docs": {
                 "category": "Best Practices",
                 "description": "Enforce either object or shorthand declaration for repository.",
@@ -25922,8 +25990,10 @@ If your function does not access \`this\`, you can annotate it with \`this: void
               },
               "schema": [
                 {
+                  "additionalProperties": false,
                   "properties": {
                     "form": {
+                      "description": "Specifies which repository form to enforce.",
                       "enum": [
                         "object",
                         "shorthand",
@@ -25944,12 +26014,98 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Requires the \`author\` property to be present.",
-                "recommended": false,
+                "recommended": undefined,
               },
               "messages": {
                 "missing": "Property '{{property}}' is required.",
               },
-              "schema": [],
+              "schema": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "ignorePrivate": {
+                      "default": false,
+                      "type": "boolean",
+                    },
+                  },
+                  "type": "object",
+                },
+              ],
+              "type": "suggestion",
+            },
+          },
+          "require-bugs": {
+            "create": [Function],
+            "meta": {
+              "docs": {
+                "description": "Requires the \`bugs\` property to be present.",
+                "recommended": undefined,
+              },
+              "messages": {
+                "missing": "Property '{{property}}' is required.",
+              },
+              "schema": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "ignorePrivate": {
+                      "default": false,
+                      "type": "boolean",
+                    },
+                  },
+                  "type": "object",
+                },
+              ],
+              "type": "suggestion",
+            },
+          },
+          "require-bundleDependencies": {
+            "create": [Function],
+            "meta": {
+              "docs": {
+                "description": "Requires the \`bundleDependencies\` property to be present.",
+                "recommended": undefined,
+              },
+              "messages": {
+                "missing": "Property '{{property}}' is required.",
+              },
+              "schema": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "ignorePrivate": {
+                      "default": false,
+                      "type": "boolean",
+                    },
+                  },
+                  "type": "object",
+                },
+              ],
+              "type": "suggestion",
+            },
+          },
+          "require-dependencies": {
+            "create": [Function],
+            "meta": {
+              "docs": {
+                "description": "Requires the \`dependencies\` property to be present.",
+                "recommended": undefined,
+              },
+              "messages": {
+                "missing": "Property '{{property}}' is required.",
+              },
+              "schema": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "ignorePrivate": {
+                      "default": false,
+                      "type": "boolean",
+                    },
+                  },
+                  "type": "object",
+                },
+              ],
               "type": "suggestion",
             },
           },
@@ -25963,7 +26119,43 @@ If your function does not access \`this\`, you can annotate it with \`this: void
               "messages": {
                 "missing": "Property '{{property}}' is required.",
               },
-              "schema": [],
+              "schema": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "ignorePrivate": {
+                      "default": false,
+                      "type": "boolean",
+                    },
+                  },
+                  "type": "object",
+                },
+              ],
+              "type": "suggestion",
+            },
+          },
+          "require-devDependencies": {
+            "create": [Function],
+            "meta": {
+              "docs": {
+                "description": "Requires the \`devDependencies\` property to be present.",
+                "recommended": undefined,
+              },
+              "messages": {
+                "missing": "Property '{{property}}' is required.",
+              },
+              "schema": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "ignorePrivate": {
+                      "default": false,
+                      "type": "boolean",
+                    },
+                  },
+                  "type": "object",
+                },
+              ],
               "type": "suggestion",
             },
           },
@@ -25972,12 +26164,23 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Requires the \`engines\` property to be present.",
-                "recommended": false,
+                "recommended": undefined,
               },
               "messages": {
                 "missing": "Property '{{property}}' is required.",
               },
-              "schema": [],
+              "schema": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "ignorePrivate": {
+                      "default": false,
+                      "type": "boolean",
+                    },
+                  },
+                  "type": "object",
+                },
+              ],
               "type": "suggestion",
             },
           },
@@ -25986,12 +26189,23 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Requires the \`files\` property to be present.",
-                "recommended": false,
+                "recommended": undefined,
               },
               "messages": {
                 "missing": "Property '{{property}}' is required.",
               },
-              "schema": [],
+              "schema": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "ignorePrivate": {
+                      "default": false,
+                      "type": "boolean",
+                    },
+                  },
+                  "type": "object",
+                },
+              ],
               "type": "suggestion",
             },
           },
@@ -26000,12 +26214,23 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Requires the \`keywords\` property to be present.",
-                "recommended": false,
+                "recommended": undefined,
               },
               "messages": {
                 "missing": "Property '{{property}}' is required.",
               },
-              "schema": [],
+              "schema": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "ignorePrivate": {
+                      "default": false,
+                      "type": "boolean",
+                    },
+                  },
+                  "type": "object",
+                },
+              ],
               "type": "suggestion",
             },
           },
@@ -26019,7 +26244,68 @@ If your function does not access \`this\`, you can annotate it with \`this: void
               "messages": {
                 "missing": "Property '{{property}}' is required.",
               },
-              "schema": [],
+              "schema": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "ignorePrivate": {
+                      "default": true,
+                      "type": "boolean",
+                    },
+                  },
+                  "type": "object",
+                },
+              ],
+              "type": "suggestion",
+            },
+          },
+          "require-optionalDependencies": {
+            "create": [Function],
+            "meta": {
+              "docs": {
+                "description": "Requires the \`optionalDependencies\` property to be present.",
+                "recommended": undefined,
+              },
+              "messages": {
+                "missing": "Property '{{property}}' is required.",
+              },
+              "schema": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "ignorePrivate": {
+                      "default": false,
+                      "type": "boolean",
+                    },
+                  },
+                  "type": "object",
+                },
+              ],
+              "type": "suggestion",
+            },
+          },
+          "require-peerDependencies": {
+            "create": [Function],
+            "meta": {
+              "docs": {
+                "description": "Requires the \`peerDependencies\` property to be present.",
+                "recommended": undefined,
+              },
+              "messages": {
+                "missing": "Property '{{property}}' is required.",
+              },
+              "schema": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "ignorePrivate": {
+                      "default": false,
+                      "type": "boolean",
+                    },
+                  },
+                  "type": "object",
+                },
+              ],
               "type": "suggestion",
             },
           },
@@ -26033,7 +26319,18 @@ If your function does not access \`this\`, you can annotate it with \`this: void
               "messages": {
                 "missing": "Property '{{property}}' is required.",
               },
-              "schema": [],
+              "schema": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "ignorePrivate": {
+                      "default": false,
+                      "type": "boolean",
+                    },
+                  },
+                  "type": "object",
+                },
+              ],
               "type": "suggestion",
             },
           },
@@ -26042,12 +26339,23 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Requires the \`types\` property to be present.",
-                "recommended": false,
+                "recommended": undefined,
               },
               "messages": {
                 "missing": "Property '{{property}}' is required.",
               },
-              "schema": [],
+              "schema": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "ignorePrivate": {
+                      "default": false,
+                      "type": "boolean",
+                    },
+                  },
+                  "type": "object",
+                },
+              ],
               "type": "suggestion",
             },
           },
@@ -26061,13 +26369,27 @@ If your function does not access \`this\`, you can annotate it with \`this: void
               "messages": {
                 "missing": "Property '{{property}}' is required.",
               },
-              "schema": [],
+              "schema": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "ignorePrivate": {
+                      "default": true,
+                      "type": "boolean",
+                    },
+                  },
+                  "type": "object",
+                },
+              ],
               "type": "suggestion",
             },
           },
           "restrict-dependency-ranges": {
             "create": [Function],
             "meta": {
+              "defaultOptions": [
+                [],
+              ],
               "docs": {
                 "description": "Restricts the range of dependencies to allow or disallow specific types of ranges.",
               },
@@ -26085,6 +26407,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                       "additionalProperties": false,
                       "properties": {
                         "forDependencyTypes": {
+                          "description": "Apply a range type restriction for an entire group of dependencies by which type of dependencies they belong to.",
                           "items": {
                             "enum": [
                               "dependencies",
@@ -26096,15 +26419,18 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                           "type": "array",
                         },
                         "forPackages": {
+                          "description": "The exact name of a package, or a regex pattern used to match a group of packages by name.",
                           "items": {
                             "type": "string",
                           },
                           "type": "array",
                         },
                         "forVersions": {
+                          "description": "Apply a restriction to a specific semver range.",
                           "type": "string",
                         },
                         "rangeType": {
+                          "description": "Identifies which range type or types you want to apply to packages that match any of the other match options (or all dependencies if no other options are provided).",
                           "oneOf": [
                             {
                               "enum": [
@@ -26132,10 +26458,12 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                       "type": "object",
                     },
                     {
+                      "description": "Array of configuration options, specifying range requirements.",
                       "items": {
                         "additionalProperties": false,
                         "properties": {
                           "forDependencyTypes": {
+                            "description": "Apply a range type restriction for an entire group of dependencies by which type of dependencies they belong to.",
                             "items": {
                               "enum": [
                                 "dependencies",
@@ -26147,15 +26475,18 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                             "type": "array",
                           },
                           "forPackages": {
+                            "description": "The exact name of a package, or a regex pattern used to match a group of packages by name.",
                             "items": {
                               "type": "string",
                             },
                             "type": "array",
                           },
                           "forVersions": {
+                            "description": "Apply a restriction to a specific semver range.",
                             "type": "string",
                           },
                           "rangeType": {
+                            "description": "Identifies which range type or types you want to apply to packages that match any of the other match options (or all dependencies if no other options are provided).",
                             "oneOf": [
                               {
                                 "enum": [
@@ -26193,6 +26524,19 @@ If your function does not access \`this\`, you can annotate it with \`this: void
           "sort-collections": {
             "create": [Function],
             "meta": {
+              "defaultOptions": [
+                [
+                  "config",
+                  "dependencies",
+                  "devDependencies",
+                  "exports",
+                  "optionalDependencies",
+                  "overrides",
+                  "peerDependencies",
+                  "peerDependenciesMeta",
+                  "scripts",
+                ],
+              ],
               "docs": {
                 "category": "Best Practices",
                 "description": "Dependencies, scripts, and configuration values must be declared in alphabetical order.",
@@ -26204,6 +26548,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
               },
               "schema": [
                 {
+                  "description": "Array of package properties to require sorting.",
                   "items": {
                     "type": "string",
                   },
@@ -26235,11 +26580,11 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "category": "Best Practices",
-                "description": "Enforce that the author field is a valid npm author specification",
+                "description": "Enforce that the \`author\` property is valid.",
                 "recommended": true,
               },
               "messages": {
-                "invalid": "Invalid author: {{ errors }}",
+                "validationError": "Invalid author: {{ errors }}",
               },
               "schema": [],
               "type": "problem",
@@ -26248,6 +26593,11 @@ If your function does not access \`this\`, you can annotate it with \`this: void
           "valid-bin": {
             "create": [Function],
             "meta": {
+              "defaultOptions": [
+                {
+                  "enforceCase": false,
+                },
+              ],
               "docs": {
                 "category": "Best Practices",
                 "description": "Enforce that the \`bin\` property is valid.",
@@ -26261,15 +26611,121 @@ If your function does not access \`this\`, you can annotate it with \`this: void
               },
               "schema": [
                 {
+                  "additionalProperties": false,
                   "properties": {
                     "enforceCase": {
-                      "default": false,
+                      "description": "Enforce that the bin's keys should be in kebab case.",
                       "type": "boolean",
                     },
                   },
                   "type": "object",
                 },
               ],
+              "type": "problem",
+            },
+          },
+          "valid-bundleDependencies": {
+            "create": [Function],
+            "meta": {
+              "docs": {
+                "category": "Best Practices",
+                "description": "Enforce that the \`bundleDependencies\` (also: \`bundledDependencies\`) property is valid.",
+                "recommended": true,
+              },
+              "messages": {
+                "validationError": "Invalid bundleDependencies: {{ errors }}",
+              },
+              "schema": [],
+              "type": "problem",
+            },
+          },
+          "valid-config": {
+            "create": [Function],
+            "meta": {
+              "docs": {
+                "category": "Best Practices",
+                "description": "Enforce that the \`config\` property is valid.",
+                "recommended": true,
+              },
+              "messages": {
+                "validationError": "Invalid config: {{ errors }}",
+              },
+              "schema": [],
+              "type": "problem",
+            },
+          },
+          "valid-cpu": {
+            "create": [Function],
+            "meta": {
+              "docs": {
+                "category": "Best Practices",
+                "description": "Enforce that the \`cpu\` property is valid.",
+                "recommended": true,
+              },
+              "messages": {
+                "validationError": "Invalid cpu: {{ errors }}",
+              },
+              "schema": [],
+              "type": "problem",
+            },
+          },
+          "valid-dependencies": {
+            "create": [Function],
+            "meta": {
+              "docs": {
+                "category": "Best Practices",
+                "description": "Enforce that the \`dependencies\` property is valid.",
+                "recommended": true,
+              },
+              "messages": {
+                "validationError": "Invalid dependencies: {{ errors }}",
+              },
+              "schema": [],
+              "type": "problem",
+            },
+          },
+          "valid-description": {
+            "create": [Function],
+            "meta": {
+              "docs": {
+                "category": "Best Practices",
+                "description": "Enforce that the \`description\` property is valid.",
+                "recommended": true,
+              },
+              "messages": {
+                "validationError": "Invalid description: {{ errors }}",
+              },
+              "schema": [],
+              "type": "problem",
+            },
+          },
+          "valid-devDependencies": {
+            "create": [Function],
+            "meta": {
+              "docs": {
+                "category": "Best Practices",
+                "description": "Enforce that the \`devDependencies\` property is valid.",
+                "recommended": true,
+              },
+              "messages": {
+                "validationError": "Invalid devDependencies: {{ errors }}",
+              },
+              "schema": [],
+              "type": "problem",
+            },
+          },
+          "valid-license": {
+            "create": [Function],
+            "meta": {
+              "docs": {
+                "category": "Best Practices",
+                "description": "Enforce that the \`license\` property is valid.",
+                "recommended": true,
+              },
+              "messages": {
+                "validationError": "Invalid license: {{ errors }}",
+              },
+              "schema": [],
               "type": "problem",
             },
           },
@@ -26304,9 +26760,29 @@ If your function does not access \`this\`, you can annotate it with \`this: void
               "type": "problem",
             },
           },
+          "valid-optionalDependencies": {
+            "create": [Function],
+            "meta": {
+              "docs": {
+                "category": "Best Practices",
+                "description": "Enforce that the \`optionalDependencies\` property is valid.",
+                "recommended": true,
+              },
+              "messages": {
+                "validationError": "Invalid optionalDependencies: {{ errors }}",
+              },
+              "schema": [],
+              "type": "problem",
+            },
+          },
           "valid-package-definition": {
             "create": [Function],
             "meta": {
+              "defaultOptions": [
+                {
+                  "ignoreProperties": [],
+                },
+              ],
               "docs": {
                 "category": "Best Practices",
                 "description": "Enforce that package.json has all properties required by the npm spec",
@@ -26317,6 +26793,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                   "additionalProperties": false,
                   "properties": {
                     "ignoreProperties": {
+                      "description": "Array of top-level package properties to ignore.",
                       "items": {
                         "type": "string",
                       },
@@ -26326,6 +26803,21 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                   "type": "object",
                 },
               ],
+              "type": "problem",
+            },
+          },
+          "valid-peerDependencies": {
+            "create": [Function],
+            "meta": {
+              "docs": {
+                "category": "Best Practices",
+                "description": "Enforce that the \`peerDependencies\` property is valid.",
+                "recommended": true,
+              },
+              "messages": {
+                "validationError": "Invalid peerDependencies: {{ errors }}",
+              },
+              "schema": [],
               "type": "problem",
             },
           },
@@ -26344,6 +26836,21 @@ If your function does not access \`this\`, you can annotate it with \`this: void
               },
               "schema": [],
               "type": "suggestion",
+            },
+          },
+          "valid-scripts": {
+            "create": [Function],
+            "meta": {
+              "docs": {
+                "category": "Best Practices",
+                "description": "Enforce that the \`scripts\` property is valid.",
+                "recommended": true,
+              },
+              "messages": {
+                "validationError": "Invalid scripts: {{ errors }}",
+              },
+              "schema": [],
+              "type": "problem",
             },
           },
           "valid-type": {
@@ -26392,21 +26899,41 @@ If your function does not access \`this\`, you can annotate it with \`this: void
       "package-json/unique-dependencies": "error",
       "package-json/valid-author": "error",
       "package-json/valid-bin": "error",
+      "package-json/valid-bundleDependencies": "error",
+      "package-json/valid-config": "error",
+      "package-json/valid-cpu": "error",
+      "package-json/valid-dependencies": "error",
+      "package-json/valid-description": "error",
+      "package-json/valid-devDependencies": "error",
+      "package-json/valid-license": "error",
       "package-json/valid-name": "error",
+      "package-json/valid-optionalDependencies": "error",
       "package-json/valid-package-definition": [
         "error",
         {
           "ignoreProperties": [
             "author",
+            "bundleDependencies",
+            "config",
+            "cpu",
+            "dependencies",
+            "description",
+            "devDependencies",
+            "license",
+            "optionalDependencies",
+            "peerDependencies",
+            "scripts",
+            "type",
             "bin",
             "name",
             "repository-directory",
-            "type",
             "version",
           ],
         },
       ],
+      "package-json/valid-peerDependencies": "error",
       "package-json/valid-repository-directory": "error",
+      "package-json/valid-scripts": "error",
       "package-json/valid-type": "error",
       "package-json/valid-version": "error",
     },
@@ -26664,10 +27191,10 @@ If your function does not access \`this\`, you can annotate it with \`this: void
               "react/jsx-newline": 0,
               "react/jsx-one-expression-per-line": 0,
               "react/jsx-props-no-multi-spaces": 0,
-              "react/jsx-self-closing-comp": 0,
               "react/jsx-sort-props": 0,
               "react/jsx-tag-spacing": 0,
               "react/jsx-wrap-multilines": 0,
+              "react/self-closing-comp": 0,
               "rest-spread-spacing": 0,
               "semi": 0,
               "semi-spacing": 0,
@@ -26765,10 +27292,12 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                   "FunctionDeclaration": {
                     "body": 1,
                     "parameters": 1,
+                    "returnType": 1,
                   },
                   "FunctionExpression": {
                     "body": 1,
                     "parameters": 1,
+                    "returnType": 1,
                   },
                   "ImportDeclaration": 1,
                   "MemberExpression": 1,
@@ -26973,7 +27502,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                 "error",
                 "single",
                 {
-                  "allowTemplateLiterals": true,
+                  "allowTemplateLiterals": "always",
                   "avoidEscape": false,
                 },
               ],
@@ -27146,10 +27675,12 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                   "FunctionDeclaration": {
                     "body": 1,
                     "parameters": 1,
+                    "returnType": 1,
                   },
                   "FunctionExpression": {
                     "body": 1,
                     "parameters": 1,
+                    "returnType": 1,
                   },
                   "ImportDeclaration": 1,
                   "MemberExpression": 1,
@@ -27354,7 +27885,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                 "error",
                 "single",
                 {
-                  "allowTemplateLiterals": true,
+                  "allowTemplateLiterals": "always",
                   "avoidEscape": false,
                 },
               ],
@@ -27456,7 +27987,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce linebreaks after opening and before closing array brackets",
-                "url": "https://eslint.style/rules/js/array-bracket-newline",
+                "url": "https://eslint.style/rules/array-bracket-newline",
               },
               "fixable": "whitespace",
               "messages": {
@@ -27504,7 +28035,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent spacing inside array brackets",
-                "url": "https://eslint.style/rules/js/array-bracket-spacing",
+                "url": "https://eslint.style/rules/array-bracket-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -27546,7 +28077,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce line breaks after each array element",
-                "url": "https://eslint.style/rules/js/array-element-newline",
+                "url": "https://eslint.style/rules/array-element-newline",
               },
               "fixable": "whitespace",
               "messages": {
@@ -27620,7 +28151,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require parentheses around arrow function arguments",
-                "url": "https://eslint.style/rules/js/arrow-parens",
+                "url": "https://eslint.style/rules/arrow-parens",
               },
               "fixable": "code",
               "messages": {
@@ -27657,7 +28188,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent spacing before and after the arrow in arrow functions",
-                "url": "https://eslint.style/rules/js/arrow-spacing",
+                "url": "https://eslint.style/rules/arrow-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -27693,7 +28224,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Disallow or enforce spaces inside of blocks after opening block and before closing block",
-                "url": "https://eslint.style/rules/ts/block-spacing",
+                "url": "https://eslint.style/rules/block-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -27723,7 +28254,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent brace style for blocks",
-                "url": "https://eslint.style/rules/ts/brace-style",
+                "url": "https://eslint.style/rules/brace-style",
               },
               "fixable": "whitespace",
               "messages": {
@@ -27765,7 +28296,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require or disallow trailing commas",
-                "url": "https://eslint.style/rules/ts/comma-dangle",
+                "url": "https://eslint.style/rules/comma-dangle",
               },
               "fixable": "code",
               "messages": {
@@ -27856,7 +28387,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent spacing before and after commas",
-                "url": "https://eslint.style/rules/ts/comma-spacing",
+                "url": "https://eslint.style/rules/comma-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -27888,7 +28419,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent comma style",
-                "url": "https://eslint.style/rules/js/comma-style",
+                "url": "https://eslint.style/rules/comma-style",
               },
               "fixable": "code",
               "messages": {
@@ -27926,7 +28457,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent spacing inside computed property brackets",
-                "url": "https://eslint.style/rules/js/computed-property-spacing",
+                "url": "https://eslint.style/rules/computed-property-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -27963,7 +28494,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent line breaks after opening and before closing braces",
-                "url": "https://eslint.style/rules/plus/curly-newline",
+                "url": "https://eslint.style/rules/curly-newline",
               },
               "fixable": "whitespace",
               "messages": {
@@ -28390,60 +28921,6 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                             },
                           ],
                         },
-                        "TSEnumBody": {
-                          "oneOf": [
-                            {
-                              "enum": [
-                                "always",
-                                "never",
-                              ],
-                              "type": "string",
-                            },
-                            {
-                              "additionalProperties": false,
-                              "properties": {
-                                "consistent": {
-                                  "type": "boolean",
-                                },
-                                "minElements": {
-                                  "minimum": 0,
-                                  "type": "integer",
-                                },
-                                "multiline": {
-                                  "type": "boolean",
-                                },
-                              },
-                              "type": "object",
-                            },
-                          ],
-                        },
-                        "TSInterfaceBody": {
-                          "oneOf": [
-                            {
-                              "enum": [
-                                "always",
-                                "never",
-                              ],
-                              "type": "string",
-                            },
-                            {
-                              "additionalProperties": false,
-                              "properties": {
-                                "consistent": {
-                                  "type": "boolean",
-                                },
-                                "minElements": {
-                                  "minimum": 0,
-                                  "type": "integer",
-                                },
-                                "multiline": {
-                                  "type": "boolean",
-                                },
-                              },
-                              "type": "object",
-                            },
-                          ],
-                        },
                         "TSModuleBlock": {
                           "oneOf": [
                             {
@@ -28631,7 +29108,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent newlines before and after dots",
-                "url": "https://eslint.style/rules/js/dot-location",
+                "url": "https://eslint.style/rules/dot-location",
               },
               "fixable": "code",
               "messages": {
@@ -28656,7 +29133,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require or disallow newline at the end of files",
-                "url": "https://eslint.style/rules/js/eol-last",
+                "url": "https://eslint.style/rules/eol-last",
               },
               "fixable": "whitespace",
               "messages": {
@@ -28677,84 +29154,13 @@ If your function does not access \`this\`, you can annotate it with \`this: void
               "type": "layout",
             },
           },
-          "func-call-spacing": {
-            "create": [Function],
-            "defaultOptions": [
-              "never",
-              {},
-            ],
-            "meta": {
-              "docs": {
-                "description": "Require or disallow spacing between function identifiers and their invocations",
-                "url": "https://eslint.style/rules/ts/function-call-spacing",
-              },
-              "fixable": "whitespace",
-              "messages": {
-                "missing": "Missing space between function name and paren.",
-                "unexpectedNewline": "Unexpected newline between function name and paren.",
-                "unexpectedWhitespace": "Unexpected whitespace between function name and paren.",
-              },
-              "schema": {
-                "anyOf": [
-                  {
-                    "items": [
-                      {
-                        "enum": [
-                          "never",
-                        ],
-                        "type": "string",
-                      },
-                    ],
-                    "maxItems": 1,
-                    "minItems": 0,
-                    "type": "array",
-                  },
-                  {
-                    "items": [
-                      {
-                        "enum": [
-                          "always",
-                        ],
-                        "type": "string",
-                      },
-                      {
-                        "additionalProperties": false,
-                        "properties": {
-                          "allowNewlines": {
-                            "type": "boolean",
-                          },
-                          "optionalChain": {
-                            "additionalProperties": false,
-                            "properties": {
-                              "after": {
-                                "type": "boolean",
-                              },
-                              "before": {
-                                "type": "boolean",
-                              },
-                            },
-                            "type": "object",
-                          },
-                        },
-                        "type": "object",
-                      },
-                    ],
-                    "maxItems": 2,
-                    "minItems": 0,
-                    "type": "array",
-                  },
-                ],
-              },
-              "type": "layout",
-            },
-          },
           "function-call-argument-newline": {
             "create": [Function],
             "defaultOptions": [],
             "meta": {
               "docs": {
                 "description": "Enforce line breaks between arguments of a function call",
-                "url": "https://eslint.style/rules/js/function-call-argument-newline",
+                "url": "https://eslint.style/rules/function-call-argument-newline",
               },
               "fixable": "whitespace",
               "messages": {
@@ -28783,7 +29189,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require or disallow spacing between function identifiers and their invocations",
-                "url": "https://eslint.style/rules/ts/function-call-spacing",
+                "url": "https://eslint.style/rules/function-call-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -28851,7 +29257,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent line breaks inside function parentheses",
-                "url": "https://eslint.style/rules/js/function-paren-newline",
+                "url": "https://eslint.style/rules/function-paren-newline",
               },
               "fixable": "whitespace",
               "messages": {
@@ -28896,7 +29302,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent spacing around \`*\` operators in generator functions",
-                "url": "https://eslint.style/rules/js/generator-star-spacing",
+                "url": "https://eslint.style/rules/generator-star-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -29016,7 +29422,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce the location of arrow function bodies",
-                "url": "https://eslint.style/rules/js/implicit-arrow-linebreak",
+                "url": "https://eslint.style/rules/implicit-arrow-linebreak",
               },
               "fixable": "whitespace",
               "messages": {
@@ -29048,7 +29454,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent indentation",
-                "url": "https://eslint.style/rules/ts/indent",
+                "url": "https://eslint.style/rules/indent",
               },
               "fixable": "whitespace",
               "messages": {
@@ -29130,6 +29536,10 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                             },
                           ],
                         },
+                        "returnType": {
+                          "minimum": 0,
+                          "type": "integer",
+                        },
                       },
                       "type": "object",
                     },
@@ -29154,6 +29564,10 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                               "type": "string",
                             },
                           ],
+                        },
+                        "returnType": {
+                          "minimum": 0,
+                          "type": "integer",
                         },
                       },
                       "type": "object",
@@ -29267,6 +29681,21 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                                 },
                               ],
                             },
+                            "using": {
+                              "oneOf": [
+                                {
+                                  "minimum": 0,
+                                  "type": "integer",
+                                },
+                                {
+                                  "enum": [
+                                    "first",
+                                    "off",
+                                  ],
+                                  "type": "string",
+                                },
+                              ],
+                            },
                             "var": {
                               "oneOf": [
                                 {
@@ -29345,7 +29774,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Indentation for binary operators",
-                "url": "https://eslint.style/rules/plus/indent-binary-ops",
+                "url": "https://eslint.style/rules/indent-binary-ops",
               },
               "fixable": "whitespace",
               "messages": {
@@ -29376,7 +29805,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce or disallow spaces inside of curly braces in JSX attributes and expressions",
-                "url": "https://eslint.style/rules/jsx/jsx-child-element-spacing",
+                "url": "https://eslint.style/rules/jsx-child-element-spacing",
               },
               "messages": {
                 "spacingAfterPrev": "Ambiguous spacing after previous element {{element}}",
@@ -29392,7 +29821,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce closing bracket location in JSX",
-                "url": "https://eslint.style/rules/jsx/jsx-closing-bracket-location",
+                "url": "https://eslint.style/rules/jsx-closing-bracket-location",
               },
               "fixable": "code",
               "messages": {
@@ -29483,7 +29912,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce closing tag location for multiline JSX",
-                "url": "https://eslint.style/rules/jsx/jsx-closing-tag-location",
+                "url": "https://eslint.style/rules/jsx-closing-tag-location",
               },
               "fixable": "whitespace",
               "messages": {
@@ -29514,7 +29943,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes",
-                "url": "https://eslint.style/rules/jsx/jsx-curly-brace-presence",
+                "url": "https://eslint.style/rules/jsx-curly-brace-presence",
               },
               "fixable": "code",
               "messages": {
@@ -29574,7 +30003,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent linebreaks in curly braces in JSX attributes and expressions",
-                "url": "https://eslint.style/rules/jsx/jsx-curly-newline",
+                "url": "https://eslint.style/rules/jsx-curly-newline",
               },
               "fixable": "whitespace",
               "messages": {
@@ -29627,7 +30056,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce or disallow spaces inside of curly braces in JSX attributes and expressions",
-                "url": "https://eslint.style/rules/jsx/jsx-curly-spacing",
+                "url": "https://eslint.style/rules/jsx-curly-spacing",
               },
               "fixable": "code",
               "messages": {
@@ -29639,15 +30068,101 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                 "spaceNeededBefore": "A space is required before '{{token}}'",
               },
               "schema": {
-                "definitions": {
-                  "basicConfig": {
-                    "properties": {
-                      "allowMultiline": {
-                        "type": "boolean",
-                      },
-                      "spacing": {
+                "items": [
+                  {
+                    "anyOf": [
+                      {
+                        "additionalProperties": false,
                         "properties": {
-                          "objectLiterals": {
+                          "allowMultiline": {
+                            "type": "boolean",
+                          },
+                          "attributes": {
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "allowMultiline": {
+                                    "type": "boolean",
+                                  },
+                                  "spacing": {
+                                    "additionalProperties": false,
+                                    "properties": {
+                                      "objectLiterals": {
+                                        "enum": [
+                                          "always",
+                                          "never",
+                                        ],
+                                        "type": "string",
+                                      },
+                                    },
+                                    "type": "object",
+                                  },
+                                  "when": {
+                                    "enum": [
+                                      "always",
+                                      "never",
+                                    ],
+                                    "type": "string",
+                                  },
+                                },
+                                "type": "object",
+                              },
+                              {
+                                "type": "boolean",
+                              },
+                            ],
+                          },
+                          "children": {
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "allowMultiline": {
+                                    "type": "boolean",
+                                  },
+                                  "spacing": {
+                                    "additionalProperties": false,
+                                    "properties": {
+                                      "objectLiterals": {
+                                        "enum": [
+                                          "always",
+                                          "never",
+                                        ],
+                                        "type": "string",
+                                      },
+                                    },
+                                    "type": "object",
+                                  },
+                                  "when": {
+                                    "enum": [
+                                      "always",
+                                      "never",
+                                    ],
+                                    "type": "string",
+                                  },
+                                },
+                                "type": "object",
+                              },
+                              {
+                                "type": "boolean",
+                              },
+                            ],
+                          },
+                          "spacing": {
+                            "additionalProperties": false,
+                            "properties": {
+                              "objectLiterals": {
+                                "enum": [
+                                  "always",
+                                  "never",
+                                ],
+                                "type": "string",
+                              },
+                            },
+                            "type": "object",
+                          },
+                          "when": {
                             "enum": [
                               "always",
                               "never",
@@ -29656,48 +30171,6 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                           },
                         },
                         "type": "object",
-                      },
-                      "when": {
-                        "enum": [
-                          "always",
-                          "never",
-                        ],
-                        "type": "string",
-                      },
-                    },
-                    "type": "object",
-                  },
-                  "basicConfigOrBoolean": {
-                    "anyOf": [
-                      {
-                        "$ref": "#/definitions/basicConfig",
-                      },
-                      {
-                        "type": "boolean",
-                      },
-                    ],
-                  },
-                },
-                "items": [
-                  {
-                    "anyOf": [
-                      {
-                        "allOf": [
-                          {
-                            "$ref": "#/definitions/basicConfig",
-                          },
-                          {
-                            "properties": {
-                              "attributes": {
-                                "$ref": "#/definitions/basicConfigOrBoolean",
-                              },
-                              "children": {
-                                "$ref": "#/definitions/basicConfigOrBoolean",
-                              },
-                            },
-                            "type": "object",
-                          },
-                        ],
                       },
                       {
                         "enum": [
@@ -29715,6 +30188,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                         "type": "boolean",
                       },
                       "spacing": {
+                        "additionalProperties": false,
                         "properties": {
                           "objectLiterals": {
                             "enum": [
@@ -29741,7 +30215,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce or disallow spaces around equal signs in JSX attributes",
-                "url": "https://eslint.style/rules/jsx/jsx-equals-spacing",
+                "url": "https://eslint.style/rules/jsx-equals-spacing",
               },
               "fixable": "code",
               "messages": {
@@ -29768,7 +30242,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce proper position of the first property in JSX",
-                "url": "https://eslint.style/rules/jsx/jsx-first-prop-new-line",
+                "url": "https://eslint.style/rules/jsx-first-prop-new-line",
               },
               "fixable": "code",
               "messages": {
@@ -29796,7 +30270,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce line breaks before and after JSX elements when they are used as arguments to a function.",
-                "url": "https://eslint.style/rules/jsx/jsx-function-call-newline",
+                "url": "https://eslint.style/rules/jsx-function-call-newline",
               },
               "fixable": "whitespace",
               "messages": {
@@ -29821,7 +30295,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
               "deprecated": true,
               "docs": {
                 "description": "Enforce JSX indentation. Deprecated, use \`indent\` rule instead.",
-                "url": "https://eslint.style/rules/jsx/jsx-indent",
+                "url": "https://eslint.style/rules/jsx-indent",
               },
               "fixable": "whitespace",
               "messages": {
@@ -29863,7 +30337,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce props indentation in JSX",
-                "url": "https://eslint.style/rules/jsx/jsx-indent-props",
+                "url": "https://eslint.style/rules/jsx-indent-props",
               },
               "fixable": "code",
               "messages": {
@@ -29883,6 +30357,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                       "type": "integer",
                     },
                     {
+                      "additionalProperties": false,
                       "properties": {
                         "ignoreTernaryOperator": {
                           "type": "boolean",
@@ -29916,7 +30391,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce maximum of props on a single line in JSX",
-                "url": "https://eslint.style/rules/jsx/jsx-max-props-per-line",
+                "url": "https://eslint.style/rules/jsx-max-props-per-line",
               },
               "fixable": "code",
               "messages": {
@@ -29929,6 +30404,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                       "additionalProperties": false,
                       "properties": {
                         "maximum": {
+                          "additionalProperties": false,
                           "properties": {
                             "multi": {
                               "minimum": 1,
@@ -29973,7 +30449,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require or prevent a new line after jsx elements and expressions.",
-                "url": "https://eslint.style/rules/jsx/jsx-newline",
+                "url": "https://eslint.style/rules/jsx-newline",
               },
               "fixable": "code",
               "messages": {
@@ -30023,7 +30499,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require one JSX element per line",
-                "url": "https://eslint.style/rules/jsx/jsx-one-expression-per-line",
+                "url": "https://eslint.style/rules/jsx-one-expression-per-line",
               },
               "fixable": "whitespace",
               "messages": {
@@ -30059,7 +30535,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce PascalCase for user-defined JSX components",
-                "url": "https://eslint.style/rules/jsx/jsx-pascal-case",
+                "url": "https://eslint.style/rules/jsx-pascal-case",
               },
               "messages": {
                 "usePascalCase": "Imported JSX component {{name}} must be in PascalCase",
@@ -30098,7 +30574,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Disallow multiple spaces between inline JSX props",
-                "url": "https://eslint.style/rules/jsx/jsx-props-no-multi-spaces",
+                "url": "https://eslint.style/rules/jsx-props-no-multi-spaces",
               },
               "fixable": "code",
               "messages": {
@@ -30115,7 +30591,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce the consistent use of either double or single quotes in JSX attributes",
-                "url": "https://eslint.style/rules/js/jsx-quotes",
+                "url": "https://eslint.style/rules/jsx-quotes",
               },
               "fixable": "whitespace",
               "messages": {
@@ -30139,7 +30615,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Disallow extra closing tags for components without children",
-                "url": "https://eslint.style/rules/jsx/jsx-self-closing-comp",
+                "url": "https://eslint.style/rules/jsx-self-closing-comp",
               },
               "fixable": "code",
               "messages": {
@@ -30170,7 +30646,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce props alphabetical sorting",
-                "url": "https://eslint.style/rules/jsx/jsx-sort-props",
+                "url": "https://eslint.style/rules/jsx-sort-props",
               },
               "fixable": "code",
               "messages": {
@@ -30211,12 +30687,22 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                       "type": "boolean",
                     },
                     "reservedFirst": {
-                      "type": [
-                        "array",
-                        "boolean",
+                      "oneOf": [
+                        {
+                          "items": {
+                            "type": "string",
+                          },
+                          "type": "array",
+                        },
+                        {
+                          "type": "boolean",
+                        },
                       ],
                     },
                     "reservedLast": {
+                      "items": {
+                        "type": "string",
+                      },
                       "type": "array",
                     },
                     "shorthandFirst": {
@@ -30238,7 +30724,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce whitespace in and around the JSX opening and closing brackets",
-                "url": "https://eslint.style/rules/jsx/jsx-tag-spacing",
+                "url": "https://eslint.style/rules/jsx-tag-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -30313,7 +30799,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Disallow missing parentheses around multiline JSX",
-                "url": "https://eslint.style/rules/jsx/jsx-wrap-multilines",
+                "url": "https://eslint.style/rules/jsx-wrap-multilines",
               },
               "fixable": "code",
               "messages": {
@@ -30443,7 +30929,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent spacing between property names and type annotations in types and interfaces",
-                "url": "https://eslint.style/rules/ts/key-spacing",
+                "url": "https://eslint.style/rules/key-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -30692,7 +31178,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent spacing before and after keywords",
-                "url": "https://eslint.style/rules/ts/keyword-spacing",
+                "url": "https://eslint.style/rules/keyword-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -30717,6 +31203,18 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                       "additionalProperties": false,
                       "properties": {
                         "abstract": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "after": {
+                              "type": "boolean",
+                            },
+                            "before": {
+                              "type": "boolean",
+                            },
+                          },
+                          "type": "object",
+                        },
+                        "accessor": {
                           "additionalProperties": false,
                           "properties": {
                             "after": {
@@ -31484,6 +31982,18 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                           },
                           "type": "object",
                         },
+                        "using": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "after": {
+                              "type": "boolean",
+                            },
+                            "before": {
+                              "type": "boolean",
+                            },
+                          },
+                          "type": "object",
+                        },
                         "var": {
                           "additionalProperties": false,
                           "properties": {
@@ -31572,7 +32082,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce position of line comments",
-                "url": "https://eslint.style/rules/js/line-comment-position",
+                "url": "https://eslint.style/rules/line-comment-position",
               },
               "messages": {
                 "above": "Expected comment to be above code.",
@@ -31622,7 +32132,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent linebreak style",
-                "url": "https://eslint.style/rules/js/linebreak-style",
+                "url": "https://eslint.style/rules/linebreak-style",
               },
               "fixable": "whitespace",
               "messages": {
@@ -31651,7 +32161,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require empty lines around comments",
-                "url": "https://eslint.style/rules/ts/lines-around-comment",
+                "url": "https://eslint.style/rules/lines-around-comment",
               },
               "fixable": "whitespace",
               "messages": {
@@ -31756,7 +32266,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require or disallow an empty line between class members",
-                "url": "https://eslint.style/rules/ts/lines-between-class-members",
+                "url": "https://eslint.style/rules/lines-between-class-members",
               },
               "fixable": "whitespace",
               "messages": {
@@ -31846,7 +32356,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce a maximum line length",
-                "url": "https://eslint.style/rules/js/max-len",
+                "url": "https://eslint.style/rules/max-len",
               },
               "messages": {
                 "max": "This line has a length of {{lineLength}}. Maximum allowed is {{maxLength}}.",
@@ -31996,7 +32506,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce a maximum number of statements allowed per line",
-                "url": "https://eslint.style/rules/js/max-statements-per-line",
+                "url": "https://eslint.style/rules/max-statements-per-line",
               },
               "messages": {
                 "exceed": "This line has {{numberOfStatementsOnThisLine}} {{statements}}. Maximum allowed is {{maxStatementsPerLine}}.",
@@ -32066,7 +32576,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require a specific member delimiter style for interfaces and type literals",
-                "url": "https://eslint.style/rules/ts/member-delimiter-style",
+                "url": "https://eslint.style/rules/member-delimiter-style",
               },
               "fixable": "whitespace",
               "messages": {
@@ -32182,7 +32692,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce a particular style for multiline comments",
-                "url": "https://eslint.style/rules/js/multiline-comment-style",
+                "url": "https://eslint.style/rules/multiline-comment-style",
               },
               "fixable": "whitespace",
               "messages": {
@@ -32221,6 +32731,9 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                       {
                         "additionalProperties": false,
                         "properties": {
+                          "checkExclamation": {
+                            "type": "boolean",
+                          },
                           "checkJSDoc": {
                             "type": "boolean",
                           },
@@ -32241,7 +32754,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce newlines between operands of ternary expressions",
-                "url": "https://eslint.style/rules/js/multiline-ternary",
+                "url": "https://eslint.style/rules/multiline-ternary",
               },
               "fixable": "whitespace",
               "messages": {
@@ -32260,6 +32773,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                   "type": "string",
                 },
                 {
+                  "additionalProperties": false,
                   "properties": {
                     "ignoreJSX": {
                       "default": false,
@@ -32278,7 +32792,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce or disallow parentheses when invoking a constructor with no arguments",
-                "url": "https://eslint.style/rules/js/new-parens",
+                "url": "https://eslint.style/rules/new-parens",
               },
               "fixable": "code",
               "messages": {
@@ -32303,7 +32817,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require a newline after each call in a method chain",
-                "url": "https://eslint.style/rules/js/newline-per-chained-call",
+                "url": "https://eslint.style/rules/newline-per-chained-call",
               },
               "fixable": "whitespace",
               "messages": {
@@ -32332,7 +32846,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Disallow arrow functions where they could be confused with comparisons",
-                "url": "https://eslint.style/rules/js/no-confusing-arrow",
+                "url": "https://eslint.style/rules/no-confusing-arrow",
               },
               "fixable": "code",
               "messages": {
@@ -32365,7 +32879,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Disallow unnecessary parentheses",
-                "url": "https://eslint.style/rules/ts/no-extra-parens",
+                "url": "https://eslint.style/rules/no-extra-parens",
               },
               "fixable": "code",
               "messages": {
@@ -32397,6 +32911,21 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                       {
                         "additionalProperties": false,
                         "properties": {
+                          "allowNodesInSpreadElement": {
+                            "additionalProperties": false,
+                            "properties": {
+                              "AwaitExpression": {
+                                "type": "boolean",
+                              },
+                              "ConditionalExpression": {
+                                "type": "boolean",
+                              },
+                              "LogicalExpression": {
+                                "type": "boolean",
+                              },
+                            },
+                            "type": "object",
+                          },
                           "allowParensAfterCommentPattern": {
                             "type": "string",
                           },
@@ -32455,7 +32984,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Disallow unnecessary semicolons",
-                "url": "https://eslint.style/rules/ts/no-extra-semi",
+                "url": "https://eslint.style/rules/no-extra-semi",
               },
               "fixable": "code",
               "messages": {
@@ -32471,7 +33000,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Disallow leading or trailing decimal points in numeric literals",
-                "url": "https://eslint.style/rules/js/no-floating-decimal",
+                "url": "https://eslint.style/rules/no-floating-decimal",
               },
               "fixable": "code",
               "messages": {
@@ -32488,7 +33017,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Disallow mixed binary operators",
-                "url": "https://eslint.style/rules/js/no-mixed-operators",
+                "url": "https://eslint.style/rules/no-mixed-operators",
               },
               "messages": {
                 "unexpectedMixedOperator": "Unexpected mix of '{{leftOperator}}' and '{{rightOperator}}'. Use parentheses to clarify the intended order of operations.",
@@ -32555,7 +33084,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Disallow mixed spaces and tabs for indentation",
-                "url": "https://eslint.style/rules/js/no-mixed-spaces-and-tabs",
+                "url": "https://eslint.style/rules/no-mixed-spaces-and-tabs",
               },
               "messages": {
                 "mixedSpacesAndTabs": "Mixed spaces and tabs.",
@@ -32584,7 +33113,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Disallow multiple spaces",
-                "url": "https://eslint.style/rules/js/no-multi-spaces",
+                "url": "https://eslint.style/rules/no-multi-spaces",
               },
               "fixable": "whitespace",
               "messages": {
@@ -32624,7 +33153,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Disallow multiple empty lines",
-                "url": "https://eslint.style/rules/js/no-multiple-empty-lines",
+                "url": "https://eslint.style/rules/no-multiple-empty-lines",
               },
               "fixable": "whitespace",
               "messages": {
@@ -32664,7 +33193,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Disallow all tabs",
-                "url": "https://eslint.style/rules/js/no-tabs",
+                "url": "https://eslint.style/rules/no-tabs",
               },
               "messages": {
                 "unexpectedTab": "Unexpected tab character.",
@@ -32690,7 +33219,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Disallow trailing whitespace at the end of lines",
-                "url": "https://eslint.style/rules/js/no-trailing-spaces",
+                "url": "https://eslint.style/rules/no-trailing-spaces",
               },
               "fixable": "whitespace",
               "messages": {
@@ -32721,7 +33250,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Disallow whitespace before properties",
-                "url": "https://eslint.style/rules/js/no-whitespace-before-property",
+                "url": "https://eslint.style/rules/no-whitespace-before-property",
               },
               "fixable": "whitespace",
               "messages": {
@@ -32737,7 +33266,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce the location of single-line statements",
-                "url": "https://eslint.style/rules/js/nonblock-statement-body-position",
+                "url": "https://eslint.style/rules/nonblock-statement-body-position",
               },
               "fixable": "whitespace",
               "messages": {
@@ -32848,7 +33377,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent line breaks after opening and before closing braces",
-                "url": "https://eslint.style/rules/ts/object-curly-newline",
+                "url": "https://eslint.style/rules/object-curly-newline",
               },
               "fixable": "whitespace",
               "messages": {
@@ -33004,6 +33533,34 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                             },
                           ],
                         },
+                        "TSEnumBody": {
+                          "oneOf": [
+                            {
+                              "enum": [
+                                "always",
+                                "never",
+                              ],
+                              "type": "string",
+                            },
+                            {
+                              "additionalProperties": false,
+                              "minProperties": 1,
+                              "properties": {
+                                "consistent": {
+                                  "type": "boolean",
+                                },
+                                "minProperties": {
+                                  "minimum": 0,
+                                  "type": "integer",
+                                },
+                                "multiline": {
+                                  "type": "boolean",
+                                },
+                              },
+                              "type": "object",
+                            },
+                          ],
+                        },
                         "TSInterfaceBody": {
                           "oneOf": [
                             {
@@ -33077,7 +33634,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent spacing inside braces",
-                "url": "https://eslint.style/rules/ts/object-curly-spacing",
+                "url": "https://eslint.style/rules/object-curly-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -33115,13 +33672,12 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "defaultOptions": [
               {
                 "allowAllPropertiesOnSameLine": false,
-                "allowMultiplePropertiesPerLine": false,
               },
             ],
             "meta": {
               "docs": {
                 "description": "Enforce placing object properties on separate lines",
-                "url": "https://eslint.style/rules/ts/object-property-newline",
+                "url": "https://eslint.style/rules/object-property-newline",
               },
               "fixable": "whitespace",
               "messages": {
@@ -33133,10 +33689,6 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                   "additionalProperties": false,
                   "properties": {
                     "allowAllPropertiesOnSameLine": {
-                      "default": false,
-                      "type": "boolean",
-                    },
-                    "allowMultiplePropertiesPerLine": {
                       "default": false,
                       "type": "boolean",
                     },
@@ -33153,7 +33705,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require or disallow newlines around variable declarations",
-                "url": "https://eslint.style/rules/js/one-var-declaration-per-line",
+                "url": "https://eslint.style/rules/one-var-declaration-per-line",
               },
               "fixable": "whitespace",
               "messages": {
@@ -33177,7 +33729,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent linebreak style for operators",
-                "url": "https://eslint.style/rules/js/operator-linebreak",
+                "url": "https://eslint.style/rules/operator-linebreak",
               },
               "fixable": "code",
               "messages": {
@@ -33230,7 +33782,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require or disallow padding within blocks",
-                "url": "https://eslint.style/rules/js/padded-blocks",
+                "url": "https://eslint.style/rules/padded-blocks",
               },
               "fixable": "whitespace",
               "messages": {
@@ -33304,7 +33856,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require or disallow padding lines between statements",
-                "url": "https://eslint.style/rules/ts/padding-line-between-statements",
+                "url": "https://eslint.style/rules/padding-line-between-statements",
               },
               "fixable": "whitespace",
               "hasSuggestions": false,
@@ -33322,119 +33874,78 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                     ],
                     "type": "string",
                   },
-                  "statementType": {
+                  "statementOption": {
                     "anyOf": [
                       {
-                        "enum": [
-                          "*",
-                          "block-like",
-                          "exports",
-                          "require",
-                          "directive",
-                          "expression",
-                          "iife",
-                          "multiline-block-like",
-                          "multiline-expression",
-                          "multiline-const",
-                          "multiline-export",
-                          "multiline-let",
-                          "multiline-var",
-                          "singleline-const",
-                          "singleline-export",
-                          "singleline-let",
-                          "singleline-var",
-                          "block",
-                          "empty",
-                          "function",
-                          "ts-method",
-                          "break",
-                          "case",
-                          "class",
-                          "const",
-                          "continue",
-                          "debugger",
-                          "default",
-                          "do",
-                          "export",
-                          "for",
-                          "if",
-                          "import",
-                          "let",
-                          "return",
-                          "switch",
-                          "throw",
-                          "try",
-                          "var",
-                          "while",
-                          "with",
-                          "cjs-export",
-                          "cjs-import",
-                          "enum",
-                          "interface",
-                          "type",
-                          "function-overload",
-                        ],
-                        "type": "string",
+                        "$ref": "#/$defs/statementType",
                       },
                       {
                         "additionalItems": false,
                         "items": {
-                          "enum": [
-                            "*",
-                            "block-like",
-                            "exports",
-                            "require",
-                            "directive",
-                            "expression",
-                            "iife",
-                            "multiline-block-like",
-                            "multiline-expression",
-                            "multiline-const",
-                            "multiline-export",
-                            "multiline-let",
-                            "multiline-var",
-                            "singleline-const",
-                            "singleline-export",
-                            "singleline-let",
-                            "singleline-var",
-                            "block",
-                            "empty",
-                            "function",
-                            "ts-method",
-                            "break",
-                            "case",
-                            "class",
-                            "const",
-                            "continue",
-                            "debugger",
-                            "default",
-                            "do",
-                            "export",
-                            "for",
-                            "if",
-                            "import",
-                            "let",
-                            "return",
-                            "switch",
-                            "throw",
-                            "try",
-                            "var",
-                            "while",
-                            "with",
-                            "cjs-export",
-                            "cjs-import",
-                            "enum",
-                            "interface",
-                            "type",
-                            "function-overload",
-                          ],
-                          "type": "string",
+                          "$ref": "#/$defs/statementType",
                         },
                         "minItems": 1,
                         "type": "array",
                         "uniqueItems": true,
                       },
                     ],
+                  },
+                  "statementType": {
+                    "enum": [
+                      "*",
+                      "exports",
+                      "require",
+                      "directive",
+                      "iife",
+                      "block",
+                      "empty",
+                      "function",
+                      "ts-method",
+                      "break",
+                      "case",
+                      "class",
+                      "continue",
+                      "debugger",
+                      "default",
+                      "do",
+                      "for",
+                      "if",
+                      "import",
+                      "return",
+                      "switch",
+                      "throw",
+                      "try",
+                      "while",
+                      "with",
+                      "cjs-export",
+                      "cjs-import",
+                      "enum",
+                      "interface",
+                      "type",
+                      "function-overload",
+                      "block-like",
+                      "singleline-block-like",
+                      "multiline-block-like",
+                      "expression",
+                      "singleline-expression",
+                      "multiline-expression",
+                      "export",
+                      "singleline-export",
+                      "multiline-export",
+                      "var",
+                      "singleline-var",
+                      "multiline-var",
+                      "let",
+                      "singleline-let",
+                      "multiline-let",
+                      "const",
+                      "singleline-const",
+                      "multiline-const",
+                      "using",
+                      "singleline-using",
+                      "multiline-using",
+                    ],
+                    "type": "string",
                   },
                 },
                 "additionalItems": false,
@@ -33445,10 +33956,10 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                       "$ref": "#/$defs/paddingType",
                     },
                     "next": {
-                      "$ref": "#/$defs/statementType",
+                      "$ref": "#/$defs/statementOption",
                     },
                     "prev": {
-                      "$ref": "#/$defs/statementType",
+                      "$ref": "#/$defs/statementOption",
                     },
                   },
                   "required": [
@@ -33471,7 +33982,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require quotes around object literal, type literal, interfaces and enums property names",
-                "url": "https://eslint.style/rules/ts/quote-props",
+                "url": "https://eslint.style/rules/quote-props",
               },
               "fixable": "code",
               "messages": {
@@ -33550,7 +34061,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce the consistent use of either backticks, double, or single quotes",
-                "url": "https://eslint.style/rules/ts/quotes",
+                "url": "https://eslint.style/rules/quotes",
               },
               "fixable": "code",
               "messages": {
@@ -33612,7 +34123,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce spacing between rest and spread operators and their expressions",
-                "url": "https://eslint.style/rules/js/rest-spread-spacing",
+                "url": "https://eslint.style/rules/rest-spread-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -33643,7 +34154,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require or disallow semicolons instead of ASI",
-                "url": "https://eslint.style/rules/ts/semi",
+                "url": "https://eslint.style/rules/semi",
               },
               "fixable": "code",
               "messages": {
@@ -33715,7 +34226,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent spacing before and after semicolons",
-                "url": "https://eslint.style/rules/ts/semi-spacing",
+                "url": "https://eslint.style/rules/semi-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -33749,7 +34260,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce location of semicolons",
-                "url": "https://eslint.style/rules/js/semi-style",
+                "url": "https://eslint.style/rules/semi-style",
               },
               "fixable": "whitespace",
               "messages": {
@@ -33775,7 +34286,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent spacing before blocks",
-                "url": "https://eslint.style/rules/ts/space-before-blocks",
+                "url": "https://eslint.style/rules/space-before-blocks",
               },
               "fixable": "whitespace",
               "messages": {
@@ -33819,6 +34330,14 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                           ],
                           "type": "string",
                         },
+                        "modules": {
+                          "enum": [
+                            "always",
+                            "never",
+                            "off",
+                          ],
+                          "type": "string",
+                        },
                       },
                       "type": "object",
                     },
@@ -33836,7 +34355,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent spacing before function parenthesis",
-                "url": "https://eslint.style/rules/ts/space-before-function-paren",
+                "url": "https://eslint.style/rules/space-before-function-paren",
               },
               "fixable": "whitespace",
               "messages": {
@@ -33872,6 +34391,14 @@ If your function does not access \`this\`, you can annotate it with \`this: void
                           ],
                           "type": "string",
                         },
+                        "catch": {
+                          "enum": [
+                            "always",
+                            "never",
+                            "ignore",
+                          ],
+                          "type": "string",
+                        },
                         "named": {
                           "enum": [
                             "always",
@@ -33895,7 +34422,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent spacing inside parentheses",
-                "url": "https://eslint.style/rules/js/space-in-parens",
+                "url": "https://eslint.style/rules/space-in-parens",
               },
               "fixable": "whitespace",
               "messages": {
@@ -33946,7 +34473,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require spacing around infix operators",
-                "url": "https://eslint.style/rules/ts/space-infix-ops",
+                "url": "https://eslint.style/rules/space-infix-ops",
               },
               "fixable": "whitespace",
               "messages": {
@@ -33977,7 +34504,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent spacing before or after unary operators",
-                "url": "https://eslint.style/rules/js/space-unary-ops",
+                "url": "https://eslint.style/rules/space-unary-ops",
               },
               "fixable": "whitespace",
               "messages": {
@@ -34019,7 +34546,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce consistent spacing after the \`//\` or \`/*\` in a comment",
-                "url": "https://eslint.style/rules/js/spaced-comment",
+                "url": "https://eslint.style/rules/spaced-comment",
               },
               "fixable": "whitespace",
               "messages": {
@@ -34106,7 +34633,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforce spacing around colons of switch statements",
-                "url": "https://eslint.style/rules/js/switch-colon-spacing",
+                "url": "https://eslint.style/rules/switch-colon-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -34140,7 +34667,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require or disallow spacing around embedded expressions of template strings",
-                "url": "https://eslint.style/rules/js/template-curly-spacing",
+                "url": "https://eslint.style/rules/template-curly-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -34167,7 +34694,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require or disallow spacing between template tags and their literals",
-                "url": "https://eslint.style/rules/js/template-tag-spacing",
+                "url": "https://eslint.style/rules/template-tag-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -34194,7 +34721,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require consistent spacing around type annotations",
-                "url": "https://eslint.style/rules/ts/type-annotation-spacing",
+                "url": "https://eslint.style/rules/type-annotation-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -34265,7 +34792,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Enforces consistent spacing inside TypeScript type generics",
-                "url": "https://eslint.style/rules/plus/type-generic-spacing",
+                "url": "https://eslint.style/rules/type-generic-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -34281,7 +34808,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Expect space before the type declaration in the named tuple",
-                "url": "https://eslint.style/rules/plus/type-named-tuple-spacing",
+                "url": "https://eslint.style/rules/type-named-tuple-spacing",
               },
               "fixable": "whitespace",
               "messages": {
@@ -34299,7 +34826,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require parentheses around immediate \`function\` invocations",
-                "url": "https://eslint.style/rules/js/wrap-iife",
+                "url": "https://eslint.style/rules/wrap-iife",
               },
               "fixable": "code",
               "messages": {
@@ -34336,7 +34863,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require parenthesis around regex literals",
-                "url": "https://eslint.style/rules/js/wrap-regex",
+                "url": "https://eslint.style/rules/wrap-regex",
               },
               "fixable": "code",
               "messages": {
@@ -34352,7 +34879,7 @@ If your function does not access \`this\`, you can annotate it with \`this: void
             "meta": {
               "docs": {
                 "description": "Require or disallow spacing around the \`*\` in \`yield*\` expressions",
-                "url": "https://eslint.style/rules/js/yield-star-spacing",
+                "url": "https://eslint.style/rules/yield-star-spacing",
               },
               "fixable": "whitespace",
               "messages": {
