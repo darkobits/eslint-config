@@ -10,7 +10,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "exactOptionalPropertyTypes": false,
+    "exactOptionalPropertyTypes": true,
     "paths": { "@/*": ["./src/*"] }
   },
   "include": ["src", "*.config.ts"],

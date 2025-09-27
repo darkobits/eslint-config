@@ -7,7 +7,10 @@ export default defineConfig({
    *
    * @see https://tsdown.dev/reference/config-options#entry
    */
-  entry: ['src/**/*.{ts,tsx,js,jsx}', '!src/**/*.{spec,test}.{ts,tsx,js,jsx}'],
+  // entry: [
+  //   'src/**/*.{ts,tsx,js,jsx}',
+  //   '!src/**/*.{spec,test}.{ts,tsx,js,jsx}'
+  // ],
   /**
    * Do not bundle third party dependencies.
    *
@@ -20,7 +23,7 @@ export default defineConfig({
    *
    * @see https://tsdown.dev/reference/config-options#unbundle
   */
-  unbundle: true,
+  // unbundle: true,
   /**
   * After building, run `publint` (installed separately).
   *

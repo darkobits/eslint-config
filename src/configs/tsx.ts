@@ -1,3 +1,4 @@
+import { defineConfig } from 'eslint/config'
 // @ts-expect-error - This package lacks type definitions.
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
 import reactPlugin from 'eslint-plugin-react'
@@ -6,7 +7,7 @@ import * as tseslint from 'typescript-eslint'
 
 import { ts } from './ts'
 
-export const tsx: tseslint.ConfigArray = tseslint.config(
+export const tsx = defineConfig([
   {
     extends: [ts],
     files: ['**/*.{ts,tsx}'],
@@ -21,7 +22,7 @@ export const tsx: tseslint.ConfigArray = tseslint.config(
       ...reactPlugin.configs['jsx-runtime'].rules,
       ...reactHooksPlugin.configs.recommended.rules,
 
-      // ----- Plugin: React -------------------------------------------------------
+      // ----- Plugin: React ---------------------------------------------------
 
       // Require button elements to have an explicit "type" attribute.
       'react/button-has-type': ['error'],
@@ -30,7 +31,8 @@ export const tsx: tseslint.ConfigArray = tseslint.config(
       'react/display-name': 'off',
 
       // Require that named components be defined as arrow functions or function
-      // declarations, and that unnamed components be defined as arrow functions.
+      // declarations, and that unnamed components be defined as arrow
+      // functions.
       'react/function-component-definition': ['error', {
         namedComponents: ['arrow-function', 'function-declaration'],
         unnamedComponents: 'arrow-function'
@@ -48,8 +50,8 @@ export const tsx: tseslint.ConfigArray = tseslint.config(
       // Prevent invalid characters from appearing in markup.
       //
       // DISABLED: While it may prevent certain mistakes, these can usually be
-      // caught by proof-reading copy. Leaving this rule enabled makes drafting copy
-      // in JSX unwieldy.
+      // caught by proof-reading copy. Leaving this rule enabled makes drafting
+      // copy in JSX unwieldy.
       'react/no-special-entities': 'off',
 
       // Prevent usage of unknown DOM properties.
@@ -65,8 +67,8 @@ export const tsx: tseslint.ConfigArray = tseslint.config(
       // Prevent extra closing tags for components without children.
       'react/self-closing-comp': ['error'],
 
-      // Require that the value of the `style` prop be an object or a variable that
-      // is an object.
+      // Require that the value of the `style` prop be an object or a variable
+      // that is an object.
       'react/style-prop-object': ['error'],
 
       // Prevent passing children to void DOM elements (ie: <img />, <br />).
@@ -84,8 +86,8 @@ export const tsx: tseslint.ConfigArray = tseslint.config(
       // Enforce consistent line breaks in curly braces in JSX attributes and
       // expressions.
       //
-      // DISABLED: This rule does not have a configuration option that allows for
-      // the following:
+      // DISABLED: This rule does not have a configuration option that allows
+      // for the following:
       //
       // {someValue
       //   ? <div>Value is true!</div>
@@ -93,7 +95,8 @@ export const tsx: tseslint.ConfigArray = tseslint.config(
       // }
       'react/jsx-newline': 'off',
 
-      // Disallow spaces inside of curly braces in JSX attributes and expressions.
+      // Disallow spaces inside of curly braces in JSX attributes and
+      // expressions.
       'react/jsx-curly-spacing': ['error', {
         when: 'never',
         objectLiterals: 'never'
@@ -107,22 +110,22 @@ export const tsx: tseslint.ConfigArray = tseslint.config(
         extensions: ['.tsx', '.jsx']
       }],
 
-      // Require that the first JSX property be on a new line if the JSX tag takes
-      // up multiple lines and there are multiple properties.
+      // Require that the first JSX property be on a new line if the JSX tag
+      // takes up multiple lines and there are multiple properties.
       'react/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
 
       // Enforce shorthand for React fragments (ie: <>...</>).
       'react/jsx-fragments': ['error', 'syntax'],
 
-      // Require indentation of 2 spaces in JSX, including attributes and logical
-      // expressions.
+      // Require indentation of 2 spaces in JSX, including attributes and
+      // logical expressions.
       'react/jsx-indent': ['error', 2, {
         checkAttributes: true,
         indentLogicalExpressions: true
       }],
 
-      // Enforce an indentation level of 2 spaces for multi-line JSX props relative
-      // to their tags.
+      // Enforce an indentation level of 2 spaces for multi-line JSX props
+      // relative to their tags.
       'react/jsx-indent-props': ['error', 2],
 
       // Report missing `key` props in iterators/collection literals.
@@ -185,8 +188,8 @@ export const tsx: tseslint.ConfigArray = tseslint.config(
       // Disallow multiple spaces between inline JSX props.
       'react/jsx-props-no-multi-spaces': ['error'],
 
-      // Disallow JSX props spreading. This enhances readability of code by being
-      // more explicit about what props are received by the component.
+      // Disallow JSX props spreading. This enhances readability of code by
+      // being more explicit about what props are received by the component.
       'react/jsx-props-no-spreading': ['error', {
       // Allow props spreading when the properties being spread are explicitly
       // enumerated.
@@ -219,15 +222,15 @@ export const tsx: tseslint.ConfigArray = tseslint.config(
         prop: 'ignore'
       }],
 
-      // ----- Plugin: React Hooks -------------------------------------------------
+      // ----- Plugin: React Hooks ---------------------------------------------
 
       // Warn when hooks do not declare dependencies they use.
       //
-      // TEMPORARILY DISABLED: This rule has a very aggressive regular expression to
-      // test whether a function is a React hook[1] that winds up matching
-      // useAsyncEffect. The rule then throws a false positive because the function
-      // passed to useAsyncEffect is async. Consider re-enabling it if a future
-      // version is more configurable.
+      // TEMPORARILY DISABLED: This rule has a very aggressive regular
+      // expression to test whether a function is a React hook[1] that winds up
+      // matching useAsyncEffect. The rule then throws a false positive because
+      // the function passed to useAsyncEffect is async. Consider re-enabling it
+      // if a future version is more configurable.
       //
       // 'react-hooks/exhaustive-deps': ['warn', {
       //   // Prevents false-positives when using `use-async-effect`.
@@ -236,7 +239,7 @@ export const tsx: tseslint.ConfigArray = tseslint.config(
       // 'react-hooks/exhaustive-deps': 'off'
       'react-hooks/exhaustive-deps': 'off',
 
-      // ----- [Plugin] jsx-a11y ---------------------------------------------------
+      // ----- [Plugin] jsx-a11y -----------------------------------------------
 
       // config.plugins['jsx-a11y': jsxA11yPlugin
 
@@ -245,8 +248,8 @@ export const tsx: tseslint.ConfigArray = tseslint.config(
       //   ...jsxA11yPlugin.configs.recommended.rules
       // }
 
-      // This rule was deprecated in version 6.1.0, but still appears to be in the
-      // plugin's 'recommended' rule set.
+      // This rule was deprecated in version 6.1.0, but still appears to be in
+      // the plugin's 'recommended' rule set.
       // 'jsx-a11y/label-has-for': 'off'
       'jsx-a11y/label-has-for': 'off',
 
@@ -254,14 +257,14 @@ export const tsx: tseslint.ConfigArray = tseslint.config(
       // 'jsx-a11y/media-has-caption': 'off'
       'jsx-a11y/media-has-caption': 'off',
 
-      // ----- [Plugin] unicorn ----------------------------------------------------
+      // ----- [Plugin] unicorn ------------------------------------------------
 
       // NOTE: This plugin was installed and its rules configured by the 'ts'
-      // preset, so deleting them from our own rules will not suffice, we need to
-      // explicitly set them to 'off'.
+      // preset, so deleting them from our own rules will not suffice, we need
+      // to explicitly set them to 'off'.
 
-      // Disable this rule in React projects because React makes heavy use of the
-      // `null` value.
+      // Disable this rule in React projects because React makes heavy use of
+      // the `null` value.
       'unicorn/no-null': 'off',
 
       // [Dec 2021]
@@ -270,18 +273,21 @@ export const tsx: tseslint.ConfigArray = tseslint.config(
       // variable by passing an implicit `undefined` to `useState`.
       // const [foo, setFoo] = React.useState<Foo>()
       //
-      // However, if we try to reset the variable to `undefined` later by calling
-      // `setFoo` with zero arguments, TypeScript thinks we are actually trying to
-      // set it to `void` rather than `undefined`, and throws a type error:
+      // However, if we try to reset the variable to `undefined` later by
+      // calling `setFoo` with zero arguments, TypeScript thinks we are actually
+      // trying to set it to `void` rather than `undefined`, and throws a type
+      // error:
+      //
       // setFoo() //=> "Expected setFoo to be called with 1 argument..."
       //
-      // - If we pass an explicit `undefined` to `setFoo` to satisfy the argument
-      //   requirement, this rule will throw an error.
+      // - If we pass an explicit `undefined` to `setFoo` to satisfy the
+      //   argument requirement, this rule will throw an error.
       // - If we type the state variable to allow `void` as a type, it can cause
-      //   a lot of trouble downstream as anything that consumes that state variable
-      //   must now discriminate between 2 bottom values.
+      //   a lot of trouble downstream as anything that consumes that state
+      //   variable must now discriminate between 2 bottom values.
       //
-      // Thus, until the issue is resolved upstream, this rule has been disabled.
+      // Thus, until the issue is resolved upstream, this rule has been
+      // disabled.
       'unicorn/no-useless-undefined': 'off'
     }
   },
@@ -293,4 +299,4 @@ export const tsx: tseslint.ConfigArray = tseslint.config(
     ],
     rules: {}
   }
-)
+])

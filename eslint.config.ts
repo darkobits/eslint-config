@@ -1,18 +1,19 @@
+import { defineConfig } from 'eslint/config'
 import packageJsonPlugin from 'eslint-plugin-package-json'
 
-import eslintPlugin, { type ConfigArray } from './dist'
+import plugin from './dist'
 
-const config: ConfigArray = eslintPlugin.config(
-  packageJsonPlugin.configs.recommended,
-  {
-    extends: [
-      ...eslintPlugin.configs.ts
-    ],
-    rules: {
-      // '@stylistic/max-len': ['warn', 120],
-      'unicorn/no-empty-file': 'off'
+export default defineConfig({
+  extends: [
+    packageJsonPlugin.configs.recommended,
+    plugin.configs.recommended
+  ],
+  rules: {
+    'unicorn/no-empty-file': 'off'
+  },
+  settings: {
+    packageJson: {
+      enforceForPrivate: false
     }
   }
-)
-
-export default config
+})
