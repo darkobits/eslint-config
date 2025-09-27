@@ -13,6 +13,6 @@
     "exactOptionalPropertyTypes": true,
     "paths": { "@/*": ["./src/*"] }
   },
-  "include": ["src", "*.config.ts"],
+  "include": ["src", "*.config.ts", ".release-it.ts"],
   "exclude": ["dist", "node_modules", "fixtures"]
 }
