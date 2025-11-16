@@ -51,8 +51,6 @@ export const ts = defineConfig([{
     ]
   },
   rules: {
-    ...importPlugin.configs.recommended.rules,
-
     // ----- Common: Best Practices ------------------------------------------
 
     // Enforce return statements in callbacks of array methods.
@@ -349,6 +347,8 @@ export const ts = defineConfig([{
 
     // ----- [Plugin] import -------------------------------------------------
 
+    ...importPlugin.configs.recommended.rules,
+
     'import/no-unresolved': ['error', {
       // Resolve require() calls in addition to import statements.
       commonjs: true,
@@ -568,7 +568,6 @@ export const ts = defineConfig([{
     // Don't enforce 'more descriptive' variable names.
     'unicorn/prevent-abbreviations': 'off',
 
-    // Allow
     'unicorn/prefer-object-from-entries': 'off',
 
     // Do not require that "TODO" comments have an expiration date.

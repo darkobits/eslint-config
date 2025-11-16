@@ -5,7 +5,6 @@ export default {
     tagName: 'v${version}',
     requireCleanWorkingDir: true,
     commitMessage: 'chore: release v${version}\n[skip ci]',
-    // @ts-expect-error This is fine in JSON configs.
     requireBranch: ['main', 'master', 'beta']
   },
   github: {

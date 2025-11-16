@@ -10,12 +10,12 @@
   "author": "darkobits",
   "type": "module",
   "exports": {
-    ".": "./dist/index.js",
+    ".": "./dist/index.mjs",
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "files": [
     "dist"
   ],
@@ -33,37 +33,37 @@
     "tsc:watch": "tsc --watch"
   },
   "dependencies": {
-    "@eslint/js": "^9.36.0",
-    "@stylistic/eslint-plugin": "^5.4.0",
-    "@typescript-eslint/eslint-plugin": "^8.44.1",
-    "@typescript-eslint/parser": "^8.44.1",
+    "@eslint/js": "^9.39.1",
+    "@stylistic/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.4",
+    "@typescript-eslint/parser": "^8.46.4",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-unicorn": "^59.0.1",
-    "get-tsconfig": "^4.10.1",
-    "typescript-eslint": "^8.44.1"
+    "get-tsconfig": "^4.13.0",
+    "typescript-eslint": "^8.46.4"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^10.0.1",
     "@types/eslint": "^9.6.1",
-    "@types/node": "^22.18.6",
-    "@types/react": "^19.1.14",
-    "@vitest/ui": "^3.2.4",
-    "eslint": "^9.36.0",
-    "eslint-plugin-package-json": "~0.56.3",
-    "jiti": "^2.6.0",
-    "publint": "^0.3.13",
-    "react": "^19.1.1",
-    "release-it": "^19.0.5",
+    "@types/node": "^22.19.1",
+    "@types/react": "^19.2.5",
+    "@vitest/ui": "^4.0.9",
+    "eslint": "^9.39.1",
+    "eslint-plugin-package-json": "~0.79.0",
+    "jiti": "^2.6.1",
+    "publint": "^0.3.15",
+    "react": "^19.2.0",
+    "release-it": "^19.0.6",
     "ts-essentials": "^10.1.1",
-    "tsdown": "~0.14.2",
-    "typescript": "^5.9.2",
-    "vite": "^7.1.7",
-    "vitest": "^3.2.4"
+    "tsdown": "~0.16.4",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.2",
+    "vitest": "^4.0.9"
   },
   "peerDependencies": {
     "eslint": "^9.36.0"

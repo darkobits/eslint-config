@@ -17,12 +17,10 @@ export const tsx = defineConfig([
       'react-hooks': reactHooksPlugin
     },
     rules: {
-      ...jsxA11yPlugin.configs.recommended.rules,
+      // ----- Plugin: React ---------------------------------------------------
+
       ...reactPlugin.configs.recommended.rules,
       ...reactPlugin.configs['jsx-runtime'].rules,
-      ...reactHooksPlugin.configs.recommended.rules,
-
-      // ----- Plugin: React ---------------------------------------------------
 
       // Require button elements to have an explicit "type" attribute.
       'react/button-has-type': ['error'],
@@ -224,6 +222,8 @@ export const tsx = defineConfig([
 
       // ----- Plugin: React Hooks ---------------------------------------------
 
+      ...reactHooksPlugin.configs.recommended.rules,
+
       // Warn when hooks do not declare dependencies they use.
       //
       // TEMPORARILY DISABLED: This rule has a very aggressive regular
@@ -240,6 +240,8 @@ export const tsx = defineConfig([
       'react-hooks/exhaustive-deps': 'off',
 
       // ----- [Plugin] jsx-a11y -----------------------------------------------
+
+      ...jsxA11yPlugin.configs.recommended.rules,
 
       // config.plugins['jsx-a11y': jsxA11yPlugin
 
