@@ -21,6 +21,6 @@ export default {
     }
   },
   hooks: {
-    'before:init': ['pnpm run build']
+    'before:init': ['pnpm test', 'pnpm run build']
   }
 } satisfies Config

@@ -1,19 +1,7 @@
 import { defineConfig } from 'eslint/config'
-import packageJsonPlugin from 'eslint-plugin-package-json'
 
-import plugin from './dist'
+import { configs } from './dist/index.mjs'
 
-export default defineConfig({
-  extends: [
-    packageJsonPlugin.configs.recommended,
-    plugin.configs.recommended
-  ],
-  rules: {
-    'unicorn/no-empty-file': 'off'
-  },
-  settings: {
-    packageJson: {
-      enforceForPrivate: false
-    }
-  }
-})
+export default defineConfig(
+  configs.ts
+)

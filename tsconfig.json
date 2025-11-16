@@ -1,7 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "lib": ["esnext"],
+    "lib": [
+      "esnext"
+    ],
     "module": "esnext",
     "target": "esnext",
     "moduleResolution": "bundler",
@@ -11,8 +13,20 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "exactOptionalPropertyTypes": true,
-    "paths": { "@/*": ["./src/*"] }
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
   },
-  "include": ["src", "*.config.ts", ".release-it.ts"],
-  "exclude": ["dist", "node_modules", "fixtures"]
+  "include": [
+    "src",
+    "*.config.ts",
+    ".release-it.ts"
+  ],
+  "exclude": [
+    "dist",
+    "coverage",
+    "node_modules"
+  ]
 }

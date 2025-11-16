@@ -3,17 +3,16 @@ import { defineConfig } from 'eslint/config'
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
-import * as tseslint from 'typescript-eslint'
 
 import { ts } from './ts'
 
 export const tsx = defineConfig([
   {
     extends: [ts],
-    files: ['**/*.{ts,tsx}'],
     plugins: {
       'jsx-a11y': jsxA11yPlugin,
       'react': reactPlugin,
+      // @ts-expect-error This is fine.
       'react-hooks': reactHooksPlugin
     },
     rules: {
@@ -143,7 +142,7 @@ export const tsx = defineConfig([
 
       // Control what kinds of functions can be used in JSX props.
       'react/jsx-no-bind': ['error', {
-      // Allow anonymous arrow functions.
+        // Allow anonymous arrow functions.
         allowArrowFunctions: true,
         // Disallow regular functions.
         allowFunctions: false,
@@ -163,7 +162,7 @@ export const tsx = defineConfig([
 
       // Disallow the usage of `javascript:` URLs.
       'react/jsx-no-script-url': ['error', [{
-      // Include the popular Link component from React Router.
+        // Include the popular Link component from React Router.
         name: 'Link',
         props: ['to']
       }]],
@@ -189,14 +188,14 @@ export const tsx = defineConfig([
       // Disallow JSX props spreading. This enhances readability of code by
       // being more explicit about what props are received by the component.
       'react/jsx-props-no-spreading': ['error', {
-      // Allow props spreading when the properties being spread are explicitly
-      // enumerated.
+        // Allow props spreading when the properties being spread are explicitly
+        // enumerated.
         explicitSpread: 'ignore'
       }],
 
       // Validate whitespace in and around the JSX opening and closing brackets.
       'react/jsx-tag-spacing': ['error', {
-      // Disallow spaces after `<` opening tags.
+        // Disallow spaces after `<` opening tags.
         afterOpening: 'never',
         // Disallow spaces before `>` closing tags.
         beforeClosing: 'never',
@@ -236,27 +235,17 @@ export const tsx = defineConfig([
       //   // Prevents false-positives when using `use-async-effect`.
       //   additionalHooks: 'useAsyncEffect'
       // }]
-      // 'react-hooks/exhaustive-deps': 'off'
       'react-hooks/exhaustive-deps': 'off',
 
       // ----- [Plugin] jsx-a11y -----------------------------------------------
 
       ...jsxA11yPlugin.configs.recommended.rules,
 
-      // config.plugins['jsx-a11y': jsxA11yPlugin
-
-      // rules = {
-      //   ...rules,
-      //   ...jsxA11yPlugin.configs.recommended.rules
-      // }
-
       // This rule was deprecated in version 6.1.0, but still appears to be in
       // the plugin's 'recommended' rule set.
-      // 'jsx-a11y/label-has-for': 'off'
       'jsx-a11y/label-has-for': 'off',
 
       // Do not require media elements to have captions.
-      // 'jsx-a11y/media-has-caption': 'off'
       'jsx-a11y/media-has-caption': 'off',
 
       // ----- [Plugin] unicorn ------------------------------------------------
@@ -292,13 +281,5 @@ export const tsx = defineConfig([
       // disabled.
       'unicorn/no-useless-undefined': 'off'
     }
-  },
-  // ----- JavaScript Files ----------------------------------------------------
-  {
-    files: ['**/*.js'],
-    extends: [
-      tseslint.configs.disableTypeChecked
-    ],
-    rules: {}
   }
 ])

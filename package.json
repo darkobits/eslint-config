@@ -29,10 +29,13 @@
     "release:beta": "release-it --preRelease=beta",
     "release:dry": "release-it --dry-run",
     "release:rc": "release-it --preRelease=rc",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "tsc": "tsc",
     "tsc:watch": "tsc --watch"
   },
   "dependencies": {
+    "@eslint/compat": "^2.0.0",
     "@eslint/js": "^9.39.1",
     "@stylistic/eslint-plugin": "^5.5.0",
     "@typescript-eslint/eslint-plugin": "^8.46.4",
@@ -43,14 +46,15 @@
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-unicorn": "^59.0.1",
+    "eslint-plugin-unicorn": "^62.0.0",
+    "find-up": "^8.0.0",
     "get-tsconfig": "^4.13.0",
     "typescript-eslint": "^8.46.4"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^10.0.1",
     "@types/eslint": "^9.6.1",
-    "@types/node": "^22.19.1",
+    "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@vitest/ui": "^4.0.9",
     "eslint": "^9.39.1",
@@ -63,12 +67,13 @@
     "tsdown": "~0.16.4",
     "typescript": "^5.9.3",
     "vite": "^7.2.2",
+    "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^4.0.9"
   },
   "peerDependencies": {
     "eslint": "^9.36.0"
   },
-  "packageManager": "pnpm@10.17.1+sha512.17c560fca4867ae9473a3899ad84a88334914f379be46d455cbf92e5cf4b39d34985d452d2583baf19967fa76cb5c17bc9e245529d0b98745721aa7200ecaf7a",
+  "packageManager": "pnpm@10.22.0",
   "engines": {
     "node": ">=22"
   }
