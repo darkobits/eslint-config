@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 
+# [4.0.0-beta.7](https://github.com/darkobits/eslint-plugin/compare/v4.0.0-beta.6...v4.0.0-beta.7) (2025-11-16)
+
+
+### Bug Fixes
+
+* Move dependency. ([81a6a86](https://github.com/darkobits/eslint-plugin/commit/81a6a860e70ac53c40ec34231e385800909da165))
+
 # [4.0.0-beta.6](https://github.com/darkobits/eslint-plugin/compare/v4.0.0-beta.5...v4.0.0-beta.6) (2025-11-16)
 
 # [4.0.0-beta.5](https://github.com/darkobits/eslint-plugin/compare/v4.0.0-beta.4...v4.0.0-beta.5) (2025-11-16)
