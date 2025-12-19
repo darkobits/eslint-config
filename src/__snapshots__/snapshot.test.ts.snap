@@ -5,7 +5,7 @@ exports[`configs > ts > should match the snapshot 1`] = `
   "language": "@/js",
   "languageOptions": {
     "ecmaVersion": 2026,
-    "parser": "typescript-eslint/parser@8.46.4",
+    "parser": "typescript-eslint/parser@8.50.0",
     "parserOptions": {
       "projectService": true,
       "tsconfigRootDir": "/Users/joshua/Git/eslint-plugin",
@@ -18,7 +18,7 @@ exports[`configs > ts > should match the snapshot 1`] = `
   "plugins": [
     "@",
     "@stylistic",
-    "@typescript-eslint:@typescript-eslint/eslint-plugin@8.46.4",
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@8.50.0",
     "import",
     "prefer-arrow",
     "unicorn:eslint-plugin-unicorn@62.0.0",
@@ -166,7 +166,7 @@ exports[`configs > ts > should match the snapshot 1`] = `
     ],
     "@stylistic/jsx-quotes": [
       2,
-      "prefer-double",
+      "prefer-single",
     ],
     "@stylistic/jsx-tag-spacing": [
       2,
@@ -410,12 +410,6 @@ exports[`configs > ts > should match the snapshot 1`] = `
       {
         "after": true,
         "before": false,
-        "overrides": {
-          "arrow": {
-            "after": true,
-            "before": true,
-          },
-        },
       },
     ],
     "@stylistic/type-generic-spacing": [
@@ -777,6 +771,9 @@ exports[`configs > ts > should match the snapshot 1`] = `
       2,
     ],
     "@typescript-eslint/no-useless-constructor": [
+      2,
+    ],
+    "@typescript-eslint/no-useless-default-assignment": [
       2,
     ],
     "@typescript-eslint/no-wrapper-object-types": [
@@ -1636,7 +1633,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
   "language": "@/js",
   "languageOptions": {
     "ecmaVersion": 2026,
-    "parser": "typescript-eslint/parser@8.46.4",
+    "parser": "typescript-eslint/parser@8.50.0",
     "parserOptions": {
       "projectService": true,
       "tsconfigRootDir": "/Users/joshua/Git/eslint-plugin",
@@ -1649,7 +1646,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
   "plugins": [
     "@",
     "@stylistic",
-    "@typescript-eslint:@typescript-eslint/eslint-plugin@8.46.4",
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@8.50.0",
     "import",
     "prefer-arrow",
     "unicorn:eslint-plugin-unicorn@62.0.0",
@@ -1800,7 +1797,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
     ],
     "@stylistic/jsx-quotes": [
       2,
-      "prefer-double",
+      "prefer-single",
     ],
     "@stylistic/jsx-tag-spacing": [
       2,
@@ -2044,12 +2041,6 @@ exports[`configs > tsx > should match the snapshot 1`] = `
       {
         "after": true,
         "before": false,
-        "overrides": {
-          "arrow": {
-            "after": true,
-            "before": true,
-          },
-        },
       },
     ],
     "@stylistic/type-generic-spacing": [
@@ -2411,6 +2402,9 @@ exports[`configs > tsx > should match the snapshot 1`] = `
       2,
     ],
     "@typescript-eslint/no-useless-constructor": [
+      2,
+    ],
+    "@typescript-eslint/no-useless-default-assignment": [
       2,
     ],
     "@typescript-eslint/no-wrapper-object-types": [

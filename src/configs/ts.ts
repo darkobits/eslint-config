@@ -598,8 +598,8 @@ export const ts = defineConfig(
         ]
       }],
 
-      // Require double quotes in JSX.
-      '@stylistic/jsx-quotes': ['error', 'prefer-double'],
+      // Require single quotes in JSX.
+      '@stylistic/jsx-quotes': ['error', 'prefer-single'],
 
       // Require a space before and after keywords like `for`, `if`, etc.
       '@stylistic/keyword-spacing': ['error', {
@@ -685,13 +685,7 @@ export const ts = defineConfig(
       // Enforce consistent spacing around type annotations.
       '@stylistic/type-annotation-spacing': ['error', {
         after: true,
-        before: false,
-        overrides: {
-          arrow: {
-            before: true,
-            after: true
-          }
-        }
+        before: false
       }],
 
       // Do not require ternary expressions be multi-line.
