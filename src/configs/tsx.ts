@@ -16,6 +16,10 @@ export const tsx = defineConfig([
       'react-hooks': reactHooksPlugin
     },
     rules: {
+      '@stylistic/jsx-one-expression-per-line': ['error', {
+        allow: 'non-jsx'
+      }],
+
       // ----- Plugin: React ---------------------------------------------------
 
       ...reactPlugin.configs.recommended.rules,

@@ -22,17 +22,3 @@ describe('configs', () => {
     })
   })
 })
-
-// describe('rule diffs', async () => {
-//   const noRulesConfig = await computeConfigForThisFile(configs.tsNoRules)
-//   const tsConfig = await computeConfigForThisFile(configs.ts)
-//   Object.entries(tsConfig.rules ?? {}).forEach(([ruleName, ruleConfig]) => {
-//     const baseConfig = Reflect.get(noRulesConfig.rules ?? {}, ruleName)
-//     if (!ruleConfig || !baseConfig) return
-//     if (JSON.stringify(baseConfig) !== JSON.stringify(ruleConfig)) {
-//       it(`${ruleName} config mismatch`, () => {
-//         expect(baseConfig).toMatchObject(ruleConfig as any)
-//       })
-//     }
-//   })
-// })

@@ -1789,7 +1789,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
     "@stylistic/jsx-one-expression-per-line": [
       2,
       {
-        "allow": "single-child",
+        "allow": "non-jsx",
       },
     ],
     "@stylistic/jsx-quotes": [
