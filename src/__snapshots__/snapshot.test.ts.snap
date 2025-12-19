@@ -407,10 +407,7 @@ exports[`configs > ts > should match the snapshot 1`] = `
     ],
     "@stylistic/type-annotation-spacing": [
       2,
-      {
-        "after": true,
-        "before": false,
-      },
+      {},
     ],
     "@stylistic/type-generic-spacing": [
       2,
@@ -2038,10 +2035,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
     ],
     "@stylistic/type-annotation-spacing": [
       2,
-      {
-        "after": true,
-        "before": false,
-      },
+      {},
     ],
     "@stylistic/type-generic-spacing": [
       2,

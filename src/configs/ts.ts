@@ -683,10 +683,7 @@ export const ts = defineConfig(
       '@stylistic/template-curly-spacing': ['error', 'never'],
 
       // Enforce consistent spacing around type annotations.
-      '@stylistic/type-annotation-spacing': ['error', {
-        after: true,
-        before: false
-      }],
+      '@stylistic/type-annotation-spacing': ['error'],
 
       // Do not require ternary expressions be multi-line.
       '@stylistic/multiline-ternary': 'off',
