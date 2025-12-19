@@ -47,5 +47,11 @@ export default defineConfig({
    *
    * @see https://tsdown.dev/reference/config-options#exports
    */
-  exports: true
+  exports: true,
+  /**
+   * Always use the .js and .d.ts extensions.
+   *
+   * @see https://tsdown.dev/reference/api/Interface.InlineConfig#outextensions
+   */
+  outExtensions: () => ({ js: '.js', dts: '.d.ts' })
 })
