@@ -16,9 +16,9 @@ export const tsx = defineConfig([
       'react-hooks': reactHooksPlugin
     },
     rules: {
-      '@stylistic/jsx-one-expression-per-line': ['error', {
-        allow: 'non-jsx'
-      }],
+      // ----- Plugin: Stylistic -----------------------------------------------
+
+      '@stylistic/jsx-one-expression-per-line': 'off',
 
       // ----- Plugin: React ---------------------------------------------------
 
@@ -189,13 +189,8 @@ export const tsx = defineConfig([
       // Disallow multiple spaces between inline JSX props.
       'react/jsx-props-no-multi-spaces': ['error'],
 
-      // Disallow JSX props spreading. This enhances readability of code by
-      // being more explicit about what props are received by the component.
-      'react/jsx-props-no-spreading': ['error', {
-        // Allow props spreading when the properties being spread are explicitly
-        // enumerated.
-        explicitSpread: 'ignore'
-      }],
+      // Prop spreading should be avoided, but not prohibited.
+      'react/jsx-props-no-spreading': 'off',
 
       // Validate whitespace in and around the JSX opening and closing brackets.
       'react/jsx-tag-spacing': ['error', {
@@ -241,7 +236,7 @@ export const tsx = defineConfig([
       // }]
       'react-hooks/exhaustive-deps': 'off',
 
-      // ----- [Plugin] jsx-a11y -----------------------------------------------
+      // ----- Plugin: jsx-a11y ------------------------------------------------
 
       ...jsxA11yPlugin.configs.recommended.rules,
 
@@ -252,7 +247,7 @@ export const tsx = defineConfig([
       // Do not require media elements to have captions.
       'jsx-a11y/media-has-caption': 'off',
 
-      // ----- [Plugin] unicorn ------------------------------------------------
+      // ----- Plugin: unicorn -------------------------------------------------
 
       // NOTE: This plugin was installed and its rules configured by the 'ts'
       // preset, so deleting them from our own rules will not suffice, we need

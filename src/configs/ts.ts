@@ -26,9 +26,17 @@ export const ts = defineConfig(
     ignores: ['**/*.d.ts'],
     extends: [
       eslint.configs.recommended,
-      stylisticPlugin.configs.recommended,
       tseslint.configs.strictTypeChecked,
-      tseslint.configs.stylisticTypeChecked
+      tseslint.configs.stylisticTypeChecked,
+      stylisticPlugin.configs.customize({
+        quoteProps: 'consistent',
+        commaDangle: 'never',
+        braceStyle: '1tbs',
+        quotes: 'single',
+        semi: false,
+        indent: 2,
+        jsx: true
+      })
     ],
     languageOptions: {
       parserOptions: {
@@ -60,7 +68,7 @@ export const ts = defineConfig(
       }
     },
     rules: {
-      // ----- Best Practices --------------------------------------------------
+      // ----- Base ------------------------------------------------------------
 
       // Enforce return statements in callbacks of array methods.
       'array-callback-return': ['error', {
@@ -169,7 +177,7 @@ export const ts = defineConfig(
       // `await` or `yield`.
       'require-atomic-updates': 'error',
 
-      // ----- [Plugin] @typescript/eslint -------------------------------------
+      // ----- Plugin TypeScript ESLint ----------------------------------------
 
       // Require that member overloads be consecutive.
       '@typescript-eslint/adjacent-overload-signatures': 'error',
@@ -549,7 +557,7 @@ export const ts = defineConfig(
       // an optional/rest parameter.
       '@typescript-eslint/unified-signatures': 'error',
 
-      // ----- Stylistic -------------------------------------------------------
+      // ----- Plugin: Stylistic -----------------------------------------------
 
       // Require line breaks after opening and before closing array brackets if
       // there are line breaks inside elements or between elements.
@@ -567,12 +575,6 @@ export const ts = defineConfig(
         before: true
       }],
 
-      // Enforce the usage of 'one-true-brace-style' for braces.
-      '@stylistic/brace-style': ['error', '1tbs'],
-
-      // Disallow trailing commas in object and array literals.
-      '@stylistic/comma-dangle': ['error', 'never'],
-
       // Disallow spaces before commas, require spaces after commas.
       '@stylistic/comma-spacing': ['error', {
         after: true,
@@ -586,7 +588,6 @@ export const ts = defineConfig(
       // that calls it.
       '@/func-call-spacing': ['error', 'never'],
 
-      // Require 2-space indentation.
       '@stylistic/indent': ['error', 2, {
         // Require an extra 2 spaces of indentation between switch statements
         // and case statements.
@@ -657,9 +658,6 @@ export const ts = defineConfig(
       // Disallow unnecessary semicolons.
       '@stylistic/no-extra-semi': 'error',
 
-      // Use single quotes.
-      '@stylistic/quotes': ['error', 'single'],
-
       // Disallow spaces between rest/spread operators and their expressions.
       '@stylistic/rest-spread-spacing': 'error',
 
@@ -689,7 +687,7 @@ export const ts = defineConfig(
       // Do not require ternary expressions be multi-line.
       '@stylistic/multiline-ternary': 'off',
 
-      // ----- [Plugin] import -------------------------------------------------
+      // ----- Plugin: import --------------------------------------------------
 
       ...importPlugin.configs.recommended.rules,
 
@@ -841,7 +839,7 @@ export const ts = defineConfig(
       // Do not require exports to be grouped.
       'import/group-exports': 'off',
 
-      // ----- [Plugin] prefer-arrow -------------------------------------------
+      // ----- Plugin: prefer-arrow --------------------------------------------
 
       // Prefer the use of arrow functions in certain contexts.
       'prefer-arrow/prefer-arrow-functions': ['error', {
@@ -854,7 +852,7 @@ export const ts = defineConfig(
         disallowPrototype: true
       }],
 
-      // ----- [Plugin] unicorn ------------------------------------------------
+      // ----- Plugin: unicorn -------------------------------------------------
 
       // Require consistent naming of errors in catch blocks.
       'unicorn/catch-error-name': ['error', {
