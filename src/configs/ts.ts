@@ -37,6 +37,7 @@ export const ts = defineConfig(
       }
     },
     plugins: {
+      '@stylistic': stylisticPlugin,
       'import': importPlugin,
       'prefer-arrow': preferArrowPlugin,
       'unicorn': unicornPlugin
