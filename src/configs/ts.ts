@@ -563,11 +563,8 @@ export const ts = defineConfig(
       // there are line breaks inside elements or between elements.
       '@stylistic/array-bracket-newline': ['error', 'consistent'],
 
-      // Require parens around arrow function arguments only when required.
-      '@stylistic/arrow-parens': ['error', 'as-needed', {
-        // Require parens if the function body is surrounded by braces.
-        // requireForBlockBody: true
-      }],
+      // Require parens around arrow function arguments as needed.
+      '@stylistic/arrow-parens': ['error', 'as-needed'],
 
       // Require a space before and after an arrow function's arrow.
       '@stylistic/arrow-spacing': ['error', {
@@ -627,16 +624,10 @@ export const ts = defineConfig(
       // Do not enforce a limit on statements per line.
       '@stylistic/max-statements-per-line': 'off',
 
-      // Require no semi-colons after members in interface declarations.
+      // Only require semi-colons in single-line interface declarations.
       '@stylistic/member-delimiter-style': ['error', {
-        multiline: {
-          delimiter: 'none',
-          requireLast: false
-        },
-        singleline: {
-          delimiter: 'semi',
-          requireLast: false
-        }
+        multiline: { delimiter: 'none', requireLast: false },
+        singleline: { delimiter: 'semi', requireLast: false }
       }],
 
       // Disallow arrow functions where they could be confused with comparisons.
@@ -657,6 +648,9 @@ export const ts = defineConfig(
 
       // Disallow unnecessary semicolons.
       '@stylistic/no-extra-semi': 'error',
+
+      // Warn about trailing spaces.
+      '@stylistic/no-trailing-spaces': 'warn',
 
       // Disallow spaces between rest/spread operators and their expressions.
       '@stylistic/rest-spread-spacing': 'error',

@@ -5,7 +5,7 @@ exports[`configs > ts > should match the snapshot 1`] = `
   "language": "@/js",
   "languageOptions": {
     "ecmaVersion": 2026,
-    "parser": "typescript-eslint/parser@8.50.0",
+    "parser": "typescript-eslint/parser@8.53.0",
     "parserOptions": {
       "projectService": true,
       "tsconfigRootDir": "/Users/joshua/Git/eslint-plugin",
@@ -17,7 +17,7 @@ exports[`configs > ts > should match the snapshot 1`] = `
   },
   "plugins": [
     "@",
-    "@typescript-eslint:@typescript-eslint/eslint-plugin@8.50.0",
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@8.53.0",
     "@stylistic",
     "import",
     "prefer-arrow",
@@ -43,9 +43,6 @@ exports[`configs > ts > should match the snapshot 1`] = `
     "@stylistic/arrow-parens": [
       2,
       "as-needed",
-      {
-        "requireForBlockBody": false,
-      },
     ],
     "@stylistic/arrow-spacing": [
       2,
@@ -319,7 +316,7 @@ exports[`configs > ts > should match the snapshot 1`] = `
       2,
     ],
     "@stylistic/no-trailing-spaces": [
-      2,
+      1,
     ],
     "@stylistic/no-whitespace-before-property": [
       2,
@@ -1637,7 +1634,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
   "language": "@/js",
   "languageOptions": {
     "ecmaVersion": 2026,
-    "parser": "typescript-eslint/parser@8.50.0",
+    "parser": "typescript-eslint/parser@8.53.0",
     "parserOptions": {
       "projectService": true,
       "tsconfigRootDir": "/Users/joshua/Git/eslint-plugin",
@@ -1649,7 +1646,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
   },
   "plugins": [
     "@",
-    "@typescript-eslint:@typescript-eslint/eslint-plugin@8.50.0",
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@8.53.0",
     "@stylistic",
     "import",
     "prefer-arrow",
@@ -1678,9 +1675,6 @@ exports[`configs > tsx > should match the snapshot 1`] = `
     "@stylistic/arrow-parens": [
       2,
       "as-needed",
-      {
-        "requireForBlockBody": false,
-      },
     ],
     "@stylistic/arrow-spacing": [
       2,
@@ -1954,7 +1948,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
       2,
     ],
     "@stylistic/no-trailing-spaces": [
-      2,
+      1,
     ],
     "@stylistic/no-whitespace-before-property": [
       2,
