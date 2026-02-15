@@ -8,7 +8,6 @@ exports[`configs > ts > should match the snapshot 1`] = `
     "parser": "typescript-eslint/parser@8.53.0",
     "parserOptions": {
       "projectService": true,
-      "tsconfigRootDir": "/Users/joshua/Git/eslint-plugin",
     },
     "sourceType": "module",
   },
@@ -1619,7 +1618,6 @@ exports[`configs > ts > should match the snapshot 1`] = `
     "import/resolver": {
       "typescript": {
         "alwaysTryTypes": true,
-        "project": "/Users/joshua/Git/eslint-plugin/tsconfig.json",
       },
     },
     "packageJson": {
@@ -1637,7 +1635,6 @@ exports[`configs > tsx > should match the snapshot 1`] = `
     "parser": "typescript-eslint/parser@8.53.0",
     "parserOptions": {
       "projectService": true,
-      "tsconfigRootDir": "/Users/joshua/Git/eslint-plugin",
     },
     "sourceType": "module",
   },
@@ -3771,7 +3768,6 @@ exports[`configs > tsx > should match the snapshot 1`] = `
     "import/resolver": {
       "typescript": {
         "alwaysTryTypes": true,
-        "project": "/Users/joshua/Git/eslint-plugin/tsconfig.json",
       },
     },
     "packageJson": {
