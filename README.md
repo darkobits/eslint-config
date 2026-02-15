@@ -21,11 +21,6 @@
     src="https://img.shields.io/github/actions/workflow/status/darkobits/eslint-config/ci.yml?style=flat-square"
   ></a>
   <a
-    href="https://depfu.com/repos/github/darkobits/eslint-config"
-  ><img
-    src="https://img.shields.io/depfu/darkobits/eslint-config?style=flat-square"
-  ></a>
-  <a
     href="https://conventionalcommits.org"
   ><img
     src="https://img.shields.io/static/v1?label=commits&message=conventional&style=flat-square&color=398AFB"
