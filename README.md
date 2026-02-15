@@ -46,7 +46,8 @@ This package provides two presets: [`ts`](./src/configs/ts.ts) for TypeScript
 projects and [`tsx`](./src/configs/tsx.ts) for TypeScript projects that use
 JSX and React.
 
-If you do not need to modify the preset in any way, a minimal config file:
+If you do not need to modify the preset in any way, simply re-export the desired
+configuration preset:
 
 > `eslint.config.ts`
 
@@ -58,10 +59,6 @@ export default.configs.tsx
 ```
 
 If you need to extend a preset, the `defineConfig` helper should be used:
-
-
-import the desired preset and re-export it as the default
-export:
 
 > `eslint.config.ts`
 
@@ -82,7 +79,31 @@ export default defineConfig({
 
 See:
 
-- [ESLint Documentation](https://eslint.org/docs/latest/extend/shareable-configs#overriding-settings-from-shareable-configs).
+- [Use a Shareable Config - ESLint Documentation](https://eslint.org/docs/latest/extend/shareable-configs#overriding-settings-from-shareable-configs)
+
+### Additional Utilities
+
+This package's configuration presets automatically ignore patterns in the first
+`.gitignore` file found at or above the directory where `tsconfig.json` is
+located. If you need to specify additional ignore files, this package re-exports
+the `includeIgnoreFile` and `convertIgnorePatternToMinimatch` utilities from
+`@eslint/compat`:
+
+> `eslint.config.ts`
+
+```ts
+import { configs, includeIgnoreFile } from '@darkobits/eslint-config'
+import { defineConfig } from 'eslint/config'
+
+export default defineConfig({
+  ignores: [includeIgnoreFile('path/to/.ignore-file')]
+}, {
+  extends: [configs.ts],
+  rules: {
+    // ...
+  }
+})
+```
 
 ### Configuration Inspector
 
@@ -93,10 +114,6 @@ following:
 ```sh
 npx eslint --inspect-config
 ```
-
-Example:
-
-![](https://private-user-images.githubusercontent.com/11247099/320013940-d74a057a-f674-4a8d-977f-d9b6a3cde949.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDEyNjAwMDYsIm5iZiI6MTc0MTI1OTcwNiwicGF0aCI6Ii8xMTI0NzA5OS8zMjAwMTM5NDAtZDc0YTA1N2EtZjY3NC00YThkLTk3N2YtZDliNmEzY2RlOTQ5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMDYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzA2VDExMTUwNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTAxZTc1YjY1ZjA5NDRhYTViMTY4MmQ5YmQxMzU4MWU4ODI0MDQyNzYyMGQ5MDEwMGU4YjA0ODFkZGM5ZjdkYTgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Cs6PUEqZPHKWV26iMlOgz3wrKS6937e6zOeEWHLALGU)
 
 <br />
 <a href="#top">
