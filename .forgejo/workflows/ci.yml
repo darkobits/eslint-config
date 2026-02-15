@@ -1,0 +1,36 @@
+# See: https://forgejo.org/docs/next/user/actions/github-actions
+name: ci
+on:
+  push:
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+env:
+  FORCE_COLOR: 3
+jobs:
+  ci:
+    runs-on: docker
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+      # Note: This repository builds its own lint rules, so we must run out
+      # build script before linting our source code.
+      - name: Build
+        run: pnpm build
+      - name: Lint
+        run: pnpm lint
+      - name: Test
+        run: pnpm test
