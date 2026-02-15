@@ -16,11 +16,6 @@
     src="https://img.shields.io/npm/v/@darkobits/eslint-config.svg?style=flat-square"
   ></a>
   <a
-    href="https://github.com/darkobits/eslint-config/actions?query=workflow%3Aci"
-  ><img
-    src="https://img.shields.io/github/actions/workflow/status/darkobits/eslint-config/ci.yml?style=flat-square"
-  ></a>
-  <a
     href="https://conventionalcommits.org"
   ><img
     src="https://img.shields.io/static/v1?label=commits&message=conventional&style=flat-square&color=398AFB"

@@ -2,16 +2,6 @@ import { defineConfig } from 'tsdown/config'
 
 export default defineConfig({
   /**
-   * Any TypeScript file (except for tests) in the source directory should be
-   * considered an entry.
-   *
-   * @see https://tsdown.dev/reference/config-options#entry
-   */
-  // entry: [
-  //   'src/**/*.{ts,tsx,js,jsx}',
-  //   '!src/**/*.{spec,test}.{ts,tsx,js,jsx}'
-  // ],
-  /**
    * Do not bundle third party dependencies.
    *
    * See: https://tsdown.dev/options/dependencies#external
