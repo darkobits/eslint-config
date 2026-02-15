@@ -19,9 +19,10 @@ const tsconfigDir = tsconfigPath ? path.dirname(tsconfigPath) : undefined
 const gitignorePath = findUpSync('.gitignore', { cwd: tsconfigDir ?? process.cwd() })
 
 export const ts = defineConfig(
-  gitignorePath ? includeIgnoreFile(gitignorePath, 'Imported .gitignore patterns.') : {},
+  gitignorePath ? includeIgnoreFile(gitignorePath, '.gitignore') : {},
   packageJsonPlugin.configs.recommended,
   {
+    name: 'ts',
     files: ['**/*.{ts,tsx,js,jsx,cjs,mjs,cts,mts}'],
     ignores: ['**/*.d.ts'],
     extends: [
@@ -930,6 +931,7 @@ export const ts = defineConfig(
       'unicorn/no-anonymous-default-export': 'off'
     }
   }, {
+    name: 'ts',
     files: ['**/*.{js,jsx,cjs,mjs}'],
     extends: [tseslint.configs.disableTypeChecked]
   }

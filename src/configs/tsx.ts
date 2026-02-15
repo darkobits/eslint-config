@@ -8,6 +8,7 @@ import { ts } from './ts'
 
 export const tsx = defineConfig([
   {
+    name: 'tsx',
     extends: [ts],
     plugins: {
       'jsx-a11y': jsxA11yPlugin,

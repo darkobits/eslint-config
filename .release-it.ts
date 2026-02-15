@@ -5,7 +5,7 @@ export default {
     tagName: 'v${version}',
     requireCleanWorkingDir: true,
     commitMessage: 'chore: release v${version}\n[skip ci]',
-    requireBranch: ['main', 'master', 'beta']
+    requireBranch: ['main', 'beta']
   },
   github: {
     release: true,
