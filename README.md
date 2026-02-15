@@ -42,61 +42,47 @@ npm install --save-dev @darkobits/eslint-config
 
 ## Use
 
-This package provides two presets: [`presetTs`](./src/configuration-presets/preset-ts.ts) for TypeScript
-projects and [`presetTsx`](./src/configuration-presets/preset-tsx.ts) for TypeScript projects that use
+This package provides two presets: [`ts`](./src/configs/ts.ts) for TypeScript
+projects and [`tsx`](./src/configs/tsx.ts) for TypeScript projects that use
 JSX and React.
 
-In your project's `eslint.config.js` file, import the desired preset and re-export it as the default
+If you do not need to modify the preset in any way, a minimal config file:
+
+> `eslint.config.ts`
+
+```ts
+export { configs } from '@darkobits/eslint-config'
+export default configs.ts
+// Or
+export default.configs.tsx
+```
+
+If you need to extend a preset, the `defineConfig` helper should be used:
+
+
+import the desired preset and re-export it as the default
 export:
 
-```ts
-export { presetTs as default } from '@darkobits/eslint-config'
-```
-
-or
+> `eslint.config.ts`
 
 ```ts
-export { presetTsx as default } from '@darkobits/eslint-config'
+import { configs } from '@darkobits/eslint-config'
+import { defineConfig } from 'eslint/config'
+
+export default defineConfig({
+  // Any global ignores should be defined early in a separate config object.
+  ignores: []
+}, {
+  extends: [configs.ts],
+  rules: {
+    // ...
+  }
+})
 ```
 
-If you need to define any additional configuration specific to your project, use the spread operator to
-add the preset to a new array:
+See:
 
-```ts
-import { airBnb } from '@airbnb/eslint-config-airbnb-is-still-a-thing-right'
-import { presetTs } from '@darkobits/eslint-config'
-
-export default [
-  // Exempt this directory from linting. Do this early to prevent ESLint from
-  // processing these files any further.
-  { ignores: ['rainbows/**'] },
-  // Then, apply one or more configuration presets.
-  ...airBnb,
-  ...presetTs,
-  // If we then wanted to disable a rule used by any of the above:
-  { rules: { 'unicorn/catch-error-name': 'off' } }
-]
-```
-
-> [!TIP]
-> Order matters here! Configuration for files that you want to have globally ignored occur first,
-> followed by one or more configuration presets, then overrides.
-
-For more on this topic, refer to the ESLint [documentation](https://eslint.org/docs/latest/extend/shareable-configs#overriding-settings-from-shareable-configs).
-
-### Type Safety
-
-For added type safety, use the `defineFlatConfig` helper:
-
-```ts
-import { defineFlatConfig, presetTs } from '@darkobits/eslint-config'
-
-export default defineFlatConfig([
-  { ignores: ['rainbows/**'] },
-  ...presetTs,
-  { rules: { 'unicorn/catch-error-name': 'off' } }
-])
-```
+- [ESLint Documentation](https://eslint.org/docs/latest/extend/shareable-configs#overriding-settings-from-shareable-configs).
 
 ### Configuration Inspector
 

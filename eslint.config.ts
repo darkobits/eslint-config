@@ -1,7 +1,5 @@
-import { defineConfig } from 'eslint/config'
+// import { defineConfig } from 'eslint/config'
 
 import { configs } from './dist/index.js'
 
-export default defineConfig(
-  configs.ts
-)
+export default configs.ts
