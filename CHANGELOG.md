@@ -3,6 +3,8 @@
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 
+## [4.0.1](https://github.com/darkobits/eslint-plugin/compare/v4.0.0-beta.12...v4.0.1) (2026-02-15)
+
 # [4.0.0-beta.12](https://github.com/darkobits/eslint-plugin/compare/v4.0.0-beta.11...v4.0.0-beta.12) (2026-01-14)
 
 # [4.0.0-beta.11](https://github.com/darkobits/eslint-plugin/compare/v4.0.0-beta.10...v4.0.0-beta.11) (2025-12-23)
