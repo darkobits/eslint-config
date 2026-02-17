@@ -13,8 +13,6 @@
     ".": "./dist/index.js",
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
@@ -35,40 +33,40 @@
     "tsc:watch": "tsc --watch"
   },
   "dependencies": {
-    "@eslint/compat": "^2.0.1",
+    "@eslint/compat": "^2.0.2",
     "@eslint/js": "^9.39.2",
-    "@stylistic/eslint-plugin": "^5.7.0",
-    "@typescript-eslint/eslint-plugin": "^8.53.0",
-    "@typescript-eslint/parser": "^8.53.0",
+    "@stylistic/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/eslint-plugin": "^8.56.0",
+    "@typescript-eslint/parser": "^8.56.0",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-package-json": "~0.85.0",
+    "eslint-plugin-package-json": "~0.88.3",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-unicorn": "^62.0.0",
     "find-up": "^8.0.0",
-    "get-tsconfig": "^4.13.0",
-    "typescript-eslint": "^8.53.0"
+    "get-tsconfig": "^4.13.6",
+    "typescript-eslint": "^8.56.0"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^10.0.4",
+    "@release-it/conventional-changelog": "^10.0.5",
     "@types/eslint": "^9.6.1",
-    "@types/node": "^24.10.8",
-    "@types/react": "^19.2.8",
-    "@vitest/ui": "^4.0.17",
+    "@types/node": "^24.10.13",
+    "@types/react": "^19.2.14",
+    "@vitest/ui": "^4.0.18",
     "eslint": "^9.39.2",
     "jiti": "^2.6.1",
-    "publint": "^0.3.16",
-    "react": "^19.2.3",
-    "release-it": "^19.2.3",
+    "publint": "^0.3.17",
+    "react": "^19.2.4",
+    "release-it": "^19.2.4",
     "ts-essentials": "^10.1.1",
-    "tsdown": "~0.18.4",
+    "tsdown": "~0.20.3",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
-    "vite-tsconfig-paths": "^6.0.4",
-    "vitest": "^4.0.17"
+    "vite-tsconfig-paths": "^6.1.1",
+    "vitest": "^4.0.18"
   },
   "peerDependencies": {
     "eslint": "^9.36.0"

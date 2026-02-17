@@ -8,11 +8,8 @@ async function computeConfigForThisFile(config: ReturnType<typeof defineConfig>)
   const eslint = new ESLint({ overrideConfigFile: true, baseConfig: config })
   const computedConfig = await eslint.calculateConfigForFile(import.meta.filename)
   try {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     Reflect.deleteProperty(computedConfig, 'gitignorePath')
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     Reflect.deleteProperty(computedConfig?.languageOptions?.parserOptions ?? {}, 'tsconfigRootDir')
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     Reflect.deleteProperty(computedConfig?.settings['import/resolver']?.typescript, 'project')
   } catch (error: any) {
     // eslint-disable-next-line no-console

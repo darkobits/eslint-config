@@ -311,7 +311,7 @@ export const ts = defineConfig(
         format: ['camelCase', 'UPPER_CASE', 'PascalCase']
       }, {
         selector: 'objectLiteralProperty',
-        format: ['camelCase', 'UPPER_CASE']
+        format: null
       }, {
         // Do not enforce any naming conventions for object properties because
         // we often need to use objects whose shape is defined by a third-party
