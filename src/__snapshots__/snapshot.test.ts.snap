@@ -5,7 +5,7 @@ exports[`configs > ts > should match the snapshot 1`] = `
   "language": "@/js",
   "languageOptions": {
     "ecmaVersion": 2026,
-    "parser": "typescript-eslint/parser@8.53.0",
+    "parser": "typescript-eslint/parser@8.56.0",
     "parserOptions": {
       "projectService": true,
     },
@@ -16,11 +16,11 @@ exports[`configs > ts > should match the snapshot 1`] = `
   },
   "plugins": [
     "@",
-    "@typescript-eslint:@typescript-eslint/eslint-plugin@8.53.0",
-    "@stylistic",
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@8.56.0",
+    "@stylistic:@stylistic/eslint-plugin@5.8.0",
     "import",
     "prefer-arrow",
-    "unicorn:eslint-plugin-unicorn@62.0.0",
+    "unicorn:eslint-plugin-unicorn@63.0.0",
   ],
   "processor": undefined,
   "rules": {
@@ -104,13 +104,10 @@ exports[`configs > ts > should match the snapshot 1`] = `
       {
         "SwitchCase": 1,
         "flatTernaryExpressions": true,
-        "ignoreComments": false,
         "ignoredNodes": [
           "ConditionalExpression",
           "TSTypeParameterInstantiation",
         ],
-        "offsetTernaryExpressions": false,
-        "tabLength": 4,
       },
     ],
     "@stylistic/indent-binary-ops": [
@@ -119,18 +116,23 @@ exports[`configs > ts > should match the snapshot 1`] = `
     ],
     "@stylistic/jsx-closing-bracket-location": [
       2,
+      "tag-aligned",
     ],
     "@stylistic/jsx-closing-tag-location": [
       2,
+      "tag-aligned",
     ],
     "@stylistic/jsx-curly-brace-presence": [
       2,
       {
+        "children": "never",
         "propElementValues": "always",
+        "props": "never",
       },
     ],
     "@stylistic/jsx-curly-newline": [
       2,
+      "consistent",
     ],
     "@stylistic/jsx-curly-spacing": [
       2,
@@ -138,9 +140,11 @@ exports[`configs > ts > should match the snapshot 1`] = `
     ],
     "@stylistic/jsx-equals-spacing": [
       2,
+      "never",
     ],
     "@stylistic/jsx-first-prop-new-line": [
       2,
+      "multiline-multiprop",
     ],
     "@stylistic/jsx-function-call-newline": [
       2,
@@ -201,6 +205,7 @@ exports[`configs > ts > should match the snapshot 1`] = `
       {
         "after": true,
         "before": true,
+        "overrides": {},
       },
     ],
     "@stylistic/lines-between-class-members": [
@@ -235,6 +240,7 @@ exports[`configs > ts > should match the snapshot 1`] = `
           "delimiter": "none",
           "requireLast": false,
         },
+        "multilineDetection": "brackets",
         "singleline": {
           "delimiter": "semi",
           "requireLast": false,
@@ -247,6 +253,7 @@ exports[`configs > ts > should match the snapshot 1`] = `
     ],
     "@stylistic/new-parens": [
       2,
+      "always",
     ],
     "@stylistic/no-confusing-arrow": [
       2,
@@ -299,9 +306,18 @@ exports[`configs > ts > should match the snapshot 1`] = `
     ],
     "@stylistic/no-mixed-spaces-and-tabs": [
       2,
+      false,
     ],
     "@stylistic/no-multi-spaces": [
       2,
+      {
+        "exceptions": {
+          "ImportAttribute": true,
+          "Property": true,
+        },
+        "ignoreEOLComments": false,
+        "includeTabs": true,
+      },
     ],
     "@stylistic/no-multiple-empty-lines": [
       2,
@@ -313,9 +329,16 @@ exports[`configs > ts > should match the snapshot 1`] = `
     ],
     "@stylistic/no-tabs": [
       2,
+      {
+        "allowIndentationTabs": false,
+      },
     ],
     "@stylistic/no-trailing-spaces": [
       1,
+      {
+        "ignoreComments": false,
+        "skipBlankLines": false,
+      },
     ],
     "@stylistic/no-whitespace-before-property": [
       2,
@@ -335,6 +358,9 @@ exports[`configs > ts > should match the snapshot 1`] = `
         "classes": "never",
         "switches": "never",
       },
+      {
+        "allowSingleLineBlocks": false,
+      },
     ],
     "@stylistic/quote-props": [
       2,
@@ -346,6 +372,7 @@ exports[`configs > ts > should match the snapshot 1`] = `
       {
         "allowTemplateLiterals": "always",
         "avoidEscape": false,
+        "ignoreStringLiterals": false,
       },
     ],
     "@stylistic/rest-spread-spacing": [
@@ -381,6 +408,10 @@ exports[`configs > ts > should match the snapshot 1`] = `
     ],
     "@stylistic/space-infix-ops": [
       2,
+      {
+        "ignoreTypes": false,
+        "int32Hint": false,
+      },
     ],
     "@stylistic/space-unary-ops": [
       2,
@@ -578,10 +609,7 @@ exports[`configs > ts > should match the snapshot 1`] = `
         "selector": "import",
       },
       {
-        "format": [
-          "camelCase",
-          "UPPER_CASE",
-        ],
+        "format": null,
         "selector": "objectLiteralProperty",
       },
       {
@@ -1348,7 +1376,7 @@ exports[`configs > ts > should match the snapshot 1`] = `
     "no-shadow-restricted-names": [
       2,
       {
-        "reportGlobalThis": false,
+        "reportGlobalThis": true,
       },
     ],
     "no-sparse-arrays": [
@@ -1359,6 +1387,9 @@ exports[`configs > ts > should match the snapshot 1`] = `
     ],
     "no-throw-literal": [
       0,
+    ],
+    "no-unassigned-vars": [
+      2,
     ],
     "no-undef": [
       0,
@@ -1417,6 +1448,9 @@ exports[`configs > ts > should match the snapshot 1`] = `
         "typedefs": true,
         "variables": true,
       },
+    ],
+    "no-useless-assignment": [
+      2,
     ],
     "no-useless-backreference": [
       2,
@@ -1489,6 +1523,12 @@ exports[`configs > ts > should match the snapshot 1`] = `
     ],
     "prefer-template": [
       2,
+    ],
+    "preserve-caught-error": [
+      2,
+      {
+        "requireCatchParameter": false,
+      },
     ],
     "radix": [
       2,
@@ -1591,7 +1631,9 @@ exports[`configs > ts > should match the snapshot 1`] = `
     ],
     "unicorn/prefer-object-from-entries": [
       0,
-      {},
+      {
+        "functions": [],
+      },
     ],
     "unicorn/prefer-top-level-await": [
       0,
@@ -1639,7 +1681,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
   "language": "@/js",
   "languageOptions": {
     "ecmaVersion": 2026,
-    "parser": "typescript-eslint/parser@8.53.0",
+    "parser": "typescript-eslint/parser@8.56.0",
     "parserOptions": {
       "projectService": true,
     },
@@ -1650,11 +1692,11 @@ exports[`configs > tsx > should match the snapshot 1`] = `
   },
   "plugins": [
     "@",
-    "@typescript-eslint:@typescript-eslint/eslint-plugin@8.53.0",
-    "@stylistic",
+    "@typescript-eslint:@typescript-eslint/eslint-plugin@8.56.0",
+    "@stylistic:@stylistic/eslint-plugin@5.8.0",
     "import",
     "prefer-arrow",
-    "unicorn:eslint-plugin-unicorn@62.0.0",
+    "unicorn:eslint-plugin-unicorn@63.0.0",
     "jsx-a11y:eslint-plugin-jsx-a11y@6.10.2",
     "react",
     "react-hooks:eslint-plugin-react-hooks@7.0.0",
@@ -1741,13 +1783,10 @@ exports[`configs > tsx > should match the snapshot 1`] = `
       {
         "SwitchCase": 1,
         "flatTernaryExpressions": true,
-        "ignoreComments": false,
         "ignoredNodes": [
           "ConditionalExpression",
           "TSTypeParameterInstantiation",
         ],
-        "offsetTernaryExpressions": false,
-        "tabLength": 4,
       },
     ],
     "@stylistic/indent-binary-ops": [
@@ -1756,18 +1795,23 @@ exports[`configs > tsx > should match the snapshot 1`] = `
     ],
     "@stylistic/jsx-closing-bracket-location": [
       2,
+      "tag-aligned",
     ],
     "@stylistic/jsx-closing-tag-location": [
       2,
+      "tag-aligned",
     ],
     "@stylistic/jsx-curly-brace-presence": [
       2,
       {
+        "children": "never",
         "propElementValues": "always",
+        "props": "never",
       },
     ],
     "@stylistic/jsx-curly-newline": [
       2,
+      "consistent",
     ],
     "@stylistic/jsx-curly-spacing": [
       2,
@@ -1775,9 +1819,11 @@ exports[`configs > tsx > should match the snapshot 1`] = `
     ],
     "@stylistic/jsx-equals-spacing": [
       2,
+      "never",
     ],
     "@stylistic/jsx-first-prop-new-line": [
       2,
+      "multiline-multiprop",
     ],
     "@stylistic/jsx-function-call-newline": [
       2,
@@ -1838,6 +1884,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
       {
         "after": true,
         "before": true,
+        "overrides": {},
       },
     ],
     "@stylistic/lines-between-class-members": [
@@ -1872,6 +1919,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
           "delimiter": "none",
           "requireLast": false,
         },
+        "multilineDetection": "brackets",
         "singleline": {
           "delimiter": "semi",
           "requireLast": false,
@@ -1884,6 +1932,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
     ],
     "@stylistic/new-parens": [
       2,
+      "always",
     ],
     "@stylistic/no-confusing-arrow": [
       2,
@@ -1936,9 +1985,18 @@ exports[`configs > tsx > should match the snapshot 1`] = `
     ],
     "@stylistic/no-mixed-spaces-and-tabs": [
       2,
+      false,
     ],
     "@stylistic/no-multi-spaces": [
       2,
+      {
+        "exceptions": {
+          "ImportAttribute": true,
+          "Property": true,
+        },
+        "ignoreEOLComments": false,
+        "includeTabs": true,
+      },
     ],
     "@stylistic/no-multiple-empty-lines": [
       2,
@@ -1950,9 +2008,16 @@ exports[`configs > tsx > should match the snapshot 1`] = `
     ],
     "@stylistic/no-tabs": [
       2,
+      {
+        "allowIndentationTabs": false,
+      },
     ],
     "@stylistic/no-trailing-spaces": [
       1,
+      {
+        "ignoreComments": false,
+        "skipBlankLines": false,
+      },
     ],
     "@stylistic/no-whitespace-before-property": [
       2,
@@ -1972,6 +2037,9 @@ exports[`configs > tsx > should match the snapshot 1`] = `
         "classes": "never",
         "switches": "never",
       },
+      {
+        "allowSingleLineBlocks": false,
+      },
     ],
     "@stylistic/quote-props": [
       2,
@@ -1983,6 +2051,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
       {
         "allowTemplateLiterals": "always",
         "avoidEscape": false,
+        "ignoreStringLiterals": false,
       },
     ],
     "@stylistic/rest-spread-spacing": [
@@ -2018,6 +2087,10 @@ exports[`configs > tsx > should match the snapshot 1`] = `
     ],
     "@stylistic/space-infix-ops": [
       2,
+      {
+        "ignoreTypes": false,
+        "int32Hint": false,
+      },
     ],
     "@stylistic/space-unary-ops": [
       2,
@@ -2215,10 +2288,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
         "selector": "import",
       },
       {
-        "format": [
-          "camelCase",
-          "UPPER_CASE",
-        ],
+        "format": null,
         "selector": "objectLiteralProperty",
       },
       {
@@ -3225,7 +3295,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
     "no-shadow-restricted-names": [
       2,
       {
-        "reportGlobalThis": false,
+        "reportGlobalThis": true,
       },
     ],
     "no-sparse-arrays": [
@@ -3236,6 +3306,9 @@ exports[`configs > tsx > should match the snapshot 1`] = `
     ],
     "no-throw-literal": [
       0,
+    ],
+    "no-unassigned-vars": [
+      2,
     ],
     "no-undef": [
       0,
@@ -3294,6 +3367,9 @@ exports[`configs > tsx > should match the snapshot 1`] = `
         "typedefs": true,
         "variables": true,
       },
+    ],
+    "no-useless-assignment": [
+      2,
     ],
     "no-useless-backreference": [
       2,
@@ -3366,6 +3442,12 @@ exports[`configs > tsx > should match the snapshot 1`] = `
     ],
     "prefer-template": [
       2,
+    ],
+    "preserve-caught-error": [
+      2,
+      {
+        "requireCatchParameter": false,
+      },
     ],
     "radix": [
       2,
@@ -3741,14 +3823,19 @@ exports[`configs > tsx > should match the snapshot 1`] = `
     ],
     "unicorn/no-useless-undefined": [
       0,
-      {},
+      {
+        "checkArguments": true,
+        "checkArrowFunctionBody": true,
+      },
     ],
     "unicorn/prefer-module": [
       0,
     ],
     "unicorn/prefer-object-from-entries": [
       0,
-      {},
+      {
+        "functions": [],
+      },
     ],
     "unicorn/prefer-top-level-await": [
       0,
