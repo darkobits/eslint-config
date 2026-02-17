@@ -272,7 +272,7 @@ exports[`configs > ts > should match the snapshot 1`] = `
       2,
     ],
     "@stylistic/no-mixed-operators": [
-      2,
+      0,
       {
         "allowSamePrecedence": true,
         "groups": [
@@ -578,6 +578,13 @@ exports[`configs > ts > should match the snapshot 1`] = `
         "selector": "import",
       },
       {
+        "format": [
+          "camelCase",
+          "UPPER_CASE",
+        ],
+        "selector": "objectLiteralProperty",
+      },
+      {
         "format": null,
         "selector": "property",
       },
@@ -658,7 +665,7 @@ exports[`configs > ts > should match the snapshot 1`] = `
       2,
     ],
     "@typescript-eslint/no-misused-promises": [
-      2,
+      0,
     ],
     "@typescript-eslint/no-misused-spread": [
       2,
@@ -730,7 +737,7 @@ exports[`configs > ts > should match the snapshot 1`] = `
       2,
     ],
     "@typescript-eslint/no-unsafe-argument": [
-      2,
+      0,
     ],
     "@typescript-eslint/no-unsafe-assignment": [
       0,
@@ -863,7 +870,7 @@ exports[`configs > ts > should match the snapshot 1`] = `
       },
     ],
     "@typescript-eslint/restrict-template-expressions": [
-      2,
+      0,
       {
         "allowAny": false,
         "allowBoolean": false,
@@ -1902,7 +1909,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
       2,
     ],
     "@stylistic/no-mixed-operators": [
-      2,
+      0,
       {
         "allowSamePrecedence": true,
         "groups": [
@@ -2208,6 +2215,13 @@ exports[`configs > tsx > should match the snapshot 1`] = `
         "selector": "import",
       },
       {
+        "format": [
+          "camelCase",
+          "UPPER_CASE",
+        ],
+        "selector": "objectLiteralProperty",
+      },
+      {
         "format": null,
         "selector": "property",
       },
@@ -2288,7 +2302,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
       2,
     ],
     "@typescript-eslint/no-misused-promises": [
-      2,
+      0,
     ],
     "@typescript-eslint/no-misused-spread": [
       2,
@@ -2360,7 +2374,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
       2,
     ],
     "@typescript-eslint/no-unsafe-argument": [
-      2,
+      0,
     ],
     "@typescript-eslint/no-unsafe-assignment": [
       0,
@@ -2493,7 +2507,7 @@ exports[`configs > tsx > should match the snapshot 1`] = `
       },
     ],
     "@typescript-eslint/restrict-template-expressions": [
-      2,
+      0,
       {
         "allowAny": false,
         "allowBoolean": false,

@@ -310,6 +310,9 @@ export const ts = defineConfig(
         selector: 'import',
         format: ['camelCase', 'UPPER_CASE', 'PascalCase']
       }, {
+        selector: 'objectLiteralProperty',
+        format: ['camelCase', 'UPPER_CASE']
+      }, {
         // Do not enforce any naming conventions for object properties because
         // we often need to use objects whose shape is defined by a third-party
         // API or schema that we have no control over.
@@ -378,8 +381,9 @@ export const ts = defineConfig(
       // Enforce valid definition of `new` and `constructor`.
       '@typescript-eslint/no-misused-new': 'error',
 
-      // Avoid using promises in places not designed to handle them.
-      '@typescript-eslint/no-misused-promises': 'error',
+      // Allow Promise-returning functions to be used where a void return was
+      // expected.
+      '@typescript-eslint/no-misused-promises': 'off',
 
       // Disallow the use of custom TypeScript modules and namespaces.
       '@typescript-eslint/no-namespace': ['error', {
@@ -424,6 +428,8 @@ export const ts = defineConfig(
       // modules/APIs in the JavaScript ecosystem, and the need for `any` is
       // still quite common.
       '@typescript-eslint/no-unsafe-assignment': 'off',
+
+      '@typescript-eslint/no-unsafe-argument': 'off',
 
       // Warn on member access of values that are of type `any`.
       //
@@ -527,6 +533,7 @@ export const ts = defineConfig(
       // have unintended results at times, but also allows developers to
       // implement their own toString methods on objects that will serialize
       // them in a sane way.
+      '@typescript-eslint/restrict-template-expressions': 'off',
       '@typescript-eslint/restrict-template-literal-expressions': 'off',
 
       // Enforces await-ing of Promise-like values before returning them. This
@@ -649,6 +656,9 @@ export const ts = defineConfig(
 
       // Disallow unnecessary semicolons.
       '@stylistic/no-extra-semi': 'error',
+
+      // This rule conflicts with no-extra-parens.
+      '@stylistic/no-mixed-operators': 'off',
 
       // Warn about trailing spaces.
       '@stylistic/no-trailing-spaces': 'warn',
