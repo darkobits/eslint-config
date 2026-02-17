@@ -1,6 +1,6 @@
 {
   "name": "@darkobits/eslint-config",
-  "version": "4.0.2",
+  "version": "5.0.0",
   "description": "ESLint configuration presets for TypeScript projects.",
   "repository": {
     "type": "git",
